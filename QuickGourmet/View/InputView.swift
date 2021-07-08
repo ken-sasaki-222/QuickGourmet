@@ -31,7 +31,7 @@ struct InputView: View {
                     Spacer()
                 }
             }
-            .navigationTitle("さくっとグルメ")
+            .navigationTitle("食いっくグルメ")
         }
     }
 }
