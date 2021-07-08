@@ -25,7 +25,8 @@ struct InputView: View {
                 HStack {
                     Spacer()
                     Button("検索") {
-                        print("検索開始")
+                        print("駅、エリア: \($keywordText.wrappedValue)")
+                        print("ジャンル: \($genreText.wrappedValue)")
                     }
                     Spacer()
                 }
