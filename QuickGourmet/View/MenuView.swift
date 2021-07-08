@@ -32,17 +32,6 @@ struct MenuView: View {
                     }
                     .foregroundColor(.black)
                 }
-                
-                HStack {
-                    Image("version_icon")
-                        .resizable()
-                        .frame(width: 30, height: 30)
-                        .padding(10)
-                    Button("バージョン") {
-                        
-                    }
-                    .foregroundColor(.black)
-                }
             }
             
             Section(header: Text("開発者")) {
@@ -76,6 +65,19 @@ struct MenuView: View {
                         .frame(width: 30, height: 30)
                         .padding(10)
                     Button("Qiita") {
+                        
+                    }
+                    .foregroundColor(.black)
+                }
+            }
+            
+            Section(header: Text("バージョン")) {
+                HStack {
+                    Image("version_icon")
+                        .resizable()
+                        .frame(width: 30, height: 30)
+                        .padding(10)
+                    Button("バージョン  1.0") {
                         
                     }
                     .foregroundColor(.black)
