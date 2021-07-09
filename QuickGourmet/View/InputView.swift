@@ -10,6 +10,12 @@ import SwiftUI
 struct InputView: View {
     @State var keywordText = ""
     @State var genreText = ""
+    
+    var requestURL: String {
+        get {
+            return "https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=\(API_KEY)&keyword=\($keywordText.wrappedValue)&genre=\("G002")&count=10&format=json"
+        }
+    }
         
     var body: some View {
         NavigationView {
@@ -25,14 +31,18 @@ struct InputView: View {
                 HStack {
                     Spacer()
                     Button("検索") {
-                        print("駅、エリア: \($keywordText.wrappedValue)")
-                        print("ジャンル: \($genreText.wrappedValue)")
+                        communicationAPI()
                     }
                     Spacer()
                 }
             }
             .navigationTitle("食いっくグルメ")
         }
+    }
+    
+    // API通信
+    func communicationAPI() {
+        print("検索URL: \(requestURL)")
     }
 }
 
