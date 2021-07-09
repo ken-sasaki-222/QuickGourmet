@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D868894E2698492C0064BDCD /* ApiKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D868894D2698492C0064BDCD /* ApiKey.swift */; };
 		D87C9C392696FDB70051FA77 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87C9C382696FDB70051FA77 /* TabBarView.swift */; };
 		D87C9C3B269701A30051FA77 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87C9C3A269701A30051FA77 /* MenuView.swift */; };
 		D8BA1188269661460007DCE5 /* QuickGourmetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BA1187269661460007DCE5 /* QuickGourmetApp.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D868894D2698492C0064BDCD /* ApiKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKey.swift; sourceTree = "<group>"; };
 		D87C9C382696FDB70051FA77 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		D87C9C3A269701A30051FA77 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		D8BA1184269661460007DCE5 /* QuickGourmet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuickGourmet.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,6 +53,7 @@
 			isa = PBXGroup;
 			children = (
 				D8BA118B269661490007DCE5 /* Assets.xcassets */,
+				D868894D2698492C0064BDCD /* ApiKey.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -160,6 +163,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D868894E2698492C0064BDCD /* ApiKey.swift in Sources */,
 				D8BA118A269661460007DCE5 /* InputView.swift in Sources */,
 				D87C9C3B269701A30051FA77 /* MenuView.swift in Sources */,
 				D87C9C392696FDB70051FA77 /* TabBarView.swift in Sources */,
