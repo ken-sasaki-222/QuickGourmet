@@ -17,7 +17,7 @@ struct SearchListView: View {
     var body: some View {
         NavigationView {
             List((shopData)) { shop in
-                NavigationLink(destination: ShopDetailView()) {
+                NavigationLink(destination: ShopDetailView(shopData: shopData[0])) {
                     ShopRowView(shopData: shopData[0])
                 }
             }

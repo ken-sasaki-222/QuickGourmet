@@ -17,11 +17,27 @@ struct ShopRowView: View {
         VStack {
             URLImage(url: shopData.photo.mobile.l)
                 .aspectRatio(contentMode: .fit)
-            
-            Text(shopData.name)
-            
+            HStack {
+                VStack(alignment: .leading) {
+                    Text(shopData.name)
+                        .font(.title3)
+                        .fontWeight(.medium)
+                        .fixedSize(horizontal: false, vertical: true)
+                        .padding(.top, 4.0)
+                    Text(shopData.mobileAccess)
+                        .font(.headline)
+                        .padding(.top, 4.0)
+                        .padding(.bottom, 4.0)
+                    Text(shopData.budget.average)
+                        .foregroundColor(.gray)
+                        .font(.footnote)
+                        .fixedSize(horizontal: false, vertical: true)
+                        .lineLimit(1)
+                        .padding(.bottom, 8.0)
+                }
+                Spacer()
+            }
         }
-        
     }
 }
 
