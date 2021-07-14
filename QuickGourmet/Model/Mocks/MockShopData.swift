@@ -7,6 +7,7 @@
 
 import Foundation
 
+
 // Search API
 // https://webservice.recruit.co.jp/hotpepper/gourmet/v1/
 
@@ -17,6 +18,9 @@ let mockShopesData: [Shop]
             open: "月～日、祝日、祝前日: 17:00～23:00 （料理L.O. 22:30 ドリンクL.O. 22:30）",
             lat: Int(35.6610492907),
             lng: Int(139.6968179396),
+            budget: Shop.Budget(average: "3000円（通常平均）/4000円（飲み放題付き宴会平均）",
+                                code: "B003",
+                                name: "3001～4000円"),
             genre: Shop.Genre(catche: "渋谷 -焼肉食べ放題- 黒毛和牛食べ放題95品",
                               code: "G008",
                               genreName: "焼肉・ホルモン"),
@@ -29,6 +33,9 @@ let mockShopesData: [Shop]
             open: "月～日、祝日、祝前日: 17:00～23:00 （料理L.O. 22:30 ドリンクL.O. 22:30）",
             lat: Int(35.6610492907),
             lng: Int(139.6968179396),
+            budget: Shop.Budget(average: "3000円（通常平均）/4000円（飲み放題付き宴会平均）",
+                                code: "B003",
+                                name: "3001～4000円"),
             genre: Shop.Genre(catche: "渋谷 -焼肉食べ放題- 黒毛和牛食べ放題95品",
                               code: "G008",
                               genreName: "焼肉・ホルモン"),
@@ -41,6 +48,9 @@ let mockShopesData: [Shop]
             open: "月～日、祝日、祝前日: 17:00～23:00 （料理L.O. 22:30 ドリンクL.O. 22:30）",
             lat: Int(35.6610492907),
             lng: Int(139.6968179396),
+            budget: Shop.Budget(average: "3000円（通常平均）/4000円（飲み放題付き宴会平均）",
+                                code: "B003",
+                                name: "3001～4000円"),
             genre: Shop.Genre(catche: "渋谷 -焼肉食べ放題- 黒毛和牛食べ放題95品",
                               code: "G008",
                               genreName: "焼肉・ホルモン"),
@@ -53,6 +63,9 @@ let mockShopesData: [Shop]
             open: "月～日、祝日、祝前日: 17:00～23:00 （料理L.O. 22:30 ドリンクL.O. 22:30）",
             lat: Int(35.6610492907),
             lng: Int(139.6968179396),
+            budget: Shop.Budget(average: "3000円（通常平均）/4000円（飲み放題付き宴会平均）",
+                                code: "B003",
+                                name: "3001～4000円"),
             genre: Shop.Genre(catche: "渋谷 -焼肉食べ放題- 黒毛和牛食べ放題95品",
                               code: "G008",
                               genreName: "焼肉・ホルモン"),
@@ -65,6 +78,9 @@ let mockShopesData: [Shop]
             open: "月～日、祝日、祝前日: 17:00～23:00 （料理L.O. 22:30 ドリンクL.O. 22:30）",
             lat: Int(35.6610492907),
             lng: Int(139.6968179396),
+            budget: Shop.Budget(average: "3000円（通常平均）/4000円（飲み放題付き宴会平均）",
+                                code: "B003",
+                                name: "3001～4000円"),
             genre: Shop.Genre(catche: "渋谷 -焼肉食べ放題- 黒毛和牛食べ放題95品",
                               code: "G008",
                               genreName: "焼肉・ホルモン"),
