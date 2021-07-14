@@ -28,20 +28,20 @@ struct URLImage: View {
                 return VStack {
                     Image(uiImage: UIImage(systemName: "icloud.and.arrow.down")!)
                         .resizable()
-                        .frame(width: 35, height: 35, alignment: .center)
+                        .frame(width: 35, height: 32, alignment: .center)
                 }
             }
             // Viewを返す
             return VStack {
                 Image(uiImage: img)
                     .resizable()
-                    .frame(width: 320, height: 197, alignment: .center)
+                    .frame(width: 380, height: 235, alignment: .center)
             }
         } else {
             return VStack {
                 Image(uiImage: UIImage(systemName: "icloud.and.arrow.down")!)
                     .resizable()
-                    .frame(width: 35, height: 35, alignment: .center)
+                    .frame(width: 35, height: 32, alignment: .center)
             }
         }
     }
