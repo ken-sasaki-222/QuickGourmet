@@ -15,9 +15,16 @@ struct Shop: Decodable, Identifiable {
     var open: String
     var lat: Int
     var lng: Int
+    var budget: Budget
     var genre: Genre
     var photo: Photo
     var urls: URLS
+    
+    struct Budget: Decodable {
+        var average: String
+        var code: String
+        var name: String
+    }
     
     struct Genre: Decodable {
         var catche: String
