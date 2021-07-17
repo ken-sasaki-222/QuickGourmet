@@ -101,6 +101,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		D85D9DE126A2B98200F4B5C5 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				D8A8E5BE269DEA66009F9C0C /* ImageDownloder.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		D87C9C3C269703B80051FA77 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -112,14 +120,6 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		D87C9C3D269706630051FA77 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				D868895326984AD90064BDCD /* ApiKey.swift */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
 		D8A8E5B7269DB3DA009F9C0C /* ShopDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -128,13 +128,13 @@
 			path = ShopDetail;
 			sourceTree = "<group>";
 		};
-		D8A8E5B9269DBEA4009F9C0C /* Other */ = {
+		D8A8E5B9269DBEA4009F9C0C /* API */ = {
 			isa = PBXGroup;
 			children = (
 				D8A8E5BA269DC047009F9C0C /* ShopSearchFetcher.swift */,
-				D8A8E5BE269DEA66009F9C0C /* ImageDownloder.swift */,
+				D868895326984AD90064BDCD /* ApiKey.swift */,
 			);
-			path = Other;
+			path = API;
 			sourceTree = "<group>";
 		};
 		D8A8E5C5269DF275009F9C0C /* Image */ = {
@@ -165,12 +165,12 @@
 			isa = PBXGroup;
 			children = (
 				D8BA1187269661460007DCE5 /* QuickGourmetApp.swift */,
+				D8550488269D0DAA0053334A /* Model */,
 				D87C9C3C269703B80051FA77 /* Views */,
 				D82895C426A05FC50030FACB /* ViewModel */,
-				D8550488269D0DAA0053334A /* Model */,
-				D8A8E5B9269DBEA4009F9C0C /* Other */,
-				D87C9C3D269706630051FA77 /* Resources */,
+				D8A8E5B9269DBEA4009F9C0C /* API */,
 				D8BA118B269661490007DCE5 /* Assets.xcassets */,
+				D85D9DE126A2B98200F4B5C5 /* Utils */,
 				D8BA1190269661490007DCE5 /* Info.plist */,
 				D8BA118D269661490007DCE5 /* Preview Content */,
 			);
