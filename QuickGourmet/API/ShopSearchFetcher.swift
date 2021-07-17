@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ShopSearchFetcher: ObservableObject {
+class ShopSearchFetcher {
     
     // 暫定のURL -> 本来はパラメーターに検索フォームの内容が入る
     // hotpepper gourmet search API
