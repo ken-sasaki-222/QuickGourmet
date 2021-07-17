@@ -13,7 +13,7 @@ class ShopSearchFetcher: ObservableObject {
     // hotpepper gourmet search API
     private var requestString: String {
         get {
-            return "https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=8038faee5cb2aff5&keyword=%E6%B8%8B%E8%B0%B7&genre=G008&count=5&format=json"
+            return "https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=8038faee5cb2aff5&keyword=%E6%B8%8B%E8%B0%B7&genre=G008&count=100&format=json"
         }
     }
     
@@ -38,8 +38,8 @@ class ShopSearchFetcher: ObservableObject {
                     completion(searchResponseData.results.shop)
                 }
             } catch {
-                print(error)
-                print("json convert failed in JSONDecoder.: \(error.localizedDescription)")
+                print("JSONDecode Failure Overview.: \(error.localizedDescription)")
+                print("Details of JSONDecode failure.: \(error)")
             }
         }.resume() // URLSessionタスク開始
         
