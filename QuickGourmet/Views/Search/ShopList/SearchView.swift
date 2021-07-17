@@ -12,7 +12,7 @@ struct SearchView: View {
     @State var genreText = ""
     @State var selectGenre = 0
     
-    let shopData: [Shop] = mockShopesData
+    let shopData: [HotPepperResponse] = mockShopesData
     
     var genreNames = ["居酒屋", "ダイニングバー・バル", "創作料理", "和食", "洋食", "イタリアン・フレンチ", "中華", "焼肉・ホルモン", "アジア・エスニック料理", "各国料理", "カラオケ・パーティ", "バー・カクテル", "ラーメン", "カフェ・スイーツ", "その他グルメ", "お好み焼き・もんじゃ", "韓国料理"]
     
