@@ -17,34 +17,29 @@ class ShopSearchFetcher: ObservableObject {
         }
     }
     
-    // このプロパティに変更があった場合にイベントを通知
-    @Published var shopData: [Shop] = []
-    
-    init() {
-        fetchShopData()
-    }
-    
-    func fetchShopData() {
-        
+    func fetchShopData(completion: @escaping ([Shop]) -> Void) {
         // force unwrap! 使いたくないのでguard
         guard let requestURL = URL(string: requestString) else {
             return
         }
         
         URLSession.shared.dataTask(with: URLRequest(url: requestURL)) { (data, response, error) in
-            if let data = data {
-                
-                let decoder: JSONDecoder = JSONDecoder()
-                guard let searchResponseData = try? decoder.decode(ShopGroup.self, from: data) else {
-                    print("Decoder failure: \(error.debugDescription)")
-                    return
-                }
+            guard let data = data else {
+                return
+            }
+            
+            let decoder: JSONDecoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+            do {
+                let searchResponseData = try decoder.decode(HotPepperResponse.self, from: data)
+                print("JSONDecode succeeded.")
                 
                 DispatchQueue.main.async {
-                    self.shopData = searchResponseData.shopes.reversed()
+                    completion(searchResponseData.results.shop)
                 }
-            } else {
-                print("json convert failed in JSONDecoder.: \(error?.localizedDescription)")
+            } catch {
+                print(error)
+                print("json convert failed in JSONDecoder.: \(error.localizedDescription)")
             }
         }.resume() // URLSessionタスク開始
         

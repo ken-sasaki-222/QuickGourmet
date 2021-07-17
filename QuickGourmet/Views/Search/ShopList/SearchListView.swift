@@ -8,20 +8,24 @@
 import SwiftUI
 
 struct SearchListView: View {
-    
-    let shopData: [Shop] = mockShopesData
+
+    // インターフェース定義用Mock
+    // let shopData: [Response] = mockShopesDate
     
     // ObservableObjectに準拠したクラスを監視
-    @ObservedObject var shopSearchFetcher = ShopSearchFetcher()
+    // @ObservedObject var shopSearchFetcher = ShopSearchFetcher()
+    
+    // ObservableObjectでViewModel監視
+    @ObservedObject private var searchListViewModel = SearchListViewModel()
     
     var body: some View {
         NavigationView {
-            List((shopData)) { shop in
-                NavigationLink(destination: ShopDetailView(shopData: shopData[0])) {
-                    ShopRowView(shopData: shopData[0])
+            List(searchListViewModel.shopData) { shop in
+                NavigationLink(destination: ShopDetailView()) {
+                    ShopRowView(shopData: shop)
                 }
             }
-            .navigationTitle(Text("検索結果一覧"))
+            .navigationTitle("検索結果")
         }
     }
 }
