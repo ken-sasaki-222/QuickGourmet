@@ -15,7 +15,7 @@ struct ShopRowView: View {
     
     var body: some View {
         VStack {
-            URLImage(url: shopData.photo.mobile.l)
+            URLImage(url: shopData.photo.pc.l)
                 .aspectRatio(contentMode: .fit)
             HStack {
                 VStack(alignment: .leading) {
@@ -43,6 +43,6 @@ struct ShopRowView: View {
 
 struct ShopRowView_Previews: PreviewProvider {
     static var previews: some View {
-        ShopRowView(shopData: mockShopesData[0])
+        ShopRowView(shopData: mockShopesData[0].results.shop[0])
     }
 }
