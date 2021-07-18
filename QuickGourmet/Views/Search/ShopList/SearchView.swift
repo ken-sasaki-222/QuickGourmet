@@ -12,43 +12,70 @@ struct SearchView: View {
     @State var genreText = ""
     @State var selectGenre = 0
     
-    let shopData: [HotPepperResponse] = mockShopesData
-    
     var genreNames = ["居酒屋", "ダイニングバー・バル", "創作料理", "和食", "洋食", "イタリアン・フレンチ", "中華", "焼肉・ホルモン", "アジア・エスニック料理", "各国料理", "カラオケ・パーティ", "バー・カクテル", "ラーメン", "カフェ・スイーツ", "その他グルメ", "お好み焼き・もんじゃ", "韓国料理"]
     
     var requestURL: String {
         get {
-            return "https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=\(API_KEY)&keyword=\($keywordText.wrappedValue)&genre=G001&count=10&format=json"
+            return "https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=\(API_KEY)&keyword=\($keywordText.wrappedValue)&genre=\(convertGenreCode(selectCode: selectGenre))&count=10&format=json"
         }
     }
     
-    enum GenreCode: String {
-        case 居酒屋
-        case barbal
-        case sousaku
-//        case wasyoku = "004"
-//        case yousyoku = "005"
-//        case itarianfulenti = "006"
-//        case tyuuka = "007"
-//        case yakiniku = "008"
-//        case aziaryouri = "009"
-//        case kakokuryouri = "010"
-//        case karaokeparty = "011"
-//        case kakuteru = "012"
-//        case ra_menn = "013"
-//        case kafe = "014"
-//        case sonota = "015"
-//        case okonomiyaku = "016"
-//        case korearyori = "017"
+    // Picker選択内容に合わせてジャンルコードを返す
+    enum GenreCode: Int {
+        case 居酒屋 = 0
+        case ダイニングバー・バル = 1
+        case 創作料理 = 2
+        case 和食 = 3
+        case 洋食 = 4
+        case イタリアン・フレンチ = 5
+        case 中華 = 6
+        case 焼肉・ホルモン = 7
+        case アジア・エスニック料理 = 8
+        case 各国料理 = 9
+        case カラオケ・パーティ = 10
+        case バー・カクテル = 11
+        case ラーメン = 12
+        case カフェ・スイーツ = 13
+        case その他グルメ = 14
+        case お好み焼き・もんじゃ = 15
+        case 韓国料理 = 16
         
         var genreCode: String {
             switch self {
             case .居酒屋:
                 return "G001"
-            case .barbal:
+            case .ダイニングバー・バル:
                 return "G002"
-            case .sousaku:
+            case .創作料理:
                 return "G003"
+            case .和食:
+                return "G004"
+            case .洋食:
+                return "G005"
+            case .イタリアン・フレンチ:
+                return "G006"
+            case .中華:
+                return "G007"
+            case .焼肉・ホルモン:
+                return "G008"
+            case .アジア・エスニック料理:
+                return "G009"
+            case .各国料理:
+                return "G010"
+            case .カラオケ・パーティ:
+                return "G011"
+            case .バー・カクテル:
+                return "G012"
+            case .ラーメン:
+                return "G013"
+            case .カフェ・スイーツ:
+                return "G014"
+            case .その他グルメ:
+                return "G015"
+            case .お好み焼き・もんじゃ:
+                return "G016"
+            case .韓国料理:
+                return "G017"
             default:
                 return ""
             }
@@ -66,13 +93,12 @@ struct SearchView: View {
                     Picker(selection: $selectGenre, label: Text("ジャンルを選択")) {
                         ForEach(0..<genreNames.count) { index in
                             Text(genreNames[index])
-                            
-                            
-                            
                         }
                         .foregroundColor(.black)
                     }
                 }
+                
+                
                 
                 HStack {
                     Spacer()
@@ -82,18 +108,22 @@ struct SearchView: View {
                     Spacer()
                 }
             }
+            
             .navigationTitle("食いっくグルメ")
         }
     }
     
-    func kenken(genreName: String) -> String {
-        guard let code = GenreCode(rawValue: "居酒屋")?.genreCode else {
+    // Pickerのselectionを取得してHotPepperAPIで使えるString型に変換
+    func convertGenreCode(selectCode: Int) -> String {
+        guard let code = GenreCode(rawValue: selectCode)?.genreCode else {
             return ""
         }
+        
+        print("code: \(code)")
         return code
     }
     
-    // API通信
+    // 設定情報投げる
     func communicationAPI() {
         print("検索URL: \(requestURL)")
     }
