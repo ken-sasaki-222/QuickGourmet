@@ -11,16 +11,18 @@ struct SearchView: View {
     @State var keywordText = ""
     @State var genreText = ""
     @State var selectGenre = 0
+    @ObservedObject var searchVM = SearchViewModel()
     
-    var genreNames = ["居酒屋", "ダイニングバー・バル", "創作料理", "和食", "洋食", "イタリアン・フレンチ", "中華", "焼肉・ホルモン", "アジア・エスニック料理", "各国料理", "カラオケ・パーティ", "バー・カクテル", "ラーメン", "カフェ・スイーツ", "その他グルメ", "お好み焼き・もんじゃ", "韓国料理"]
+    var genreNames = ["居酒屋", "ダイニングバー・バル", "創作料理", "和食", "洋食", "イタリアン・フレンチ", "中華", "焼肉・ホルモン", "アジア・エスニック料理", "各国料理", "カラオケ・パーティ", "バー・カクテル", "ラーメン", "カフェ・スイーツ", "その他グルメ", "お好み焼き・もんじゃ", "韓国料理",]
     
-    var requestURL: String {
+    // hotpepper gourmet search API
+    var requestString: String {
         get {
-            return "https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=\(API_KEY)&keyword=\($keywordText.wrappedValue)&genre=\(convertGenreCode(selectCode: selectGenre))&count=10&format=json"
+            return "https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=\(API_KEY)&keyword=\(keywordText)&genre=\(convertGenreCode(selectCode: selectGenre))&count=10&format=json"
         }
     }
     
-    // Picker選択内容に合わせてジャンルコードを返す
+    // Picker選択内容に合わせて公式ジャンルコードを返す
     enum GenreCode: Int {
         case 居酒屋 = 0
         case ダイニングバー・バル = 1
@@ -88,7 +90,6 @@ struct SearchView: View {
                 Section(header: Text("必須")) {
                     TextField("駅、エリアを入力", text: $keywordText)
                 }
-                
                 Section(header: Text("必須")) {
                     Picker(selection: $selectGenre, label: Text("ジャンルを選択")) {
                         ForEach(0..<genreNames.count) { index in
@@ -97,18 +98,12 @@ struct SearchView: View {
                         .foregroundColor(.black)
                     }
                 }
-                
-                
-                
                 HStack {
                     Spacer()
-                    Button("検索") {
-                        communicationAPI()
-                    }
+                      NavigationLink("検索", destination: SearchListView())
                     Spacer()
                 }
             }
-            
             .navigationTitle("食いっくグルメ")
         }
     }
@@ -118,14 +113,15 @@ struct SearchView: View {
         guard let code = GenreCode(rawValue: selectCode)?.genreCode else {
             return ""
         }
-        
         print("code: \(code)")
         return code
     }
     
-    // 設定情報投げる
+    // 検索情報を投げる
     func communicationAPI() {
-        print("検索URL: \(requestURL)")
+        print("requestString: \(requestString)")
+        searchVM.urlString = requestString
+        searchVM.callShopSearchFetcher()
     }
 }
 

@@ -8,22 +8,17 @@
 import Foundation
 
 class ShopSearchFetcher {
+    var requestString = String()
     
-    // 暫定のURL -> 本来はパラメーターに検索フォームの内容が入る
-    // hotpepper gourmet search API
-    private var requestString: String {
-        get {
-            return "https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=8038faee5cb2aff5&keyword=%E6%B8%8B%E8%B0%B7&genre=G008&count=100&format=json"
-        }
-    }
-    
+    // API叩く
     func fetchShopData(completion: @escaping ([Shop]) -> Void) {
         // force unwrap! 使いたくないのでguard
-        guard let requestURL = URL(string: requestString) else {
+        guard let requestUrl = URL(string: requestString) else {
             return
         }
+        print("requestURL: \(requestUrl)")
         
-        URLSession.shared.dataTask(with: URLRequest(url: requestURL)) { (data, response, error) in
+        URLSession.shared.dataTask(with: URLRequest(url: requestUrl)) { (data, response, error) in
             guard let data = data else {
                 return
             }
