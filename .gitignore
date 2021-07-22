@@ -37,4 +37,4 @@ fastlane/screenshots/**/*.png
 fastlane/test_output
 
 iOSInjectionProject/
-QuickGourmet/Resources/ApiKey.swift
+QuickGourmet/API/ApiKey.swift

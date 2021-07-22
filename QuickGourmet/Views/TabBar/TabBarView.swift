@@ -13,7 +13,7 @@ struct TabBarView: View {
     var body: some View {
         TabView(selection: $section) {
             // 検索ページ
-            InputView()
+            SearchView()
                 .tabItem {
                     Image(systemName: "magnifyingglass")
                     Text("検索")
