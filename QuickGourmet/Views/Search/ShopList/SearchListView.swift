@@ -11,27 +11,23 @@ struct SearchListView: View {
 
     // インターフェース定義用Mock
     // let shopData: [Response] = mockShopesDate
-    
-    // ObservableObjectに準拠したクラスを監視
     // @ObservedObject var shopSearchFetcher = ShopSearchFetcher()
     
-    // ObservableObjectでViewModel監視
-    @ObservedObject private var searchListViewModel = SearchListViewModel()
+    @ObservedObject var searchVM: SearchViewModel
     
     var body: some View {
-        NavigationView {
-            List(searchListViewModel.shopData) { shop in
-                NavigationLink(destination: ShopDetailView()) {
-                    ShopRowView(shopData: shop)
-                }
+        List(searchVM.shopData) { shop in
+            NavigationLink(destination: ShopDetailView()) {
+                ShopRowView(shopData: shop)
             }
-            .navigationTitle("検索結果")
         }
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
-struct SearchListView_Previews: PreviewProvider {
-    static var previews: some View {
-        SearchListView()
-    }
-}
+//struct SearchListView_Previews: PreviewProvider {
+//    var searchVM: SearchViewModel
+//    static var previews: some View {
+//        SearchListView(searchVM: searchVM)
+//    }
+//}
