@@ -11,10 +11,12 @@ struct SearchView: View {
     @State var keywordText = ""
     @State var genreText = ""
     @State var selectGenre = 0
-    @ObservedObject var searchVM = SearchViewModel()
+    @State var isTapActive = false
+    @State var searchVM = SearchViewModel()
     
     var genreNames = ["居酒屋", "ダイニングバー・バル", "創作料理", "和食", "洋食", "イタリアン・フレンチ", "中華", "焼肉・ホルモン", "アジア・エスニック料理", "各国料理", "カラオケ・パーティ", "バー・カクテル", "ラーメン", "カフェ・スイーツ", "その他グルメ", "お好み焼き・もんじゃ", "韓国料理",]
     
+    // Todo: Viewで管理するのは設計的に違う気がするので後々対応
     // hotpepper gourmet search API
     var requestString: String {
         get {
@@ -83,31 +85,44 @@ struct SearchView: View {
             }
         }
     }
-        
+    
     var body: some View {
         NavigationView {
-            Form {
-                Section(header: Text("必須")) {
-                    TextField("駅、エリアを入力", text: $keywordText)
-                }
-                Section(header: Text("必須")) {
-                    Picker(selection: $selectGenre, label: Text("ジャンルを選択")) {
-                        ForEach(0..<genreNames.count) { index in
-                            Text(genreNames[index])
+            ZStack {
+                Form {
+                    Section(header: Text("必須")) {
+                        TextField("駅、エリアを入力", text: $keywordText)
+                    }
+                    Section(header: Text("必須")) {
+                        Picker(selection: $selectGenre, label: Text("ジャンルを選択")) {
+                            ForEach(0..<genreNames.count) { index in
+                                Text(genreNames[index])
+                            }
+                            .foregroundColor(.black)
                         }
-                        .foregroundColor(.black)
                     }
                 }
-                HStack {
-                    Spacer()
-                      NavigationLink("検索", destination: SearchListView())
-                    Spacer()
+                .navigationTitle("条件検索")
+                NavigationLink(destination: SearchListView(searchVM: searchVM), isActive: $isTapActive) {
+                    
+                }
+                Button(action: {
+                    communicateHotPepperAPI()
+                    self.isTapActive = true
+                }) {
+                    Text("条件検索")
+                        .foregroundColor(Color.white)
+                        .fontWeight(.medium)
+                        .padding(.vertical, 15)
+                        .padding(.horizontal, 30)
+                        .background(Color.red)
+                        .cornerRadius(100)
                 }
             }
-            .navigationTitle("食いっくグルメ")
         }
     }
     
+    // Todo: enumも含めてconvertGenreCodeはViewで管理するのは設計的に違う気がするので後々対応
     // Pickerのselectionを取得してHotPepperAPIで使えるString型に変換
     func convertGenreCode(selectCode: Int) -> String {
         guard let code = GenreCode(rawValue: selectCode)?.genreCode else {
@@ -117,8 +132,7 @@ struct SearchView: View {
         return code
     }
     
-    // 検索情報を投げる
-    func communicationAPI() {
+    func communicateHotPepperAPI() {
         print("requestString: \(requestString)")
         searchVM.urlString = requestString
         searchVM.callShopSearchFetcher()
