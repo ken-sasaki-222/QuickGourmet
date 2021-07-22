@@ -8,13 +8,14 @@
 import SwiftUI
 
 struct SearchButton: View {
+    var text: String
     var action = {}
     
     var body: some View {
         Button(action: {
             action()
         }) {
-            Text("条件検索")
+            Text(text)
                 .foregroundColor(Color.white)
                 .fontWeight(.medium)
                 .font(.headline)
@@ -28,6 +29,6 @@ struct SearchButton: View {
 
 struct SearchButton_Previews: PreviewProvider {
     static var previews: some View {
-        SearchButton()
+        SearchButton(text: "条件検索")
     }
 }
