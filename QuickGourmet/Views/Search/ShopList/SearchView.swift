@@ -88,7 +88,7 @@ struct SearchView: View {
     
     var body: some View {
         NavigationView {
-            ZStack {
+            ZStack(alignment: .center) {
                 Form {
                     Section(header: Text("必須")) {
                         TextField("駅、エリアを入力", text: $keywordText)
@@ -106,17 +106,9 @@ struct SearchView: View {
                 NavigationLink(destination: SearchListView(searchVM: searchVM), isActive: $isTapActive) {
                     
                 }
-                Button(action: {
+                SearchButton {
                     communicateHotPepperAPI()
                     self.isTapActive = true
-                }) {
-                    Text("条件検索")
-                        .foregroundColor(Color.white)
-                        .fontWeight(.medium)
-                        .padding(.vertical, 15)
-                        .padding(.horizontal, 30)
-                        .background(Color.red)
-                        .cornerRadius(100)
                 }
             }
         }
@@ -141,6 +133,9 @@ struct SearchView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchView()
+        Group {
+            SearchView()
+            SearchView()
+        }
     }
 }
