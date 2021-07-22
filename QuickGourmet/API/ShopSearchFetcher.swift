@@ -10,9 +10,7 @@ import Foundation
 class ShopSearchFetcher {
     var requestString = String()
     
-    // API叩く
     func fetchShopData(completion: @escaping ([Shop]) -> Void) {
-        // force unwrap! 使いたくないのでguard
         guard let requestUrl = URL(string: requestString) else {
             return
         }
@@ -36,7 +34,6 @@ class ShopSearchFetcher {
                 print("JSONDecode Failure Overview.: \(error.localizedDescription)")
                 print("Details of JSONDecode failure.: \(error)")
             }
-        }.resume() // URLSessionタスク開始
-        
+        }.resume()
     }
 }
