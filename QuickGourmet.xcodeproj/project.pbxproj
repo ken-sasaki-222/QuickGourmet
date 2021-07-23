@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		D81CB62D26A9405F004807E1 /* SearchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81CB62C26A9405F004807E1 /* SearchButton.swift */; };
-		D82895C626A05FEA0030FACB /* SearchListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82895C526A05FEA0030FACB /* SearchListViewModel.swift */; };
 		D844A35826A94FED005482CF /* ApiKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D844A35726A94FED005482CF /* ApiKey.swift */; };
 		D855048D269D0F1B0053334A /* HotPepperResponseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D855048C269D0F1B0053334A /* HotPepperResponseResponse.swift */; };
 		D8711D3526A43377005EA395 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8711D3426A43377005EA395 /* SearchViewModel.swift */; };
@@ -30,7 +29,6 @@
 
 /* Begin PBXFileReference section */
 		D81CB62C26A9405F004807E1 /* SearchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchButton.swift; sourceTree = "<group>"; };
-		D82895C526A05FEA0030FACB /* SearchListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListViewModel.swift; sourceTree = "<group>"; };
 		D844A35726A94FED005482CF /* ApiKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiKey.swift; sourceTree = "<group>"; };
 		D855048C269D0F1B0053334A /* HotPepperResponseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotPepperResponseResponse.swift; sourceTree = "<group>"; };
 		D8711D3426A43377005EA395 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
@@ -74,7 +72,6 @@
 		D82895C426A05FC50030FACB /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				D82895C526A05FEA0030FACB /* SearchListViewModel.swift */,
 				D8711D3426A43377005EA395 /* SearchViewModel.swift */,
 			);
 			path = ViewModel;
@@ -311,7 +308,6 @@
 				D855048D269D0F1B0053334A /* HotPepperResponseResponse.swift in Sources */,
 				D87C9C392696FDB70051FA77 /* TabBarView.swift in Sources */,
 				D8BA1188269661460007DCE5 /* QuickGourmetApp.swift in Sources */,
-				D82895C626A05FEA0030FACB /* SearchListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
