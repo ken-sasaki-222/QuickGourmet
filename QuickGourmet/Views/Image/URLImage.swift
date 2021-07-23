@@ -13,11 +13,11 @@ struct URLImage: View {
     // これで@Publishedなプロパティを監視できる（この場合downloadData）
     @ObservedObject private var imageDownloader = ImageDownloader()
     
-    let url: String
+    let urlString: String
 
-    init(url: String) {
-        self.url = url
-        self.imageDownloader.downloadImage(url: self.url)
+    init(urlString: String) {
+        self.urlString = urlString
+        self.imageDownloader.downloadImage(url: self.urlString)
     }
 
     var body: some View {
@@ -49,6 +49,6 @@ struct URLImage: View {
 
 struct URLImage_Previews: PreviewProvider {
     static var previews: some View {
-        URLImage(url: "https://imgfp.hotp.jp/IMGH/54/14/P037425414/P037425414_168.jpg")
+        URLImage(urlString: "https://imgfp.hotp.jp/IMGH/54/14/P037425414/P037425414_168.jpg")
     }
 }
