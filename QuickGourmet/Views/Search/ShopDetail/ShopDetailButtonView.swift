@@ -8,13 +8,24 @@
 import SwiftUI
 
 struct ShopDetailButtonView: View {
+    @State private var isShown = false
+    var shopUrlString: String
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        SearchButton(text: "ホットペッパーグルメへ移動") {
+            self.isShown = true
+        }
+        .sheet(isPresented: $isShown) {
+            if let  url = URL(string: shopUrlString) {
+                SafariView(url: url)
+                    .edgesIgnoringSafeArea(.all)
+            }
+        }
     }
 }
 
 struct ShopDetailButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        ShopDetailButtonView()
+        ShopDetailButtonView(shopUrlString: mockShopesData[0].results.shop[0].urls.pc)
     }
 }
