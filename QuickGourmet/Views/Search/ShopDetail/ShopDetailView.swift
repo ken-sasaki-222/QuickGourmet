@@ -12,7 +12,7 @@ struct ShopDetailView: View {
     
     var body: some View {
         ScrollView {
-            CircleImage(imageString: shopData.photo.pc.l)
+            CircleImage(imageUrlString: shopData.photo.pc.l)
             
             ShopDetailButtonView(shopUrlString: shopData.urls.pc)
         }
