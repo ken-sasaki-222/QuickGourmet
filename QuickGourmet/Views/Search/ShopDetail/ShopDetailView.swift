@@ -12,10 +12,16 @@ struct ShopDetailView: View {
     
     var body: some View {
         ScrollView {
-            CircleImage(imageUrlString: shopData.photo.pc.l)
-            
-            ShopDetailButtonView(shopUrlString: shopData.urls.pc)
+            VStack {
+                MapView(latitude: shopData.lat, longitude: shopData.lng)
+                    .frame(height: 350)
+                CircleImage(imageUrlString: shopData.photo.pc.l)
+                    .offset(y: -130)
+                    .padding(.bottom, -130)
+                ShopDetailButtonView(shopUrlString: shopData.urls.pc)
+            }
         }
+        .edgesIgnoringSafeArea(.all)
     }
 }
 
