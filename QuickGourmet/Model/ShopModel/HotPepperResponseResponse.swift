@@ -25,6 +25,7 @@ struct Shop: Decodable, Identifiable {
     var open: String
     var lat: Double
     var lng: Double
+    var logo_image: String
     var budget: Budget
     var genre: Genre
     var photo: Photo
