@@ -14,10 +14,8 @@ struct ShopDetailView: View {
         ScrollView {
             VStack {
                 MapView(latitude: shopData.lat, longitude: shopData.lng)
-                    .frame(height: 350)
-                CircleImage(imageUrlString: shopData.photo.pc.l)
-                    .offset(y: -130)
-                    .padding(.bottom, -130)
+                    .frame(height: 300)
+                ShopDetailInfoView(name: shopData.name, address: shopData.address, mobileAccess: shopData.mobileAccess, average: shopData.budget.average, open: shopData.open, genreName: shopData.genre.name, logoImage: shopData.logoImage)
                 ShopDetailButtonView(shopUrlString: shopData.urls.pc)
             }
         }
