@@ -19,7 +19,7 @@ let mockShopesData: [HotPepperResponse]
                                                       open: "月～日、祝日、祝前日: 17:00～23:00 （料理L.O. 22:30 ドリンクL.O. 22:30）",
                                                       lat: 35.6610492907,
                                                       lng: 139.6968179396,
-                                                      logo_image: "https://imgfp.hotp.jp/IMGH/55/97/P036825597/P036825597_69.jpg",
+                                                      logoImage: "https://imgfp.hotp.jp/IMGH/55/97/P036825597/P036825597_69.jpg",
                                                       budget: Shop.Budget(
                                                         average: "3000円（通常平均）/4000円（飲み放題付き宴会平均）",
                                                         name: "3001～4000円"),
@@ -39,7 +39,8 @@ let mockShopesData: [HotPepperResponse]
                                                       mobileAccess: "JR線､東京ﾒﾄﾛ日比谷線【恵比寿駅】徒歩1分",
                                                       open: "月～日、祝日、祝前日: 17:00～23:00 （料理L.O. 22:00 ドリンクL.O. 22:00）",
                                                       lat: 35.6479160886,
-                                                      lng: 139.708788282, logo_image: "https://imgfp.hotp.jp/IMGH/55/97/P036825597/P036825597_69.jpg",
+                                                      lng: 139.708788282,
+                                                      logoImage: "https://imgfp.hotp.jp/IMGH/55/97/P036825597/P036825597_69.jpg",
                                                       budget: Shop.Budget(
                                                         average: "3,500円(ディナー)★飲み放題付き宴会コースは4,500円～",
                                                         name: "3001～4000円"),
@@ -60,7 +61,7 @@ let mockShopesData: [HotPepperResponse]
                                                       open: "月～木: 11:30～15:0016:00～23:30 （料理L.O. 23:00 ドリンクL.O. 23:00）金、祝前日: 11:30～15:0016:00～翌2:00 （料理L.O. 翌1:30 ドリンクL.O. 翌1:30）土: 11:30～翌2:00 （料理L.O. 翌1:30 ドリンクL.O. 翌1:30）日、祝日: 11:30～23:30 （料理L.O. 23:00 ドリンクL.O. 23:00）",
                                                       lat: 35.6600054248,
                                                       lng: 139.7036860089,
-                                                      logo_image: "https://imgfp.hotp.jp/IMGH/55/97/P036825597/P036825597_69.jpg",
+                                                      logoImage: "https://imgfp.hotp.jp/IMGH/55/97/P036825597/P036825597_69.jpg",
                                                       budget: Shop.Budget(
                                                         average: "2200円 　「お通し代」「席代」「入場料」は頂いておりません。",
                                                         name: "2001～3000円"),
@@ -81,7 +82,7 @@ let mockShopesData: [HotPepperResponse]
                                                       open: "月～日、祝日、祝前日: 17:00～23:00 （料理L.O. 22:30 ドリンクL.O. 22:30）",
                                                       lat: 35.6610492907,
                                                       lng: 139.6968179396,
-                                                      logo_image: "https://imgfp.hotp.jp/IMGH/55/97/P036825597/P036825597_69.jpg",
+                                                      logoImage: "https://imgfp.hotp.jp/IMGH/55/97/P036825597/P036825597_69.jpg",
                                                       budget: Shop.Budget(
                                                         average: "3000円（通常平均）/4000円（飲み放題付き宴会平均）",
                                                         name: "3001～4000円"),
@@ -102,7 +103,7 @@ let mockShopesData: [HotPepperResponse]
                                                       open: "月～日、祝日、祝前日: 17:00～翌2:00 （料理L.O. 翌1:30 ドリンクL.O. 翌1:45）",
                                                       lat: 35.6610848844,
                                                       lng: 139.6983994704,
-                                                      logo_image: "https://imgfp.hotp.jp/IMGH/55/97/P036825597/P036825597_69.jpg",
+                                                      logoImage: "https://imgfp.hotp.jp/IMGH/55/97/P036825597/P036825597_69.jpg",
                                                       budget: Shop.Budget(
                                                         average: "コース平均2980円　/　アラカルト平均3000円　◎食べ放題有り◎",
                                                         name: "2001～3000円"),
