@@ -20,9 +20,10 @@ struct SearchButton: View {
                 .fontWeight(.medium)
                 .font(.headline)
                 .padding(.vertical, 15)
-                .padding(.horizontal, 100)
+                .padding(.horizontal, 50)
                 .background(Color.red)
                 .cornerRadius(100)
+                .lineLimit(1)
         }
     }
 }

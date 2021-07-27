@@ -15,7 +15,7 @@ struct ShopRowView: View {
     
     var body: some View {
         VStack {
-            URLImage(url: shopData.photo.pc.l)
+            URLImage(urlString: shopData.photo.pc.l)
                 .aspectRatio(contentMode: .fit)
             HStack {
                 VStack(alignment: .leading) {

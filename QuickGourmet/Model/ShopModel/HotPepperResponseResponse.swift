@@ -20,10 +20,12 @@ struct Results: Decodable {
 struct Shop: Decodable, Identifiable {
     var id: String
     var name: String
+    var address: String
     var mobileAccess: String
     var open: String
     var lat: Double
     var lng: Double
+    var logoImage: String
     var budget: Budget
     var genre: Genre
     var photo: Photo
