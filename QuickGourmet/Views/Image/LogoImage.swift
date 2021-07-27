@@ -28,7 +28,7 @@ struct LogoImage: View {
             return VStack {
                 Image(uiImage: img)
                     .resizable()
-                    .frame(width: 100, height: 100, alignment: .center)
+                    .frame(width: 80, height: 80, alignment: .center)
             }
         } else {
             return VStack {

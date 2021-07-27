@@ -16,27 +16,22 @@ struct ShopDetailInfoView: View {
     var genreName: String
     var logoImage: String
     
-    
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
                 HStack {
                     VStack {
                         Text(name)
-                            .font(.title2)
+                            .font(.title3)
                             .fontWeight(.medium)
+                            .lineLimit(2)
                         Text(genreName)
                             .font(.footnote)
                             .foregroundColor(.gray)
                             .padding(.top, 1)
                     }
-                    .padding(.init(top: 5, leading: 30, bottom: 0, trailing:30))
-                    LogoImage(urlString: logoImage)
-                        .clipShape(Circle())
-                        .clipShape(Circle())
-                        .overlay(Circle().stroke(Color.white, lineWidth: 4))
-                        .shadow(radius: 7)
                 }
+                .padding(.init(top: 20, leading: 30, bottom: 0, trailing: 30))
                 HStack {
                     Image(systemName: "mappin.circle")
                     Text(address)
@@ -48,22 +43,23 @@ struct ShopDetailInfoView: View {
                     Image(systemName: "figure.walk")
                     Text(mobileAccess)
                         .font(.body)
+                        .lineLimit(3)
                 }
                 .padding(.init(top: 10, leading: 30, bottom: 0, trailing:30))
                 HStack {
                     Image(systemName: "clock")
                     Text(open)
                         .font(.body)
-                        .lineLimit(3)
+                        .lineLimit(5)
                 }
                 .padding(.init(top: 10, leading: 30, bottom: 5, trailing:30))
                 HStack {
                     Image(systemName: "dollarsign.circle")
                     Text(average)
                         .font(.body)
-                        .lineLimit(2)
+                        .lineLimit(3)
                 }
-                .padding(.init(top: 10, leading: 30, bottom: 5, trailing:30))
+                .padding(.init(top: 10, leading: 30, bottom: 20, trailing:30))
             }
         }
     }

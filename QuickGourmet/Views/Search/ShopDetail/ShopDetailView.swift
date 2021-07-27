@@ -13,13 +13,26 @@ struct ShopDetailView: View {
     var body: some View {
         ScrollView {
             VStack {
-                MapView(latitude: shopData.lat, longitude: shopData.lng)
-                    .frame(height: 300)
-                ShopDetailInfoView(name: shopData.name, address: shopData.address, mobileAccess: shopData.mobileAccess, average: shopData.budget.average, open: shopData.open, genreName: shopData.genre.name, logoImage: shopData.logoImage)
+                ZStack {
+                    MapView(latitude: shopData.lat, longitude: shopData.lng)
+                    LogoImage(urlString: shopData.logoImage)
+                        .clipShape(Circle())
+                        .overlay(Circle().stroke(Color.white, lineWidth: 4))
+                        .shadow(radius: 7)
+                        .offset(x: -130, y: 155)
+                }
+                .padding(.bottom, 40)
+                ShopDetailInfoView(name: shopData.name,
+                                   address: shopData.address,
+                                   mobileAccess: shopData.mobileAccess,
+                                   average: shopData.budget.average,
+                                   open: shopData.open,
+                                   genreName: shopData.genre.name,
+                                   logoImage: shopData.logoImage
+                )
                 ShopDetailButtonView(shopUrlString: shopData.urls.pc)
             }
         }
-        .edgesIgnoringSafeArea(.all)
     }
 }
 

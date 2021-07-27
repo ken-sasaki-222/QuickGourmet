@@ -34,6 +34,7 @@ struct MapView: View {
             .onAppear {
                 setRegion(coordinate: CLLocationCoordinate2D(latitude: latitude, longitude: longitude))
             }
+            .frame(height: 300)
     }
     
     // 引数で取得した緯度経度を使って動的に表示領域の中心位置と、縮尺を決める
