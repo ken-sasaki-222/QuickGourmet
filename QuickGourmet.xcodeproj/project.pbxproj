@@ -13,6 +13,7 @@
 		D844A35826A94FED005482CF /* ApiKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D844A35726A94FED005482CF /* ApiKey.swift */; };
 		D855048D269D0F1B0053334A /* HotPepperResponseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D855048C269D0F1B0053334A /* HotPepperResponseResponse.swift */; };
 		D8711D3526A43377005EA395 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8711D3426A43377005EA395 /* SearchViewModel.swift */; };
+		D87B8C3D26B045EF00BB945C /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87B8C3C26B045EF00BB945C /* MenuViewModel.swift */; };
 		D87C9C392696FDB70051FA77 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87C9C382696FDB70051FA77 /* TabBarView.swift */; };
 		D87C9C3B269701A30051FA77 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87C9C3A269701A30051FA77 /* MenuView.swift */; };
 		D88426FA26AA7B680073B3F2 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88426F926AA7B680073B3F2 /* SafariView.swift */; };
@@ -30,6 +31,7 @@
 		D8ED9EB4269E798700AFE337 /* ShopRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8ED9EB3269E798700AFE337 /* ShopRowView.swift */; };
 		D8ED9EB6269E799000AFE337 /* SearchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8ED9EB5269E799000AFE337 /* SearchListView.swift */; };
 		D8ED9EB8269E79A500AFE337 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8ED9EB7269E79A500AFE337 /* SearchView.swift */; };
+		D8FC157926B19DDA00B22408 /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FC157826B19DDA00B22408 /* MailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,7 @@
 		D844A35726A94FED005482CF /* ApiKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiKey.swift; sourceTree = "<group>"; };
 		D855048C269D0F1B0053334A /* HotPepperResponseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotPepperResponseResponse.swift; sourceTree = "<group>"; };
 		D8711D3426A43377005EA395 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		D87B8C3C26B045EF00BB945C /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
 		D87C9C382696FDB70051FA77 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		D87C9C3A269701A30051FA77 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		D88426F926AA7B680073B3F2 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
@@ -58,6 +61,7 @@
 		D8ED9EB3269E798700AFE337 /* ShopRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopRowView.swift; sourceTree = "<group>"; };
 		D8ED9EB5269E799000AFE337 /* SearchListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchListView.swift; sourceTree = "<group>"; };
 		D8ED9EB7269E79A500AFE337 /* SearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		D8FC157826B19DDA00B22408 /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				D88426F426AA740C0073B3F2 /* Search */,
+				D87B8C3B26B045D900BB945C /* Menu */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -137,6 +142,14 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		D87B8C3B26B045D900BB945C /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				D87B8C3C26B045EF00BB945C /* MenuViewModel.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
 		D87C9C3C269703B80051FA77 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -146,7 +159,8 @@
 				D8A8E5C5269DF275009F9C0C /* Image */,
 				D81CB62E26A942A5004807E1 /* Button */,
 				D83D600C26AAB374002A6CEC /* Map */,
-				D88426F826AA79DB0073B3F2 /* SafariView */,
+				D88426F826AA79DB0073B3F2 /* Safari */,
+				D8FC157726B19DA700B22408 /* Mail */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -159,12 +173,12 @@
 			path = Search;
 			sourceTree = "<group>";
 		};
-		D88426F826AA79DB0073B3F2 /* SafariView */ = {
+		D88426F826AA79DB0073B3F2 /* Safari */ = {
 			isa = PBXGroup;
 			children = (
 				D88426F926AA7B680073B3F2 /* SafariView.swift */,
 			);
-			path = SafariView;
+			path = Safari;
 			sourceTree = "<group>";
 		};
 		D8A8E5B7269DB3DA009F9C0C /* ShopDetail */ = {
@@ -262,6 +276,14 @@
 			path = ShopModel;
 			sourceTree = "<group>";
 		};
+		D8FC157726B19DA700B22408 /* Mail */ = {
+			isa = PBXGroup;
+			children = (
+				D8FC157826B19DDA00B22408 /* MailView.swift */,
+			);
+			path = Mail;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -336,6 +358,7 @@
 				D844A35826A94FED005482CF /* ApiKey.swift in Sources */,
 				D8ED9EB4269E798700AFE337 /* ShopRowView.swift in Sources */,
 				D8711D3526A43377005EA395 /* SearchViewModel.swift in Sources */,
+				D87B8C3D26B045EF00BB945C /* MenuViewModel.swift in Sources */,
 				D889E16326AF09EA00F18681 /* LogoImage.swift in Sources */,
 				D8A8E5BB269DC047009F9C0C /* ShopSearchFetcher.swift in Sources */,
 				D8A8E5B4269DAEB3009F9C0C /* ShopDetailView.swift in Sources */,
@@ -347,6 +370,7 @@
 				D8ED9E9A269E78A100AFE337 /* ResponseGroup.swift in Sources */,
 				D8ED9EB2269E795F00AFE337 /* MockShopData.swift in Sources */,
 				D87C9C3B269701A30051FA77 /* MenuView.swift in Sources */,
+				D8FC157926B19DDA00B22408 /* MailView.swift in Sources */,
 				D8ED9EB8269E79A500AFE337 /* SearchView.swift in Sources */,
 				D855048D269D0F1B0053334A /* HotPepperResponseResponse.swift in Sources */,
 				D88426FA26AA7B680073B3F2 /* SafariView.swift in Sources */,
