@@ -25,9 +25,7 @@ struct MapView: View {
             interactionModes: .all,
             showsUserLocation: true,
             userTrackingMode: $userTrackingMode,
-            annotationItems: [
-                PinItem(coordinate: .init(latitude: latitude, longitude: longitude)),
-            ],
+            annotationItems: [PinItem(coordinate: .init(latitude: latitude, longitude: longitude))],
             annotationContent: { item in
                 MapMarker(coordinate: item.coordinate)
             })

@@ -44,10 +44,11 @@ struct Shop: Decodable, Identifiable {
 
     struct Photo: Decodable {
         var pc: Pc
-        struct Pc: Decodable {
-            var l: String
-            var s: String
-        }
+    }
+
+    struct Pc: Decodable {
+        var l: String
+        var s: String
     }
 
     struct Urls: Decodable {
