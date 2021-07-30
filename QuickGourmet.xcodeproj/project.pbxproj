@@ -317,6 +317,7 @@
 			buildPhases = (
 				2E828DA7E99B2758BA396D76 /* [CP] Check Pods Manifest.lock */,
 				D83A6DEF26B27A5D008F1A7B /* Run Script */,
+				D8F12E7726B3F51600118C63 /* ShellScript */,
 				D8BA1180269661460007DCE5 /* Sources */,
 				D8BA1181269661460007DCE5 /* Frameworks */,
 				D8BA1182269661460007DCE5 /* Resources */,
@@ -414,6 +415,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif [ $CONFIGURATION = \"Debug\" ]; then\n\"${PODS_ROOT}/SwiftFormat/CommandLineTool/swiftformat\" . --exclude Pods --swiftversion 5.4.2 --disable unusedArguments --disable andOperator --disable preferKeyPath\nfi\n";
+		};
+		D8F12E7726B3F51600118C63 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
