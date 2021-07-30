@@ -5,21 +5,19 @@
 //  Created by sasaki.ken on 2021/07/23.
 //
 
-import SwiftUI
 import SafariServices
+import SwiftUI
 
 struct SafariView: UIViewControllerRepresentable {
     typealias UIViewControllerType = SFSafariViewController
-    
+
     var url: URL
-    
-    func makeUIViewController(context: UIViewControllerRepresentableContext<SafariView>) -> SFSafariViewController {
+
+    func makeUIViewController(context _: UIViewControllerRepresentableContext<SafariView>) -> SFSafariViewController {
         return SFSafariViewController(url: url)
     }
-    
-    func updateUIViewController(_ uiViewController: SFSafariViewController, context: UIViewControllerRepresentableContext<SafariView>) {
-        
-    }
+
+    func updateUIViewController(_: SFSafariViewController, context _: UIViewControllerRepresentableContext<SafariView>) {}
 }
 
 struct WebView_Previews: PreviewProvider {

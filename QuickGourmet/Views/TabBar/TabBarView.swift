@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TabBarView: View {
     @State private var section = 0
-    
+
     var body: some View {
         TabView(selection: $section) {
             // 検索ページ
@@ -19,7 +19,7 @@ struct TabBarView: View {
                     Text("検索")
                 }
                 .tag(0)
-            
+
             // メニューページ
             MenuView()
                 .tabItem {

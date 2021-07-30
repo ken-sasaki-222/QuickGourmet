@@ -10,12 +10,12 @@ import SwiftUI
 struct LogoImage: View {
     @ObservedObject private var imageDownloader = ImageDownloader()
     let urlString: String
-    
+
     init(urlString: String) {
         self.urlString = urlString
-        self.imageDownloader.downloadImage(url: self.urlString)
+        imageDownloader.downloadImage(url: self.urlString)
     }
-    
+
     var body: some View {
         if let imageData = self.imageDownloader.downloadData {
             guard let img = UIImage(data: imageData) else {
@@ -39,7 +39,6 @@ struct LogoImage: View {
         }
     }
 }
-
 
 struct LogoImage_Previews: PreviewProvider {
     static var previews: some View {

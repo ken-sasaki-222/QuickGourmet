@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		30289446D1E3B0797CB28608 /* Pods_QuickGourmet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1B982FE3AEA28CD50ABBD5C /* Pods_QuickGourmet.framework */; };
 		D81CB62D26A9405F004807E1 /* SearchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81CB62C26A9405F004807E1 /* SearchButton.swift */; };
 		D829713226B26AA9005C4454 /* ApiKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D829713126B26AA9005C4454 /* ApiKey.swift */; };
 		D83D600926AAA0E8002A6CEC /* ShopDetailButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83D600826AAA0E8002A6CEC /* ShopDetailButtonView.swift */; };
@@ -35,6 +36,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2D426BF4E1A63986FA4520FC /* Pods-QuickGourmet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuickGourmet.debug.xcconfig"; path = "Target Support Files/Pods-QuickGourmet/Pods-QuickGourmet.debug.xcconfig"; sourceTree = "<group>"; };
+		6DF1E1FFD30D2807F5F3C09B /* Pods-QuickGourmet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuickGourmet.release.xcconfig"; path = "Target Support Files/Pods-QuickGourmet/Pods-QuickGourmet.release.xcconfig"; sourceTree = "<group>"; };
 		D81CB62C26A9405F004807E1 /* SearchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchButton.swift; sourceTree = "<group>"; };
 		D829713126B26AA9005C4454 /* ApiKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiKey.swift; sourceTree = "<group>"; };
 		D83D600826AAA0E8002A6CEC /* ShopDetailButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopDetailButtonView.swift; sourceTree = "<group>"; };
@@ -62,6 +65,7 @@
 		D8ED9EB5269E799000AFE337 /* SearchListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchListView.swift; sourceTree = "<group>"; };
 		D8ED9EB7269E79A500AFE337 /* SearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		D8FC157826B19DDA00B22408 /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
+		E1B982FE3AEA28CD50ABBD5C /* Pods_QuickGourmet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuickGourmet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,12 +73,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30289446D1E3B0797CB28608 /* Pods_QuickGourmet.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2AB96C0BE4D98F4978856322 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2D426BF4E1A63986FA4520FC /* Pods-QuickGourmet.debug.xcconfig */,
+				6DF1E1FFD30D2807F5F3C09B /* Pods-QuickGourmet.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		82F4305A5EDFBC96D78AA438 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E1B982FE3AEA28CD50ABBD5C /* Pods_QuickGourmet.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D81CB62E26A942A5004807E1 /* Button */ = {
 			isa = PBXGroup;
 			children = (
@@ -214,6 +236,8 @@
 			children = (
 				D8BA1186269661460007DCE5 /* QuickGourmet */,
 				D8BA1185269661460007DCE5 /* Products */,
+				2AB96C0BE4D98F4978856322 /* Pods */,
+				82F4305A5EDFBC96D78AA438 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -291,9 +315,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D8BA1193269661490007DCE5 /* Build configuration list for PBXNativeTarget "QuickGourmet" */;
 			buildPhases = (
+				2E828DA7E99B2758BA396D76 /* [CP] Check Pods Manifest.lock */,
 				D8BA1180269661460007DCE5 /* Sources */,
 				D8BA1181269661460007DCE5 /* Frameworks */,
 				D8BA1182269661460007DCE5 /* Resources */,
+				D83A6DEF26B27A5D008F1A7B /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -347,6 +373,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2E828DA7E99B2758BA396D76 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-QuickGourmet-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D83A6DEF26B27A5D008F1A7B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif [ $CONFIGURATION = \"Debug\" ]; then\n\"${PODS_ROOT}/SwiftFormat/CommandLineTool/swiftformat\" . --exclude Pods --swiftversion 5.4.2 --disable unusedArguments --disable andOperator --disable preferKeyPath\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D8BA1180269661460007DCE5 /* Sources */ = {
@@ -500,6 +568,7 @@
 		};
 		D8BA1194269661490007DCE5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2D426BF4E1A63986FA4520FC /* Pods-QuickGourmet.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -522,6 +591,7 @@
 		};
 		D8BA1195269661490007DCE5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6DF1E1FFD30D2807F5F3C09B /* Pods-QuickGourmet.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

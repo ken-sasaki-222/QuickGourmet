@@ -11,7 +11,7 @@ class SearchViewModel: ObservableObject {
     @Published var shopSearchFetcher = ShopSearchFetcher()
     @Published var shopData: [Shop] = []
     var urlString: String?
-    
+
     // SearchViewから値を受け取ってModelに渡す
     func callShopSearchFetcher() {
         guard let encodeItem = urlString else {

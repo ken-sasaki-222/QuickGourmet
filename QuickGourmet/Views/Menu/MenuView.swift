@@ -5,14 +5,20 @@
 //  Created by sasaki.ken on 2021/07/08.
 //
 
-import SwiftUI
-import StoreKit
 import MessageUI
+import StoreKit
+import SwiftUI
+
+// Todo
+// SwiftFormatにオプションを追加
+// SwiftFormatのルールを確認
 
 struct MenuView: View {
     @State private var isShowMailView = false
     var menuVM = MenuViewModel()
-    
+    var sample: Bool?
+    var sample2: Bool?
+
     var body: some View {
         NavigationView {
             Form {
@@ -23,6 +29,11 @@ struct MenuView: View {
                             .frame(width: 30, height: 30)
                             .padding(10)
                         Button("ご意見・ご要望") {
+                            if sample == true && sample2 == false {
+                                print("--disable unusedArguments")
+                            } else {
+                                print("")
+                            }
                             isShowMailView = true
                         }
                         .disabled(!MFMailComposeViewController.canSendMail())
