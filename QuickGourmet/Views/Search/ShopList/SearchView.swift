@@ -78,8 +78,6 @@ struct SearchView: View {
                 return "G016"
             case .韓国料理:
                 return "G017"
-            default:
-                return ""
             }
         }
     }
