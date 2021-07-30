@@ -10,7 +10,7 @@ import Foundation
 class ImageDownloader: ObservableObject {
     // 監視対象
     // このプロパティに変更があった場合にイベントを通知
-    @Published var downloadData: Data? = nil
+    @Published var downloadData: Data?
 
     // 引数を非同期で監視対象に代入
     func downloadImage(url: String) {

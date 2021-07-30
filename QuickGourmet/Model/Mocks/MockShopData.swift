@@ -29,7 +29,7 @@ let mockShopesData: [HotPepperResponse]
                                                           name: "焼肉・ホルモン"
                                                       ),
                                                       photo: Shop.Photo(
-                                                          pc: Shop.Photo.Pc(
+                                                          pc: Shop.Pc(
                                                               l: "https://imgfp.hotp.jp/IMGH/54/14/P037425414/P037425414_238.jpg",
                                                               s: "https://imgfp.hotp.jp/IMGH/54/14/P037425414/P037425414_58_s.jpg"
                                                           )),
@@ -53,7 +53,7 @@ let mockShopesData: [HotPepperResponse]
                                                        name: "居酒屋"
                                                    ),
                                                    photo: Shop.Photo(
-                                                       pc: Shop.Photo.Pc(
+                                                       pc: Shop.Pc(
                                                            l: "https://imgfp.hotp.jp/IMGH/16/96/P036211696/P036211696_238.jpg",
                                                            s: "https://imgfp.hotp.jp/IMGH/16/96/P036211696/P036211696_58_s.jpg"
                                                        )),
@@ -77,7 +77,7 @@ let mockShopesData: [HotPepperResponse]
                                                        name: "焼肉・ホルモン"
                                                    ),
                                                    photo: Shop.Photo(
-                                                       pc: Shop.Photo.Pc(
+                                                       pc: Shop.Pc(
                                                            l: "https://imgfp.hotp.jp/IMGH/31/63/P038083163/P038083163_238.jpg",
                                                            s: "https://imgfp.hotp.jp/IMGH/31/63/P038083163/P038083163_58_s.jpg"
                                                        )),
@@ -101,7 +101,7 @@ let mockShopesData: [HotPepperResponse]
                                                        name: "焼肉・ホルモン"
                                                    ),
                                                    photo: Shop.Photo(
-                                                       pc: Shop.Photo.Pc(
+                                                       pc: Shop.Pc(
                                                            l: "https://imgfp.hotp.jp/IMGH/54/14/P037425414/P037425414_238.jpg",
                                                            s: "https://imgfp.hotp.jp/IMGH/54/14/P037425414/P037425414_58_s.jpg"
                                                        )),
@@ -125,7 +125,7 @@ let mockShopesData: [HotPepperResponse]
                                                        name: "焼肉・ホルモン"
                                                    ),
                                                    photo: Shop.Photo(
-                                                       pc: Shop.Photo.Pc(
+                                                       pc: Shop.Pc(
                                                            l: "https://imgfp.hotp.jp/IMGH/65/93/P038056593/P038056593_238.jpg",
                                                            s: "https://imgfp.hotp.jp/IMGH/54/14/P037425414/P037425414_58_s.jpg"
                                                        )),

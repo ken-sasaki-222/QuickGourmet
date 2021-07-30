@@ -16,67 +16,67 @@ struct SearchView: View {
 
     var genreNames = ["居酒屋", "ダイニングバー・バル", "創作料理", "和食", "洋食", "イタリアン・フレンチ", "中華", "焼肉・ホルモン", "アジア・エスニック料理", "各国料理", "カラオケ・パーティ", "バー・カクテル", "ラーメン", "カフェ・スイーツ", "その他グルメ", "お好み焼き・もんじゃ", "韓国料理"]
 
-    // TODO: Viewで管理するのは設計的に違う気がするので後々対応
+    // architectureTODO: Viewで管理するのは設計的に違う気がするので後々対応
     // hotpepper gourmet search API
     var requestString: String {
-        "https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=\(API_KEY)&keyword=\(keywordText)&genre=\(convertGenreCode(selectCode: selectGenre))&count=10&format=json"
+        "https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=\(APIKEY)&keyword=\(keywordText)&genre=\(convertGenreCode(selectCode: selectGenre))&count=10&format=json"
     }
 
     // Picker選択内容に合わせて公式ジャンルコードを返す
     enum GenreCode: Int {
-        case 居酒屋 = 0
-        case ダイニングバー・バル = 1
-        case 創作料理 = 2
-        case 和食 = 3
-        case 洋食 = 4
-        case イタリアン・フレンチ = 5
-        case 中華 = 6
-        case 焼肉・ホルモン = 7
-        case アジア・エスニック料理 = 8
-        case 各国料理 = 9
-        case カラオケ・パーティ = 10
-        case バー・カクテル = 11
-        case ラーメン = 12
-        case カフェ・スイーツ = 13
-        case その他グルメ = 14
-        case お好み焼き・もんじゃ = 15
-        case 韓国料理 = 16
+        case izakaya = 0
+        case dainingubar = 1
+        case sousakuryouri = 2
+        case wasyoku = 3
+        case yousyoku = 4
+        case italian = 5
+        case tyuuka = 6
+        case yakiniku = 7
+        case aziaryouri = 8
+        case kakukokuryouri = 9
+        case karaoke = 10
+        case kakuteru = 11
+        case ramen = 12
+        case cafe = 13
+        case other = 14
+        case okonomiyaki = 15
+        case corearyouri = 16
 
         var genreCode: String {
             switch self {
-            case .居酒屋:
+            case .izakaya:
                 return "G001"
-            case .ダイニングバー・バル:
+            case .dainingubar:
                 return "G002"
-            case .創作料理:
+            case .sousakuryouri:
                 return "G003"
-            case .和食:
+            case .wasyoku:
                 return "G004"
-            case .洋食:
+            case .yousyoku:
                 return "G005"
-            case .イタリアン・フレンチ:
+            case .italian:
                 return "G006"
-            case .中華:
+            case .tyuuka:
                 return "G007"
-            case .焼肉・ホルモン:
+            case .yakiniku:
                 return "G008"
-            case .アジア・エスニック料理:
+            case .aziaryouri:
                 return "G009"
-            case .各国料理:
+            case .kakukokuryouri:
                 return "G010"
-            case .カラオケ・パーティ:
+            case .karaoke:
                 return "G011"
-            case .バー・カクテル:
+            case .kakuteru:
                 return "G012"
-            case .ラーメン:
+            case .ramen:
                 return "G013"
-            case .カフェ・スイーツ:
+            case .cafe:
                 return "G014"
-            case .その他グルメ:
+            case .other:
                 return "G015"
-            case .お好み焼き・もんじゃ:
+            case .okonomiyaki:
                 return "G016"
-            case .韓国料理:
+            case .corearyouri:
                 return "G017"
             }
         }
@@ -108,7 +108,7 @@ struct SearchView: View {
         }
     }
 
-    // TODO: enumも含めてconvertGenreCodeはViewで管理するのは設計的に違う気がするので後々対応
+    // architectureTODO: enumも含めてconvertGenreCodeはViewで管理するのは設計的に違う気がするので後々対応
     // Pickerのselectionを取得してHotPepperAPIで使えるString型に変換
     func convertGenreCode(selectCode: Int) -> String {
         guard let code = GenreCode(rawValue: selectCode)?.genreCode else {
