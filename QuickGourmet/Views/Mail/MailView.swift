@@ -26,7 +26,7 @@ struct MailView: UIViewControllerRepresentable {
     }
 
     func makeCoordinator() -> MailView.Coordinator {
-        return Coordinator(parent: self)
+        Coordinator(parent: self)
     }
 
     class Coordinator: NSObject, MFMailComposeViewControllerDelegate {

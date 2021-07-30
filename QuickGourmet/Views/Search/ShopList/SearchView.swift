@@ -19,7 +19,7 @@ struct SearchView: View {
     // TODO: Viewで管理するのは設計的に違う気がするので後々対応
     // hotpepper gourmet search API
     var requestString: String {
-        return "https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=\(API_KEY)&keyword=\(keywordText)&genre=\(convertGenreCode(selectCode: selectGenre))&count=10&format=json"
+        "https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=\(API_KEY)&keyword=\(keywordText)&genre=\(convertGenreCode(selectCode: selectGenre))&count=10&format=json"
     }
 
     // Picker選択内容に合わせて公式ジャンルコードを返す
