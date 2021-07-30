@@ -15,7 +15,7 @@ struct ShopDetailInfoView: View {
     var open: String
     var genreName: String
     var logoImage: String
-    
+
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
@@ -38,28 +38,28 @@ struct ShopDetailInfoView: View {
                         .font(.body)
                         .lineLimit(3)
                 }
-                .padding(.init(top: 10, leading: 30, bottom: 0, trailing:30))
+                .padding(.init(top: 10, leading: 30, bottom: 0, trailing: 30))
                 HStack {
                     Image(systemName: "figure.walk")
                     Text(mobileAccess)
                         .font(.body)
                         .lineLimit(3)
                 }
-                .padding(.init(top: 10, leading: 30, bottom: 0, trailing:30))
+                .padding(.init(top: 10, leading: 30, bottom: 0, trailing: 30))
                 HStack {
                     Image(systemName: "clock")
                     Text(open)
                         .font(.body)
                         .lineLimit(5)
                 }
-                .padding(.init(top: 10, leading: 30, bottom: 5, trailing:30))
+                .padding(.init(top: 10, leading: 30, bottom: 5, trailing: 30))
                 HStack {
                     Image(systemName: "dollarsign.circle")
                     Text(average)
                         .font(.body)
                         .lineLimit(3)
                 }
-                .padding(.init(top: 10, leading: 30, bottom: 20, trailing:30))
+                .padding(.init(top: 10, leading: 30, bottom: 20, trailing: 30))
             }
         }
     }

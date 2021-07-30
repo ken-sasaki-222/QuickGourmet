@@ -5,8 +5,8 @@
 //  Created by sasaki.ken on 2021/07/23.
 //
 
-import SwiftUI
 import MapKit
+import SwiftUI
 
 struct PinItem: Identifiable {
     let id = UUID()
@@ -19,14 +19,14 @@ struct MapView: View {
     var coordinate: CLLocationCoordinate2D? // 表示領域の中心位置
     var latitude: Double // 緯度
     var longitude: Double // 経度
-    
+
     var body: some View {
         Map(coordinateRegion: $region,
             interactionModes: .all,
             showsUserLocation: true,
             userTrackingMode: $userTrackingMode,
             annotationItems: [
-                PinItem(coordinate: .init(latitude: latitude, longitude: longitude))
+                PinItem(coordinate: .init(latitude: latitude, longitude: longitude)),
             ],
             annotationContent: { item in
                 MapMarker(coordinate: item.coordinate)
@@ -36,12 +36,11 @@ struct MapView: View {
             }
             .frame(height: 300)
     }
-    
+
     // 引数で取得した緯度経度を使って動的に表示領域の中心位置と、縮尺を決める
     private func setRegion(coordinate: CLLocationCoordinate2D) {
         region = MKCoordinateRegion(center: coordinate,
-                                    span: MKCoordinateSpan(latitudeDelta: 0.0009, longitudeDelta: 0.0009)
-        )
+                                    span: MKCoordinateSpan(latitudeDelta: 0.0009, longitudeDelta: 0.0009))
     }
 }
 

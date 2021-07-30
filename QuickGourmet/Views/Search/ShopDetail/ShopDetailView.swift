@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ShopDetailView: View {
     var shopData: Shop
-    
+
     var body: some View {
         ScrollView {
             VStack {
@@ -28,8 +28,7 @@ struct ShopDetailView: View {
                                    average: shopData.budget.average,
                                    open: shopData.open,
                                    genreName: shopData.genre.name,
-                                   logoImage: shopData.logoImage
-                )
+                                   logoImage: shopData.logoImage)
                 ShopDetailButtonView(shopUrlString: shopData.urls.pc)
             }
         }

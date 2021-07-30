@@ -10,7 +10,7 @@ import SwiftUI
 struct SearchButton: View {
     var text: String
     var action = {}
-    
+
     var body: some View {
         Button(action: {
             action()

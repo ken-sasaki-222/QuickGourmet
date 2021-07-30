@@ -8,16 +8,15 @@
 import SwiftUI
 
 struct URLImage: View {
-    
     // ObservableObjectに準拠したクラスのインスタンス
     // これで@Publishedなプロパティを監視できる（この場合downloadData）
     @ObservedObject private var imageDownloader = ImageDownloader()
-    
+
     let urlString: String
 
     init(urlString: String) {
         self.urlString = urlString
-        self.imageDownloader.downloadImage(url: self.urlString)
+        imageDownloader.downloadImage(url: self.urlString)
     }
 
     var body: some View {

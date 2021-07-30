@@ -412,7 +412,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif [ $CONFIGURATION = \"Debug\" ]; then\n\"${PODS_ROOT}/SwiftFormat/CommandLineTool/swiftformat\" .\nfi\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif [ $CONFIGURATION = \"Debug\" ]; then\n\"${PODS_ROOT}/SwiftFormat/CommandLineTool/swiftformat\" . --exclude Pods --swiftversion 5.4.2 --disable unusedArguments --disable andOperator --disable preferKeyPath\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

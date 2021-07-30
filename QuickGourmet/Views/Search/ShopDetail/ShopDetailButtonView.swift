@@ -10,13 +10,13 @@ import SwiftUI
 struct ShopDetailButtonView: View {
     @State private var isShown = false
     var shopUrlString: String
-    
+
     var body: some View {
         SearchButton(text: "ホットペッパーグルメへ移動") {
             self.isShown = true
         }
         .sheet(isPresented: $isShown) {
-            if let  url = URL(string: shopUrlString) {
+            if let url = URL(string: shopUrlString) {
                 SafariView(url: url)
                     .edgesIgnoringSafeArea(.all)
             }
