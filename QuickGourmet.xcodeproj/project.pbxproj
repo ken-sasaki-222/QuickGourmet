@@ -32,6 +32,7 @@
 		D8ED9EB4269E798700AFE337 /* ShopRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8ED9EB3269E798700AFE337 /* ShopRowView.swift */; };
 		D8ED9EB6269E799000AFE337 /* SearchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8ED9EB5269E799000AFE337 /* SearchListView.swift */; };
 		D8ED9EB8269E79A500AFE337 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8ED9EB7269E79A500AFE337 /* SearchView.swift */; };
+		D8F12E7926B423D000118C63 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8F12E7826B423D000118C63 /* CoreLocation.framework */; };
 		D8FC157926B19DDA00B22408 /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FC157826B19DDA00B22408 /* MailView.swift */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +65,7 @@
 		D8ED9EB3269E798700AFE337 /* ShopRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopRowView.swift; sourceTree = "<group>"; };
 		D8ED9EB5269E799000AFE337 /* SearchListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchListView.swift; sourceTree = "<group>"; };
 		D8ED9EB7269E79A500AFE337 /* SearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		D8F12E7826B423D000118C63 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		D8FC157826B19DDA00B22408 /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
 		E1B982FE3AEA28CD50ABBD5C /* Pods_QuickGourmet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuickGourmet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -73,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8F12E7926B423D000118C63 /* CoreLocation.framework in Frameworks */,
 				30289446D1E3B0797CB28608 /* Pods_QuickGourmet.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -92,6 +95,7 @@
 		82F4305A5EDFBC96D78AA438 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D8F12E7826B423D000118C63 /* CoreLocation.framework */,
 				E1B982FE3AEA28CD50ABBD5C /* Pods_QuickGourmet.framework */,
 			);
 			name = Frameworks;
