@@ -28,6 +28,7 @@ struct QuickSearchRowView: View {
             ArrowImage()
                 .offset(x: 300, y: 95)
         }
+        .padding(.bottom, 25)
     }
 }
 
