@@ -12,7 +12,7 @@ struct QuickSearchView: View {
     @State private var isTapActive = false
     @State private var isShowsAlert = false
     @State var searchVM = SearchViewModel()
-    let quickSearchVM = QuickSearchViewModel()
+    private let quickSearchVM = QuickSearchViewModel()
     private let userDefaultsDataStore = UserDefaultsDataStore()
     private let locationManager = CLLocationManager()
 
@@ -36,7 +36,7 @@ struct QuickSearchView: View {
                                 isShowsAlert = true
                             default:
                                 isShowsAlert = false
-                                communicateQuickSearchVM()
+                                communicateQuickSearchVM(index: index)
                                 isTapActive = true
                             }
                         }) {
@@ -55,9 +55,10 @@ struct QuickSearchView: View {
         }
     }
 
-    func communicateQuickSearchVM() {
+    func communicateQuickSearchVM(index: Int) {
         quickSearchVM.latitude = userDefaultsDataStore.latitudeInformation
         quickSearchVM.longitude = userDefaultsDataStore.longitudeInformation
+        quickSearchVM.genreIndex = index
         quickSearchVM.callShopSearchFetcher()
     }
 }
