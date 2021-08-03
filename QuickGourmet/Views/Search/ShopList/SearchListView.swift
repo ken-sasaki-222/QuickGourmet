@@ -12,10 +12,11 @@ struct SearchListView: View {
     // let shopData: [Response] = mockShopesDate
     // @ObservedObject var shopSearchFetcher = ShopSearchFetcher()
 
-    @ObservedObject var searchVM: SearchViewModel
+    // @ObservedObject var searchVM: SearchViewModel
+    @ObservedObject var quickSearchVM: QuickSearchViewModel
 
     var body: some View {
-        List(searchVM.shopData) { shop in
+        List(quickSearchVM.shopData) { shop in
             NavigationLink(destination: ShopDetailView(shopData: shop)) {
                 ShopRowView(shopData: shop)
             }
