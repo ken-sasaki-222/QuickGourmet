@@ -6,7 +6,12 @@
 //
 
 import Foundation
+import SwiftUI
 
 class QuickSearchViewModel {
-    
+    func goToLocationSetting() {
+        if let url = URL(string: "app-settings:root=General&path=com.ken.QuickGourmet") {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+    }
 }
