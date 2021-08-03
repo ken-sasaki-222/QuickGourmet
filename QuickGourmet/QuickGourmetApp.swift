@@ -32,6 +32,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         if CLLocationManager.locationServicesEnabled() {
             locationManager.desiredAccuracy = kCLLocationAccuracyBest // 精度
             locationManager.distanceFilter = 10
+            locationManager.allowsBackgroundLocationUpdates = true // バックグラウンド処理を可能にする
+            locationManager.pausesLocationUpdatesAutomatically = false // ポーズしても位置取得を続ける
             locationManager.activityType = .fitness
             locationManager.startUpdatingLocation()
         }
