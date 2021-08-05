@@ -87,7 +87,7 @@ class QuickSearchViewModel: ObservableObject {
     }
 
     func callShopSearchFetcher() {
-        print("requestString:",requestString)
+        print("requestString:", requestString)
         guard let encodeString = requestString.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed) else {
             return
         }
