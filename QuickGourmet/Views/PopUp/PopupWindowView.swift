@@ -50,11 +50,11 @@ struct PopupWindowView: View {
                     Button(action: {
                         show = false
                     }) {
-                        Image(systemName: "xmark.circle")
+                        Image(systemName: "xmark.circle.fill")
                             .resizable()
-                            .frame(width: 25, height: 25, alignment: .center)
-                            .foregroundColor(Color.black)
-                            .offset(x: -125, y: -170)
+                            .frame(width: 40, height: 40, alignment: .center)
+                            .foregroundColor(Color.white)
+                            .offset(x: 0, y: 230)
                     }
                 }
             }
