@@ -13,8 +13,8 @@ struct PopupWindowView: View {
     let action = {}
 
     var body: some View {
-        ZStack {
-            if show {
+        if show {
+            ZStack {
                 Color.black.opacity(0.3)
                     .edgesIgnoringSafeArea(.all)
                 ZStack {
@@ -47,15 +47,14 @@ struct PopupWindowView: View {
                     .cornerRadius(20)
                     .background(Color.white)
                     .cornerRadius(20)
-                    Button(action: {
-                        show = false
-                    }) {
-                        Image(systemName: "xmark.circle.fill")
-                            .resizable()
-                            .frame(width: 40, height: 40, alignment: .center)
-                            .foregroundColor(Color.white)
-                            .offset(x: 0, y: 230)
-                    }
+                    Image(systemName: "xmark.circle.fill")
+                        .resizable()
+                        .frame(width: 40, height: 40, alignment: .center)
+                        .foregroundColor(Color.white)
+                        .offset(x: 0, y: 230)
+                        .onTapGesture {
+                            show = false
+                        }
                 }
             }
         }
