@@ -22,7 +22,7 @@ struct PopupWindowView: View {
                     VStack(alignment: .center, spacing: 0) {
                         Text("おおよその徒歩時間を選択")
                             .frame(height: 45, alignment: .center)
-                            .font(.headline)
+                            .font(.title3)
                             .padding(.top, 20)
                         Picker(selection: $selection, label: Text("徒歩時間")) {
                             ForEach(0 ..< selectTexts.count) { index in
