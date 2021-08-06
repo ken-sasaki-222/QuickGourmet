@@ -9,7 +9,8 @@ import SwiftUI
 
 struct PopupWindowView: View {
     @Binding var show: Bool
-    @State private var selection = 0
+    @State private var selection = 2
+    let selectTexts = ["おおよそ3分", "おおよそ7分", "おおよそ13分", "おおよそ20分", "おおよそ30分"]
     let action = {}
 
     var body: some View {
@@ -20,19 +21,15 @@ struct PopupWindowView: View {
                 ZStack {
                     VStack(alignment: .center, spacing: 0) {
                         Text("おおよその徒歩時間を選択")
-                            // .frame(minWidth: .infinity)
                             .frame(height: 45, alignment: .center)
                             .font(.headline)
                             .padding(.top, 20)
                         Picker(selection: $selection, label: Text("徒歩時間")) {
-                            Text("おおよそ3分").tag(0)
-                            Text("おおよそ7分").tag(1)
-                            Text("おおよそ13分").tag(2)
-                            Text("おおよそ20分").tag(3)
-                            Text("おおよそ30分").tag(4)
+                            ForEach(0 ..< selectTexts.count) { index in
+                                Text(selectTexts[index])
+                            }
                         }
                         .frame(maxWidth: 200)
-                        .padding(.top, 20)
                         Button(action: {
                             withAnimation(.linear(duration: 0.3)) {
                                 action()
