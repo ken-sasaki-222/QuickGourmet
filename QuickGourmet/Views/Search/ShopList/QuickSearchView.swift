@@ -25,39 +25,41 @@ struct QuickSearchView: View {
 
     var body: some View {
         NavigationView {
-            ScrollView {
-                ZStack(alignment: .top) {
-                    VStack(spacing: 10) {
-                        ForEach(0 ..< quickSearchImages.count) { index in
-                            NavigationLink(destination: SearchListView(quickSearchVM: quickSearchVM), isActive: $isTapActive) {}
-                            Button(action: {
-                                switch locationManager.authorizationStatus {
-                                case .notDetermined: // 許諾とっていない
-                                    isShowsAlert = true
-                                case .denied: // 許可されていない
-                                    isShowsAlert = true
-                                default:
-                                    isShowsAlert = false
-                                    withAnimation(.linear(duration: 0.3)) {
-                                        isShowsPopUp = true
+            ZStack {
+                ScrollView {
+                    ZStack {
+                        VStack(spacing: 10) {
+                            ForEach(0 ..< quickSearchImages.count) { index in
+                                NavigationLink(destination: SearchListView(quickSearchVM: quickSearchVM), isActive: $isTapActive) {}
+                                Button(action: {
+                                    switch locationManager.authorizationStatus {
+                                    case .notDetermined: // 許諾とっていない
+                                        isShowsAlert = true
+                                    case .denied: // 許可されていない
+                                        isShowsAlert = true
+                                    default:
+                                        isShowsAlert = false
+                                        withAnimation(.linear(duration: 0.3)) {
+                                            isShowsPopUp = true
+                                        }
+                                        // isTapActive = true
                                     }
-                                    // isTapActive = true
+                                }) {
+                                    QuickSearchRowView(imageString: quickSearchImages[index], genreName: quickSearchTextes[index])
                                 }
-                            }) {
-                                QuickSearchRowView(imageString: quickSearchImages[index], genreName: quickSearchTextes[index])
+                                .alert(isPresented: $isShowsAlert) {
+                                    Alert(title: Text("確認"), message: Text("位置情報を許可してください"), dismissButton: .default(Text("OK")) {
+                                        quickSearchVM.goToLocationSetting()
+                                    })
+                                }
                             }
-                            .alert(isPresented: $isShowsAlert) {
-                                Alert(title: Text("確認"), message: Text("位置情報を許可してください"), dismissButton: .default(Text("OK")) {
-                                    quickSearchVM.goToLocationSetting()
-                                })
-                            }
+                            .edgesIgnoringSafeArea(.bottom)
                         }
-                        .edgesIgnoringSafeArea(.bottom)
                     }
-                    PopupWindowView(show: $isShowsPopUp)
+                    .navigationTitle("食いっくグルメ")
                 }
+                PopupWindowView(show: $isShowsPopUp)
             }
-            .navigationTitle("食いっくグルメ")
         }
     }
 
