@@ -30,25 +30,23 @@ struct PopupWindowView: View {
                             }
                         }
                         .frame(maxWidth: 200)
-                        Button(action: {
+                        SearchButton(text: "検索") {
                             withAnimation(.linear(duration: 0.3)) {
                                 action()
                                 show = false
                             }
-                        }) {
-                            SearchButton(text: "検索")
-                                .padding(.vertical, 20)
                         }
+                        .padding(.top, 20)
+                        .padding(.bottom, 20)
                     }
                     .frame(maxWidth: 300)
-                    .cornerRadius(20)
                     .background(Color.white)
                     .cornerRadius(20)
                     Image(systemName: "xmark.circle.fill")
                         .resizable()
                         .frame(width: 40, height: 40, alignment: .center)
                         .foregroundColor(Color.white)
-                        .offset(x: 0, y: 230)
+                        .offset(x: 0, y: 220)
                         .onTapGesture {
                             show = false
                         }

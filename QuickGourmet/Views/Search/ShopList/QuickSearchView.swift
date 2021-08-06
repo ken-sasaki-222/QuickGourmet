@@ -22,7 +22,6 @@ struct QuickSearchView: View {
     let quickSearchTextes = ["居酒屋", "ダイニングバー・バル", "創作料理", "和食", "洋食", "イタリアン・フレンチ", "中華", "焼肉・ホルモン", "アジア・エスニック料理", "各国料理", "カラオケ・パーティ", "バー・カクテル", "ラーメン", "カフェ・スイーツ", "その他グルメ", "お好み焼き・もんじゃ", "韓国料理"]
 
     // searchTODO: 距離指定ではなく徒歩００分で指定させる
-
     var body: some View {
         NavigationView {
             ZStack {
