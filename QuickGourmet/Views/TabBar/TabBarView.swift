@@ -24,7 +24,7 @@ struct TabBarView: View {
                     Text("検索")
                 }
                 .tag(1) // メニューページ
-            HumburgerMenuView()
+            HamburgerMenuView()
                 .tabItem {
                     Image(systemName: "list.bullet")
                     Text("メニュー")
