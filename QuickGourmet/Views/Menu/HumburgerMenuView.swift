@@ -13,7 +13,7 @@ import SwiftUI
 // SwiftFormatにオプションを追加
 // SwiftFormatのルールを確認
 
-struct MenuView: View {
+struct HumburgerMenuView: View {
     @State private var isShowMailView = false
     var menuVM = MenuViewModel()
     var sample: Bool?
@@ -106,6 +106,6 @@ struct MenuView: View {
 
 struct MenuView_Previews: PreviewProvider {
     static var previews: some View {
-        MenuView()
+        HumburgerMenuView()
     }
 }
