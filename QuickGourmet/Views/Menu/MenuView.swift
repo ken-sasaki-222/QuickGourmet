@@ -20,89 +20,87 @@ struct MenuView: View {
     var sample2: Bool?
 
     var body: some View {
-        NavigationView {
-            Form {
-                Section(header: Text("このアプリについて")) {
-                    HStack {
-                        Image("mail_icon")
-                            .resizable()
-                            .frame(width: 30, height: 30)
-                            .padding(10)
-                        Button("ご意見・ご要望") {
-                            if sample == true && sample2 == false {
-                                print("--disable unusedArguments")
-                            } else {
-                                print("")
-                            }
-                            isShowMailView = true
+        List {
+            Section(header: Text("このアプリについて")) {
+                HStack {
+                    Image("mail_icon")
+                        .resizable()
+                        .frame(width: 30, height: 30)
+                        .padding(10)
+                    Button("ご意見・ご要望") {
+                        if sample == true && sample2 == false {
+                            print("--disable unusedArguments")
+                        } else {
+                            print("")
                         }
-                        .disabled(!MFMailComposeViewController.canSendMail())
-                        .sheet(isPresented: $isShowMailView) {
-                            MailView(isShow: $isShowMailView)
-                        }
+                        isShowMailView = true
                     }
-                    HStack {
-                        Image("review_icon")
-                            .resizable()
-                            .frame(width: 30, height: 30)
-                            .padding(10)
-                        Button("レビュー") {
-                            if let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
-                                SKStoreReviewController.requestReview(in: scene)
-                            }
-                        }
+                    .disabled(!MFMailComposeViewController.canSendMail())
+                    .sheet(isPresented: $isShowMailView) {
+                        MailView(isShow: $isShowMailView)
                     }
-                    HStack {
-                        Image("share_icon")
-                            .resizable()
-                            .frame(width: 30, height: 30)
-                            .padding(10)
-                        Button("シェア") {
-                            menuVM.shareOnTwitter()
+                }
+                HStack {
+                    Image("review_icon")
+                        .resizable()
+                        .frame(width: 30, height: 30)
+                        .padding(10)
+                    Button("レビュー") {
+                        if let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
+                            SKStoreReviewController.requestReview(in: scene)
                         }
                     }
                 }
-                Section(header: Text("開発者")) {
-                    HStack {
-                        Image("twitter_icon")
-                            .resizable()
-                            .frame(width: 30, height: 30)
-                            .padding(10)
-                        Button("Twitter") {
-                            menuVM.goToDeveloperSNSPage(snsString: "twitter")
-                        }
-                    }
-                    HStack {
-                        Image("github_icon")
-                            .resizable()
-                            .frame(width: 30, height: 30)
-                            .padding(10)
-                        Button("GitHub") {
-                            menuVM.goToDeveloperSNSPage(snsString: "gitHub")
-                        }
-                    }
-                    HStack {
-                        Image("qiita_icon")
-                            .resizable()
-                            .frame(width: 30, height: 30)
-                            .padding(10)
-                        Button("Qiita") {
-                            menuVM.goToDeveloperSNSPage(snsString: "qiita")
-                        }
-                    }
-                }
-                Section(header: Text("バージョン")) {
-                    HStack {
-                        Image("version_icon")
-                            .resizable()
-                            .frame(width: 30, height: 30)
-                            .padding(10)
-                        Text("バージョン 1.0")
+                HStack {
+                    Image("share_icon")
+                        .resizable()
+                        .frame(width: 30, height: 30)
+                        .padding(10)
+                    Button("シェア") {
+                        menuVM.shareOnTwitter()
                     }
                 }
             }
-            .navigationTitle("メニュー")
+            Section(header: Text("開発者")) {
+                HStack {
+                    Image("twitter_icon")
+                        .resizable()
+                        .frame(width: 30, height: 30)
+                        .padding(10)
+                    Button("Twitter") {
+                        menuVM.goToDeveloperSNSPage(snsString: "twitter")
+                    }
+                }
+                HStack {
+                    Image("github_icon")
+                        .resizable()
+                        .frame(width: 30, height: 30)
+                        .padding(10)
+                    Button("GitHub") {
+                        menuVM.goToDeveloperSNSPage(snsString: "gitHub")
+                    }
+                }
+                HStack {
+                    Image("qiita_icon")
+                        .resizable()
+                        .frame(width: 30, height: 30)
+                        .padding(10)
+                    Button("Qiita") {
+                        menuVM.goToDeveloperSNSPage(snsString: "qiita")
+                    }
+                }
+            }
+            Section(header: Text("バージョン")) {
+                HStack {
+                    Image("version_icon")
+                        .resizable()
+                        .frame(width: 30, height: 30)
+                        .padding(10)
+                    Text("バージョン 1.0")
+                }
+            }
         }
+        .disabled(true)
     }
 }
 
