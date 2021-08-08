@@ -12,6 +12,9 @@ struct QuickSearchView: View {
     @State private var isTapActive = false
     @State private var isShowsAlert = false
     @State private var isShowsPopUp = false
+    @State private var currentOffset = CGFloat()
+    @State private var closeOffset = CGFloat()
+    @State private var openOffset = CGFloat()
     @State var searchVM = SearchViewModel()
     private let quickSearchVM = QuickSearchViewModel()
     private let userDefaultsDataStore = UserDefaultsDataStore()
@@ -23,46 +26,83 @@ struct QuickSearchView: View {
 
     // searchTODO: 距離指定ではなく徒歩００分で指定させる
     var body: some View {
-        NavigationView {
+        GeometryReader { geometry in
             ZStack {
-                ScrollView {
-                    ZStack {
-                        VStack(spacing: 10) {
-                            ForEach(0 ..< quickSearchImages.count) { index in
-                                NavigationLink(destination: SearchListView(quickSearchVM: quickSearchVM), isActive: $isTapActive) {}
-                                Button(action: {
-                                    switch locationManager.authorizationStatus {
-                                    case .notDetermined: // 許諾とっていない
-                                        isShowsAlert = true
-                                    case .denied: // 許可されていない
-                                        isShowsAlert = true
-                                    default:
-                                        isShowsAlert = false
-                                        withAnimation(.linear(duration: 0.3)) {
-                                            isShowsPopUp = true
+                NavigationView {
+                    ScrollView {
+                        ZStack {
+                            ZStack {
+                                VStack(spacing: 10) {
+                                    ForEach(0 ..< quickSearchImages.count) { index in
+                                        NavigationLink(destination: SearchListView(quickSearchVM: quickSearchVM), isActive: $isTapActive) {}
+                                        Button(action: {
+                                            switch locationManager.authorizationStatus {
+                                            case .notDetermined: // 許諾とっていない
+                                                isShowsAlert = true
+                                            case .denied: // 許可されていない
+                                                isShowsAlert = true
+                                            default:
+                                                isShowsAlert = false
+                                                withAnimation(.linear(duration: 0.3)) {
+                                                    isShowsPopUp = true
+                                                }
+                                                // isTapActive = true
+                                            }
+                                        }) {
+                                            QuickSearchRowView(imageString: quickSearchImages[index], genreName: quickSearchTextes[index])
                                         }
-                                        // isTapActive = true
+                                        .alert(isPresented: $isShowsAlert) {
+                                            Alert(title: Text("確認"), message: Text("位置情報を許可してください"), dismissButton: .default(Text("OK")) {
+                                                quickSearchVM.goToLocationSetting()
+                                            })
+                                        }
                                     }
+                                    .edgesIgnoringSafeArea(.bottom)
+                                }
+                                .navigationTitle("食いっくグルメ")
+                                .navigationBarTitleDisplayMode(.inline)
+                                .navigationBarItems(leading: Button(action: {
+                                    toggleHamburgerMenu()
                                 }) {
-                                    QuickSearchRowView(imageString: quickSearchImages[index], genreName: quickSearchTextes[index])
-                                }
-                                .alert(isPresented: $isShowsAlert) {
-                                    Alert(title: Text("確認"), message: Text("位置情報を許可してください"), dismissButton: .default(Text("OK")) {
-                                        quickSearchVM.goToLocationSetting()
-                                    })
-                                }
+                                    Image(systemName: "list.bullet")
+                                })
                             }
-                            .edgesIgnoringSafeArea(.bottom)
+                            Color.black.opacity(Double((closeOffset - currentOffset) / closeOffset) - 0.1
+                            )
+                            .edgesIgnoringSafeArea(.all)
+                            .onTapGesture {
+                                toggleHamburgerMenu()
+                            }
                         }
+                        PopupWindowView(show: $isShowsPopUp)
                     }
-                    .navigationTitle("食いっくグルメ")
                 }
-                PopupWindowView(show: $isShowsPopUp)
+                HamburgerMenuView()
+                    .frame(width: geometry.size.width * 0.5)
+                    .onAppear(perform: {
+                        setHumburgerMenuPosition(viewWidth: geometry.size.width)
+                    })
+                    .offset(x: self.currentOffset)
+                    .animation(.default)
             }
         }
     }
 
-    func communicateQuickSearchVM(index: Int) {
+    private func setHumburgerMenuPosition(viewWidth: CGFloat) {
+        currentOffset = (viewWidth / 2) * -1 + ((viewWidth * 0.5) / 2) * -1
+        closeOffset = currentOffset
+        openOffset = ((viewWidth / 2) * -1) + ((viewWidth * 0.5) / 2)
+    }
+
+    private func toggleHamburgerMenu() {
+        if currentOffset == closeOffset {
+            currentOffset = openOffset
+        } else {
+            currentOffset = closeOffset
+        }
+    }
+
+    private func communicateQuickSearchVM(index: Int) {
         quickSearchVM.latitude = userDefaultsDataStore.latitudeInformation
         quickSearchVM.longitude = userDefaultsDataStore.longitudeInformation
         quickSearchVM.genreIndex = index
