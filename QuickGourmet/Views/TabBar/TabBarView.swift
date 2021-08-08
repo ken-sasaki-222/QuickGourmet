@@ -23,13 +23,7 @@ struct TabBarView: View {
                     Image(systemName: "magnifyingglass")
                     Text("検索")
                 }
-                .tag(1) // メニューページ
-            HamburgerMenuView()
-                .tabItem {
-                    Image(systemName: "list.bullet")
-                    Text("メニュー")
-                }
-                .tag(2)
+                .tag(1)
         }
     }
 }
