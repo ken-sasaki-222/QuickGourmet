@@ -9,15 +9,9 @@ import MessageUI
 import StoreKit
 import SwiftUI
 
-// Todo
-// SwiftFormatにオプションを追加
-// SwiftFormatのルールを確認
-
 struct HamburgerMenuView: View {
     @State private var isShowMailView = false
-    var menuVM = MenuViewModel()
-    var sample: Bool?
-    var sample2: Bool?
+    var menuVM = HamburgerMenuViewModel()
 
     var body: some View {
         Form {
@@ -28,11 +22,6 @@ struct HamburgerMenuView: View {
                         .frame(width: 20, height: 20)
                         .padding(5)
                     Button(action: {
-                        if sample == true && sample2 == false {
-                            print("--disable unusedArguments")
-                        } else {
-                            print("")
-                        }
                         isShowMailView = true
                     }) {
                         Text("ご意見・ご要望")
@@ -49,9 +38,7 @@ struct HamburgerMenuView: View {
                         .frame(width: 20, height: 20)
                         .padding(5)
                     Button(action: {
-                        if let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
-                            SKStoreReviewController.requestReview(in: scene)
-                        }
+                        menuVM.askForReview()
                     }) {
                         Text("レビュー")
                             .font(.caption)
