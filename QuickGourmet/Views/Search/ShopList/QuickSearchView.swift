@@ -64,7 +64,9 @@ struct QuickSearchView: View {
                                 .navigationBarItems(leading: Button(action: {
                                     toggleHamburgerMenu()
                                 }) {
-                                    Image(systemName: "list.bullet")
+                                    Image("hamburger_menu_icon")
+                                        .resizable()
+                                        .frame(width: 20, height: 20)
                                 })
                             }
                             Color.black.opacity(Double((closeOffset - currentOffset) / closeOffset) - 0.1
