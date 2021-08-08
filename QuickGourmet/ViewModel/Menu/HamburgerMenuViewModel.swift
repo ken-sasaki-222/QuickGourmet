@@ -7,13 +7,20 @@
 
 import Foundation
 import MessageUI
+import StoreKit
 import SwiftUI
 
-class MenuViewModel {
+class HamburgerMenuViewModel {
     enum DevelopperUrlType: String {
         case twitter = "https://twitter.com/ken_sasaki2"
         case gitHub = "https://github.com/ken-sasaki-222"
         case qiita = "https://qiita.com/nkekisasa222"
+    }
+
+    func askForReview() {
+        if let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
+            SKStoreReviewController.requestReview(in: scene)
+        }
     }
 
     func shareOnTwitter() {
