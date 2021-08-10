@@ -8,4 +8,5 @@ target 'QuickGourmet' do
   # Pods for QuickGourmet
   pod 'SwiftFormat/CLI', :configurations => ['Debug']
   pod 'SwiftLint'
+  pod 'NendSDK_iOS'
 end
