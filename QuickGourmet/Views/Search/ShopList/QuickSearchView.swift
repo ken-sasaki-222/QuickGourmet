@@ -16,14 +16,13 @@ struct QuickSearchView: View {
     @State private var closeOffset = CGFloat()
     @State private var openOffset = CGFloat()
     @State private var index = 0
-    @State var searchVM = SearchViewModel()
     private let quickSearchVM = QuickSearchViewModel()
     private let userDefaultsDataStore = UserDefaultsDataStore()
     private let locationManager = CLLocationManager()
 
     private let quickSearchImages = ["food_izakaya", "food_baru", "food_sousaku", "food_wasyoku", "food_yosyoku", "food_italia", "food_tyuka", "food_yakiniku", "food_asia", "food_kakukoku", "food_karaoke", "food_bar", "food_ramen", "food_cafe", "food_other", "food_okonomiyaki", "food_korea"]
 
-    let quickSearchTextes = ["居酒屋", "ダイニングバー・バル", "創作料理", "和食", "洋食", "イタリアン・フレンチ", "中華", "焼肉・ホルモン", "アジア・エスニック料理", "各国料理", "カラオケ・パーティ", "バー・カクテル", "ラーメン", "カフェ・スイーツ", "その他グルメ", "お好み焼き・もんじゃ", "韓国料理"]
+    private let quickSearchTextes = ["居酒屋", "ダイニングバー・バル", "創作料理", "和食", "洋食", "イタリアン・フレンチ", "中華", "焼肉・ホルモン", "アジア・エスニック料理", "各国料理", "カラオケ・パーティ", "バー・カクテル", "ラーメン", "カフェ・スイーツ", "その他グルメ", "お好み焼き・もんじゃ", "韓国料理"]
 
     // searchTODO: 距離指定ではなく徒歩００分で指定させる
     var body: some View {
@@ -79,7 +78,7 @@ struct QuickSearchView: View {
                         }
                     }
                 }
-                PopupWindowView(show: $isShowsPopUp, action: { selection in
+                PopupWindowView(show: $isShowsPopUp, searchAction: { selection in
                     communicateQuickSearchVM(index: index, selection: selection)
                     isTapActive = true
                 })

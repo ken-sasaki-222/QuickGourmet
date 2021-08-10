@@ -16,7 +16,7 @@ class QuickSearchViewModel: ObservableObject {
     var latitude: Double = 0.0
     var longitude: Double = 0.0
 
-    enum GenreCode: Int {
+    private enum GenreType: Int {
         case izakaya = 0
         case dainingubar = 1
         case sousakuryouri = 2
@@ -75,48 +75,48 @@ class QuickSearchViewModel: ObservableObject {
         }
     }
 
-    enum PickerSelectType: Int {
-        case threeMinutesWalk = 0
+    private enum PickerSelectionType: Int {
+        case fourMinutesWalk = 0
         case sevenMinutesWalk = 1
         case thirteenMinuteWalk = 2
-        case twentyMinuteWalk = 3
-        case thirtyMinuteWalk = 4
-
-        var pickerSelectIndex: Int {
+        case twentyFiveMinutes = 3
+        case thirtyEightMinuteWalk = 4
+        
+        var rangeCode: Int {
             switch self {
-            case .threeMinutesWalk:
+            case .fourMinutesWalk:
                 return 1
             case .sevenMinutesWalk:
                 return 2
             case .thirteenMinuteWalk:
                 return 3
-            case .twentyMinuteWalk:
+            case .twentyFiveMinutes:
                 return 4
-            case .thirtyMinuteWalk:
+            case .thirtyEightMinuteWalk:
                 return 5
             }
         }
     }
-
-    var range: Int {
-        guard let range = PickerSelectType(rawValue: pickerSelection)?.pickerSelectIndex else {
-            return 0
+    
+    private var range: Int {
+        guard let rangeCode = PickerSelectionType(rawValue: pickerSelection)?.rangeCode else {
+            return 5
         }
-        return range
+        return rangeCode
     }
-
-    var requestString: String {
-        "https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=\(APIKEY)&lat=\(latitude)&lng=\(longitude)&range=\(range)3&genre=\(convertGenreCode(selectIndex: genreIndex))&count=100&format=json"
-    }
-
-    func convertGenreCode(selectIndex: Int) -> String {
-        guard let code = GenreCode(rawValue: selectIndex)?.genreCode else {
+    
+    private var genre: String {
+        guard let genreCode = GenreType(rawValue: genreIndex)?.genreCode else {
             return ""
         }
-        print("code: \(code)")
-        return code
+        return genreCode
     }
-
+    
+    // HotPepper API.
+    private var requestString: String {
+        "https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=\(APIKEY)&lat=\(latitude)&lng=\(longitude)&range=\(range)3&genre=\(genre)&count=100&format=json"
+    }
+    
     func callShopSearchFetcher() {
         print("requestString:", requestString)
         guard let encodeString = requestString.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed) else {
