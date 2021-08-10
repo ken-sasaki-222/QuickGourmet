@@ -10,8 +10,8 @@ import SwiftUI
 struct PopupWindowView: View {
     @Binding var show: Bool
     @State private var selection = 2
+    var action: (Int) -> Void
     let selectTexts = ["おおよそ3分", "おおよそ7分", "おおよそ13分", "おおよそ20分", "おおよそ30分"]
-    let action = {}
 
     var body: some View {
         if show {
@@ -32,7 +32,7 @@ struct PopupWindowView: View {
                         .frame(maxWidth: 200)
                         SearchButton(text: "検索") {
                             withAnimation(.linear(duration: 0.3)) {
-                                action()
+                                action(selection)
                                 show = false
                             }
                         }
@@ -58,6 +58,8 @@ struct PopupWindowView: View {
 
 struct PopupWindowView_Previews: PreviewProvider {
     static var previews: some View {
-        PopupWindowView(show: .constant(true))
+        PopupWindowView(show: .constant(true), action: { _ in
+
+        })
     }
 }

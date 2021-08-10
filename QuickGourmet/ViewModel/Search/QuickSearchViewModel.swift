@@ -12,6 +12,7 @@ class QuickSearchViewModel: ObservableObject {
     @Published var shopSearchFetcher = ShopSearchFetcher()
     @Published var shopData: [Shop] = []
     var genreIndex: Int = 0
+    var pickerSelection: Int = 0
     var latitude: Double = 0.0
     var longitude: Double = 0.0
 
@@ -74,8 +75,38 @@ class QuickSearchViewModel: ObservableObject {
         }
     }
 
+    enum PickerSelectType: Int {
+        case threeMinutesWalk = 0
+        case sevenMinutesWalk = 1
+        case thirteenMinuteWalk = 2
+        case twentyMinuteWalk = 3
+        case thirtyMinuteWalk = 4
+
+        var pickerSelectIndex: Int {
+            switch self {
+            case .threeMinutesWalk:
+                return 1
+            case .sevenMinutesWalk:
+                return 2
+            case .thirteenMinuteWalk:
+                return 3
+            case .twentyMinuteWalk:
+                return 4
+            case .thirtyMinuteWalk:
+                return 5
+            }
+        }
+    }
+
+    var range: Int {
+        guard let range = PickerSelectType(rawValue: pickerSelection)?.pickerSelectIndex else {
+            return 0
+        }
+        return range
+    }
+
     var requestString: String {
-        "https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=\(APIKEY)&lat=\(latitude)&lng=\(longitude)&range=3&genre=\(convertGenreCode(selectIndex: genreIndex))&count=100&format=json"
+        "https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=\(APIKEY)&lat=\(latitude)&lng=\(longitude)&range=\(range)3&genre=\(convertGenreCode(selectIndex: genreIndex))&count=100&format=json"
     }
 
     func convertGenreCode(selectIndex: Int) -> String {

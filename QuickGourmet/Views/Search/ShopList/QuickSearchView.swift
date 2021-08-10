@@ -15,6 +15,7 @@ struct QuickSearchView: View {
     @State private var currentOffset = CGFloat()
     @State private var closeOffset = CGFloat()
     @State private var openOffset = CGFloat()
+    @State private var index = 0
     @State var searchVM = SearchViewModel()
     private let quickSearchVM = QuickSearchViewModel()
     private let userDefaultsDataStore = UserDefaultsDataStore()
@@ -45,8 +46,8 @@ struct QuickSearchView: View {
                                                 isShowsAlert = false
                                                 withAnimation(.linear(duration: 0.3)) {
                                                     isShowsPopUp = true
+                                                    self.index = index
                                                 }
-                                                // isTapActive = true
                                             }
                                         }) {
                                             QuickSearchRowView(imageString: quickSearchImages[index], genreName: quickSearchTextes[index])
@@ -76,9 +77,12 @@ struct QuickSearchView: View {
                                 toggleHamburgerMenu()
                             }
                         }
-                        PopupWindowView(show: $isShowsPopUp)
                     }
                 }
+                PopupWindowView(show: $isShowsPopUp, action: { selection in
+                    communicateQuickSearchVM(index: index, selection: selection)
+                    isTapActive = true
+                })
                 HamburgerMenuView()
                     .frame(width: geometry.size.width * 0.5)
                     .onAppear(perform: {
@@ -104,10 +108,11 @@ struct QuickSearchView: View {
         }
     }
 
-    private func communicateQuickSearchVM(index: Int) {
+    private func communicateQuickSearchVM(index: Int, selection: Int) {
         quickSearchVM.latitude = userDefaultsDataStore.latitudeInformation
         quickSearchVM.longitude = userDefaultsDataStore.longitudeInformation
         quickSearchVM.genreIndex = index
+        quickSearchVM.pickerSelection = selection
         quickSearchVM.callShopSearchFetcher()
     }
 }
