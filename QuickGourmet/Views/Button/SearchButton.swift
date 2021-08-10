@@ -19,9 +19,9 @@ struct SearchButton: View {
                 .foregroundColor(Color.white)
                 .fontWeight(.medium)
                 .font(.headline)
-                .padding(.vertical, 15)
-                .padding(.horizontal, 50)
-                .background(Color.red)
+                .padding(.vertical, 10)
+                .padding(.horizontal, 30)
+                .background(Color.green)
                 .cornerRadius(100)
                 .lineLimit(1)
         }
@@ -30,6 +30,6 @@ struct SearchButton: View {
 
 struct SearchButton_Previews: PreviewProvider {
     static var previews: some View {
-        SearchButton(text: "条件検索")
+        SearchButton(text: "検索")
     }
 }

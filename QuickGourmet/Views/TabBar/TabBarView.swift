@@ -12,19 +12,16 @@ struct TabBarView: View {
 
     var body: some View {
         TabView(selection: $section) {
-            // 検索ページ
+            QuickSearchView()
+                .tabItem {
+                    Image(systemName: "magnifyingglass.circle")
+                    Text("クイック検索")
+                }
+                .tag(0)
             SearchView()
                 .tabItem {
                     Image(systemName: "magnifyingglass")
                     Text("検索")
-                }
-                .tag(0)
-
-            // メニューページ
-            MenuView()
-                .tabItem {
-                    Image(systemName: "list.bullet")
-                    Text("メニュー")
                 }
                 .tag(1)
         }
