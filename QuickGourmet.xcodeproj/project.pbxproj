@@ -35,6 +35,7 @@
 		D8BD192E26B816C900E0BBCB /* QuickSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BD192D26B816C900E0BBCB /* QuickSearchView.swift */; };
 		D8BD193026B8282B00E0BBCB /* QuickSearchRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BD192F26B8282B00E0BBCB /* QuickSearchRowView.swift */; };
 		D8C58FC126B8D2590020AC57 /* ArrowImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C58FC026B8D2590020AC57 /* ArrowImage.swift */; };
+		D8D1198626C7B2A500F9CD65 /* NendBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D1198526C7B2A500F9CD65 /* NendBannerView.swift */; };
 		D8DB885226B962DA0057F807 /* UserDefaultsDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DB885126B962DA0057F807 /* UserDefaultsDataStore.swift */; };
 		D8ED9E9A269E78A100AFE337 /* ResponseGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8ED9E99269E78A100AFE337 /* ResponseGroup.swift */; };
 		D8ED9EB2269E795F00AFE337 /* MockShopData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8ED9EB1269E795F00AFE337 /* MockShopData.swift */; };
@@ -78,6 +79,7 @@
 		D8BD192D26B816C900E0BBCB /* QuickSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickSearchView.swift; sourceTree = "<group>"; };
 		D8BD192F26B8282B00E0BBCB /* QuickSearchRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickSearchRowView.swift; sourceTree = "<group>"; };
 		D8C58FC026B8D2590020AC57 /* ArrowImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrowImage.swift; sourceTree = "<group>"; };
+		D8D1198526C7B2A500F9CD65 /* NendBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NendBannerView.swift; sourceTree = "<group>"; };
 		D8DB885126B962DA0057F807 /* UserDefaultsDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsDataStore.swift; sourceTree = "<group>"; };
 		D8ED9E99269E78A100AFE337 /* ResponseGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseGroup.swift; sourceTree = "<group>"; };
 		D8ED9EB1269E795F00AFE337 /* MockShopData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockShopData.swift; sourceTree = "<group>"; };
@@ -281,6 +283,7 @@
 			children = (
 				D8ADBBF926C400E10003002F /* NendInterstitialView.swift */,
 				D8F1495C26C7A12700F2C159 /* NendBunnerViewController.swift */,
+				D8D1198526C7B2A500F9CD65 /* NendBannerView.swift */,
 			);
 			path = Advertisement;
 			sourceTree = "<group>";
@@ -551,6 +554,7 @@
 				D8ED9EB2269E795F00AFE337 /* MockShopData.swift in Sources */,
 				D829713226B26AA9005C4454 /* ApiKey.swift in Sources */,
 				D87C9C3B269701A30051FA77 /* HamburgerMenuView.swift in Sources */,
+				D8D1198626C7B2A500F9CD65 /* NendBannerView.swift in Sources */,
 				D8FC157926B19DDA00B22408 /* MailView.swift in Sources */,
 				D8ED9EB8269E79A500AFE337 /* SearchView.swift in Sources */,
 				D855048D269D0F1B0053334A /* HotPepperResponseResponse.swift in Sources */,
