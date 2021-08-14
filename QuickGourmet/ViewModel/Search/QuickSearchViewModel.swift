@@ -11,6 +11,7 @@ import SwiftUI
 class QuickSearchViewModel: ObservableObject {
     @Published var shopSearchFetcher = ShopSearchFetcher()
     @Published var shopData: [Shop] = []
+    private let userDefaultsDataStore = UserDefaultsDataStore()
     var genreIndex: Int = 0
     var pickerSelection: Int = 0
     var latitude: Double = 0.0
@@ -135,4 +136,6 @@ class QuickSearchViewModel: ObservableObject {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
     }
+
+    func recordShopDetailLaunchCount() {}
 }

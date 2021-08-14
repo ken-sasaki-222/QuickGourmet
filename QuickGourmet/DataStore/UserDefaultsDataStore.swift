@@ -11,6 +11,7 @@ class UserDefaultsDataStore {
     enum UserDefaultsKey: String {
         case latitudeInformation = "latitude_information"
         case longitudeInformation = "longitude_information"
+        case shopDetailLaunchCount = "shopdetail_launchcount"
     }
 
     var defalts: UserDefaults {
@@ -32,6 +33,15 @@ class UserDefaultsDataStore {
         }
         set(newValue) {
             defalts.setValue(newValue, forKey: UserDefaultsKey.longitudeInformation.rawValue)
+        }
+    }
+
+    var shopDetailLaunchCount: Int {
+        get {
+            defalts.integer(forKey: UserDefaultsKey.shopDetailLaunchCount.rawValue)
+        }
+        set(newValue) {
+            defalts.setValue(newValue + 1, forKey: UserDefaultsKey.shopDetailLaunchCount.rawValue)
         }
     }
 }
