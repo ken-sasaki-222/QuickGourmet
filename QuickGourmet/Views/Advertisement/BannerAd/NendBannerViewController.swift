@@ -31,7 +31,7 @@ class NendBannerViewController: UIViewController, NADViewDelegate {
         nadView?.pause() // 広告のリフレッシュを中断
     }
 
-    func setNadView() {
+    private func setNadView() {
         nadView = NADView(isAdjustAdSize: true)
         nadView?.setNendID(NEND_INTERSTITIAL_BANNER_SPOTID, apiKey: NEND_INTERSTITIAL_BANNER_AD_APIKEY)
         nadView?.delegate = self
@@ -77,7 +77,7 @@ class NendBannerViewController: UIViewController, NADViewDelegate {
             NSLayoutConstraint(item: adView!,
                                attribute: .bottom,
                                relatedBy: .equal,
-                               toItem: bottomLayoutGuide,
+                               toItem: view.safeAreaLayoutGuide.bottomAnchor,
                                attribute: .top,
                                multiplier: 1,
                                constant: 0),
