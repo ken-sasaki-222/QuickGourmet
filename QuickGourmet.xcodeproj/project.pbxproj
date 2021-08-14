@@ -43,7 +43,7 @@
 		D8ED9EB6269E799000AFE337 /* SearchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8ED9EB5269E799000AFE337 /* SearchListView.swift */; };
 		D8ED9EB8269E79A500AFE337 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8ED9EB7269E79A500AFE337 /* SearchView.swift */; };
 		D8F12E7926B423D000118C63 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8F12E7826B423D000118C63 /* CoreLocation.framework */; };
-		D8F1495D26C7A12700F2C159 /* NendBunnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F1495C26C7A12700F2C159 /* NendBunnerViewController.swift */; };
+		D8F1495D26C7A12700F2C159 /* NendBannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F1495C26C7A12700F2C159 /* NendBannerViewController.swift */; };
 		D8FC157926B19DDA00B22408 /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FC157826B19DDA00B22408 /* MailView.swift */; };
 /* End PBXBuildFile section */
 
@@ -87,7 +87,7 @@
 		D8ED9EB5269E799000AFE337 /* SearchListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchListView.swift; sourceTree = "<group>"; };
 		D8ED9EB7269E79A500AFE337 /* SearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		D8F12E7826B423D000118C63 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		D8F1495C26C7A12700F2C159 /* NendBunnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NendBunnerViewController.swift; sourceTree = "<group>"; };
+		D8F1495C26C7A12700F2C159 /* NendBannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NendBannerViewController.swift; sourceTree = "<group>"; };
 		D8FC157826B19DDA00B22408 /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
 		E1B982FE3AEA28CD50ABBD5C /* Pods_QuickGourmet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuickGourmet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -281,9 +281,8 @@
 		D8ADBBF826C4006E0003002F /* Advertisement */ = {
 			isa = PBXGroup;
 			children = (
-				D8ADBBF926C400E10003002F /* NendInterstitialView.swift */,
-				D8F1495C26C7A12700F2C159 /* NendBunnerViewController.swift */,
-				D8D1198526C7B2A500F9CD65 /* NendBannerView.swift */,
+				D8D1198726C7B8CD00F9CD65 /* InterstitialAd */,
+				D8D1198826C7B8E900F9CD65 /* BannerAd */,
 			);
 			path = Advertisement;
 			sourceTree = "<group>";
@@ -330,6 +329,23 @@
 				D8BA118E269661490007DCE5 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D8D1198726C7B8CD00F9CD65 /* InterstitialAd */ = {
+			isa = PBXGroup;
+			children = (
+				D8ADBBF926C400E10003002F /* NendInterstitialView.swift */,
+			);
+			path = InterstitialAd;
+			sourceTree = "<group>";
+		};
+		D8D1198826C7B8E900F9CD65 /* BannerAd */ = {
+			isa = PBXGroup;
+			children = (
+				D8F1495C26C7A12700F2C159 /* NendBannerViewController.swift */,
+				D8D1198526C7B2A500F9CD65 /* NendBannerView.swift */,
+			);
+			path = BannerAd;
 			sourceTree = "<group>";
 		};
 		D8DB885026B962BE0057F807 /* DataStore */ = {
@@ -536,7 +552,7 @@
 				D87B8C3D26B045EF00BB945C /* HamburgerMenuViewModel.swift in Sources */,
 				D889E16326AF09EA00F18681 /* LogoImage.swift in Sources */,
 				D8A8E5BB269DC047009F9C0C /* ShopSearchFetcher.swift in Sources */,
-				D8F1495D26C7A12700F2C159 /* NendBunnerViewController.swift in Sources */,
+				D8F1495D26C7A12700F2C159 /* NendBannerViewController.swift in Sources */,
 				D8DB885226B962DA0057F807 /* UserDefaultsDataStore.swift in Sources */,
 				D8A8E5B4269DAEB3009F9C0C /* ShopDetailView.swift in Sources */,
 				D889303B26B914C2008C0F60 /* QuickSearchViewModel.swift in Sources */,

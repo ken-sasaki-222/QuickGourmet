@@ -8,7 +8,7 @@
 import NendAd
 import SwiftUI
 
-class NendBunnerViewController: UIViewController, NADViewDelegate {
+class NendBannerViewController: UIViewController, NADViewDelegate {
     private var nadView: NADView?
 
     override func viewDidLoad() {
