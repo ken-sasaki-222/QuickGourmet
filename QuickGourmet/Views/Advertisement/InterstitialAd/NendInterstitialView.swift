@@ -45,32 +45,6 @@ class NendInterstitialView: NSObject, NADInterstitialLoadingDelegate, NADInterst
         }
     }
 
-    // 動画広告の表示
-    func showInterstitialVideoAD() {
-        var showResult: NADInterstitialShowResult
-        let rootVC = UIApplication.shared.windows.first?.rootViewController
-        showResult = NADInterstitial.sharedInstance().showAd(from: rootVC, spotID: NEND_INTERSTITIAL_VIDEO_SPOTID)
-
-        switch showResult {
-        case .AD_SHOW_SUCCESS:
-            print("AD_SHOW_SUCCESS")
-        case .AD_LOAD_INCOMPLETE:
-            print("AD_LOAD_INCOMPLETE")
-        case .AD_REQUEST_INCOMPLETE:
-            print("FAILED_AD_REQUEST")
-        case .AD_DOWNLOAD_INCOMPLETE:
-            print("FAILED_AD_DOWNLOAD")
-        case .AD_FREQUENCY_NOT_REACHABLE:
-            print("AD_FREQUENCY_NOT_REACHABLE")
-        case .AD_SHOW_ALREADY:
-            print("AD_SHOW_ALREADY")
-        case .AD_CANNOT_DISPLAY:
-            print("AD_CANNOT_DISPLAY")
-        @unknown default:
-            break
-        }
-    }
-
     func didFinishLoadInterstitialAd(withStatus status: NADInterstitialStatusCode) {}
 
     func didClick(with type: NADInterstitialClickType) {
