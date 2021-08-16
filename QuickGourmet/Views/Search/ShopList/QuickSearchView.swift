@@ -78,6 +78,9 @@ struct QuickSearchView: View {
                         }
                     }
                 }
+                .onAppear {
+                    quickSearchVM.requestIDFA()
+                }
                 PopupWindowView(show: $isShowsPopUp, searchAction: { selection in
                     communicateQuickSearchVM(index: index, selection: selection)
                     isTapActive = true

@@ -5,6 +5,8 @@
 //  Created by sasaki.ken on 2021/08/03.
 //
 
+import AdSupport
+import AppTrackingTransparency
 import Foundation
 import SwiftUI
 
@@ -138,4 +140,11 @@ class QuickSearchViewModel: ObservableObject {
     }
 
     func recordShopDetailLaunchCount() {}
+
+    func requestIDFA() {
+        ATTrackingManager.requestTrackingAuthorization(completionHandler: { _ in
+            // Tracking authorization completed. Start loading ads here.
+            // loadAd()
+        })
+    }
 }
