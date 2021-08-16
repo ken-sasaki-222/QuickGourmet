@@ -78,6 +78,9 @@ struct QuickSearchView: View {
                         }
                     }
                 }
+                .onAppear {
+                    quickSearchVM.requestIDFA()
+                }
                 PopupWindowView(show: $isShowsPopUp, searchAction: { selection in
                     communicateQuickSearchVM(index: index, selection: selection)
                     isTapActive = true
@@ -89,6 +92,8 @@ struct QuickSearchView: View {
                     })
                     .offset(x: self.currentOffset)
                     .animation(.default)
+                // 申請許可後コメントイン
+                // NendBannerView()
             }
         }
     }
