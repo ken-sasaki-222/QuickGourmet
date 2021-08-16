@@ -6,6 +6,7 @@
 //
 
 import CoreLocation
+import NendAd
 import SwiftUI
 
 @main
@@ -26,7 +27,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     let userDefaultsDataStore = UserDefaultsDataStore()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
-        // locationManager = CLLocationManager()
+        // インタースティシャル静止広告のロード
+        NADInterstitial.sharedInstance().loadAd(withSpotID: NEND_INTERSTITIAL_STILLNESS_SPOTID, apiKey: NEND_INTERSTITIAL_STILLNESS_AD_APIKEY)
+        // バナー広告のロード
+        NADInterstitial.sharedInstance().loadAd(withSpotID: NEND_INTERSTITIAL_BANNER_SPOTID, apiKey: NEND_INTERSTITIAL_BANNER_AD_APIKEY)
+
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
 

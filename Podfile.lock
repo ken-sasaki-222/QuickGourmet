@@ -1,20 +1,24 @@
 PODS:
+  - NendSDK_iOS (7.0.6)
   - SwiftFormat/CLI (0.48.11)
   - SwiftLint (0.43.1)
 
 DEPENDENCIES:
+  - NendSDK_iOS
   - SwiftFormat/CLI
   - SwiftLint
 
 SPEC REPOS:
   trunk:
+    - NendSDK_iOS
     - SwiftFormat
     - SwiftLint
 
 SPEC CHECKSUMS:
+  NendSDK_iOS: 43c45dad9195c8e814c2da6497fe3d66515fb982
   SwiftFormat: 938e5865a118c49d63c7a290ddad86335f9e585f
   SwiftLint: 99f82d07b837b942dd563c668de129a03fc3fb52
 
-PODFILE CHECKSUM: 720189f3d9fbd1a18be1b5fa0d06bf6e5279d061
+PODFILE CHECKSUM: d666b85ca4c3630c24c50d6534dbcff053ebaae2
 
 COCOAPODS: 1.10.1
