@@ -16,7 +16,7 @@ struct QuickGourmetApp: App {
 
     var body: some Scene {
         WindowGroup {
-            TabBarView()
+            FirstScreenView()
         }
     }
 }
