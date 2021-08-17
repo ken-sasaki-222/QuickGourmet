@@ -14,6 +14,7 @@
 		D83D600926AAA0E8002A6CEC /* ShopDetailButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83D600826AAA0E8002A6CEC /* ShopDetailButtonView.swift */; };
 		D83D600E26AAB387002A6CEC /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83D600D26AAB387002A6CEC /* MapView.swift */; };
 		D855048D269D0F1B0053334A /* HotPepperResponseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D855048C269D0F1B0053334A /* HotPepperResponseResponse.swift */; };
+		D864626F26CBEAE90021092E /* UserAuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D864626E26CBEAE90021092E /* UserAuthViewModel.swift */; };
 		D8711D3526A43377005EA395 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8711D3426A43377005EA395 /* SearchViewModel.swift */; };
 		D871222B26B9892B000D094A /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = D871222A26B9892B000D094A /* Color.swift */; };
 		D871222E26B98DAB000D094A /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D871222D26B98DAB000D094A /* UIColor.swift */; };
@@ -43,8 +44,8 @@
 		D8ED9EB6269E799000AFE337 /* SearchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8ED9EB5269E799000AFE337 /* SearchListView.swift */; };
 		D8ED9EB8269E79A500AFE337 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8ED9EB7269E79A500AFE337 /* SearchView.swift */; };
 		D8F12E7926B423D000118C63 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8F12E7826B423D000118C63 /* CoreLocation.framework */; };
-		D8F73EE326C34F4A00B26993 /* FirstScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F73EE226C34F4A00B26993 /* FirstScreenView.swift */; };
 		D8F1495D26C7A12700F2C159 /* NendBannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F1495C26C7A12700F2C159 /* NendBannerViewController.swift */; };
+		D8F73EE326C34F4A00B26993 /* FirstScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F73EE226C34F4A00B26993 /* FirstScreenView.swift */; };
 		D8FC157926B19DDA00B22408 /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FC157826B19DDA00B22408 /* MailView.swift */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +58,7 @@
 		D83D600826AAA0E8002A6CEC /* ShopDetailButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopDetailButtonView.swift; sourceTree = "<group>"; };
 		D83D600D26AAB387002A6CEC /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		D855048C269D0F1B0053334A /* HotPepperResponseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotPepperResponseResponse.swift; sourceTree = "<group>"; };
+		D864626E26CBEAE90021092E /* UserAuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuthViewModel.swift; sourceTree = "<group>"; };
 		D8711D3426A43377005EA395 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		D871222A26B9892B000D094A /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		D871222D26B98DAB000D094A /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
@@ -88,8 +90,8 @@
 		D8ED9EB5269E799000AFE337 /* SearchListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchListView.swift; sourceTree = "<group>"; };
 		D8ED9EB7269E79A500AFE337 /* SearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		D8F12E7826B423D000118C63 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		D8F73EE226C34F4A00B26993 /* FirstScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstScreenView.swift; sourceTree = "<group>"; };
 		D8F1495C26C7A12700F2C159 /* NendBannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NendBannerViewController.swift; sourceTree = "<group>"; };
+		D8F73EE226C34F4A00B26993 /* FirstScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstScreenView.swift; sourceTree = "<group>"; };
 		D8FC157826B19DDA00B22408 /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
 		E1B982FE3AEA28CD50ABBD5C /* Pods_QuickGourmet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuickGourmet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -136,6 +138,7 @@
 		D82895C426A05FC50030FACB /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				D864626D26CBEACE0021092E /* Auth */,
 				D88426F426AA740C0073B3F2 /* Search */,
 				D87B8C3B26B045D900BB945C /* Menu */,
 			);
@@ -198,6 +201,14 @@
 				D8A8E5BE269DEA66009F9C0C /* ImageDownloder.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		D864626D26CBEACE0021092E /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				D864626E26CBEAE90021092E /* UserAuthViewModel.swift */,
+			);
+			path = Auth;
 			sourceTree = "<group>";
 		};
 		D871222926B988C6000D094A /* Extension */ = {
@@ -569,6 +580,7 @@
 				D889303B26B914C2008C0F60 /* QuickSearchViewModel.swift in Sources */,
 				D83D600E26AAB387002A6CEC /* MapView.swift in Sources */,
 				D8ED9EB6269E799000AFE337 /* SearchListView.swift in Sources */,
+				D864626F26CBEAE90021092E /* UserAuthViewModel.swift in Sources */,
 				D8BD193026B8282B00E0BBCB /* QuickSearchRowView.swift in Sources */,
 				D8ADBBFA26C400E10003002F /* NendInterstitialView.swift in Sources */,
 				D81CB62D26A9405F004807E1 /* SearchButton.swift in Sources */,
