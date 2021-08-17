@@ -25,21 +25,22 @@ struct FirstScreenView: View {
                         .font(.title3)
                         .lineLimit(3)
                         .offset(x: 0, y: -200)
-                    NavigationLink(destination: QuickSearchView(), isActive: $isTapActived) {
-                        Button(action: {
-                            isTapActived.toggle()
-                        }) {
-                            Text("食いっくグルメをはじめる")
-                                .foregroundColor(Color.white)
-                                .fontWeight(.medium)
-                                .font(.title3)
-                                .padding(.vertical, 20)
-                                .padding(.horizontal, 60)
-                                .background(Color.green)
-                                .cornerRadius(100)
-                                .lineLimit(1)
-                        }
+                    Button(action: {
+                        isTapActived.toggle()
+                    }) {
+                        Text("食いっくグルメをはじめる")
+                            .foregroundColor(Color.white)
+                            .fontWeight(.medium)
+                            .font(.title3)
+                            .padding(.vertical, 20)
+                            .padding(.horizontal, 60)
+                            .background(Color.green)
+                            .cornerRadius(100)
+                            .lineLimit(1)
                     }
+                    .fullScreenCover(isPresented: $isTapActived, content: {
+                        QuickSearchView()
+                    })
                 }
             }
             .navigationTitle("食いっくグルメ")
