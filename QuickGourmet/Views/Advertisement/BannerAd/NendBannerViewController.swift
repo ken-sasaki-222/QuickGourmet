@@ -52,6 +52,7 @@ class NendBannerViewController: UIViewController, NADViewDelegate {
         view.addSubview(nadView)
 
         // 画面下部に広告を配置
+        // refactorTODO: bottomLayoutGuideが非推奨なので改善する（view.safeAreaLayoutGuide.bottomAnchorだと広告表示されない）
         view.addConstraints([
             NSLayoutConstraint(item: adView!,
                                attribute: .width,
@@ -77,7 +78,7 @@ class NendBannerViewController: UIViewController, NADViewDelegate {
             NSLayoutConstraint(item: adView!,
                                attribute: .bottom,
                                relatedBy: .equal,
-                               toItem: view.safeAreaLayoutGuide.bottomAnchor,
+                               toItem: bottomLayoutGuide,
                                attribute: .top,
                                multiplier: 1,
                                constant: 0),
