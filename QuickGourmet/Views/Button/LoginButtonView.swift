@@ -8,8 +8,22 @@
 import SwiftUI
 
 struct LoginButtonView: View {
+    var tapAction = {}
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Button(action: {
+            tapAction()
+        }) {
+            Text("ログイン")
+                .foregroundColor(Color.white)
+                .fontWeight(.medium)
+                .font(.title3)
+                .padding(.vertical, 10)
+                .padding(.horizontal, 70)
+                .background(Color.green)
+                .cornerRadius(100)
+                .lineLimit(1)
+        }
     }
 }
 
