@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SearchButton: View {
+struct SearchButtonView: View {
     var text: String
     var action = {}
 
@@ -30,6 +30,6 @@ struct SearchButton: View {
 
 struct SearchButton_Previews: PreviewProvider {
     static var previews: some View {
-        SearchButton(text: "検索")
+        SearchButtonView(text: "検索")
     }
 }

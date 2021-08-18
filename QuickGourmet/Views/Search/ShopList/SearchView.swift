@@ -100,7 +100,7 @@ struct SearchView: View {
                 }
                 .navigationTitle("条件検索")
                 // NavigationLink(destination: SearchListView(searchVM: searchVM), isActive: $isTapActive) {}
-                SearchButton(text: "条件検索") {
+                SearchButtonView(text: "条件検索") {
                     communicateHotPepperAPI()
                     self.isTapActive = true
                 }
