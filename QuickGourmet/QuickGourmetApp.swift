@@ -6,6 +6,7 @@
 //
 
 import CoreLocation
+import Firebase
 import NendAd
 import SwiftUI
 
@@ -31,6 +32,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         NADInterstitial.sharedInstance().loadAd(withSpotID: NEND_INTERSTITIAL_STILLNESS_SPOTID, apiKey: NEND_INTERSTITIAL_STILLNESS_AD_APIKEY)
         // バナー広告のロード
         NADInterstitial.sharedInstance().loadAd(withSpotID: NEND_INTERSTITIAL_BANNER_SPOTID, apiKey: NEND_INTERSTITIAL_BANNER_AD_APIKEY)
+        // Firebase共有インスタンスの作成
+        FirebaseApp.configure()
 
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
