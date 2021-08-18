@@ -11,6 +11,7 @@
 		D81CB62D26A9405F004807E1 /* SearchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81CB62C26A9405F004807E1 /* SearchButton.swift */; };
 		D829713226B26AA9005C4454 /* ApiKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D829713126B26AA9005C4454 /* ApiKey.swift */; };
 		D8307BC426BC045B00DAB08C /* PopupWindowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8307BC326BC045B00DAB08C /* PopupWindowView.swift */; };
+		D833880F26CC9F6A003446B1 /* UIApplication+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D833880E26CC9F6A003446B1 /* UIApplication+Keyboard.swift */; };
 		D83D600926AAA0E8002A6CEC /* ShopDetailButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83D600826AAA0E8002A6CEC /* ShopDetailButtonView.swift */; };
 		D83D600E26AAB387002A6CEC /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83D600D26AAB387002A6CEC /* MapView.swift */; };
 		D855048D269D0F1B0053334A /* HotPepperResponseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D855048C269D0F1B0053334A /* HotPepperResponseResponse.swift */; };
@@ -55,6 +56,7 @@
 		D81CB62C26A9405F004807E1 /* SearchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchButton.swift; sourceTree = "<group>"; };
 		D829713126B26AA9005C4454 /* ApiKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiKey.swift; sourceTree = "<group>"; };
 		D8307BC326BC045B00DAB08C /* PopupWindowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupWindowView.swift; sourceTree = "<group>"; };
+		D833880E26CC9F6A003446B1 /* UIApplication+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Keyboard.swift"; sourceTree = "<group>"; };
 		D83D600826AAA0E8002A6CEC /* ShopDetailButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopDetailButtonView.swift; sourceTree = "<group>"; };
 		D83D600D26AAB387002A6CEC /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		D855048C269D0F1B0053334A /* HotPepperResponseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotPepperResponseResponse.swift; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 			children = (
 				D871222A26B9892B000D094A /* Color+Colors.swift */,
 				D871222D26B98DAB000D094A /* UIColor+Colors.swift */,
+				D833880E26CC9F6A003446B1 /* UIApplication+Keyboard.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -570,6 +573,7 @@
 				D8ED9EB4269E798700AFE337 /* ShopRowView.swift in Sources */,
 				D8C58FC126B8D2590020AC57 /* ArrowImage.swift in Sources */,
 				D8307BC426BC045B00DAB08C /* PopupWindowView.swift in Sources */,
+				D833880F26CC9F6A003446B1 /* UIApplication+Keyboard.swift in Sources */,
 				D8711D3526A43377005EA395 /* SearchViewModel.swift in Sources */,
 				D87B8C3D26B045EF00BB945C /* HamburgerMenuViewModel.swift in Sources */,
 				D889E16326AF09EA00F18681 /* LogoImage.swift in Sources */,
