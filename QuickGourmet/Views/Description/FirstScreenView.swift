@@ -48,11 +48,20 @@ struct FirstScreenView: View {
                         isShowsAlert.toggle()
                     }
                 }
+                .padding(.bottom, 5)
                 .fullScreenCover(isPresented: $isTapActived, content: {
                     TabBarView()
                 })
                 .alert(isPresented: $isShowsAlert) {
                     Alert(title: Text("確認"), message: Text("匿名情報を入力してください"), dismissButton: .default(Text("OK")) {})
+                }
+                Button(action: {
+                    print("利用規約の表示")
+                }) {
+                    Text("利用規約")
+                        .foregroundColor(.white)
+                        .padding(.bottom, 30)
+                        .padding(.horizontal, 10)
                 }
             }
         }
