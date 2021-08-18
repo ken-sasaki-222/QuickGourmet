@@ -169,11 +169,19 @@
 		D834146226CCFD22002D7ED0 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				D834146926CCFE5B002D7ED0 /* User */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		D834146926CCFE5B002D7ED0 /* User */ = {
+			isa = PBXGroup;
+			children = (
 				D834146326CCFDBC002D7ED0 /* UserRepository.swift */,
 				D834146526CCFDFC002D7ED0 /* UserRepositoryInterface.swift */,
 				D834146726CCFE19002D7ED0 /* MockUserRepository.swift */,
 			);
-			path = Repository;
+			path = User;
 			sourceTree = "<group>";
 		};
 		D83D600C26AAB374002A6CEC /* Map */ = {
