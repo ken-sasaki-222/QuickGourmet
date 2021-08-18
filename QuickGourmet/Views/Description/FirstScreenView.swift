@@ -14,13 +14,16 @@ struct FirstScreenView: View {
     private let userAuthVM = UserAuthViewModel()
 
     var body: some View {
-        ZStack(alignment: .top) {
+        ZStack(alignment: .center) {
             Image("first_view_background")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .edgesIgnoringSafeArea(.all)
             Color.gray.opacity(0.5)
                 .edgesIgnoringSafeArea(.all)
+                .onTapGesture {
+                    UIApplication.shared.closeKeyboard()
+                }
             VStack {
                 Text("食いっくグルメ")
                     .font(.title)
