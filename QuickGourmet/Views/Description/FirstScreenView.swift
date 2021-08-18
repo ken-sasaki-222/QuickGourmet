@@ -18,7 +18,7 @@ struct FirstScreenView: View {
             Image("first_view_background")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
-                .edgesIgnoringSafeArea(.all)
+                .edgesIgnoringSafeArea(.top)
             Color.gray.opacity(0.5)
                 .edgesIgnoringSafeArea(.all)
                 .onTapGesture {
@@ -32,33 +32,21 @@ struct FirstScreenView: View {
                     .padding(.top, 60)
                     .padding(.bottom, 30)
                     .padding(.horizontal, 10)
-                TextField("匿名ログイン（2文字以上）", text: $anonymity,
-                          onCommit: {
-                              print("匿名:", anonymity)
-                          })
+                TextField("匿名ログイン（2文字以上）", text: $anonymity)
                     .frame(width: 300, height: 44, alignment: .center)
                     .background(Color.white)
                     .cornerRadius(6)
                     .padding(.bottom, 30)
                     .padding(.horizontal, 10)
-                Button(action: {
+                LoginButtonView {
                     if userAuthVM.isValidateAnonymity(anonymity: anonymity) {
                         print("Login Complete.")
+                        print("ユーザー名:", anonymity)
                         // isTapActived.toggle()
                     } else {
                         print("Login Failed.")
                         isShowsAlert.toggle()
                     }
-                }) {
-                    Text("ログイン")
-                        .foregroundColor(Color.white)
-                        .fontWeight(.medium)
-                        .font(.title3)
-                        .padding(.vertical, 10)
-                        .padding(.horizontal, 70)
-                        .background(Color.green)
-                        .cornerRadius(100)
-                        .lineLimit(1)
                 }
                 .fullScreenCover(isPresented: $isTapActived, content: {
                     TabBarView()
