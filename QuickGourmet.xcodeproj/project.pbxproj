@@ -14,6 +14,9 @@
 		D833880F26CC9F6A003446B1 /* UIApplication+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D833880E26CC9F6A003446B1 /* UIApplication+Keyboard.swift */; };
 		D833881126CCA4B5003446B1 /* LoginButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D833881026CCA4B5003446B1 /* LoginButtonView.swift */; };
 		D834146126CCEEFB002D7ED0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D834146026CCEEFB002D7ED0 /* GoogleService-Info.plist */; };
+		D834146426CCFDBC002D7ED0 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D834146326CCFDBC002D7ED0 /* UserRepository.swift */; };
+		D834146626CCFDFC002D7ED0 /* UserRepositoryInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = D834146526CCFDFC002D7ED0 /* UserRepositoryInterface.swift */; };
+		D834146826CCFE19002D7ED0 /* MockUserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D834146726CCFE19002D7ED0 /* MockUserRepository.swift */; };
 		D83D600926AAA0E8002A6CEC /* ShopDetailButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83D600826AAA0E8002A6CEC /* ShopDetailButtonView.swift */; };
 		D83D600E26AAB387002A6CEC /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83D600D26AAB387002A6CEC /* MapView.swift */; };
 		D855048D269D0F1B0053334A /* HotPepperResponseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D855048C269D0F1B0053334A /* HotPepperResponseResponse.swift */; };
@@ -61,6 +64,9 @@
 		D833880E26CC9F6A003446B1 /* UIApplication+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Keyboard.swift"; sourceTree = "<group>"; };
 		D833881026CCA4B5003446B1 /* LoginButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButtonView.swift; sourceTree = "<group>"; };
 		D834146026CCEEFB002D7ED0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D834146326CCFDBC002D7ED0 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		D834146526CCFDFC002D7ED0 /* UserRepositoryInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryInterface.swift; sourceTree = "<group>"; };
+		D834146726CCFE19002D7ED0 /* MockUserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserRepository.swift; sourceTree = "<group>"; };
 		D83D600826AAA0E8002A6CEC /* ShopDetailButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopDetailButtonView.swift; sourceTree = "<group>"; };
 		D83D600D26AAB387002A6CEC /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		D855048C269D0F1B0053334A /* HotPepperResponseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotPepperResponseResponse.swift; sourceTree = "<group>"; };
@@ -158,6 +164,16 @@
 				D8307BC326BC045B00DAB08C /* PopupWindowView.swift */,
 			);
 			path = PopUp;
+			sourceTree = "<group>";
+		};
+		D834146226CCFD22002D7ED0 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				D834146326CCFDBC002D7ED0 /* UserRepository.swift */,
+				D834146526CCFDFC002D7ED0 /* UserRepositoryInterface.swift */,
+				D834146726CCFE19002D7ED0 /* MockUserRepository.swift */,
+			);
+			path = Repository;
 			sourceTree = "<group>";
 		};
 		D83D600C26AAB374002A6CEC /* Map */ = {
@@ -330,6 +346,7 @@
 		D8BA1186269661460007DCE5 /* QuickGourmet */ = {
 			isa = PBXGroup;
 			children = (
+				D834146226CCFD22002D7ED0 /* Repository */,
 				D8BA1187269661460007DCE5 /* QuickGourmetApp.swift */,
 				D8550488269D0DAA0053334A /* Model */,
 				D87C9C3C269703B80051FA77 /* Views */,
@@ -619,11 +636,14 @@
 				D8A8E5C4269DEFBF009F9C0C /* URLImage.swift in Sources */,
 				D8F73EE326C34F4A00B26993 /* FirstScreenView.swift in Sources */,
 				D8ED9E9A269E78A100AFE337 /* ResponseGroup.swift in Sources */,
+				D834146426CCFDBC002D7ED0 /* UserRepository.swift in Sources */,
 				D871222E26B98DAB000D094A /* UIColor+Colors.swift in Sources */,
 				D8BD192E26B816C900E0BBCB /* QuickSearchView.swift in Sources */,
+				D834146826CCFE19002D7ED0 /* MockUserRepository.swift in Sources */,
 				D8ED9EB2269E795F00AFE337 /* MockShopData.swift in Sources */,
 				D829713226B26AA9005C4454 /* ApiKey.swift in Sources */,
 				D87C9C3B269701A30051FA77 /* HamburgerMenuView.swift in Sources */,
+				D834146626CCFDFC002D7ED0 /* UserRepositoryInterface.swift in Sources */,
 				D8D1198626C7B2A500F9CD65 /* NendBannerView.swift in Sources */,
 				D8FC157926B19DDA00B22408 /* MailView.swift in Sources */,
 				D8ED9EB8269E79A500AFE337 /* SearchView.swift in Sources */,
