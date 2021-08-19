@@ -14,11 +14,13 @@ class UserAuthViewModel: ObservableObject {
 
     func canLogin(_ callback: @escaping (Result<Bool, Error>) -> Void) {
         userRepository.userAuth { result in
-            self.authResult = result
-            guard let authResult = self.authResult else {
-                return
-            }
-            callback(authResult)
+            callback(result)
+        }
+    }
+
+    func canLogout(completion: @escaping (Result<Bool, Error>) -> Void) {
+        userRepository.logout { result in
+            completion(result)
         }
     }
 }
