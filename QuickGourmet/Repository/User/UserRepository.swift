@@ -10,7 +10,7 @@ import FirebaseAuth
 import Foundation
 
 class UserRepository: UserRepositoryInterface {
-    func userAuth(_ completion: @escaping (Result<Bool, Error>) -> Void) {
+    func login(_ completion: @escaping (Result<Bool, Error>) -> Void) {
         Auth.auth().signInAnonymously { authResult, error in
             if let error = error {
                 completion(.failure(error))

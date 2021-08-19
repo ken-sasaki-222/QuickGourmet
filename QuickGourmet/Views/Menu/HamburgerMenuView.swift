@@ -12,7 +12,7 @@ import SwiftUI
 struct HamburgerMenuView: View {
     @State private var isShowMailView = false
     @State private var isShowsAlert = false
-    let menuVM = HamburgerMenuViewModel()
+    private let menuVM = HamburgerMenuViewModel()
     private let userAuthVM = UserAuthViewModel()
 
     var body: some View {
@@ -97,16 +97,6 @@ struct HamburgerMenuView: View {
                     }
                 }
             }
-            Section(header: Text("バージョン")) {
-                HStack {
-                    Image("version_icon")
-                        .resizable()
-                        .frame(width: 20, height: 20)
-                        .padding(5)
-                    Text("バージョン 1.0")
-                        .font(.caption)
-                }
-            }
             Section(header: Text("ログアウト")) {
                 HStack {
                     Image("logout_icon")
@@ -132,6 +122,16 @@ struct HamburgerMenuView: View {
                             print("Logout success.")
                             UIApplication.shared.windows.first { $0.isKeyWindow }?.rootViewController?.dismiss(animated: true, completion: nil)
                         }))
+                    }
+                }
+                Section(header: Text("バージョン")) {
+                    HStack {
+                        Image("version_icon")
+                            .resizable()
+                            .frame(width: 20, height: 20)
+                            .padding(5)
+                        Text("バージョン 1.0")
+                            .font(.caption)
                     }
                 }
             }

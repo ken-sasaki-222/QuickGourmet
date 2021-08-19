@@ -52,7 +52,7 @@
 		D8ED9EB8269E79A500AFE337 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8ED9EB7269E79A500AFE337 /* SearchView.swift */; };
 		D8F12E7926B423D000118C63 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8F12E7826B423D000118C63 /* CoreLocation.framework */; };
 		D8F1495D26C7A12700F2C159 /* NendBannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F1495C26C7A12700F2C159 /* NendBannerViewController.swift */; };
-		D8F73EE326C34F4A00B26993 /* FirstScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F73EE226C34F4A00B26993 /* FirstScreenView.swift */; };
+		D8F73EE326C34F4A00B26993 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F73EE226C34F4A00B26993 /* LoginView.swift */; };
 		D8FC157926B19DDA00B22408 /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FC157826B19DDA00B22408 /* MailView.swift */; };
 /* End PBXBuildFile section */
 
@@ -105,7 +105,7 @@
 		D8ED9EB7269E79A500AFE337 /* SearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		D8F12E7826B423D000118C63 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		D8F1495C26C7A12700F2C159 /* NendBannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NendBannerViewController.swift; sourceTree = "<group>"; };
-		D8F73EE226C34F4A00B26993 /* FirstScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstScreenView.swift; sourceTree = "<group>"; };
+		D8F73EE226C34F4A00B26993 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		D8FC157826B19DDA00B22408 /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
 		E1B982FE3AEA28CD50ABBD5C /* Pods_QuickGourmet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuickGourmet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -265,7 +265,6 @@
 		D87C9C3C269703B80051FA77 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				D8E300A326CE89160032B666 /* Indicator */,
 				D8F73EE126C34D5B00B26993 /* Description */,
 				D8550485269D0B8B0053334A /* TabBar */,
 				D8550486269D0BA00053334A /* Search */,
@@ -277,6 +276,7 @@
 				D88426F826AA79DB0073B3F2 /* Safari */,
 				D8FC157726B19DA700B22408 /* Mail */,
 				D8ADBBF826C4006E0003002F /* Advertisement */,
+				D8E300A326CE89160032B666 /* Indicator */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -447,7 +447,7 @@
 		D8F73EE126C34D5B00B26993 /* Description */ = {
 			isa = PBXGroup;
 			children = (
-				D8F73EE226C34F4A00B26993 /* FirstScreenView.swift */,
+				D8F73EE226C34F4A00B26993 /* LoginView.swift */,
 			);
 			path = Description;
 			sourceTree = "<group>";
@@ -654,7 +654,7 @@
 				D83D600926AAA0E8002A6CEC /* ShopDetailButtonView.swift in Sources */,
 				D871222B26B9892B000D094A /* Color+Colors.swift in Sources */,
 				D8A8E5C4269DEFBF009F9C0C /* URLImage.swift in Sources */,
-				D8F73EE326C34F4A00B26993 /* FirstScreenView.swift in Sources */,
+				D8F73EE326C34F4A00B26993 /* LoginView.swift in Sources */,
 				D8ED9E9A269E78A100AFE337 /* ResponseGroup.swift in Sources */,
 				D834146426CCFDBC002D7ED0 /* UserRepository.swift in Sources */,
 				D871222E26B98DAB000D094A /* UIColor+Colors.swift in Sources */,

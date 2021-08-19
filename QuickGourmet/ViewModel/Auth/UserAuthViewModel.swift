@@ -10,10 +10,9 @@ import SwiftUI
 
 class UserAuthViewModel: ObservableObject {
     @Published var userRepository = UserRepository()
-    @Published var authResult: Result<Bool, Error>?
 
     func canLogin(_ callback: @escaping (Result<Bool, Error>) -> Void) {
-        userRepository.userAuth { result in
+        userRepository.login { result in
             callback(result)
         }
     }

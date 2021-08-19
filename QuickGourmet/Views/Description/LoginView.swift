@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct FirstScreenView: View {
+struct LoginView: View {
     @State private var isTapActived = false
     @State private var isShowsAlert = false
     @State private var isShowsIndicator = false
@@ -88,6 +88,6 @@ struct FirstScreenView: View {
 
 struct FirstScreenView_Previews: PreviewProvider {
     static var previews: some View {
-        FirstScreenView()
+        LoginView()
     }
 }
