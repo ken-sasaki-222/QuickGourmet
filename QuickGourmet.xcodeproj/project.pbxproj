@@ -13,7 +13,6 @@
 		D8307BC426BC045B00DAB08C /* PopupWindowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8307BC326BC045B00DAB08C /* PopupWindowView.swift */; };
 		D833880F26CC9F6A003446B1 /* UIApplication+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D833880E26CC9F6A003446B1 /* UIApplication+Keyboard.swift */; };
 		D833881126CCA4B5003446B1 /* LoginButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D833881026CCA4B5003446B1 /* LoginButtonView.swift */; };
-		D834146126CCEEFB002D7ED0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D834146026CCEEFB002D7ED0 /* GoogleService-Info.plist */; };
 		D834146426CCFDBC002D7ED0 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D834146326CCFDBC002D7ED0 /* UserRepository.swift */; };
 		D834146626CCFDFC002D7ED0 /* UserRepositoryInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = D834146526CCFDFC002D7ED0 /* UserRepositoryInterface.swift */; };
 		D834146826CCFE19002D7ED0 /* MockUserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D834146726CCFE19002D7ED0 /* MockUserRepository.swift */; };
@@ -44,6 +43,7 @@
 		D8C58FC126B8D2590020AC57 /* ArrowImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C58FC026B8D2590020AC57 /* ArrowImage.swift */; };
 		D8D1198626C7B2A500F9CD65 /* NendBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D1198526C7B2A500F9CD65 /* NendBannerView.swift */; };
 		D8DB885226B962DA0057F807 /* UserDefaultsDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DB885126B962DA0057F807 /* UserDefaultsDataStore.swift */; };
+		D8E300A226CE58000032B666 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D8E300A126CE58000032B666 /* GoogleService-Info.plist */; };
 		D8ED9E9A269E78A100AFE337 /* ResponseGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8ED9E99269E78A100AFE337 /* ResponseGroup.swift */; };
 		D8ED9EB2269E795F00AFE337 /* MockShopData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8ED9EB1269E795F00AFE337 /* MockShopData.swift */; };
 		D8ED9EB4269E798700AFE337 /* ShopRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8ED9EB3269E798700AFE337 /* ShopRowView.swift */; };
@@ -63,7 +63,6 @@
 		D8307BC326BC045B00DAB08C /* PopupWindowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupWindowView.swift; sourceTree = "<group>"; };
 		D833880E26CC9F6A003446B1 /* UIApplication+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Keyboard.swift"; sourceTree = "<group>"; };
 		D833881026CCA4B5003446B1 /* LoginButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButtonView.swift; sourceTree = "<group>"; };
-		D834146026CCEEFB002D7ED0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D834146326CCFDBC002D7ED0 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		D834146526CCFDFC002D7ED0 /* UserRepositoryInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryInterface.swift; sourceTree = "<group>"; };
 		D834146726CCFE19002D7ED0 /* MockUserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserRepository.swift; sourceTree = "<group>"; };
@@ -96,6 +95,7 @@
 		D8C58FC026B8D2590020AC57 /* ArrowImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrowImage.swift; sourceTree = "<group>"; };
 		D8D1198526C7B2A500F9CD65 /* NendBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NendBannerView.swift; sourceTree = "<group>"; };
 		D8DB885126B962DA0057F807 /* UserDefaultsDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsDataStore.swift; sourceTree = "<group>"; };
+		D8E300A126CE58000032B666 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D8ED9E99269E78A100AFE337 /* ResponseGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseGroup.swift; sourceTree = "<group>"; };
 		D8ED9EB1269E795F00AFE337 /* MockShopData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockShopData.swift; sourceTree = "<group>"; };
 		D8ED9EB3269E798700AFE337 /* ShopRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopRowView.swift; sourceTree = "<group>"; };
@@ -354,19 +354,19 @@
 		D8BA1186269661460007DCE5 /* QuickGourmet */ = {
 			isa = PBXGroup;
 			children = (
-				D834146226CCFD22002D7ED0 /* Repository */,
 				D8BA1187269661460007DCE5 /* QuickGourmetApp.swift */,
 				D8550488269D0DAA0053334A /* Model */,
 				D87C9C3C269703B80051FA77 /* Views */,
 				D82895C426A05FC50030FACB /* ViewModel */,
 				D8A8E5B9269DBEA4009F9C0C /* API */,
+				D834146226CCFD22002D7ED0 /* Repository */,
 				D8DB885026B962BE0057F807 /* DataStore */,
 				D85D9DE126A2B98200F4B5C5 /* Utils */,
 				D871222926B988C6000D094A /* Extension */,
 				D8BA118D269661490007DCE5 /* Preview Content */,
 				D8BA118B269661490007DCE5 /* Assets.xcassets */,
 				D8BA1190269661490007DCE5 /* Info.plist */,
-				D834146026CCEEFB002D7ED0 /* GoogleService-Info.plist */,
+				D8E300A126CE58000032B666 /* GoogleService-Info.plist */,
 			);
 			path = QuickGourmet;
 			sourceTree = "<group>";
@@ -513,7 +513,7 @@
 			files = (
 				D8BA118F269661490007DCE5 /* Preview Assets.xcassets in Resources */,
 				D8BA118C269661490007DCE5 /* Assets.xcassets in Resources */,
-				D834146126CCEEFB002D7ED0 /* GoogleService-Info.plist in Resources */,
+				D8E300A226CE58000032B666 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
