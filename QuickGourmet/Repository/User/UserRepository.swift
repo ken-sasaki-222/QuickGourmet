@@ -13,7 +13,6 @@ class UserRepository: UserRepositoryInterface {
     func userAuth(_ completion: @escaping (Result<Bool, Error>) -> Void) {
         Auth.auth().signInAnonymously { authResult, error in
             if let error = error {
-                print("Auth Error.", error)
                 completion(.failure(error))
             }
             guard let user = authResult?.user else {

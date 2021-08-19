@@ -46,7 +46,7 @@ struct FirstScreenView: View {
                                 print("Login success.")
                                 isTapActived.toggle()
                             case .failure:
-                                print("Login failure.")
+                                print("Login failure.", result)
                             }
                         }
                     } else {
