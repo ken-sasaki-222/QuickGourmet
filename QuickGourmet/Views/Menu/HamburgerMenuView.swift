@@ -117,10 +117,9 @@ struct HamburgerMenuView: View {
                         userAuthVM.canLogout { result in
                             switch result {
                             case .success:
-                                print("Logout is possible.")
                                 isShowsAlert.toggle()
                             case .failure:
-                                print("Logout impossible", result)
+                                print("Logout failure", result)
                             }
                         }
                     }) {
@@ -130,7 +129,8 @@ struct HamburgerMenuView: View {
                     }
                     .alert(isPresented: $isShowsAlert) {
                         Alert(title: Text("確認"), message: Text("ログアウトしますか？"), primaryButton: .destructive(Text("いいえ")), secondaryButton: .default(Text("はい"), action: {
-                            print("画面閉じる")
+                            print("Logout success.")
+                            UIApplication.shared.windows.first { $0.isKeyWindow }?.rootViewController?.dismiss(animated: true, completion: nil)
                         }))
                     }
                 }
