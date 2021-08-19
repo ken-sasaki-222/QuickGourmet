@@ -22,4 +22,13 @@ class UserRepository: UserRepositoryInterface {
             completion(.success(isAnonymous))
         }
     }
+
+    func logout(_ completion: @escaping (Result<Bool, Error>) -> Void) {
+        do {
+            try Auth.auth().signOut()
+            completion(.success(true))
+        } catch {
+            completion(.failure(error))
+        }
+    }
 }

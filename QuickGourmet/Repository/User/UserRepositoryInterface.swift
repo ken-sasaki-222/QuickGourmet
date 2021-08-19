@@ -9,4 +9,5 @@ import Foundation
 
 protocol UserRepositoryInterface {
     func userAuth(_ completion: @escaping (Result<Bool, Error>) -> Void)
+    func logout(_ completion: @escaping (Result<Bool, Error>) -> Void)
 }
