@@ -32,19 +32,24 @@ struct FirstScreenView: View {
                     .padding(.top, 60)
                     .padding(.bottom, 30)
                     .padding(.horizontal, 10)
-                TextField("匿名ログイン（2文字以上）", text: $anonymity)
+                TextField("匿名ログイン", text: $anonymity)
                     .frame(width: 300, height: 44, alignment: .center)
                     .background(Color.white)
                     .cornerRadius(6)
                     .padding(.bottom, 30)
                     .padding(.horizontal, 10)
                 LoginButtonView {
-                    if userAuthVM.isValidateAnonymity(anonymity: anonymity) {
-                        print("Login Complete.")
-                        print("ユーザー名:", anonymity)
-                        // isTapActived.toggle()
+                    if anonymity.count >= 1 {
+                        userAuthVM.canLogin { result in
+                            switch result {
+                            case .success:
+                                print("Login success.")
+                                isTapActived.toggle()
+                            case .failure:
+                                print("Login failure.")
+                            }
+                        }
                     } else {
-                        print("Login Failed.")
                         isShowsAlert.toggle()
                     }
                 }

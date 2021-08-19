@@ -8,12 +8,18 @@
 import Foundation
 import SwiftUI
 
-class UserAuthViewModel {
-    func isValidateAnonymity(anonymity: String) -> Bool {
-        if anonymity.count >= 2 {
-            return true
-        } else {
-            return false
+class UserAuthViewModel: ObservableObject {
+    @Published var userRepository = UserRepository()
+    @Published var authResult: Result<Bool, Error>?
+
+    func canLogin(_ callback: @escaping (Result<Bool, Error>) -> Void) {
+        userRepository.userAuth { result in
+            self.authResult = result
+
+            guard let authResult = self.authResult else {
+                return
+            }
+            callback(authResult)
         }
     }
 }
