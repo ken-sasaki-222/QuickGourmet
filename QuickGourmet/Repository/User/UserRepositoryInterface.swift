@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+protocol UserRepositoryInterface {
+    func userAuth(_ completion: @escaping (Result<Bool, Error>) -> Void)
+}
