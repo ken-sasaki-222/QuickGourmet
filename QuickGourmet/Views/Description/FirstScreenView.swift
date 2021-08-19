@@ -10,6 +10,7 @@ import SwiftUI
 struct FirstScreenView: View {
     @State private var isTapActived = false
     @State private var isShowsAlert = false
+    @State private var isShowsIndicator = false
     @State private var anonymity = ""
     private let userAuthVM = UserAuthViewModel()
 
@@ -44,7 +45,11 @@ struct FirstScreenView: View {
                             switch result {
                             case .success:
                                 print("Login success.")
-                                isTapActived.toggle()
+                                isShowsIndicator.toggle()
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                                    isShowsIndicator.toggle()
+                                    isTapActived.toggle()
+                                }
                             case .failure:
                                 print("Login failure.", result)
                             }
@@ -68,6 +73,14 @@ struct FirstScreenView: View {
                         .padding(.bottom, 30)
                         .padding(.horizontal, 10)
                 }
+            }
+            if isShowsIndicator {
+                ZStack {
+                    Color.black.opacity(0.5)
+                        .edgesIgnoringSafeArea(.all)
+                    ActivityIndicator()
+                }
+                .animation(.linear)
             }
         }
     }
