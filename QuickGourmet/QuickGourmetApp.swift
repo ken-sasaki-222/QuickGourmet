@@ -7,6 +7,7 @@
 
 import CoreLocation
 import Firebase
+import FirebaseAuth
 import NendAd
 import SwiftUI
 
@@ -17,7 +18,11 @@ struct QuickGourmetApp: App {
 
     var body: some Scene {
         WindowGroup {
-            LoginView()
+            if Auth.auth().currentUser?.uid == nil {
+                LoginView()
+            } else {
+                TabBarView()
+            }
         }
     }
 }
