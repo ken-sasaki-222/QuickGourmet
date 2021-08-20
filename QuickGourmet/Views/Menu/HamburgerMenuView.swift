@@ -124,15 +124,15 @@ struct HamburgerMenuView: View {
                         }))
                     }
                 }
-                Section(header: Text("バージョン")) {
-                    HStack {
-                        Image("version_icon")
-                            .resizable()
-                            .frame(width: 20, height: 20)
-                            .padding(5)
-                        Text("バージョン 1.0")
-                            .font(.caption)
-                    }
+            }
+            Section(header: Text("バージョン")) {
+                HStack {
+                    Image("version_icon")
+                        .resizable()
+                        .frame(width: 20, height: 20)
+                        .padding(5)
+                    Text("バージョン 1.0")
+                        .font(.caption)
                 }
             }
         }
