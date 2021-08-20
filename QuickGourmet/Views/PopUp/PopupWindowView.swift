@@ -30,7 +30,7 @@ struct PopupWindowView: View {
                             }
                         }
                         .frame(maxWidth: 200)
-                        SearchButton(text: "検索") {
+                        SearchButtonView(text: "検索") {
                             withAnimation(.linear(duration: 0.3)) {
                                 searchAction(selection)
                                 show = false

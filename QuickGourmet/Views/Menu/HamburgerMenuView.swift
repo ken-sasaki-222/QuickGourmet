@@ -11,7 +11,9 @@ import SwiftUI
 
 struct HamburgerMenuView: View {
     @State private var isShowMailView = false
-    var menuVM = HamburgerMenuViewModel()
+    @State private var isShowsAlert = false
+    private let menuVM = HamburgerMenuViewModel()
+    private let userAuthVM = UserAuthViewModel()
 
     var body: some View {
         Form {
@@ -92,6 +94,34 @@ struct HamburgerMenuView: View {
                     }) {
                         Text("Qiita")
                             .font(.caption)
+                    }
+                }
+            }
+            Section(header: Text("ログアウト")) {
+                HStack {
+                    Image("logout_icon")
+                        .resizable()
+                        .frame(width: 20, height: 20)
+                        .padding(5)
+                    Button(action: {
+                        isShowsAlert.toggle()
+                    }) {
+                        Text("アカウント削除")
+                            .font(.caption)
+                            .foregroundColor((.red))
+                    }
+                    .alert(isPresented: $isShowsAlert) {
+                        Alert(title: Text("確認"), message: Text("アカウントを削除しますか？"), primaryButton: .default(Text("いいえ")), secondaryButton: .default(Text("はい"), action: {
+                            userAuthVM.canLogout { result in
+                                switch result {
+                                case .success:
+                                    print("Logout success.")
+                                    UIApplication.shared.windows.first { $0.isKeyWindow }?.rootViewController?.dismiss(animated: true, completion: nil)
+                                case .failure:
+                                    print("Logout failure", result)
+                                }
+                            }
+                        }))
                     }
                 }
             }

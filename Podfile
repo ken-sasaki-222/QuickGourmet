@@ -9,4 +9,6 @@ target 'QuickGourmet' do
   pod 'SwiftFormat/CLI', :configurations => ['Debug']
   pod 'SwiftLint'
   pod 'NendSDK_iOS'
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Auth'
 end
