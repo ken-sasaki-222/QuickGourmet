@@ -24,11 +24,15 @@ class MockUserRepository: UserRepositoryInterface {
     }
 
     func logout(_ completion: @escaping (Result<Bool, Error>) -> Void) {
-        do {
-            try Auth.auth().signOut()
-            completion(.success(true))
-        } catch {
-            completion(.failure(error))
+        Auth.auth().currentUser?.delete { [weak self] error in
+            guard self != nil else {
+                return
+            }
+            if let error = error {
+                completion(.failure(error))
+            } else {
+                completion(.success(true))
+            }
         }
     }
 }

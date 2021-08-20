@@ -104,23 +104,23 @@ struct HamburgerMenuView: View {
                         .frame(width: 20, height: 20)
                         .padding(5)
                     Button(action: {
-                        userAuthVM.canLogout { result in
-                            switch result {
-                            case .success:
-                                isShowsAlert.toggle()
-                            case .failure:
-                                print("Logout failure", result)
-                            }
-                        }
+                        isShowsAlert.toggle()
                     }) {
-                        Text("ログアウト")
+                        Text("アカウント削除")
                             .font(.caption)
                             .foregroundColor((.red))
                     }
                     .alert(isPresented: $isShowsAlert) {
-                        Alert(title: Text("確認"), message: Text("ログアウトしますか？"), primaryButton: .destructive(Text("いいえ")), secondaryButton: .default(Text("はい"), action: {
-                            print("Logout success.")
-                            UIApplication.shared.windows.first { $0.isKeyWindow }?.rootViewController?.dismiss(animated: true, completion: nil)
+                        Alert(title: Text("確認"), message: Text("アカウントを削除しますか？"), primaryButton: .default(Text("いいえ")), secondaryButton: .default(Text("はい"), action: {
+                            userAuthVM.canLogout { result in
+                                switch result {
+                                case .success:
+                                    print("Logout success.")
+                                    UIApplication.shared.windows.first { $0.isKeyWindow }?.rootViewController?.dismiss(animated: true, completion: nil)
+                                case .failure:
+                                    print("Logout failure", result)
+                                }
+                            }
                         }))
                     }
                 }
