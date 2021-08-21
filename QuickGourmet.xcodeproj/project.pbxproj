@@ -23,6 +23,7 @@
 		D8711D3526A43377005EA395 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8711D3426A43377005EA395 /* SearchViewModel.swift */; };
 		D871222B26B9892B000D094A /* Color+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D871222A26B9892B000D094A /* Color+Colors.swift */; };
 		D871222E26B98DAB000D094A /* UIColor+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D871222D26B98DAB000D094A /* UIColor+Colors.swift */; };
+		D872240226D125300017D405 /* FavoriteListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D872240126D125300017D405 /* FavoriteListView.swift */; };
 		D87B8C3D26B045EF00BB945C /* HamburgerMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87B8C3C26B045EF00BB945C /* HamburgerMenuViewModel.swift */; };
 		D87C9C392696FDB70051FA77 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87C9C382696FDB70051FA77 /* TabBarView.swift */; };
 		D87C9C3B269701A30051FA77 /* HamburgerMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87C9C3A269701A30051FA77 /* HamburgerMenuView.swift */; };
@@ -74,6 +75,7 @@
 		D8711D3426A43377005EA395 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		D871222A26B9892B000D094A /* Color+Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Colors.swift"; sourceTree = "<group>"; };
 		D871222D26B98DAB000D094A /* UIColor+Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Colors.swift"; sourceTree = "<group>"; };
+		D872240126D125300017D405 /* FavoriteListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteListView.swift; sourceTree = "<group>"; };
 		D87B8C3C26B045EF00BB945C /* HamburgerMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamburgerMenuViewModel.swift; sourceTree = "<group>"; };
 		D87C9C382696FDB70051FA77 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		D87C9C3A269701A30051FA77 /* HamburgerMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamburgerMenuView.swift; sourceTree = "<group>"; };
@@ -254,6 +256,14 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		D872240026D125010017D405 /* Favorite */ = {
+			isa = PBXGroup;
+			children = (
+				D872240126D125300017D405 /* FavoriteListView.swift */,
+			);
+			path = Favorite;
+			sourceTree = "<group>";
+		};
 		D87B8C3B26B045D900BB945C /* Menu */ = {
 			isa = PBXGroup;
 			children = (
@@ -418,6 +428,7 @@
 		D8ED9EAA269E791800AFE337 /* ShopList */ = {
 			isa = PBXGroup;
 			children = (
+				D872240026D125010017D405 /* Favorite */,
 				D8ED9EB7269E79A500AFE337 /* SearchView.swift */,
 				D8ED9EB5269E799000AFE337 /* SearchListView.swift */,
 				D8ED9EB3269E798700AFE337 /* ShopRowView.swift */,
@@ -634,6 +645,7 @@
 				D8ED9EB4269E798700AFE337 /* ShopRowView.swift in Sources */,
 				D8C58FC126B8D2590020AC57 /* ArrowImage.swift in Sources */,
 				D8E300A526CE895E0032B666 /* ActivityIndicatorView.swift in Sources */,
+				D872240226D125300017D405 /* FavoriteListView.swift in Sources */,
 				D8307BC426BC045B00DAB08C /* PopupWindowView.swift in Sources */,
 				D833880F26CC9F6A003446B1 /* UIApplication+Keyboard.swift in Sources */,
 				D8711D3526A43377005EA395 /* SearchViewModel.swift in Sources */,
