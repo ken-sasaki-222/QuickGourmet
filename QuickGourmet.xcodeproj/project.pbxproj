@@ -11,6 +11,9 @@
 		D81CB62D26A9405F004807E1 /* SearchButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81CB62C26A9405F004807E1 /* SearchButtonView.swift */; };
 		D81E428226D21FD100DB5AD6 /* FavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81E428126D21FD100DB5AD6 /* FavoriteButton.swift */; };
 		D81E428526D23F7800DB5AD6 /* FavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81E428426D23F7800DB5AD6 /* FavoriteViewModel.swift */; };
+		D81E428826D255A000DB5AD6 /* FavoriteRepositoryInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81E428726D255A000DB5AD6 /* FavoriteRepositoryInterface.swift */; };
+		D81E428A26D255FA00DB5AD6 /* FavoriteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81E428926D255FA00DB5AD6 /* FavoriteRepository.swift */; };
+		D81E428C26D2560D00DB5AD6 /* MockFavoriteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81E428B26D2560D00DB5AD6 /* MockFavoriteRepository.swift */; };
 		D829713226B26AA9005C4454 /* ApiKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D829713126B26AA9005C4454 /* ApiKey.swift */; };
 		D8307BC426BC045B00DAB08C /* PopupWindowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8307BC326BC045B00DAB08C /* PopupWindowView.swift */; };
 		D833880F26CC9F6A003446B1 /* UIApplication+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D833880E26CC9F6A003446B1 /* UIApplication+Keyboard.swift */; };
@@ -65,6 +68,9 @@
 		D81CB62C26A9405F004807E1 /* SearchButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchButtonView.swift; sourceTree = "<group>"; };
 		D81E428126D21FD100DB5AD6 /* FavoriteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteButton.swift; sourceTree = "<group>"; };
 		D81E428426D23F7800DB5AD6 /* FavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModel.swift; sourceTree = "<group>"; };
+		D81E428726D255A000DB5AD6 /* FavoriteRepositoryInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRepositoryInterface.swift; sourceTree = "<group>"; };
+		D81E428926D255FA00DB5AD6 /* FavoriteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRepository.swift; sourceTree = "<group>"; };
+		D81E428B26D2560D00DB5AD6 /* MockFavoriteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFavoriteRepository.swift; sourceTree = "<group>"; };
 		D829713126B26AA9005C4454 /* ApiKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiKey.swift; sourceTree = "<group>"; };
 		D8307BC326BC045B00DAB08C /* PopupWindowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupWindowView.swift; sourceTree = "<group>"; };
 		D833880E26CC9F6A003446B1 /* UIApplication+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Keyboard.swift"; sourceTree = "<group>"; };
@@ -165,6 +171,16 @@
 			path = Favorite;
 			sourceTree = "<group>";
 		};
+		D81E428626D2556500DB5AD6 /* Favorite */ = {
+			isa = PBXGroup;
+			children = (
+				D81E428726D255A000DB5AD6 /* FavoriteRepositoryInterface.swift */,
+				D81E428926D255FA00DB5AD6 /* FavoriteRepository.swift */,
+				D81E428B26D2560D00DB5AD6 /* MockFavoriteRepository.swift */,
+			);
+			path = Favorite;
+			sourceTree = "<group>";
+		};
 		D82895C426A05FC50030FACB /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -188,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				D834146926CCFE5B002D7ED0 /* User */,
+				D81E428626D2556500DB5AD6 /* Favorite */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -666,10 +683,12 @@
 				D87B8C3D26B045EF00BB945C /* HamburgerMenuViewModel.swift in Sources */,
 				D889E16326AF09EA00F18681 /* LogoImage.swift in Sources */,
 				D8A8E5BB269DC047009F9C0C /* ShopSearchFetcher.swift in Sources */,
+				D81E428A26D255FA00DB5AD6 /* FavoriteRepository.swift in Sources */,
 				D8F1495D26C7A12700F2C159 /* NendBannerViewController.swift in Sources */,
 				D8DB885226B962DA0057F807 /* UserDefaultsDataStore.swift in Sources */,
 				D8A8E5B4269DAEB3009F9C0C /* ShopDetailView.swift in Sources */,
 				D889303B26B914C2008C0F60 /* QuickSearchViewModel.swift in Sources */,
+				D81E428C26D2560D00DB5AD6 /* MockFavoriteRepository.swift in Sources */,
 				D83D600E26AAB387002A6CEC /* MapView.swift in Sources */,
 				D8ED9EB6269E799000AFE337 /* SearchListView.swift in Sources */,
 				D81E428526D23F7800DB5AD6 /* FavoriteViewModel.swift in Sources */,
@@ -677,6 +696,7 @@
 				D8BD193026B8282B00E0BBCB /* QuickSearchRowView.swift in Sources */,
 				D8ADBBFA26C400E10003002F /* NendInterstitialView.swift in Sources */,
 				D833881126CCA4B5003446B1 /* LoginButtonView.swift in Sources */,
+				D81E428826D255A000DB5AD6 /* FavoriteRepositoryInterface.swift in Sources */,
 				D81CB62D26A9405F004807E1 /* SearchButtonView.swift in Sources */,
 				D83D600926AAA0E8002A6CEC /* ShopDetailButtonView.swift in Sources */,
 				D871222B26B9892B000D094A /* Color+Colors.swift in Sources */,
