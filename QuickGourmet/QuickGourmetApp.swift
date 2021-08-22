@@ -39,6 +39,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         NADInterstitial.sharedInstance().loadAd(withSpotID: NEND_INTERSTITIAL_BANNER_SPOTID, apiKey: NEND_INTERSTITIAL_BANNER_AD_APIKEY)
         // Firebase共有インスタンスの作成
         FirebaseApp.configure()
+        // Cloud Firestoreの初期化
+        _ = Firestore.firestore()
 
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
