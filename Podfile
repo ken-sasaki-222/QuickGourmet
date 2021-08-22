@@ -11,4 +11,5 @@ target 'QuickGourmet' do
   pod 'NendSDK_iOS'
   pod 'Firebase/Analytics'
   pod 'Firebase/Auth'
+  pod 'FirebaseFirestore', :git => 'https://github.com/invertase/firestore-ios-sdk-frameworks.git', :tag => '7.11.0'
 end

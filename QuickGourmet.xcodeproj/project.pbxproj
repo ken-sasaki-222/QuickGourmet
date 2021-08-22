@@ -499,7 +499,7 @@
 				D8BA1181269661460007DCE5 /* Frameworks */,
 				D8BA1182269661460007DCE5 /* Resources */,
 				4F5B5AAB5FC33EF3353120F3 /* [CP] Copy Pods Resources */,
-				B06D00E7B59D0B605E990C81 /* [CP] Embed Pods Frameworks */,
+				58A1D2FF1B9C10EA3007A3FE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -595,7 +595,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-QuickGourmet/Pods-QuickGourmet-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B06D00E7B59D0B605E990C81 /* [CP] Embed Pods Frameworks */ = {
+		58A1D2FF1B9C10EA3007A3FE /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
