@@ -30,6 +30,7 @@ struct ShopDetailInfoView: View {
                             .foregroundColor(.gray)
                             .padding(.top, 1)
                     }
+                    FavoriteButton()
                 }
                 .padding(.init(top: 20, leading: 30, bottom: 0, trailing: 30))
                 HStack {

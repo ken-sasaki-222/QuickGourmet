@@ -9,7 +9,11 @@ import SwiftUI
 
 struct FavoriteButton: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Image(systemName: "star")
+            .resizable()
+            .frame(width: 25, height: 25)
+            .foregroundColor(.gray)
+            .padding(.leading, 30)
     }
 }
 
