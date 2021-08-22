@@ -8,17 +8,23 @@
 import SwiftUI
 
 struct FavoriteButton: View {
+    var action: () -> Void
+
     var body: some View {
-        Image(systemName: "star")
-            .resizable()
-            .frame(width: 25, height: 25)
-            .foregroundColor(.gray)
-            .padding(.leading, 30)
+        Button(action: {
+            action()
+        }) {
+            Image(systemName: "star")
+                .resizable()
+                .frame(width: 25, height: 25)
+                .foregroundColor(.gray)
+                .padding(.leading, 30)
+        }
     }
 }
 
 struct FavoriteButton_Previews: PreviewProvider {
     static var previews: some View {
-        FavoriteButton()
+        FavoriteButton(action: {})
     }
 }
