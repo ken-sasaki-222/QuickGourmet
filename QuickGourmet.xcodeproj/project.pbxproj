@@ -10,6 +10,7 @@
 		30289446D1E3B0797CB28608 /* Pods_QuickGourmet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1B982FE3AEA28CD50ABBD5C /* Pods_QuickGourmet.framework */; };
 		D81CB62D26A9405F004807E1 /* SearchButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81CB62C26A9405F004807E1 /* SearchButtonView.swift */; };
 		D81E428226D21FD100DB5AD6 /* FavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81E428126D21FD100DB5AD6 /* FavoriteButton.swift */; };
+		D81E428526D23F7800DB5AD6 /* FavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81E428426D23F7800DB5AD6 /* FavoriteViewModel.swift */; };
 		D829713226B26AA9005C4454 /* ApiKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D829713126B26AA9005C4454 /* ApiKey.swift */; };
 		D8307BC426BC045B00DAB08C /* PopupWindowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8307BC326BC045B00DAB08C /* PopupWindowView.swift */; };
 		D833880F26CC9F6A003446B1 /* UIApplication+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D833880E26CC9F6A003446B1 /* UIApplication+Keyboard.swift */; };
@@ -63,6 +64,7 @@
 		6DF1E1FFD30D2807F5F3C09B /* Pods-QuickGourmet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuickGourmet.release.xcconfig"; path = "Target Support Files/Pods-QuickGourmet/Pods-QuickGourmet.release.xcconfig"; sourceTree = "<group>"; };
 		D81CB62C26A9405F004807E1 /* SearchButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchButtonView.swift; sourceTree = "<group>"; };
 		D81E428126D21FD100DB5AD6 /* FavoriteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteButton.swift; sourceTree = "<group>"; };
+		D81E428426D23F7800DB5AD6 /* FavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModel.swift; sourceTree = "<group>"; };
 		D829713126B26AA9005C4454 /* ApiKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiKey.swift; sourceTree = "<group>"; };
 		D8307BC326BC045B00DAB08C /* PopupWindowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupWindowView.swift; sourceTree = "<group>"; };
 		D833880E26CC9F6A003446B1 /* UIApplication+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Keyboard.swift"; sourceTree = "<group>"; };
@@ -155,9 +157,18 @@
 			path = Button;
 			sourceTree = "<group>";
 		};
+		D81E428326D23F6000DB5AD6 /* Favorite */ = {
+			isa = PBXGroup;
+			children = (
+				D81E428426D23F7800DB5AD6 /* FavoriteViewModel.swift */,
+			);
+			path = Favorite;
+			sourceTree = "<group>";
+		};
 		D82895C426A05FC50030FACB /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				D81E428326D23F6000DB5AD6 /* Favorite */,
 				D864626D26CBEACE0021092E /* Auth */,
 				D88426F426AA740C0073B3F2 /* Search */,
 				D87B8C3B26B045D900BB945C /* Menu */,
@@ -661,6 +672,7 @@
 				D889303B26B914C2008C0F60 /* QuickSearchViewModel.swift in Sources */,
 				D83D600E26AAB387002A6CEC /* MapView.swift in Sources */,
 				D8ED9EB6269E799000AFE337 /* SearchListView.swift in Sources */,
+				D81E428526D23F7800DB5AD6 /* FavoriteViewModel.swift in Sources */,
 				D864626F26CBEAE90021092E /* UserAuthViewModel.swift in Sources */,
 				D8BD193026B8282B00E0BBCB /* QuickSearchRowView.swift in Sources */,
 				D8ADBBFA26C400E10003002F /* NendInterstitialView.swift in Sources */,
