@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+protocol FavoriteRepositoryInterface {
+    func saveShopInfo(favoriteShopInfo: FavoriteShopInfo)
+    func getShopInfo()
+    func deleteShopInfo()
+}

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ShopDetailInfoView: View {
+    private let favoriteVM = FavoriteViewModel()
     var name: String
     var address: String
     var mobileAccess: String
@@ -31,7 +32,10 @@ struct ShopDetailInfoView: View {
                             .padding(.top, 1)
                     }
                     FavoriteButton(action: {
-                        
+                        let favoriteShopInfo = FavoriteShopInfo(name: name, address: address, mobileAccess: mobileAccess, average: average, open: open, genreName: genreName, logoImage: logoImage)
+                        print("kenken", favoriteShopInfo)
+
+                        favoriteVM.communicateRepository(favoriteShopInfo: favoriteShopInfo)
                     })
                 }
                 .padding(.init(top: 20, leading: 30, bottom: 0, trailing: 30))
