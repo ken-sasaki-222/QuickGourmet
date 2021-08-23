@@ -18,10 +18,10 @@ struct TabBarView: View {
                     Text("クイック検索")
                 }
                 .tag(0)
-            SearchView()
+            FavoriteListView()
                 .tabItem {
-                    Image(systemName: "magnifyingglass")
-                    Text("検索")
+                    Image(systemName: "star")
+                    Text("お気に入り店舗")
                 }
                 .tag(1)
         }
