@@ -9,6 +9,6 @@ import Foundation
 
 protocol FavoriteRepositoryInterface {
     func saveShopInfo(favoriteShopInfo: FavoriteShopInfo)
-    func getShopInfo()
+    func getShopInfo(_ completion: @escaping ([FavoriteShopInfo]) -> Void)
     func deleteShopInfo()
 }

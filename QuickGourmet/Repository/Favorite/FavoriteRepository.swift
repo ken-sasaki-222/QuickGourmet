@@ -11,6 +11,7 @@ import Foundation
 
 class FavoriteRepository: FavoriteRepositoryInterface {
     private let db = Firestore.firestore()
+    private var favoriteShopInfoArray = [FavoriteShopInfo]()
 
     func saveShopInfo(favoriteShopInfo: FavoriteShopInfo) {
         guard let uid = Auth.auth().currentUser?.uid else {
@@ -35,7 +36,52 @@ class FavoriteRepository: FavoriteRepositoryInterface {
             }
     }
 
-    func getShopInfo() {}
+    func getShopInfo(_ completion: @escaping ([FavoriteShopInfo]) -> Void) {
+        guard let uid = Auth.auth().currentUser?.uid else {
+            return
+        }
+
+        db.collection("shopInfo").document(uid).collection("favorite").getDocuments { snapshot, error in
+            if let error = error {
+                print("Error getting documents: \(error)")
+                return
+            }
+
+            self.favoriteShopInfoArray = []
+            print("querySnapshot", snapshot?.documents as Any)
+
+            if let snapshotDocuments = snapshot?.documents {
+                for document in snapshotDocuments {
+                    let documentData = document.data()
+
+                    guard let documentName = documentData["name"] as? String,
+                          let documentAddress = documentData["address"] as? String,
+                          let documentMobileAccess = documentData["mobileAccess"] as? String,
+                          let documentAverage = documentData["average"] as? String,
+                          let documentOpen = documentData["open"] as? String,
+                          let documentGenreName = documentData["genreName"] as? String,
+                          let documentLogoImage = documentData["logoImage"] as? String
+                    else {
+                        return
+                    }
+
+                    let favoriteShopInfo = FavoriteShopInfo(
+                        name: documentName,
+                        address: documentAddress,
+                        mobileAccess: documentMobileAccess,
+                        average: documentAverage,
+                        open: documentOpen,
+                        genreName: documentGenreName,
+                        logoImage: documentLogoImage
+                    )
+                    self.favoriteShopInfoArray.append(favoriteShopInfo)
+                    print("kenken", self.favoriteShopInfoArray)
+
+                    completion(self.favoriteShopInfoArray)
+                }
+            }
+        }
+    }
 
     func deleteShopInfo() {}
 }
