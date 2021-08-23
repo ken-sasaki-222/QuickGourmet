@@ -6,3 +6,12 @@
 //
 
 import Foundation
+
+class FavoriteViewModel {
+    private let favoriteRepository = FavoriteRepository()
+    var favoriteShopInfo: FavoriteShopInfo?
+
+    func communicateRepository(favoriteShopInfo: FavoriteShopInfo) {
+        favoriteRepository.saveShopInfo(favoriteShopInfo: favoriteShopInfo)
+    }
+}
