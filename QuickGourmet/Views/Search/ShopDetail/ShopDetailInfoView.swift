@@ -32,9 +32,15 @@ struct ShopDetailInfoView: View {
                             .padding(.top, 1)
                     }
                     FavoriteButton(action: {
-                        let favoriteShopInfo = FavoriteShopInfo(name: name, address: address, mobileAccess: mobileAccess, average: average, open: open, genreName: genreName, logoImage: logoImage)
-                        print("kenken", favoriteShopInfo)
-
+                        let favoriteShopInfo = FavoriteShopInfo(
+                            name: name,
+                            address: address,
+                            mobileAccess: mobileAccess,
+                            average: average,
+                            open: open,
+                            genreName: genreName,
+                            logoImage: logoImage
+                        )
                         favoriteVM.communicateRepository(favoriteShopInfo: favoriteShopInfo)
                     })
                 }
