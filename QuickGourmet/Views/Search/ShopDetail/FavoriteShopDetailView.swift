@@ -8,13 +8,40 @@
 import SwiftUI
 
 struct FavoriteShopDetailView: View {
+    private let favoriteVM = FavoriteViewModel()
+    var favoriteShopData: FavoriteShop
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ScrollView {
+            VStack {
+                ZStack {
+                    MapView(latitude: favoriteShopData.latitude, longitude: favoriteShopData.longitude)
+                    LogoImage(urlString: favoriteShopData.logoImage)
+                        .clipShape(Circle())
+                        .overlay(Circle().stroke(Color.white, lineWidth: 4))
+                        .shadow(radius: 7)
+                        .offset(x: -130, y: 155)
+                }
+                .padding(.bottom, 40)
+                ShopDetailInfoView(name: favoriteShopData.name,
+                                   address: favoriteShopData.address,
+                                   mobileAccess: favoriteShopData.mobileAccess,
+                                   average: favoriteShopData.average,
+                                   open: favoriteShopData.open,
+                                   genreName: favoriteShopData.genreName,
+                                   logoImage: favoriteShopData.logoImage,
+                                   photo: favoriteShopData.photo,
+                                   latitude: favoriteShopData.latitude,
+                                   longitude: favoriteShopData.longitude,
+                                   urlString: favoriteShopData.urlString)
+                ShopDetailButtonView(shopUrlString: favoriteShopData.urlString)
+            }
+        }
     }
 }
 
 struct FavoriteShopDetail_Previews: PreviewProvider {
     static var previews: some View {
-        FavoriteShopDetailView()
+        FavoriteShopDetailView(favoriteShopData: mockFavoriteShopesData[0])
     }
 }
