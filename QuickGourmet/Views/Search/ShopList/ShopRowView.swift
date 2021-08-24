@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ShopRowView: View {
     @State var image: UIImage?
-
     var shopData: Shop
 
     var body: some View {
