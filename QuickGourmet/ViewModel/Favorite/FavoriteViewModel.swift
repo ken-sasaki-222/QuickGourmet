@@ -7,11 +7,19 @@
 
 import Foundation
 
-class FavoriteViewModel {
+class FavoriteViewModel: ObservableObject {
+    @Published var favoriteShopData = [FavoriteShop]()
     private let favoriteRepository = FavoriteRepository()
-    var favoriteShopInfo: FavoriteShopInfo?
+    // var favoriteShopInfo: FavoriteShopInfo?
 
-    func communicateRepository(favoriteShopInfo: FavoriteShopInfo) {
-        favoriteRepository.saveShopInfo(favoriteShopInfo: favoriteShopInfo)
+    func saveFavoriteShop(favoriteShop: FavoriteShop) {
+        favoriteRepository.saveFavoriteShopData(favoriteShop: favoriteShop)
+    }
+
+    func getFavoriteShop() {
+        favoriteRepository.getFavoriteShopData { shopes in
+            self.favoriteShopData = shopes
+            print("kenken", self.favoriteShopData)
+        }
     }
 }
