@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct FavoriteShop {
+struct FavoriteShop: Identifiable {
+    var id = UUID()
     var name: String
     var address: String
     var mobileAccess: String
