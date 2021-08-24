@@ -8,9 +8,8 @@
 import Foundation
 
 class FavoriteViewModel: ObservableObject {
-    @Published var favoriteShopData = [FavoriteShop]()
-    private let favoriteRepository = FavoriteRepository()
-    // var favoriteShopInfo: FavoriteShopInfo?
+    @Published var favoriteShopData: [FavoriteShop] = []
+    let favoriteRepository = FavoriteRepository()
 
     func saveFavoriteShop(favoriteShop: FavoriteShop) {
         favoriteRepository.saveFavoriteShopData(favoriteShop: favoriteShop)

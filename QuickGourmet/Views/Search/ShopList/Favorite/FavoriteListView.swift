@@ -8,8 +8,21 @@
 import SwiftUI
 
 struct FavoriteListView: View {
+    @ObservedObject var favoriteVM = FavoriteViewModel()
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            List(favoriteVM.favoriteShopData) { shopData in
+                NavigationLink(destination: FavoriteShopDetailView(favoriteShopData: shopData)) {
+                    FavoriteShopRowView(favoriteShopData: shopData)
+                }
+            }
+            .navigationTitle("お気に入り店舗一覧")
+            .navigationBarTitleDisplayMode(.inline)
+        }
+        .onAppear {
+            favoriteVM.getFavoriteShop()
+        }
     }
 }
 

@@ -8,13 +8,38 @@
 import SwiftUI
 
 struct FavoriteShopRowView: View {
+    var favoriteShopData: FavoriteShop
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            URLImage(urlString: favoriteShopData.photo)
+                .aspectRatio(contentMode: .fit)
+            HStack {
+                VStack(alignment: .leading) {
+                    Text(favoriteShopData.name)
+                        .font(.title3)
+                        .fontWeight(.medium)
+                        .fixedSize(horizontal: false, vertical: true)
+                        .padding(.top, 4.0)
+                    Text(favoriteShopData.mobileAccess)
+                        .font(.headline)
+                        .padding(.top, 4.0)
+                        .padding(.bottom, 4.0)
+                    Text(favoriteShopData.average)
+                        .foregroundColor(.gray)
+                        .font(.footnote)
+                        .fixedSize(horizontal: false, vertical: true)
+                        .lineLimit(1)
+                        .padding(.bottom, 8.0)
+                }
+                Spacer()
+            }
+        }
     }
 }
 
 struct FavoriteShopRowView_Previews: PreviewProvider {
     static var previews: some View {
-        FavoriteShopRowView()
+        FavoriteShopRowView(favoriteShopData: mockFavoriteShopesData[0])
     }
 }
