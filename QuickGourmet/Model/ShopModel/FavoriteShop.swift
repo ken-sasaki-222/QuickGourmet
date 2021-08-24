@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct FavoriteShopInfo {
+struct FavoriteShop {
     var name: String
     var address: String
     var mobileAccess: String

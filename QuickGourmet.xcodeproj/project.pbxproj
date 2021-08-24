@@ -14,7 +14,7 @@
 		D81E428826D255A000DB5AD6 /* FavoriteRepositoryInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81E428726D255A000DB5AD6 /* FavoriteRepositoryInterface.swift */; };
 		D81E428A26D255FA00DB5AD6 /* FavoriteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81E428926D255FA00DB5AD6 /* FavoriteRepository.swift */; };
 		D81E428C26D2560D00DB5AD6 /* MockFavoriteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81E428B26D2560D00DB5AD6 /* MockFavoriteRepository.swift */; };
-		D81E428E26D258C500DB5AD6 /* FavoriteShopInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81E428D26D258C500DB5AD6 /* FavoriteShopInfo.swift */; };
+		D81E428E26D258C500DB5AD6 /* FavoriteShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81E428D26D258C500DB5AD6 /* FavoriteShop.swift */; };
 		D829713226B26AA9005C4454 /* ApiKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D829713126B26AA9005C4454 /* ApiKey.swift */; };
 		D8307BC426BC045B00DAB08C /* PopupWindowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8307BC326BC045B00DAB08C /* PopupWindowView.swift */; };
 		D833880F26CC9F6A003446B1 /* UIApplication+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D833880E26CC9F6A003446B1 /* UIApplication+Keyboard.swift */; };
@@ -72,7 +72,7 @@
 		D81E428726D255A000DB5AD6 /* FavoriteRepositoryInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRepositoryInterface.swift; sourceTree = "<group>"; };
 		D81E428926D255FA00DB5AD6 /* FavoriteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRepository.swift; sourceTree = "<group>"; };
 		D81E428B26D2560D00DB5AD6 /* MockFavoriteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFavoriteRepository.swift; sourceTree = "<group>"; };
-		D81E428D26D258C500DB5AD6 /* FavoriteShopInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteShopInfo.swift; sourceTree = "<group>"; };
+		D81E428D26D258C500DB5AD6 /* FavoriteShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteShop.swift; sourceTree = "<group>"; };
 		D829713126B26AA9005C4454 /* ApiKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiKey.swift; sourceTree = "<group>"; };
 		D8307BC326BC045B00DAB08C /* PopupWindowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupWindowView.swift; sourceTree = "<group>"; };
 		D833880E26CC9F6A003446B1 /* UIApplication+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Keyboard.swift"; sourceTree = "<group>"; };
@@ -484,7 +484,7 @@
 			children = (
 				D8ED9E99269E78A100AFE337 /* ResponseGroup.swift */,
 				D855048C269D0F1B0053334A /* HotPepperResponseResponse.swift */,
-				D81E428D26D258C500DB5AD6 /* FavoriteShopInfo.swift */,
+				D81E428D26D258C500DB5AD6 /* FavoriteShop.swift */,
 			);
 			path = ShopModel;
 			sourceTree = "<group>";
@@ -678,7 +678,7 @@
 				D8A8E5BF269DEA66009F9C0C /* ImageDownloder.swift in Sources */,
 				D8ED9EB4269E798700AFE337 /* ShopRowView.swift in Sources */,
 				D8C58FC126B8D2590020AC57 /* ArrowImage.swift in Sources */,
-				D81E428E26D258C500DB5AD6 /* FavoriteShopInfo.swift in Sources */,
+				D81E428E26D258C500DB5AD6 /* FavoriteShop.swift in Sources */,
 				D8E300A526CE895E0032B666 /* ActivityIndicatorView.swift in Sources */,
 				D872240226D125300017D405 /* FavoriteListView.swift in Sources */,
 				D8307BC426BC045B00DAB08C /* PopupWindowView.swift in Sources */,

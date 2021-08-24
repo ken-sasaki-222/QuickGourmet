@@ -11,26 +11,26 @@ import Foundation
 
 class FavoriteRepository: FavoriteRepositoryInterface {
     private let db = Firestore.firestore()
-    private var favoriteShopInfoArray = [FavoriteShopInfo]()
+    private var favoriteShopes = [FavoriteShop]()
 
-    func saveShopInfo(favoriteShopInfo: FavoriteShopInfo) {
+    func saveFavoriteShopData(favoriteShop: FavoriteShop) {
         guard let uid = Auth.auth().currentUser?.uid else {
             return
         }
 
         db.collection("shopInfo").document(uid).collection("favorite")
             .addDocument(data: [
-                "name": favoriteShopInfo.name,
-                "address": favoriteShopInfo.address,
-                "mobileAccess": favoriteShopInfo.mobileAccess,
-                "average": favoriteShopInfo.average,
-                "open": favoriteShopInfo.open,
-                "genreName": favoriteShopInfo.genreName,
-                "logoImage": favoriteShopInfo.logoImage,
-                "photo": favoriteShopInfo.photo,
-                "latitude": favoriteShopInfo.latitude,
-                "longitude": favoriteShopInfo.longitude,
-                "urlString": favoriteShopInfo.urlString
+                "name": favoriteShop.name,
+                "address": favoriteShop.address,
+                "mobileAccess": favoriteShop.mobileAccess,
+                "average": favoriteShop.average,
+                "open": favoriteShop.open,
+                "genreName": favoriteShop.genreName,
+                "logoImage": favoriteShop.logoImage,
+                "photo": favoriteShop.photo,
+                "latitude": favoriteShop.latitude,
+                "longitude": favoriteShop.longitude,
+                "urlString": favoriteShop.urlString
             ]) { error in
                 if let error = error {
                     print("Error adding document:", error)
@@ -40,7 +40,7 @@ class FavoriteRepository: FavoriteRepositoryInterface {
             }
     }
 
-    func getShopInfo(_ completion: @escaping ([FavoriteShopInfo]) -> Void) {
+    func getFavoriteShopData(_ completion: @escaping ([FavoriteShop]) -> Void) {
         guard let uid = Auth.auth().currentUser?.uid else {
             return
         }
@@ -51,7 +51,7 @@ class FavoriteRepository: FavoriteRepositoryInterface {
                 return
             }
 
-            self.favoriteShopInfoArray = []
+            self.favoriteShopes = []
             print("querySnapshot", snapshot?.documents as Any)
 
             if let snapshotDocuments = snapshot?.documents {
@@ -73,7 +73,7 @@ class FavoriteRepository: FavoriteRepositoryInterface {
                         return
                     }
 
-                    let favoriteShopInfo = FavoriteShopInfo(
+                    let favoriteShop = FavoriteShop(
                         name: documentName,
                         address: documentAddress,
                         mobileAccess: documentMobileAccess,
@@ -86,12 +86,12 @@ class FavoriteRepository: FavoriteRepositoryInterface {
                         longitude: documentLongitude,
                         urlString: documentUrlString
                     )
-                    self.favoriteShopInfoArray.append(favoriteShopInfo)
-                    completion(self.favoriteShopInfoArray)
+                    self.favoriteShopes.append(favoriteShop)
+                    completion(self.favoriteShopes)
                 }
             }
         }
     }
 
-    func deleteShopInfo() {}
+    func deleteFavoriteShopData() {}
 }

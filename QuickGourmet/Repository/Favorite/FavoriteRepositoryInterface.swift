@@ -8,7 +8,7 @@
 import Foundation
 
 protocol FavoriteRepositoryInterface {
-    func saveShopInfo(favoriteShopInfo: FavoriteShopInfo)
-    func getShopInfo(_ completion: @escaping ([FavoriteShopInfo]) -> Void)
-    func deleteShopInfo()
+    func saveFavoriteShopData(favoriteShop: FavoriteShop)
+    func getFavoriteShopData(_ completion: @escaping ([FavoriteShop]) -> Void)
+    func deleteFavoriteShopData()
 }

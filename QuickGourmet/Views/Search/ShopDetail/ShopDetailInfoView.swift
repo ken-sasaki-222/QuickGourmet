@@ -36,7 +36,7 @@ struct ShopDetailInfoView: View {
                             .padding(.top, 1)
                     }
                     FavoriteButton(action: {
-                        let favoriteShopInfo = FavoriteShopInfo(
+                        let favoriteShop = FavoriteShop(
                             name: name,
                             address: address,
                             mobileAccess: mobileAccess,
@@ -49,7 +49,7 @@ struct ShopDetailInfoView: View {
                             longitude: longitude,
                             urlString: urlString
                         )
-                        favoriteVM.saveShopInfo(favoriteShopInfo: favoriteShopInfo)
+                        favoriteVM.saveFavoriteShop(favoriteShop: favoriteShop)
                     })
                 }
                 .padding(.init(top: 20, leading: 30, bottom: 0, trailing: 30))
