@@ -27,6 +27,7 @@ class FavoriteRepository: FavoriteRepositoryInterface {
                 "open": favoriteShopInfo.open,
                 "genreName": favoriteShopInfo.genreName,
                 "logoImage": favoriteShopInfo.logoImage,
+                "photo": favoriteShopInfo.photo,
                 "latitude": favoriteShopInfo.latitude,
                 "longitude": favoriteShopInfo.longitude,
                 "urlString": favoriteShopInfo.urlString
@@ -64,6 +65,7 @@ class FavoriteRepository: FavoriteRepositoryInterface {
                           let documentOpen = documentData["open"] as? String,
                           let documentGenreName = documentData["genreName"] as? String,
                           let documentLogoImage = documentData["logoImage"] as? String,
+                          let documentPhoto = documentData["photo"] as? String,
                           let documentLatitude = documentData["latitude"] as? Double,
                           let documentLongitude = documentData["longitude"] as? Double,
                           let documentUrlString = documentData["urlString"] as? String
@@ -79,13 +81,12 @@ class FavoriteRepository: FavoriteRepositoryInterface {
                         open: documentOpen,
                         genreName: documentGenreName,
                         logoImage: documentLogoImage,
+                        photo: documentPhoto,
                         latitude: documentLatitude,
                         longitude: documentLongitude,
                         urlString: documentUrlString
                     )
                     self.favoriteShopInfoArray.append(favoriteShopInfo)
-                    print("kenken", self.favoriteShopInfoArray)
-
                     completion(self.favoriteShopInfoArray)
                 }
             }

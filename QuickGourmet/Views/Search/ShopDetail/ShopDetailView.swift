@@ -31,6 +31,7 @@ struct ShopDetailView: View {
                                    open: shopData.open,
                                    genreName: shopData.genre.name,
                                    logoImage: shopData.logoImage,
+                                   photo: shopData.photo.pc.l,
                                    latitude: shopData.lat,
                                    longitude: shopData.lng,
                                    urlString: shopData.urls.pc)
