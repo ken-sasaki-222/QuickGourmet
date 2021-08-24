@@ -16,6 +16,9 @@ struct ShopDetailInfoView: View {
     var open: String
     var genreName: String
     var logoImage: String
+    var latitude: Double
+    var longitude: Double
+    var urlString: String
 
     var body: some View {
         HStack {
@@ -39,9 +42,12 @@ struct ShopDetailInfoView: View {
                             average: average,
                             open: open,
                             genreName: genreName,
-                            logoImage: logoImage
+                            logoImage: logoImage,
+                            latitude: latitude,
+                            longitude: longitude,
+                            urlString: urlString
                         )
-                        favoriteVM.communicateRepository(favoriteShopInfo: favoriteShopInfo)
+                        favoriteVM.saveShopInfo(favoriteShopInfo: favoriteShopInfo)
                     })
                 }
                 .padding(.init(top: 20, leading: 30, bottom: 0, trailing: 30))
@@ -80,6 +86,6 @@ struct ShopDetailInfoView: View {
 
 struct ShopDetailInfoView_Previews: PreviewProvider {
     static var previews: some View {
-        ShopDetailInfoView(name: mockShopesData[0].results.shop[0].name, address: mockShopesData[0].results.shop[0].address, mobileAccess: mockShopesData[0].results.shop[0].mobileAccess, average: mockShopesData[0].results.shop[0].budget.average, open: mockShopesData[0].results.shop[0].open, genreName: mockShopesData[0].results.shop[0].genre.name, logoImage: mockShopesData[0].results.shop[0].logoImage)
+        ShopDetailInfoView(name: mockShopesData[0].results.shop[0].name, address: mockShopesData[0].results.shop[0].address, mobileAccess: mockShopesData[0].results.shop[0].mobileAccess, average: mockShopesData[0].results.shop[0].budget.average, open: mockShopesData[0].results.shop[0].open, genreName: mockShopesData[0].results.shop[0].genre.name, logoImage: mockShopesData[0].results.shop[0].logoImage, latitude: mockShopesData[0].results.shop[0].lat, longitude: mockShopesData[0].results.shop[0].lng, urlString: mockShopesData[0].results.shop[0].urls.pc)
     }
 }

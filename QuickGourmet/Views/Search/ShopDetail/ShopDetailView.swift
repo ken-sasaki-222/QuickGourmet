@@ -30,13 +30,16 @@ struct ShopDetailView: View {
                                    average: shopData.budget.average,
                                    open: shopData.open,
                                    genreName: shopData.genre.name,
-                                   logoImage: shopData.logoImage)
+                                   logoImage: shopData.logoImage,
+                                   latitude: shopData.lat,
+                                   longitude: shopData.lng,
+                                   urlString: shopData.urls.pc)
                 ShopDetailButtonView(shopUrlString: shopData.urls.pc)
             }
         }
         .onAppear(perform: {
             quickSearchVM.recordShopDetailLaunchCount()
-            NendInterstitialView().showInterstitiaStillessAD()
+            // NendInterstitialView().showInterstitiaStillessAD()
         })
     }
 }

@@ -27,6 +27,9 @@ class FavoriteRepository: FavoriteRepositoryInterface {
                 "open": favoriteShopInfo.open,
                 "genreName": favoriteShopInfo.genreName,
                 "logoImage": favoriteShopInfo.logoImage,
+                "latitude": favoriteShopInfo.latitude,
+                "longitude": favoriteShopInfo.longitude,
+                "urlString": favoriteShopInfo.urlString
             ]) { error in
                 if let error = error {
                     print("Error adding document:", error)
@@ -60,7 +63,10 @@ class FavoriteRepository: FavoriteRepositoryInterface {
                           let documentAverage = documentData["average"] as? String,
                           let documentOpen = documentData["open"] as? String,
                           let documentGenreName = documentData["genreName"] as? String,
-                          let documentLogoImage = documentData["logoImage"] as? String
+                          let documentLogoImage = documentData["logoImage"] as? String,
+                          let documentLatitude = documentData["latitude"] as? Double,
+                          let documentLongitude = documentData["longitude"] as? Double,
+                          let documentUrlString = documentData["urlString"] as? String
                     else {
                         return
                     }
@@ -72,7 +78,10 @@ class FavoriteRepository: FavoriteRepositoryInterface {
                         average: documentAverage,
                         open: documentOpen,
                         genreName: documentGenreName,
-                        logoImage: documentLogoImage
+                        logoImage: documentLogoImage,
+                        latitude: documentLatitude,
+                        longitude: documentLongitude,
+                        urlString: documentUrlString
                     )
                     self.favoriteShopInfoArray.append(favoriteShopInfo)
                     print("kenken", self.favoriteShopInfoArray)
