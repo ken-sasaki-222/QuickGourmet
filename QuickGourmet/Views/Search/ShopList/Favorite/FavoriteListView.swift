@@ -19,6 +19,7 @@ struct FavoriteListView: View {
             }
             .navigationTitle("お気に入り店舗一覧")
             .navigationBarTitleDisplayMode(.inline)
+            .listStyle(PlainListStyle())
         }
         .onAppear {
             favoriteVM.getFavoriteShop()
