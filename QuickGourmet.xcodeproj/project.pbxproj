@@ -27,6 +27,8 @@
 		D834146826CCFE19002D7ED0 /* MockUserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D834146726CCFE19002D7ED0 /* MockUserRepository.swift */; };
 		D83D600926AAA0E8002A6CEC /* ShopDetailButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83D600826AAA0E8002A6CEC /* ShopDetailButtonView.swift */; };
 		D83D600E26AAB387002A6CEC /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83D600D26AAB387002A6CEC /* MapView.swift */; };
+		D84E5C7926D5DF7A00BB79CE /* RemoveFavoriteButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84E5C7826D5DF7A00BB79CE /* RemoveFavoriteButtonView.swift */; };
+		D84E5C7B26D5DFFD00BB79CE /* FavoriteShopDetailInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84E5C7A26D5DFFD00BB79CE /* FavoriteShopDetailInfoView.swift */; };
 		D855048D269D0F1B0053334A /* HotPepperResponseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D855048C269D0F1B0053334A /* HotPepperResponseResponse.swift */; };
 		D864626F26CBEAE90021092E /* UserAuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D864626E26CBEAE90021092E /* UserAuthViewModel.swift */; };
 		D8711D3526A43377005EA395 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8711D3426A43377005EA395 /* SearchViewModel.swift */; };
@@ -88,6 +90,8 @@
 		D834146726CCFE19002D7ED0 /* MockUserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserRepository.swift; sourceTree = "<group>"; };
 		D83D600826AAA0E8002A6CEC /* ShopDetailButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopDetailButtonView.swift; sourceTree = "<group>"; };
 		D83D600D26AAB387002A6CEC /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		D84E5C7826D5DF7A00BB79CE /* RemoveFavoriteButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveFavoriteButtonView.swift; sourceTree = "<group>"; };
+		D84E5C7A26D5DFFD00BB79CE /* FavoriteShopDetailInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteShopDetailInfoView.swift; sourceTree = "<group>"; };
 		D855048C269D0F1B0053334A /* HotPepperResponseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotPepperResponseResponse.swift; sourceTree = "<group>"; };
 		D864626E26CBEAE90021092E /* UserAuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuthViewModel.swift; sourceTree = "<group>"; };
 		D8711D3426A43377005EA395 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
@@ -167,6 +171,7 @@
 				D81CB62C26A9405F004807E1 /* SearchButtonView.swift */,
 				D833881026CCA4B5003446B1 /* LoginButtonView.swift */,
 				D81E428126D21FD100DB5AD6 /* FavoriteButton.swift */,
+				D84E5C7826D5DF7A00BB79CE /* RemoveFavoriteButtonView.swift */,
 			);
 			path = Button;
 			sourceTree = "<group>";
@@ -354,6 +359,7 @@
 				D8A8E5B3269DAEB3009F9C0C /* ShopDetailView.swift */,
 				D83D600826AAA0E8002A6CEC /* ShopDetailButtonView.swift */,
 				D889E16026AED67100F18681 /* ShopDetailInfoView.swift */,
+				D84E5C7A26D5DFFD00BB79CE /* FavoriteShopDetailInfoView.swift */,
 				D80803E226D49C1A009FACC8 /* FavoriteShopDetailView.swift */,
 			);
 			path = ShopDetail;
@@ -719,6 +725,7 @@
 				D8A8E5C4269DEFBF009F9C0C /* URLImage.swift in Sources */,
 				D8F73EE326C34F4A00B26993 /* LoginView.swift in Sources */,
 				D8ED9E9A269E78A100AFE337 /* ResponseGroup.swift in Sources */,
+				D84E5C7926D5DF7A00BB79CE /* RemoveFavoriteButtonView.swift in Sources */,
 				D834146426CCFDBC002D7ED0 /* UserRepository.swift in Sources */,
 				D871222E26B98DAB000D094A /* UIColor+Colors.swift in Sources */,
 				D8BD192E26B816C900E0BBCB /* QuickSearchView.swift in Sources */,
@@ -728,6 +735,7 @@
 				D829713226B26AA9005C4454 /* ApiKey.swift in Sources */,
 				D87C9C3B269701A30051FA77 /* HamburgerMenuView.swift in Sources */,
 				D834146626CCFDFC002D7ED0 /* UserRepositoryInterface.swift in Sources */,
+				D84E5C7B26D5DFFD00BB79CE /* FavoriteShopDetailInfoView.swift in Sources */,
 				D8D1198626C7B2A500F9CD65 /* NendBannerView.swift in Sources */,
 				D8FC157926B19DDA00B22408 /* MailView.swift in Sources */,
 				D8ED9EB8269E79A500AFE337 /* SearchView.swift in Sources */,
