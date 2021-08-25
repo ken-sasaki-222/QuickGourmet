@@ -23,17 +23,13 @@ struct FavoriteShopDetailView: View {
                         .offset(x: -130, y: 155)
                 }
                 .padding(.bottom, 10)
-                ShopDetailInfoView(name: favoriteShopData.name,
-                                   address: favoriteShopData.address,
-                                   mobileAccess: favoriteShopData.mobileAccess,
-                                   average: favoriteShopData.average,
-                                   open: favoriteShopData.open,
-                                   genreName: favoriteShopData.genreName,
-                                   logoImage: favoriteShopData.logoImage,
-                                   photo: favoriteShopData.photo,
-                                   latitude: favoriteShopData.latitude,
-                                   longitude: favoriteShopData.longitude,
-                                   urlString: favoriteShopData.urlString)
+                FavoriteShopDetailInfoView(name: favoriteShopData.name,
+                                           address: favoriteShopData.address,
+                                           mobileAccess: favoriteShopData.mobileAccess,
+                                           average: favoriteShopData.average,
+                                           open: favoriteShopData.open,
+                                           genreName: favoriteShopData.genreName,
+                                           documentID: favoriteShopData.documentID)
                 ShopDetailButtonView(shopUrlString: favoriteShopData.urlString)
             }
         }

@@ -9,7 +9,7 @@ import Foundation
 
 class FavoriteViewModel: ObservableObject {
     @Published var favoriteShopData: [FavoriteShop] = []
-    let favoriteRepository = FavoriteRepository()
+    private let favoriteRepository = FavoriteRepository()
 
     func saveFavoriteShop(favoriteShop: FavoriteShop) {
         favoriteRepository.saveFavoriteShopData(favoriteShop: favoriteShop)
@@ -20,5 +20,9 @@ class FavoriteViewModel: ObservableObject {
             self.favoriteShopData = shopes
             print("kenken", self.favoriteShopData)
         }
+    }
+
+    func deleateFavoriteShop(documentID: String) {
+        favoriteRepository.deleteFavoriteShopData(documentID: documentID)
     }
 }
