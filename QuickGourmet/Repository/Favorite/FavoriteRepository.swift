@@ -68,7 +68,8 @@ class FavoriteRepository: FavoriteRepositoryInterface {
                           let documentPhoto = documentData["photo"] as? String,
                           let documentLatitude = documentData["latitude"] as? Double,
                           let documentLongitude = documentData["longitude"] as? Double,
-                          let documentUrlString = documentData["urlString"] as? String
+                          let documentUrlString = documentData["urlString"] as? String,
+                          let documentID = document.documentID as String?
                     else {
                         return
                     }
@@ -84,7 +85,8 @@ class FavoriteRepository: FavoriteRepositoryInterface {
                         photo: documentPhoto,
                         latitude: documentLatitude,
                         longitude: documentLongitude,
-                        urlString: documentUrlString
+                        urlString: documentUrlString,
+                        documentID: documentID
                     )
                     self.favoriteShopes.append(favoriteShop)
                     completion(self.favoriteShopes)
@@ -93,5 +95,17 @@ class FavoriteRepository: FavoriteRepositoryInterface {
         }
     }
 
-    func deleteFavoriteShopData() {}
+    func deleteFavoriteShopData(documentID: String) {
+        guard let uid = Auth.auth().currentUser?.uid else {
+            return
+        }
+
+        db.collection("shopInfo").document(uid).collection("favorite").document(documentID).delete { error in
+            if let error = error {
+                print("Error removing document:", error)
+            } else {
+                print("Document successfully removed.")
+            }
+        }
+    }
 }
