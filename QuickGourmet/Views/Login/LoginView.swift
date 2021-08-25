@@ -78,7 +78,13 @@ struct LoginView: View {
                 ZStack {
                     Color.black.opacity(0.5)
                         .edgesIgnoringSafeArea(.all)
-                    ActivityIndicator()
+                    VStack {
+                        ActivityIndicator()
+                        Text("Loading...")
+                            .foregroundColor(.white)
+                            .font(.headline)
+                            .padding(.top, 5)
+                    }
                 }
                 .animation(.linear)
             }
