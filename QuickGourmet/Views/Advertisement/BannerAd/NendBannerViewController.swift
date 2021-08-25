@@ -81,7 +81,7 @@ class NendBannerViewController: UIViewController, NADViewDelegate {
                                toItem: bottomLayoutGuide,
                                attribute: .top,
                                multiplier: 1,
-                               constant: 0),
+                               constant: 0)
         ])
     }
 

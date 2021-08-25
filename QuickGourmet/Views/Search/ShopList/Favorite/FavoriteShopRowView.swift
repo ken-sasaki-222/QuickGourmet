@@ -1,32 +1,31 @@
 //
-//  ShopRowView.swift
+//  FavoriteShopRowView.swift
 //  QuickGourmet
 //
-//  Created by sasaki.ken on 2021/07/13.
+//  Created by sasaki.ken on 2021/08/24.
 //
 
 import SwiftUI
 
-struct ShopRowView: View {
-    @State var image: UIImage?
-    var shopData: Shop
+struct FavoriteShopRowView: View {
+    var favoriteShopData: FavoriteShop
 
     var body: some View {
         VStack {
-            URLImage(urlString: shopData.photo.pc.l)
+            URLImage(urlString: favoriteShopData.photo)
                 .aspectRatio(contentMode: .fit)
             HStack {
                 VStack(alignment: .leading) {
-                    Text(shopData.name)
+                    Text(favoriteShopData.name)
                         .font(.title3)
                         .fontWeight(.medium)
                         .fixedSize(horizontal: false, vertical: true)
                         .padding(.top, 4.0)
-                    Text(shopData.mobileAccess)
+                    Text(favoriteShopData.mobileAccess)
                         .font(.headline)
                         .padding(.top, 4.0)
                         .padding(.bottom, 4.0)
-                    Text(shopData.budget.average)
+                    Text(favoriteShopData.average)
                         .foregroundColor(.gray)
                         .font(.footnote)
                         .fixedSize(horizontal: false, vertical: true)
@@ -39,8 +38,8 @@ struct ShopRowView: View {
     }
 }
 
-struct ShopRowView_Previews: PreviewProvider {
+struct FavoriteShopRowView_Previews: PreviewProvider {
     static var previews: some View {
-        ShopRowView(shopData: mockShopesData[0].results.shop[0])
+        FavoriteShopRowView(favoriteShopData: mockFavoriteShopesData[0])
     }
 }

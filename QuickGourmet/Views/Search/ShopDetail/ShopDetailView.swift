@@ -23,20 +23,24 @@ struct ShopDetailView: View {
                         .shadow(radius: 7)
                         .offset(x: -130, y: 155)
                 }
-                .padding(.bottom, 40)
+                .padding(.bottom, 10)
                 ShopDetailInfoView(name: shopData.name,
                                    address: shopData.address,
                                    mobileAccess: shopData.mobileAccess,
                                    average: shopData.budget.average,
                                    open: shopData.open,
                                    genreName: shopData.genre.name,
-                                   logoImage: shopData.logoImage)
+                                   logoImage: shopData.logoImage,
+                                   photo: shopData.photo.pc.l,
+                                   latitude: shopData.lat,
+                                   longitude: shopData.lng,
+                                   urlString: shopData.urls.pc)
                 ShopDetailButtonView(shopUrlString: shopData.urls.pc)
             }
         }
         .onAppear(perform: {
             quickSearchVM.recordShopDetailLaunchCount()
-            NendInterstitialView().showInterstitiaStillessAD()
+            // NendInterstitialView().showInterstitiaStillessAD()
         })
     }
 }

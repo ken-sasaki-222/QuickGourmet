@@ -1,13 +1,13 @@
 //
-//  ShopDetailInfoView.swift
+//  FavoriteShopDetailInfoView.swift
 //  QuickGourmet
 //
-//  Created by sasaki.ken on 2021/07/26.
+//  Created by sasaki.ken on 2021/08/25.
 //
 
 import SwiftUI
 
-struct ShopDetailInfoView: View {
+struct FavoriteShopDetailInfoView: View {
     private let favoriteVM = FavoriteViewModel()
     var name: String
     var address: String
@@ -15,31 +15,16 @@ struct ShopDetailInfoView: View {
     var average: String
     var open: String
     var genreName: String
-    var logoImage: String
-    var photo: String
-    var latitude: Double
-    var longitude: Double
-    var urlString: String
+    var documentID: String?
 
     var body: some View {
         VStack(alignment: .trailing) {
-            FavoriteButton(action: {
-                // ShopDetailInfoViewではお気に入りするだけ
-                let favoriteShop = FavoriteShop(
-                    name: name,
-                    address: address,
-                    mobileAccess: mobileAccess,
-                    average: average,
-                    open: open,
-                    genreName: genreName,
-                    logoImage: logoImage,
-                    photo: photo,
-                    latitude: latitude,
-                    longitude: longitude,
-                    urlString: urlString,
-                    documentID: nil
-                )
-                favoriteVM.saveFavoriteShop(favoriteShop: favoriteShop)
+            // FavoriteShopDetailInfoViewではお気に入り解除するだけ
+            RemoveFavoriteButtonView(onTapped: {
+                guard let documentID = documentID else {
+                    return
+                }
+                favoriteVM.deleateFavoriteShop(documentID: documentID)
             })
                 .padding(.init(top: 0, leading: 0, bottom: 0, trailing: 60))
             HStack {
@@ -89,8 +74,8 @@ struct ShopDetailInfoView: View {
     }
 }
 
-struct ShopDetailInfoView_Previews: PreviewProvider {
+struct FavoriteShopDetailInfoView_Previews: PreviewProvider {
     static var previews: some View {
-        ShopDetailInfoView(name: mockShopesData[0].results.shop[0].name, address: mockShopesData[0].results.shop[0].address, mobileAccess: mockShopesData[0].results.shop[0].mobileAccess, average: mockShopesData[0].results.shop[0].budget.average, open: mockShopesData[0].results.shop[0].open, genreName: mockShopesData[0].results.shop[0].genre.name, logoImage: mockShopesData[0].results.shop[0].logoImage, photo: mockShopesData[0].results.shop[0].photo.pc.l, latitude: mockShopesData[0].results.shop[0].lat, longitude: mockShopesData[0].results.shop[0].lng, urlString: mockShopesData[0].results.shop[0].urls.pc)
+        FavoriteShopDetailInfoView(name: mockFavoriteShopesData[0].name, address: mockFavoriteShopesData[0].address, mobileAccess: mockFavoriteShopesData[0].mobileAccess, average: mockFavoriteShopesData[0].average, open: mockFavoriteShopesData[0].open, genreName: mockFavoriteShopesData[0].genreName)
     }
 }
