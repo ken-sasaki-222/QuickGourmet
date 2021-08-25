@@ -20,8 +20,9 @@ struct FavoriteShop: Identifiable {
     var latitude: Double
     var longitude: Double
     var urlString: String
+    var documentID: String?
 
-    init(name: String, address: String, mobileAccess: String, average: String, open: String, genreName: String, logoImage: String, photo: String, latitude: Double, longitude: Double, urlString: String) {
+    init(name: String, address: String, mobileAccess: String, average: String, open: String, genreName: String, logoImage: String, photo: String, latitude: Double, longitude: Double, urlString: String, documentID: String?) {
         self.name = name
         self.address = address
         self.mobileAccess = mobileAccess
@@ -33,5 +34,6 @@ struct FavoriteShop: Identifiable {
         self.latitude = latitude
         self.longitude = longitude
         self.urlString = urlString
+        self.documentID = documentID
     }
 }

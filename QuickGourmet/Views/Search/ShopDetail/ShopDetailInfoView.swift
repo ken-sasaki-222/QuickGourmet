@@ -36,7 +36,8 @@ struct ShopDetailInfoView: View {
                     photo: photo,
                     latitude: latitude,
                     longitude: longitude,
-                    urlString: urlString
+                    urlString: urlString,
+                    documentID: nil
                 )
                 favoriteVM.saveFavoriteShop(favoriteShop: favoriteShop)
             })
