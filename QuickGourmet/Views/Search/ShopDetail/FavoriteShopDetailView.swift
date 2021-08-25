@@ -22,7 +22,7 @@ struct FavoriteShopDetailView: View {
                         .shadow(radius: 7)
                         .offset(x: -130, y: 155)
                 }
-                .padding(.bottom, 40)
+                .padding(.bottom, 10)
                 ShopDetailInfoView(name: favoriteShopData.name,
                                    address: favoriteShopData.address,
                                    mobileAccess: favoriteShopData.mobileAccess,

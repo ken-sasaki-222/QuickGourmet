@@ -22,9 +22,27 @@ struct ShopDetailInfoView: View {
     var urlString: String
 
     var body: some View {
-        HStack {
-            VStack(alignment: .leading) {
-                HStack {
+        VStack(alignment: .trailing) {
+            FavoriteButton(action: {
+                // ShopDetailInfoViewではお気に入りするだけ
+                let favoriteShop = FavoriteShop(
+                    name: name,
+                    address: address,
+                    mobileAccess: mobileAccess,
+                    average: average,
+                    open: open,
+                    genreName: genreName,
+                    logoImage: logoImage,
+                    photo: photo,
+                    latitude: latitude,
+                    longitude: longitude,
+                    urlString: urlString
+                )
+                favoriteVM.saveFavoriteShop(favoriteShop: favoriteShop)
+            })
+                .padding(.init(top: 0, leading: 0, bottom: 0, trailing: 60))
+            HStack {
+                VStack(alignment: .leading) {
                     VStack {
                         Text(name)
                             .font(.title3)
@@ -35,52 +53,36 @@ struct ShopDetailInfoView: View {
                             .foregroundColor(.gray)
                             .padding(.top, 1)
                     }
-                    FavoriteButton(action: {
-                        let favoriteShop = FavoriteShop(
-                            name: name,
-                            address: address,
-                            mobileAccess: mobileAccess,
-                            average: average,
-                            open: open,
-                            genreName: genreName,
-                            logoImage: logoImage,
-                            photo: photo,
-                            latitude: latitude,
-                            longitude: longitude,
-                            urlString: urlString
-                        )
-                        favoriteVM.saveFavoriteShop(favoriteShop: favoriteShop)
-                    })
+                    .padding(.init(top: 10, leading: 30, bottom: 0, trailing: 30))
+                    HStack {
+                        Image(systemName: "mappin.circle")
+                        Text(address)
+                            .font(.body)
+                            .lineLimit(3)
+                    }
+                    .padding(.init(top: 10, leading: 30, bottom: 0, trailing: 30))
+                    HStack {
+                        Image(systemName: "figure.walk")
+                        Text(mobileAccess)
+                            .font(.body)
+                            .lineLimit(3)
+                    }
+                    .padding(.init(top: 10, leading: 30, bottom: 0, trailing: 30))
+                    HStack {
+                        Image(systemName: "clock")
+                        Text(open)
+                            .font(.body)
+                            .lineLimit(5)
+                    }
+                    .padding(.init(top: 10, leading: 30, bottom: 5, trailing: 30))
+                    HStack {
+                        Image(systemName: "dollarsign.circle")
+                        Text(average)
+                            .font(.body)
+                            .lineLimit(3)
+                    }
+                    .padding(.init(top: 10, leading: 30, bottom: 20, trailing: 30))
                 }
-                .padding(.init(top: 20, leading: 30, bottom: 0, trailing: 30))
-                HStack {
-                    Image(systemName: "mappin.circle")
-                    Text(address)
-                        .font(.body)
-                        .lineLimit(3)
-                }
-                .padding(.init(top: 10, leading: 30, bottom: 0, trailing: 30))
-                HStack {
-                    Image(systemName: "figure.walk")
-                    Text(mobileAccess)
-                        .font(.body)
-                        .lineLimit(3)
-                }
-                .padding(.init(top: 10, leading: 30, bottom: 0, trailing: 30))
-                HStack {
-                    Image(systemName: "clock")
-                    Text(open)
-                        .font(.body)
-                        .lineLimit(5)
-                }
-                .padding(.init(top: 10, leading: 30, bottom: 5, trailing: 30))
-                HStack {
-                    Image(systemName: "dollarsign.circle")
-                    Text(average)
-                        .font(.body)
-                        .lineLimit(3)
-                }
-                .padding(.init(top: 10, leading: 30, bottom: 20, trailing: 30))
             }
         }
     }

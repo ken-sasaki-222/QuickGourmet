@@ -23,7 +23,7 @@ struct ShopDetailView: View {
                         .shadow(radius: 7)
                         .offset(x: -130, y: 155)
                 }
-                .padding(.bottom, 40)
+                .padding(.bottom, 10)
                 ShopDetailInfoView(name: shopData.name,
                                    address: shopData.address,
                                    mobileAccess: shopData.mobileAccess,
