@@ -46,7 +46,7 @@ struct LoginView: View {
                             case .success:
                                 print("Login success.")
                                 isShowsIndicator.toggle()
-                                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
                                     isShowsIndicator.toggle()
                                     isTapActived.toggle()
                                 }
@@ -78,6 +78,9 @@ struct LoginView: View {
                 ZStack {
                     Color.black.opacity(0.5)
                         .edgesIgnoringSafeArea(.all)
+                    RoundedRectangle(cornerRadius: 10)
+                        .frame(width: 110, height: 110, alignment: .center)
+                        .foregroundColor(.gray)
                     VStack {
                         ActivityIndicator()
                         Text("Loading...")
