@@ -12,14 +12,25 @@ struct FavoriteListView: View {
 
     var body: some View {
         NavigationView {
-            List(favoriteVM.favoriteShopData) { shopData in
-                NavigationLink(destination: FavoriteShopDetailView(favoriteShopData: shopData)) {
-                    FavoriteShopRowView(favoriteShopData: shopData)
+            if favoriteVM.favoriteShopData.count != 0 {
+                List(favoriteVM.favoriteShopData) { shopData in
+                    NavigationLink(destination: FavoriteShopDetailView(favoriteShopData: shopData)) {
+                        FavoriteShopRowView(favoriteShopData: shopData)
+                    }
                 }
+            } else {
+                ZStack {
+                    Color.gray.opacity(0.5)
+                        .frame(width: 300, height: 45, alignment: .center)
+                        .cornerRadius(10)
+                    Text("お気に入り店舗を登録してください")
+                        .font(.headline)
+                        .fontWeight(.medium)
+                }
+                .navigationTitle("お気に入り店舗一覧")
+                .navigationBarTitleDisplayMode(.inline)
+                .listStyle(PlainListStyle())
             }
-            .navigationTitle("お気に入り店舗一覧")
-            .navigationBarTitleDisplayMode(.inline)
-            .listStyle(PlainListStyle())
         }
         .onAppear {
             favoriteVM.getFavoriteShop()
