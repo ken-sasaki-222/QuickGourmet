@@ -25,7 +25,7 @@ struct QuickSearchRowView: View {
                 .padding(5)
                 .background(Color.white.opacity(0.5))
                 .offset(y: 50)
-            ArrowImage()
+            TransitionImage()
                 .offset(x: 300, y: 95)
         }
         .padding(.bottom, 25)
