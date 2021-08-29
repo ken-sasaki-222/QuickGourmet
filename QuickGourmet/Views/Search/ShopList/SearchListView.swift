@@ -16,12 +16,23 @@ struct SearchListView: View {
     @ObservedObject var quickSearchVM: QuickSearchViewModel
 
     var body: some View {
-        List(quickSearchVM.shopData) { shop in
-            NavigationLink(destination: ShopDetailView(shopData: shop)) {
-                ShopRowView(shopData: shop)
+        if quickSearchVM.shopData.count != 0 {
+            List(quickSearchVM.shopData) { shop in
+                NavigationLink(destination: ShopDetailView(shopData: shop)) {
+                    ShopRowView(shopData: shop)
+                }
+            }
+            .listStyle(PlainListStyle())
+        } else {
+            ZStack {
+                Color.gray.opacity(0.5)
+                    .frame(width: 300, height: 45, alignment: .center)
+                    .cornerRadius(10)
+                Text("検索結果に該当するお店がありません")
+                    .font(.headline)
+                    .fontWeight(.medium)
             }
         }
-        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
