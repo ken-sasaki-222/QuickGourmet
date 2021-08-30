@@ -13,4 +13,5 @@ struct ColorManager {
     static let mainColor = Color("main_color")
     static let white = Color("white")
     static let black = Color("black")
+    static let gray = Color("gray")
 }
