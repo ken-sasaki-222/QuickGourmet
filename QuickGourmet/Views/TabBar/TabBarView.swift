@@ -10,6 +10,10 @@ import SwiftUI
 struct TabBarView: View {
     @State private var section = 0
 
+    init() {
+        setTabBar()
+    }
+
     var body: some View {
         TabView(selection: $section) {
             QuickSearchView()
@@ -25,6 +29,11 @@ struct TabBarView: View {
                 }
                 .tag(1)
         }
+        .accentColor(ColorManager.mainColor)
+    }
+
+    private func setTabBar() {
+        UITabBar.appearance().unselectedItemTintColor = UIColor(ColorManager.gray)
     }
 }
 
