@@ -10,13 +10,13 @@ import SwiftUI
 struct TransitionImage: View {
     var body: some View {
         ZStack {
-            Color.green
+            ColorManager.mainColor
                 .clipShape(Circle())
                 .frame(width: 50, height: 50, alignment: .center)
             Image(systemName: "figure.walk")
                 .resizable()
-                .foregroundColor(.white)
-                .frame(width: 10, height: 15, alignment: .center)
+                .foregroundColor(ColorManager.white)
+                .frame(width: 15, height: 25, alignment: .center)
         }
     }
 }
