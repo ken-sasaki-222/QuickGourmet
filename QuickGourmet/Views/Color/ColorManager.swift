@@ -6,4 +6,8 @@
 //
 
 import Foundation
+import SwiftUI
 
+struct ColorManager {
+    static let baseColor = Color("base_color")
+}
