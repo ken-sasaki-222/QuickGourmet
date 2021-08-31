@@ -23,9 +23,14 @@ struct SearchListView: View {
                 }
             }
             .listStyle(PlainListStyle())
+            .colorMultiply(ColorManager.baseColor)
+            .edgesIgnoringSafeArea(.all)
+            .onAppear {
+                UITableView.appearance().backgroundColor = UIColor(ColorManager.white_black)
+            }
         } else {
             ZStack {
-                Color.gray.opacity(0.5)
+                ColorManager.gray.opacity(0.5)
                     .frame(width: 300, height: 45, alignment: .center)
                     .cornerRadius(10)
                 Text("検索結果に該当するお店がありません")
@@ -36,9 +41,9 @@ struct SearchListView: View {
     }
 }
 
-// struct SearchListView_Previews: PreviewProvider {
-//    var searchVM: SearchViewModel
-//    static var previews: some View {
-//        SearchListView(searchVM: searchVM)
-//    }
-// }
+struct SearchListView_Previews: PreviewProvider {
+    var searchVM: SearchViewModel
+    static var previews: some View {
+        SearchListView(quickSearchVM: QuickSearchViewModel())
+    }
+}
