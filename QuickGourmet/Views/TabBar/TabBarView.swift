@@ -19,7 +19,7 @@ struct TabBarView: View {
             QuickSearchView()
                 .tabItem {
                     Image(systemName: "magnifyingglass")
-                    Text("クイック検索")
+                    Text("食いっく検索")
                 }
                 .tag(0)
             FavoriteListView()
