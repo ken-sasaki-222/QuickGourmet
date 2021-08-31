@@ -82,7 +82,7 @@ struct QuickSearchView: View {
                         }
                     }
                     .background(ColorManager.baseColor)
-                    .edgesIgnoringSafeArea(.bottom)
+                    // .edgesIgnoringSafeArea(.bottom)
                 }
                 .onAppear {
                     quickSearchVM.requestIDFA()
