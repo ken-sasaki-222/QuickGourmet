@@ -69,7 +69,7 @@ struct LoginView: View {
                     print("利用規約の表示")
                 }) {
                     Text("利用規約")
-                        .font(.custom(FontManager.Mplus.regular, size: 13))
+                        .font(.custom(FontManager.Mplus.regular, size: 18))
                         .foregroundColor(.white)
                         .padding(.bottom, 30)
                         .padding(.horizontal, 10)
