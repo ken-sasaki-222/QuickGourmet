@@ -32,6 +32,7 @@ struct ShopDetailInfoView: View {
                 VStack(alignment: .leading) {
                     Text(name)
                         .font(.title3)
+                        .foregroundColor(ColorManager.black_white)
                         .fontWeight(.medium)
                         .lineLimit(2)
                         .padding(.init(top: 10, leading: 30, bottom: 0, trailing: 30))
@@ -39,6 +40,7 @@ struct ShopDetailInfoView: View {
                         MenuIconView(image: "pin_icon", color: ColorManager.icon_blue)
                         Text(address)
                             .font(.body)
+                            .foregroundColor(ColorManager.black_white)
                             .lineLimit(3)
                     }
                     .padding(.init(top: 10, leading: 30, bottom: 0, trailing: 30))
@@ -46,6 +48,7 @@ struct ShopDetailInfoView: View {
                         MenuIconView(image: "walk_icon", color: ColorManager.icon_green)
                         Text(mobileAccess)
                             .font(.body)
+                            .foregroundColor(ColorManager.black_white)
                             .lineLimit(3)
                     }
                     .padding(.init(top: 10, leading: 30, bottom: 0, trailing: 30))
@@ -53,6 +56,7 @@ struct ShopDetailInfoView: View {
                         MenuIconView(image: "time_icon", color: ColorManager.icon_orange)
                         Text(open)
                             .font(.body)
+                            .foregroundColor(ColorManager.black_white)
                             .lineLimit(5)
                     }
                     .padding(.init(top: 10, leading: 30, bottom: 5, trailing: 30))
@@ -60,6 +64,7 @@ struct ShopDetailInfoView: View {
                         MenuIconView(image: "maney_icon", color: ColorManager.icon_purple)
                         Text(average)
                             .font(.body)
+                            .foregroundColor(ColorManager.black_white)
                             .lineLimit(3)
                     }
                     .padding(.init(top: 10, leading: 30, bottom: 20, trailing: 30))

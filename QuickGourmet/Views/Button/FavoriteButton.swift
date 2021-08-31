@@ -22,7 +22,7 @@ struct FavoriteButton: View {
                 .font(.headline)
                 .padding(.vertical, 10)
                 .padding(.horizontal, 30)
-                .background(isFavorite ? Color.gray : Color.red)
+                .background(isFavorite ? ColorManager.gray : ColorManager.red)
                 .cornerRadius(100)
                 .lineLimit(1)
         }
