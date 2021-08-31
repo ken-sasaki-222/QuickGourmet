@@ -22,39 +22,19 @@ struct ShopDetailInfoView: View {
     var urlString: String
 
     var body: some View {
-        VStack(alignment: .trailing) {
-            FavoriteButton(action: {
-                // ShopDetailInfoViewではお気に入りするだけ
-                let favoriteShop = FavoriteShop(
-                    name: name,
-                    address: address,
-                    mobileAccess: mobileAccess,
-                    average: average,
-                    open: open,
-                    genreName: genreName,
-                    logoImage: logoImage,
-                    photo: photo,
-                    latitude: latitude,
-                    longitude: longitude,
-                    urlString: urlString,
-                    documentID: nil
-                )
-                favoriteVM.saveFavoriteShop(favoriteShop: favoriteShop)
-            })
-                .padding(.init(top: 0, leading: 0, bottom: 0, trailing: 60))
+        VStack {
+            Text(genreName)
+                .font(.body)
+                .foregroundColor(ColorManager.gray)
+                .padding(.top, 30)
+                .padding(.leading, 180)
             HStack {
                 VStack(alignment: .leading) {
-                    VStack {
-                        Text(name)
-                            .font(.title3)
-                            .fontWeight(.medium)
-                            .lineLimit(2)
-                        Text(genreName)
-                            .font(.footnote)
-                            .foregroundColor(.gray)
-                            .padding(.top, 1)
-                    }
-                    .padding(.init(top: 10, leading: 30, bottom: 0, trailing: 30))
+                    Text(name)
+                        .font(.title3)
+                        .fontWeight(.medium)
+                        .lineLimit(2)
+                        .padding(.init(top: 10, leading: 30, bottom: 0, trailing: 30))
                     HStack {
                         MenuIconView(image: "pin_icon", color: ColorManager.icon_blue)
                         Text(address)
@@ -84,6 +64,27 @@ struct ShopDetailInfoView: View {
                     }
                     .padding(.init(top: 10, leading: 30, bottom: 20, trailing: 30))
                 }
+            }
+            HStack {
+                FavoriteButton(action: {
+                    // ShopDetailInfoViewではお気に入りするだけ
+                    let favoriteShop = FavoriteShop(
+                        name: name,
+                        address: address,
+                        mobileAccess: mobileAccess,
+                        average: average,
+                        open: open,
+                        genreName: genreName,
+                        logoImage: logoImage,
+                        photo: photo,
+                        latitude: latitude,
+                        longitude: longitude,
+                        urlString: urlString,
+                        documentID: nil
+                    )
+                    favoriteVM.saveFavoriteShop(favoriteShop: favoriteShop)
+                })
+                ShopDetailButtonView(shopUrlString: urlString)
             }
         }
     }
