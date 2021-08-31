@@ -12,28 +12,28 @@ struct ShopRowView: View {
     var shopData: Shop
 
     var body: some View {
-        VStack {
+        HStack {
             URLImage(urlString: shopData.photo.pc.l)
+                .cornerRadius(10.0)
                 .aspectRatio(contentMode: .fit)
-            HStack {
-                VStack(alignment: .leading) {
-                    Text(shopData.name)
-                        .font(.title3)
-                        .fontWeight(.medium)
-                        .fixedSize(horizontal: false, vertical: true)
-                        .padding(.top, 4.0)
-                    Text(shopData.mobileAccess)
-                        .font(.headline)
-                        .padding(.top, 4.0)
-                        .padding(.bottom, 4.0)
-                    Text(shopData.budget.average)
-                        .foregroundColor(.gray)
-                        .font(.footnote)
-                        .fixedSize(horizontal: false, vertical: true)
-                        .lineLimit(1)
-                        .padding(.bottom, 8.0)
-                }
-                Spacer()
+            VStack(alignment: .leading) {
+                Text(shopData.name)
+                    .font(.headline)
+                    .fontWeight(.medium)
+                    .foregroundColor(ColorManager.black_white)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .lineLimit(2)
+                Text(shopData.mobileAccess)
+                    .font(.footnote)
+                    .foregroundColor(ColorManager.black_white)
+                    .lineLimit(2)
+                    .padding(.top, 4.0)
+                    .padding(.bottom, 4.0)
+                Text(shopData.budget.average)
+                    .font(.caption)
+                    .foregroundColor(ColorManager.gray)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .lineLimit(1)
             }
         }
     }
