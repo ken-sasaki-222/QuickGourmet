@@ -28,14 +28,14 @@ struct LoginView: View {
             VStack {
                 Text("食いっくグルメ")
                     .font(.custom(FontManager.Mplus.bold, size: 36))
-                    .foregroundColor(.white)
+                    .foregroundColor(ColorManager.white)
                     .padding(.top, 60)
                     .padding(.bottom, 30)
                     .padding(.horizontal, 10)
                 TextField("匿名ログイン", text: $anonymity)
                     .font(.custom(FontManager.Mplus.light, size: 18))
                     .frame(width: 300, height: 44, alignment: .center)
-                    .background(Color.white)
+                    .background(ColorManager.white)
                     .cornerRadius(6)
                     .padding(.bottom, 30)
                     .padding(.horizontal, 10)
@@ -70,23 +70,24 @@ struct LoginView: View {
                 }) {
                     Text("利用規約")
                         .font(.custom(FontManager.Mplus.regular, size: 18))
-                        .foregroundColor(.white)
+                        .foregroundColor(ColorManager.white)
                         .padding(.bottom, 30)
                         .padding(.horizontal, 10)
                 }
             }
             if isShowsIndicator {
                 ZStack {
-                    Color.black.opacity(0.5)
+                    ColorManager.black.opacity(0.5)
                         .edgesIgnoringSafeArea(.all)
                     RoundedRectangle(cornerRadius: 10)
                         .frame(width: 110, height: 110, alignment: .center)
-                        .foregroundColor(.gray)
+                        .foregroundColor(ColorManager.gray)
+
                     VStack {
                         ActivityIndicator()
                         Text("Loading...")
-                            .foregroundColor(.white)
-                            .font(.headline)
+                            .foregroundColor(ColorManager.white)
+                            .font(.custom(FontManager.Mplus.medium, size: 18))
                             .padding(.top, 5)
                     }
                 }
