@@ -13,10 +13,10 @@ struct TransitionImage: View {
             ColorManager.mainColor
                 .clipShape(Circle())
                 .frame(width: 50, height: 50, alignment: .center)
-            Image(systemName: "figure.walk")
+            Image("walk_icon")
                 .resizable()
                 .foregroundColor(ColorManager.white)
-                .frame(width: 15, height: 25, alignment: .center)
+                .frame(width: 25, height: 25, alignment: .center)
         }
     }
 }
