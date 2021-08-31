@@ -24,8 +24,8 @@ struct TabBarView: View {
                 .tag(0)
             FavoriteListView()
                 .tabItem {
-                    Image(systemName: "star")
-                    Text("お気に入り店舗")
+                    Image(systemName: "bookmark")
+                    Text("ブックマーク")
                 }
                 .tag(1)
         }
