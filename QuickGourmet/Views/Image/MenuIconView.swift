@@ -8,13 +8,23 @@
 import SwiftUI
 
 struct MenuIconView: View {
+    var image: String
+    var color: Color
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            color
+                .frame(width: 20, height: 20, alignment: .center)
+                .cornerRadius(3)
+            Image(image)
+                .resizable()
+                .frame(width: 15, height: 15, alignment: .center)
+        }
     }
 }
 
 struct MenuIconView_Previews: PreviewProvider {
     static var previews: some View {
-        MenuIconView()
+        MenuIconView(image: "github_icon", color: ColorManager.black)
     }
 }
