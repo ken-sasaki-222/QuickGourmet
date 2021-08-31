@@ -24,12 +24,15 @@ struct PopupWindowView: View {
                             .frame(height: 45, alignment: .center)
                             .font(.title3)
                             .padding(.top, 20)
+                            .foregroundColor(ColorManager.black_white)
                         Picker(selection: $selection, label: Text("徒歩時間")) {
                             ForEach(0 ..< selectTexts.count) { index in
                                 Text(selectTexts[index])
                             }
                         }
+                        .pickerStyle(DefaultPickerStyle())
                         .frame(maxWidth: 200)
+                        .foregroundColor(ColorManager.black_white)
                         SearchButtonView(text: "検索") {
                             withAnimation(.linear(duration: 0.3)) {
                                 searchAction(selection)
@@ -40,12 +43,12 @@ struct PopupWindowView: View {
                         .padding(.bottom, 20)
                     }
                     .frame(maxWidth: 300)
-                    .background(Color.white)
+                    .background(ColorManager.white_black)
                     .cornerRadius(20)
                     Image(systemName: "xmark.circle.fill")
                         .resizable()
                         .frame(width: 40, height: 40, alignment: .center)
-                        .foregroundColor(Color.white)
+                        .foregroundColor(ColorManager.white)
                         .offset(x: 0, y: 220)
                         .onTapGesture {
                             show = false

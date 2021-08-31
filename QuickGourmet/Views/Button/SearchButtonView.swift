@@ -16,12 +16,12 @@ struct SearchButtonView: View {
             action()
         }) {
             Text(text)
-                .foregroundColor(Color.white)
+                .foregroundColor(ColorManager.white)
                 .fontWeight(.medium)
                 .font(.headline)
                 .padding(.vertical, 10)
                 .padding(.horizontal, 30)
-                .background(Color.green)
+                .background(ColorManager.mainColor)
                 .cornerRadius(100)
                 .lineLimit(1)
         }
