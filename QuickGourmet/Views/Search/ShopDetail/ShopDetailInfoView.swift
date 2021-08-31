@@ -24,7 +24,7 @@ struct ShopDetailInfoView: View {
     var body: some View {
         VStack {
             Text("ジャンル：\(genreName)")
-                .font(.custom(FontManager.Mplus.regular, size: 13))
+                .font(.custom(FontManager.Mplus.light, size: 13))
                 .foregroundColor(ColorManager.gray)
                 .padding(.top, 30)
                 .padding(.leading, 180)
