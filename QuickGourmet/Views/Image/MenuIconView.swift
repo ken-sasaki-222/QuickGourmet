@@ -14,11 +14,11 @@ struct MenuIconView: View {
     var body: some View {
         ZStack {
             color
-                .frame(width: 20, height: 20, alignment: .center)
+                .frame(width: 25, height: 25, alignment: .center)
                 .cornerRadius(3)
             Image(image)
                 .resizable()
-                .frame(width: 15, height: 15, alignment: .center)
+                .frame(width: 18, height: 18, alignment: .center)
         }
     }
 }
