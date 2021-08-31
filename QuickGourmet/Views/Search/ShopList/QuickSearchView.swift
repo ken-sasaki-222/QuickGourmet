@@ -102,6 +102,7 @@ struct QuickSearchView: View {
                 // NendBannerView()
             }
         }
+        .accentColor(ColorManager.white)
     }
 
     private func setNavigation() {
