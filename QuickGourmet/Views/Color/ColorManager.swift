@@ -16,4 +16,10 @@ struct ColorManager {
     static let black_white = Color("black_white")
     static let gray = Color("gray")
     static let red = Color("red")
+    static let icon_red = Color("icon_red")
+    static let icon_orange = Color("icon_orange")
+    static let icon_gold = Color("icon_gold")
+    static let icon_blue = Color("icon_blue")
+    static let icon_green = Color("icon_green")
+    static let icon_purple = Color("icon_purple")
 }
