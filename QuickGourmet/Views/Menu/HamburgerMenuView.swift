@@ -15,10 +15,6 @@ struct HamburgerMenuView: View {
     private let menuVM = HamburgerMenuViewModel()
     private let userAuthVM = UserAuthViewModel()
 
-    init() {
-        setForm()
-    }
-
     var body: some View {
         Form {
             Section(header: Text("このアプリについて")) {
@@ -123,10 +119,6 @@ struct HamburgerMenuView: View {
                 }
             }
         }
-    }
-
-    private func setForm() {
-        UITableView.appearance().backgroundColor = UIColor(ColorManager.baseColor)
     }
 }
 
