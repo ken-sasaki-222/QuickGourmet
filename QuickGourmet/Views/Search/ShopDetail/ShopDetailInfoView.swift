@@ -56,28 +56,28 @@ struct ShopDetailInfoView: View {
                     }
                     .padding(.init(top: 10, leading: 30, bottom: 0, trailing: 30))
                     HStack {
-                        Image(systemName: "mappin.circle")
+                        MenuIconView(image: "pin_icon", color: ColorManager.icon_blue)
                         Text(address)
                             .font(.body)
                             .lineLimit(3)
                     }
                     .padding(.init(top: 10, leading: 30, bottom: 0, trailing: 30))
                     HStack {
-                        Image(systemName: "figure.walk")
+                        MenuIconView(image: "walk_icon", color: ColorManager.icon_green)
                         Text(mobileAccess)
                             .font(.body)
                             .lineLimit(3)
                     }
                     .padding(.init(top: 10, leading: 30, bottom: 0, trailing: 30))
                     HStack {
-                        Image(systemName: "clock")
+                        MenuIconView(image: "time_icon", color: ColorManager.icon_orange)
                         Text(open)
                             .font(.body)
                             .lineLimit(5)
                     }
                     .padding(.init(top: 10, leading: 30, bottom: 5, trailing: 30))
                     HStack {
-                        Image(systemName: "dollarsign.circle")
+                        MenuIconView(image: "maney_icon", color: ColorManager.icon_purple)
                         Text(average)
                             .font(.body)
                             .lineLimit(3)
