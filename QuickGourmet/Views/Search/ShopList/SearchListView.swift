@@ -23,7 +23,7 @@ struct SearchListView: View {
                 }
             }
             .listStyle(PlainListStyle())
-            .colorMultiply(ColorManager.baseColor)
+            // .colorMultiply(ColorManager.baseColor)
             .edgesIgnoringSafeArea(.all)
             .onAppear {
                 UITableView.appearance().backgroundColor = UIColor(ColorManager.white_black)
