@@ -63,7 +63,7 @@ struct QuickSearchView: View {
                                     }
                                     .edgesIgnoringSafeArea(.bottom)
                                 }
-                                .navigationTitle("食いっくグルメ")
+                                .navigationTitle("食いっく検索")
                                 .navigationBarTitleDisplayMode(.inline)
                                 .navigationBarItems(leading: Button(action: {
                                     toggleHamburgerMenu()
@@ -109,7 +109,10 @@ struct QuickSearchView: View {
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
         appearance.backgroundColor = UIColor(ColorManager.mainColor)
-        appearance.titleTextAttributes = [.foregroundColor: UIColor(ColorManager.white)]
+        appearance.titleTextAttributes = [
+            .font: UIFont(name: FontManager.Mplus.medium, size: 20) as Any,
+            .foregroundColor: UIColor(ColorManager.white)
+        ]
         UINavigationBar.appearance().standardAppearance = appearance
     }
 

@@ -24,7 +24,7 @@ struct HamburgerMenuView: View {
                         isShowMailView = true
                     }) {
                         Text("ご意見・ご要望")
-                            .font(.footnote)
+                            .font(.custom(FontManager.Mplus.regular, size: 13))
                             .foregroundColor(ColorManager.black_white)
                     }
                     .disabled(!MFMailComposeViewController.canSendMail())
@@ -38,7 +38,7 @@ struct HamburgerMenuView: View {
                         menuVM.askForReview()
                     }) {
                         Text("レビュー")
-                            .font(.footnote)
+                            .font(.custom(FontManager.Mplus.regular, size: 13))
                             .foregroundColor(ColorManager.black_white)
                     }
                 }
@@ -48,7 +48,7 @@ struct HamburgerMenuView: View {
                         menuVM.shareOnTwitter()
                     }) {
                         Text("シェア")
-                            .font(.footnote)
+                            .font(.custom(FontManager.Mplus.regular, size: 13))
                             .foregroundColor(ColorManager.black_white)
                     }
                 }
@@ -60,7 +60,7 @@ struct HamburgerMenuView: View {
                         menuVM.goToDeveloperSNSPage(snsString: "twitter")
                     }) {
                         Text("Twitter")
-                            .font(.footnote)
+                            .font(.custom(FontManager.Mplus.regular, size: 13))
                             .foregroundColor(ColorManager.black_white)
                     }
                 }
@@ -70,7 +70,7 @@ struct HamburgerMenuView: View {
                         menuVM.goToDeveloperSNSPage(snsString: "gitHub")
                     }) {
                         Text("GitHub")
-                            .font(.footnote)
+                            .font(.custom(FontManager.Mplus.regular, size: 13))
                             .foregroundColor(ColorManager.black_white)
                     }
                 }
@@ -80,7 +80,7 @@ struct HamburgerMenuView: View {
                         menuVM.goToDeveloperSNSPage(snsString: "qiita")
                     }) {
                         Text("Qiita")
-                            .font(.footnote)
+                            .font(.custom(FontManager.Mplus.regular, size: 13))
                             .foregroundColor(ColorManager.black_white)
                     }
                 }
@@ -92,7 +92,7 @@ struct HamburgerMenuView: View {
                         isShowsAlert.toggle()
                     }) {
                         Text("アカウント削除")
-                            .font(.footnote)
+                            .font(.custom(FontManager.Mplus.regular, size: 13))
                             .foregroundColor(ColorManager.red)
                     }
                     .alert(isPresented: $isShowsAlert) {
@@ -114,7 +114,7 @@ struct HamburgerMenuView: View {
                 HStack {
                     MenuIconView(image: "version_icon", color: ColorManager.icon_purple)
                     Text("バージョン 1.0")
-                        .font(.footnote)
+                        .font(.custom(FontManager.Mplus.regular, size: 13))
                         .foregroundColor(ColorManager.black_white)
                 }
             }

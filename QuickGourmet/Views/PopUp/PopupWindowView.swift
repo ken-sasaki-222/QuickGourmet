@@ -22,7 +22,7 @@ struct PopupWindowView: View {
                     VStack(alignment: .center, spacing: 0) {
                         Text("おおよその徒歩時間を選択")
                             .frame(height: 45, alignment: .center)
-                            .font(.title3)
+                            .font(.custom(FontManager.Mplus.medium, size: 18))
                             .padding(.top, 20)
                             .foregroundColor(ColorManager.black_white)
                         Picker(selection: $selection, label: Text("徒歩時間")) {

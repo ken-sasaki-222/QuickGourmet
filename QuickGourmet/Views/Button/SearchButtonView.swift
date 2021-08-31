@@ -17,8 +17,7 @@ struct SearchButtonView: View {
         }) {
             Text(text)
                 .foregroundColor(ColorManager.white)
-                .fontWeight(.medium)
-                .font(.headline)
+                .font(.custom(FontManager.Mplus.medium, size: 18))
                 .padding(.vertical, 10)
                 .padding(.horizontal, 30)
                 .background(ColorManager.mainColor)

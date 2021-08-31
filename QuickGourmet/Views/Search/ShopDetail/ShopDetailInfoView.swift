@@ -23,23 +23,22 @@ struct ShopDetailInfoView: View {
 
     var body: some View {
         VStack {
-            Text(genreName)
-                .font(.body)
+            Text("ジャンル：\(genreName)")
+                .font(.custom(FontManager.Mplus.regular, size: 13))
                 .foregroundColor(ColorManager.gray)
                 .padding(.top, 30)
                 .padding(.leading, 180)
             HStack {
                 VStack(alignment: .leading) {
                     Text(name)
-                        .font(.title3)
+                        .font(.custom(FontManager.Mplus.medium, size: 18))
                         .foregroundColor(ColorManager.black_white)
-                        .fontWeight(.medium)
                         .lineLimit(2)
                         .padding(.init(top: 10, leading: 30, bottom: 0, trailing: 30))
                     HStack {
                         MenuIconView(image: "pin_icon", color: ColorManager.icon_blue)
                         Text(address)
-                            .font(.body)
+                            .font(.custom(FontManager.Mplus.regular, size: 16))
                             .foregroundColor(ColorManager.black_white)
                             .lineLimit(3)
                     }
@@ -47,7 +46,7 @@ struct ShopDetailInfoView: View {
                     HStack {
                         MenuIconView(image: "walk_icon", color: ColorManager.icon_green)
                         Text(mobileAccess)
-                            .font(.body)
+                            .font(.custom(FontManager.Mplus.regular, size: 16))
                             .foregroundColor(ColorManager.black_white)
                             .lineLimit(3)
                     }
@@ -55,7 +54,7 @@ struct ShopDetailInfoView: View {
                     HStack {
                         MenuIconView(image: "time_icon", color: ColorManager.icon_orange)
                         Text(open)
-                            .font(.body)
+                            .font(.custom(FontManager.Mplus.regular, size: 16))
                             .foregroundColor(ColorManager.black_white)
                             .lineLimit(5)
                     }
@@ -63,11 +62,11 @@ struct ShopDetailInfoView: View {
                     HStack {
                         MenuIconView(image: "maney_icon", color: ColorManager.icon_purple)
                         Text(average)
-                            .font(.body)
+                            .font(.custom(FontManager.Mplus.regular, size: 16))
                             .foregroundColor(ColorManager.black_white)
                             .lineLimit(3)
                     }
-                    .padding(.init(top: 10, leading: 30, bottom: 20, trailing: 30))
+                    .padding(.init(top: 10, leading: 30, bottom: 10, trailing: 30))
                 }
             }
             HStack {
