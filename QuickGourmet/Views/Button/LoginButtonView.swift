@@ -16,8 +16,7 @@ struct LoginButtonView: View {
         }) {
             Text("ログイン")
                 .foregroundColor(Color.white)
-                .fontWeight(.medium)
-                .font(.title3)
+                .font(.custom(FontManager.Mplus.medium, size: 18))
                 .padding(.vertical, 10)
                 .padding(.horizontal, 70)
                 .background(Color.green)

@@ -27,13 +27,13 @@ struct LoginView: View {
                 }
             VStack {
                 Text("食いっくグルメ")
-                    .font(.title)
-                    .fontWeight(.bold)
+                    .font(.custom(FontManager.Mplus.bold, size: 36))
                     .foregroundColor(.white)
                     .padding(.top, 60)
                     .padding(.bottom, 30)
                     .padding(.horizontal, 10)
                 TextField("匿名ログイン", text: $anonymity)
+                    .font(.custom(FontManager.Mplus.light, size: 18))
                     .frame(width: 300, height: 44, alignment: .center)
                     .background(Color.white)
                     .cornerRadius(6)
@@ -69,6 +69,7 @@ struct LoginView: View {
                     print("利用規約の表示")
                 }) {
                     Text("利用規約")
+                        .font(.custom(FontManager.Mplus.regular, size: 13))
                         .foregroundColor(.white)
                         .padding(.bottom, 30)
                         .padding(.horizontal, 10)
