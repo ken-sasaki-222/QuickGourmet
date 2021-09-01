@@ -28,46 +28,44 @@ struct ShopDetailInfoView: View {
                 .foregroundColor(ColorManager.gray)
                 .padding(.top, 30)
                 .padding(.leading, 180)
-            HStack {
-                VStack(alignment: .leading) {
-                    Text(name)
-                        .font(.custom(FontManager.Mplus.medium, size: 18))
+            VStack(alignment: .leading) {
+                Text(name)
+                    .font(.custom(FontManager.Mplus.medium, size: 18))
+                    .foregroundColor(ColorManager.black_white)
+                    .lineLimit(2)
+                    .padding(.init(top: 10, leading: 30, bottom: 0, trailing: 30))
+                HStack {
+                    MenuIconView(image: "pin_icon", color: ColorManager.icon_blue)
+                    Text(address)
+                        .font(.custom(FontManager.Mplus.regular, size: 16))
                         .foregroundColor(ColorManager.black_white)
-                        .lineLimit(2)
-                        .padding(.init(top: 10, leading: 30, bottom: 0, trailing: 30))
-                    HStack {
-                        MenuIconView(image: "pin_icon", color: ColorManager.icon_blue)
-                        Text(address)
-                            .font(.custom(FontManager.Mplus.regular, size: 16))
-                            .foregroundColor(ColorManager.black_white)
-                            .lineLimit(3)
-                    }
-                    .padding(.init(top: 10, leading: 30, bottom: 0, trailing: 30))
-                    HStack {
-                        MenuIconView(image: "walk_icon", color: ColorManager.icon_green)
-                        Text(mobileAccess)
-                            .font(.custom(FontManager.Mplus.regular, size: 16))
-                            .foregroundColor(ColorManager.black_white)
-                            .lineLimit(3)
-                    }
-                    .padding(.init(top: 10, leading: 30, bottom: 0, trailing: 30))
-                    HStack {
-                        MenuIconView(image: "time_icon", color: ColorManager.icon_orange)
-                        Text(open)
-                            .font(.custom(FontManager.Mplus.regular, size: 16))
-                            .foregroundColor(ColorManager.black_white)
-                            .lineLimit(5)
-                    }
-                    .padding(.init(top: 10, leading: 30, bottom: 5, trailing: 30))
-                    HStack {
-                        MenuIconView(image: "maney_icon", color: ColorManager.icon_purple)
-                        Text(average)
-                            .font(.custom(FontManager.Mplus.regular, size: 16))
-                            .foregroundColor(ColorManager.black_white)
-                            .lineLimit(3)
-                    }
-                    .padding(.init(top: 10, leading: 30, bottom: 10, trailing: 30))
+                        .lineLimit(3)
                 }
+                .padding(.init(top: 10, leading: 30, bottom: 0, trailing: 30))
+                HStack {
+                    MenuIconView(image: "walk_icon", color: ColorManager.icon_green)
+                    Text(mobileAccess)
+                        .font(.custom(FontManager.Mplus.regular, size: 16))
+                        .foregroundColor(ColorManager.black_white)
+                        .lineLimit(3)
+                }
+                .padding(.init(top: 10, leading: 30, bottom: 0, trailing: 30))
+                HStack {
+                    MenuIconView(image: "time_icon", color: ColorManager.icon_orange)
+                    Text(open)
+                        .font(.custom(FontManager.Mplus.regular, size: 16))
+                        .foregroundColor(ColorManager.black_white)
+                        .lineLimit(5)
+                }
+                .padding(.init(top: 10, leading: 30, bottom: 5, trailing: 30))
+                HStack {
+                    MenuIconView(image: "maney_icon", color: ColorManager.icon_purple)
+                    Text(average)
+                        .font(.custom(FontManager.Mplus.regular, size: 16))
+                        .foregroundColor(ColorManager.black_white)
+                        .lineLimit(3)
+                }
+                .padding(.init(top: 10, leading: 30, bottom: 10, trailing: 30))
             }
             HStack {
                 FavoriteButton(action: {
