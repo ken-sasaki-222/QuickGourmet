@@ -11,28 +11,29 @@ struct FavoriteShopRowView: View {
     var favoriteShopData: FavoriteShop
 
     var body: some View {
-        VStack {
+        HStack {
             URLImage(urlString: favoriteShopData.photo)
+                .cornerRadius(10.0)
                 .aspectRatio(contentMode: .fit)
             HStack {
                 VStack(alignment: .leading) {
                     Text(favoriteShopData.name)
-                        .font(.title3)
-                        .fontWeight(.medium)
+                        .font(.custom(FontManager.Mplus.medium, size: 18))
+                        .foregroundColor(ColorManager.black_white)
                         .fixedSize(horizontal: false, vertical: true)
-                        .padding(.top, 4.0)
+                        .lineLimit(2)
                     Text(favoriteShopData.mobileAccess)
-                        .font(.headline)
+                        .font(.custom(FontManager.Mplus.regular, size: 13))
+                        .foregroundColor(ColorManager.black_white)
+                        .lineLimit(2)
                         .padding(.top, 4.0)
                         .padding(.bottom, 4.0)
                     Text(favoriteShopData.average)
-                        .foregroundColor(.gray)
-                        .font(.footnote)
+                        .font(.custom(FontManager.Mplus.light, size: 13))
+                        .foregroundColor(ColorManager.gray)
                         .fixedSize(horizontal: false, vertical: true)
                         .lineLimit(1)
-                        .padding(.bottom, 8.0)
                 }
-                Spacer()
             }
         }
     }

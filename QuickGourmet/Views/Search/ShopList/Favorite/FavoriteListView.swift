@@ -10,6 +10,10 @@ import SwiftUI
 struct FavoriteListView: View {
     @ObservedObject var favoriteVM = FavoriteViewModel()
 
+    init() {
+        NavigationManager().setNavigation()
+    }
+
     var body: some View {
         NavigationView {
             if favoriteVM.favoriteShopData.count != 0 {
@@ -20,18 +24,18 @@ struct FavoriteListView: View {
                 }
             } else {
                 ZStack {
-                    Color.gray.opacity(0.5)
-                        .frame(width: 300, height: 45, alignment: .center)
+                    ColorManager.gray.opacity(0.5)
+                        .frame(width: 320, height: 45, alignment: .center)
                         .cornerRadius(10)
-                    Text("お気に入り店舗を登録してください")
-                        .font(.headline)
-                        .fontWeight(.medium)
+                    Text("ブックマークされた店舗がありません")
+                        .font(.custom(FontManager.Mplus.regular, size: 18))
                 }
                 .navigationTitle("お気に入り店舗一覧")
                 .navigationBarTitleDisplayMode(.inline)
                 .listStyle(PlainListStyle())
             }
         }
+        .accentColor(ColorManager.white)
         .onAppear {
             favoriteVM.getFavoriteShop()
         }
