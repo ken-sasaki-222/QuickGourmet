@@ -16,12 +16,12 @@ struct RemoveFavoriteButtonView: View {
             onTapped()
             isRemoveFavorite.toggle()
         }) {
-            Text(isRemoveFavorite ? "解除済み" : "解除")
-                .foregroundColor(Color.white)
-                .font(.body)
-                .padding(.vertical, 5)
-                .padding(.horizontal, 10)
-                .background(isRemoveFavorite ? Color.gray : Color.orange)
+            Text(isRemoveFavorite ? "解除済み" : "ブックマーク解除")
+                .foregroundColor(ColorManager.white)
+                .font(.custom(FontManager.Mplus.medium, size: 18))
+                .padding(.vertical, 10)
+                .padding(.horizontal, 30)
+                .background(isRemoveFavorite ? ColorManager.gray : ColorManager.icon_orange)
                 .cornerRadius(100)
                 .lineLimit(1)
         }

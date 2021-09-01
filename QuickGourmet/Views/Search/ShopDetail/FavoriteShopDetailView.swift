@@ -29,8 +29,8 @@ struct FavoriteShopDetailView: View {
                                            average: favoriteShopData.average,
                                            open: favoriteShopData.open,
                                            genreName: favoriteShopData.genreName,
+                                           urlString: favoriteShopData.urlString,
                                            documentID: favoriteShopData.documentID)
-                ShopDetailButtonView(shopUrlString: favoriteShopData.urlString)
             }
         }
     }
