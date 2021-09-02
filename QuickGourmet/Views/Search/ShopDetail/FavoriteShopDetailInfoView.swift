@@ -67,12 +67,12 @@ struct FavoriteShopDetailInfoView: View {
             }
             HStack {
                 // FavoriteShopDetailInfoViewではお気に入り解除するだけ
-                RemoveFavoriteButtonView(onTapped: {
+                RemoveFavoriteButtonView {
                     guard let documentID = documentID else {
                         return
                     }
                     favoriteVM.deleateFavoriteShop(documentID: documentID)
-                })
+                }
                 ShopDetailButtonView(shopUrlString: urlString)
             }
         }
