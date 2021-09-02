@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct RemoveFavoriteButtonView: View {
+    @Environment(\.presentationMode) var presentationMode
     @State private var isShowsAlert = false
-    @State private var isRemoveFavorite = false
     private let favoriteVM = FavoriteViewModel()
     var onTapped: () -> Void
 
@@ -17,12 +17,12 @@ struct RemoveFavoriteButtonView: View {
         Button(action: {
             isShowsAlert.toggle()
         }) {
-            Text(isRemoveFavorite ? "解除済み" : "ブックマーク解除")
+            Text("ブックマーク解除")
                 .foregroundColor(ColorManager.white)
                 .font(.custom(FontManager.Mplus.medium, size: 18))
                 .padding(.vertical, 10)
                 .padding(.horizontal, 30)
-                .background(isRemoveFavorite ? ColorManager.gray : ColorManager.icon_orange)
+                .background(ColorManager.icon_orange)
                 .cornerRadius(100)
                 .lineLimit(1)
         }
@@ -33,10 +33,9 @@ struct RemoveFavoriteButtonView: View {
                   secondaryButton: .default(Text("はい"),
                                             action: {
                                                 onTapped()
-                                                isRemoveFavorite.toggle()
+                                                presentationMode.wrappedValue.dismiss()
                                             }))
         }
-        .disabled(isRemoveFavorite)
     }
 }
 
