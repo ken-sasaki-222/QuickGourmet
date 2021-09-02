@@ -98,8 +98,6 @@ struct QuickSearchView: View {
                     })
                     .offset(x: self.currentOffset)
                     .animation(.default)
-                // 申請許可後コメントイン
-                // NendBannerView()
             }
         }
         .accentColor(ColorManager.white)
