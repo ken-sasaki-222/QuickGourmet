@@ -33,6 +33,7 @@ struct SearchListView: View {
                     .cornerRadius(10)
                 Text("検索結果に該当するお店がありません")
                     .font(.custom(FontManager.Mplus.regular, size: 18))
+                NendBannerView()
             }
         }
     }

@@ -29,8 +29,9 @@ struct FavoriteListView: View {
                         .cornerRadius(10)
                     Text("ブックマークされた店舗がありません")
                         .font(.custom(FontManager.Mplus.regular, size: 18))
+                    NendBannerView()
                 }
-                .navigationTitle("ブックマーク一覧")
+                .navigationTitle("お気に入り店舗一覧")
                 .navigationBarTitleDisplayMode(.inline)
                 .listStyle(PlainListStyle())
             }
