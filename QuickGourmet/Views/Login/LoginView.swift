@@ -77,12 +77,11 @@ struct LoginView: View {
             }
             if isShowsIndicator {
                 ZStack {
-                    ColorManager.black.opacity(0.5)
+                    ColorManager.black.opacity(0.1)
                         .edgesIgnoringSafeArea(.all)
                     RoundedRectangle(cornerRadius: 10)
-                        .frame(width: 110, height: 110, alignment: .center)
-                        .foregroundColor(ColorManager.gray)
-
+                        .frame(width: 120, height: 120, alignment: .center)
+                        .foregroundColor(ColorManager.black.opacity(0.7))
                     VStack {
                         ActivityIndicator()
                         Text("Loading...")
