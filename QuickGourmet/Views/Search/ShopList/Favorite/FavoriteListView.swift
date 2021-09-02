@@ -30,7 +30,7 @@ struct FavoriteListView: View {
                     Text("ブックマークされた店舗がありません")
                         .font(.custom(FontManager.Mplus.regular, size: 18))
                 }
-                .navigationTitle("お気に入り店舗一覧")
+                .navigationTitle("ブックマーク一覧")
                 .navigationBarTitleDisplayMode(.inline)
                 .listStyle(PlainListStyle())
             }
