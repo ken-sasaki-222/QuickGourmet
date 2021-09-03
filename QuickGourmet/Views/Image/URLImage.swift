@@ -25,22 +25,22 @@ struct URLImage: View {
             // force unwrap! 使いたくないのでguard
             guard let img = UIImage(data: imageData) else {
                 return VStack {
-                    Image(uiImage: UIImage(systemName: "icloud.and.arrow.down")!)
+                    Image("not_image")
                         .resizable()
-                        .frame(width: 35, height: 32, alignment: .center)
+                        .frame(width: 120, height: 120, alignment: .center)
                 }
             }
             // Viewを返す
             return VStack {
                 Image(uiImage: img)
                     .resizable()
-                    .frame(width: 380, height: 235, alignment: .center)
+                    .frame(width: 120, height: 120, alignment: .center)
             }
         } else {
             return VStack {
-                Image(uiImage: UIImage(systemName: "icloud.and.arrow.down")!)
+                Image("not_image")
                     .resizable()
-                    .frame(width: 35, height: 32, alignment: .center)
+                    .frame(width: 120, height: 120, alignment: .center)
             }
         }
     }

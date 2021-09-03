@@ -10,21 +10,31 @@ import SwiftUI
 struct TabBarView: View {
     @State private var section = 0
 
+    init() {
+        setTabBar()
+    }
+
     var body: some View {
         TabView(selection: $section) {
             QuickSearchView()
                 .tabItem {
                     Image(systemName: "magnifyingglass")
-                    Text("クイック検索")
+                    Text("食いっく検索")
                 }
                 .tag(0)
             FavoriteListView()
                 .tabItem {
-                    Image(systemName: "star")
-                    Text("お気に入り店舗")
+                    Image(systemName: "bookmark")
+                    Text("ブックマーク")
                 }
                 .tag(1)
         }
+        .accentColor(ColorManager.mainColor)
+    }
+
+    private func setTabBar() {
+        // UITabBar.appearance().backgroundColor = UIColor(ColorManager.baseColor)
+        UITabBar.appearance().unselectedItemTintColor = UIColor(ColorManager.gray)
     }
 }
 

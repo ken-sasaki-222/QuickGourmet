@@ -19,15 +19,13 @@ struct HamburgerMenuView: View {
         Form {
             Section(header: Text("このアプリについて")) {
                 HStack {
-                    Image("mail_icon")
-                        .resizable()
-                        .frame(width: 20, height: 20)
-                        .padding(5)
+                    MenuIconView(image: "mail_icon", color: ColorManager.icon_red)
                     Button(action: {
                         isShowMailView = true
                     }) {
                         Text("ご意見・ご要望")
-                            .font(.caption)
+                            .font(.custom(FontManager.Mplus.regular, size: 13))
+                            .foregroundColor(ColorManager.font_light_dark)
                     }
                     .disabled(!MFMailComposeViewController.canSendMail())
                     .sheet(isPresented: $isShowMailView) {
@@ -35,80 +33,67 @@ struct HamburgerMenuView: View {
                     }
                 }
                 HStack {
-                    Image("review_icon")
-                        .resizable()
-                        .frame(width: 20, height: 20)
-                        .padding(5)
+                    MenuIconView(image: "star_icon", color: ColorManager.icon_orange)
                     Button(action: {
                         menuVM.askForReview()
                     }) {
                         Text("レビュー")
-                            .font(.caption)
+                            .font(.custom(FontManager.Mplus.regular, size: 13))
+                            .foregroundColor(ColorManager.font_light_dark)
                     }
                 }
                 HStack {
-                    Image("share_icon")
-                        .resizable()
-                        .frame(width: 20, height: 20)
-                        .padding(5)
+                    MenuIconView(image: "share_icon", color: ColorManager.icon_gold)
                     Button(action: {
                         menuVM.shareOnTwitter()
                     }) {
                         Text("シェア")
-                            .font(.caption)
+                            .font(.custom(FontManager.Mplus.regular, size: 13))
+                            .foregroundColor(ColorManager.font_light_dark)
                     }
                 }
             }
             Section(header: Text("開発者")) {
                 HStack {
-                    Image("twitter_icon")
-                        .resizable()
-                        .frame(width: 20, height: 20)
-                        .padding(5)
+                    MenuIconView(image: "twitter_icon", color: ColorManager.icon_blue)
                     Button(action: {
                         menuVM.goToDeveloperSNSPage(snsString: "twitter")
                     }) {
                         Text("Twitter")
-                            .font(.caption)
+                            .font(.custom(FontManager.Mplus.regular, size: 13))
+                            .foregroundColor(ColorManager.font_light_dark)
                     }
                 }
                 HStack {
-                    Image("github_icon")
-                        .resizable()
-                        .frame(width: 20, height: 20)
-                        .padding(5)
+                    MenuIconView(image: "github_icon", color: ColorManager.black)
                     Button(action: {
                         menuVM.goToDeveloperSNSPage(snsString: "gitHub")
                     }) {
                         Text("GitHub")
-                            .font(.caption)
+                            .font(.custom(FontManager.Mplus.regular, size: 13))
+                            .foregroundColor(ColorManager.font_light_dark)
                     }
                 }
                 HStack {
-                    Image("qiita_icon")
-                        .resizable()
-                        .frame(width: 20, height: 20)
-                        .padding(5)
+                    MenuIconView(image: "qiita_icon", color: ColorManager.icon_green)
                     Button(action: {
                         menuVM.goToDeveloperSNSPage(snsString: "qiita")
                     }) {
                         Text("Qiita")
-                            .font(.caption)
+                            .font(.custom(FontManager.Mplus.regular, size: 13))
+                            .foregroundColor(ColorManager.font_light_dark)
                     }
                 }
             }
             Section(header: Text("ログアウト")) {
                 HStack {
-                    Image("logout_icon")
-                        .resizable()
-                        .frame(width: 20, height: 20)
-                        .padding(5)
+                    MenuIconView(image: "logout_icon", color: ColorManager.gray)
                     Button(action: {
                         isShowsAlert.toggle()
                     }) {
                         Text("アカウント削除")
-                            .font(.caption)
-                            .foregroundColor((.red))
+                            .font(.custom(FontManager.Mplus.regular, size: 13))
+                            .foregroundColor(ColorManager.icon_red)
                     }
                     .alert(isPresented: $isShowsAlert) {
                         Alert(title: Text("確認"), message: Text("アカウントを削除しますか？"), primaryButton: .default(Text("いいえ")), secondaryButton: .default(Text("はい"), action: {
@@ -127,12 +112,10 @@ struct HamburgerMenuView: View {
             }
             Section(header: Text("バージョン")) {
                 HStack {
-                    Image("version_icon")
-                        .resizable()
-                        .frame(width: 20, height: 20)
-                        .padding(5)
+                    MenuIconView(image: "version_icon", color: ColorManager.icon_purple)
                     Text("バージョン 1.0")
-                        .font(.caption)
+                        .font(.custom(FontManager.Mplus.regular, size: 13))
+                        .foregroundColor(ColorManager.font_light_dark)
                 }
             }
         }

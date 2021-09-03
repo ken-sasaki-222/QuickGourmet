@@ -17,9 +17,10 @@ struct ShopDetailView: View {
             VStack {
                 ZStack {
                     MapView(latitude: shopData.lat, longitude: shopData.lng)
-                    LogoImage(urlString: shopData.logoImage)
+                    LogoImage(urlString: shopData.photo.pc.l)
                         .clipShape(Circle())
-                        .overlay(Circle().stroke(Color.white, lineWidth: 4))
+                        .overlay(Circle().stroke(ColorManager.white, lineWidth: 4))
+                        .aspectRatio(contentMode: .fit)
                         .shadow(radius: 7)
                         .offset(x: -130, y: 155)
                 }
@@ -35,12 +36,15 @@ struct ShopDetailView: View {
                                    latitude: shopData.lat,
                                    longitude: shopData.lng,
                                    urlString: shopData.urls.pc)
-                ShopDetailButtonView(shopUrlString: shopData.urls.pc)
             }
         }
         .onAppear(perform: {
-            quickSearchVM.recordShopDetailLaunchCount()
-            // NendInterstitialView().showInterstitiaStillessAD()
+            switch quickSearchVM.recordShopDetailLaunchCount() {
+            case true:
+                NendInterstitialView().showInterstitiaStillessAD()
+            case false:
+                break
+            }
         })
     }
 }

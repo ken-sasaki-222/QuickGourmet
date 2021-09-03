@@ -41,6 +41,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         FirebaseApp.configure()
         // Cloud Firestoreの初期化
         _ = Firestore.firestore()
+        // 起動回数記録
+        recordLaunchCount()
 
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
@@ -71,5 +73,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         userDefaultsDataStore.latitudeInformation = location.latitude
         userDefaultsDataStore.longitudeInformation = location.longitude
         print("緯度: ", location.latitude, "経度: ", location.longitude)
+    }
+
+    func recordLaunchCount() {
+        userDefaultsDataStore.launchCount = userDefaultsDataStore.launchCount
     }
 }

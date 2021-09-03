@@ -20,9 +20,9 @@ struct LogoImage: View {
         if let imageData = self.imageDownloader.downloadData {
             guard let img = UIImage(data: imageData) else {
                 return VStack {
-                    Image(uiImage: UIImage(systemName: "icloud.and.arrow.down")!)
+                    Image("not_image")
                         .resizable()
-                        .frame(width: 35, height: 32, alignment: .center)
+                        .frame(width: 80, height: 80, alignment: .center)
                 }
             }
             return VStack {
@@ -32,9 +32,9 @@ struct LogoImage: View {
             }
         } else {
             return VStack {
-                Image(uiImage: UIImage(systemName: "icloud.and.arrow.down")!)
+                Image("not_image")
                     .resizable()
-                    .frame(width: 35, height: 32, alignment: .center)
+                    .frame(width: 80, height: 80, alignment: .center)
             }
         }
     }

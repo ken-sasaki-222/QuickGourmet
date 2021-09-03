@@ -8,12 +8,14 @@
 import AdSupport
 import AppTrackingTransparency
 import Foundation
+import StoreKit
 import SwiftUI
 
 class QuickSearchViewModel: ObservableObject {
     @Published var shopSearchFetcher = ShopSearchFetcher()
     @Published var shopData: [Shop] = []
     private let userDefaultsDataStore = UserDefaultsDataStore()
+    private var reviewed = false
     var genreIndex: Int = 0
     var pickerSelection: Int = 0
     var latitude: Double = 0.0
@@ -139,12 +141,40 @@ class QuickSearchViewModel: ObservableObject {
         }
     }
 
-    func recordShopDetailLaunchCount() {}
-
     func requestIDFA() {
         ATTrackingManager.requestTrackingAuthorization(completionHandler: { _ in
             // Tracking authorization completed. Start loading ads here.
             // loadAd()
         })
+    }
+
+    func askForReview() {
+        if reviewed == true {
+            return
+        }
+        if userDefaultsDataStore.launchCount % 7 == 0 {
+            if let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
+                SKStoreReviewController.requestReview(in: scene)
+                reviewed = true
+            }
+        }
+    }
+
+    func recordSearchListLaunchCount() -> Bool {
+        userDefaultsDataStore.searchListLaunchCount = userDefaultsDataStore.searchListLaunchCount
+        if userDefaultsDataStore.searchListLaunchCount % 10 == 0 {
+            return true
+        } else {
+            return false
+        }
+    }
+
+    func recordShopDetailLaunchCount() -> Bool {
+        userDefaultsDataStore.shopDetailLaunchCount = userDefaultsDataStore.shopDetailLaunchCount
+        if userDefaultsDataStore.shopDetailLaunchCount % 6 == 0 {
+            return true
+        } else {
+            return false
+        }
     }
 }

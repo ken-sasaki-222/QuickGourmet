@@ -12,7 +12,7 @@ struct ShopDetailButtonView: View {
     var shopUrlString: String
 
     var body: some View {
-        SearchButtonView(text: "ホットペッパーグルメへ移動") {
+        SearchButtonView(text: "お店へ連絡") {
             self.isShown = true
         }
         .sheet(isPresented: $isShown) {

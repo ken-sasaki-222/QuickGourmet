@@ -24,6 +24,10 @@ struct QuickSearchView: View {
 
     private let quickSearchTextes = ["居酒屋", "ダイニングバー・バル", "創作料理", "和食", "洋食", "イタリアン・フレンチ", "中華", "焼肉・ホルモン", "アジア・エスニック料理", "各国料理", "カラオケ・パーティ", "バー・カクテル", "ラーメン", "カフェ・スイーツ", "その他グルメ", "お好み焼き・もんじゃ", "韓国料理"]
 
+    init() {
+        setNavigation()
+    }
+
     // searchTODO: 距離指定ではなく徒歩００分で指定させる
     var body: some View {
         GeometryReader { geometry in
@@ -59,7 +63,7 @@ struct QuickSearchView: View {
                                     }
                                     .edgesIgnoringSafeArea(.bottom)
                                 }
-                                .navigationTitle("食いっくグルメ")
+                                .navigationTitle("食いっく検索")
                                 .navigationBarTitleDisplayMode(.inline)
                                 .navigationBarItems(leading: Button(action: {
                                     toggleHamburgerMenu()
@@ -69,7 +73,7 @@ struct QuickSearchView: View {
                                         .frame(width: 20, height: 20)
                                 })
                             }
-                            Color.black.opacity(Double((closeOffset - currentOffset) / closeOffset) - 0.1
+                            ColorManager.black.opacity(Double((closeOffset - currentOffset) / closeOffset) - 0.1
                             )
                             .edgesIgnoringSafeArea(.all)
                             .onTapGesture {
@@ -77,9 +81,12 @@ struct QuickSearchView: View {
                             }
                         }
                     }
+                    .background(ColorManager.baseColor)
+                    // .edgesIgnoringSafeArea(.bottom)
                 }
                 .onAppear {
                     quickSearchVM.requestIDFA()
+                    quickSearchVM.askForReview()
                 }
                 PopupWindowView(show: $isShowsPopUp, searchAction: { selection in
                     communicateQuickSearchVM(index: index, selection: selection)
@@ -92,10 +99,20 @@ struct QuickSearchView: View {
                     })
                     .offset(x: self.currentOffset)
                     .animation(.default)
-                // 申請許可後コメントイン
-                // NendBannerView()
             }
         }
+        .accentColor(ColorManager.font_white)
+    }
+
+    private func setNavigation() {
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = UIColor(ColorManager.mainColor)
+        appearance.titleTextAttributes = [
+            .font: UIFont(name: FontManager.Mplus.medium, size: 20) as Any,
+            .foregroundColor: UIColor(ColorManager.font_white)
+        ]
+        UINavigationBar.appearance().standardAppearance = appearance
     }
 
     private func setHumburgerMenuPosition(viewWidth: CGFloat) {

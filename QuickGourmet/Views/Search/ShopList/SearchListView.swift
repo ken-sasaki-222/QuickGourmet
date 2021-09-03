@@ -14,20 +14,41 @@ struct SearchListView: View {
 
     // @ObservedObject var searchVM: SearchViewModel
     @ObservedObject var quickSearchVM: QuickSearchViewModel
+    private let userDefaultsDataStore = UserDefaultsDataStore()
 
     var body: some View {
-        List(quickSearchVM.shopData) { shop in
-            NavigationLink(destination: ShopDetailView(shopData: shop)) {
-                ShopRowView(shopData: shop)
+        if quickSearchVM.shopData.count != 0 {
+            List(quickSearchVM.shopData) { shop in
+                NavigationLink(destination: ShopDetailView(shopData: shop)) {
+                    ShopRowView(shopData: shop)
+                }
+            }
+            .listStyle(PlainListStyle())
+            .onAppear {
+                UITableView.appearance().backgroundColor = UIColor(ColorManager.baseColor)
+                switch quickSearchVM.recordSearchListLaunchCount() {
+                case true:
+                    NendInterstitialView().showInterstitiaStillessAD()
+                case false:
+                    break
+                }
+            }
+        } else {
+            ZStack {
+                ColorManager.gray.opacity(0.5)
+                    .frame(width: 320, height: 45, alignment: .center)
+                    .cornerRadius(10)
+                Text("検索結果に該当するお店がありません")
+                    .font(.custom(FontManager.Mplus.regular, size: 18))
+                NendBannerView()
             }
         }
-        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
-// struct SearchListView_Previews: PreviewProvider {
-//    var searchVM: SearchViewModel
-//    static var previews: some View {
-//        SearchListView(searchVM: searchVM)
-//    }
-// }
+struct SearchListView_Previews: PreviewProvider {
+    var searchVM: SearchViewModel
+    static var previews: some View {
+        SearchListView(quickSearchVM: QuickSearchViewModel())
+    }
+}

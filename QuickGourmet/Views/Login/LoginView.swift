@@ -27,15 +27,15 @@ struct LoginView: View {
                 }
             VStack {
                 Text("食いっくグルメ")
-                    .font(.title)
-                    .fontWeight(.bold)
-                    .foregroundColor(.white)
+                    .font(.custom(FontManager.Mplus.bold, size: 36))
+                    .foregroundColor(ColorManager.font_white)
                     .padding(.top, 60)
                     .padding(.bottom, 30)
                     .padding(.horizontal, 10)
                 TextField("匿名ログイン", text: $anonymity)
+                    .font(.custom(FontManager.Mplus.light, size: 18))
                     .frame(width: 300, height: 44, alignment: .center)
-                    .background(Color.white)
+                    .background(ColorManager.white)
                     .cornerRadius(6)
                     .padding(.bottom, 30)
                     .padding(.horizontal, 10)
@@ -46,7 +46,7 @@ struct LoginView: View {
                             case .success:
                                 print("Login success.")
                                 isShowsIndicator.toggle()
-                                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
                                     isShowsIndicator.toggle()
                                     isTapActived.toggle()
                                 }
@@ -69,16 +69,26 @@ struct LoginView: View {
                     print("利用規約の表示")
                 }) {
                     Text("利用規約")
-                        .foregroundColor(.white)
+                        .font(.custom(FontManager.Mplus.regular, size: 18))
+                        .foregroundColor(ColorManager.font_white)
                         .padding(.bottom, 30)
                         .padding(.horizontal, 10)
                 }
             }
             if isShowsIndicator {
                 ZStack {
-                    Color.black.opacity(0.5)
+                    ColorManager.black.opacity(0.1)
                         .edgesIgnoringSafeArea(.all)
-                    ActivityIndicator()
+                    RoundedRectangle(cornerRadius: 10)
+                        .frame(width: 120, height: 120, alignment: .center)
+                        .foregroundColor(ColorManager.black.opacity(0.7))
+                    VStack {
+                        ActivityIndicator()
+                        Text("Loading...")
+                            .foregroundColor(ColorManager.font_white)
+                            .font(.custom(FontManager.Mplus.medium, size: 18))
+                            .padding(.top, 5)
+                    }
                 }
                 .animation(.linear)
             }

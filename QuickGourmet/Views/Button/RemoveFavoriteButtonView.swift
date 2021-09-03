@@ -8,24 +8,34 @@
 import SwiftUI
 
 struct RemoveFavoriteButtonView: View {
+    @Environment(\.presentationMode) var presentationMode
+    @State private var isShowsAlert = false
+    private let favoriteVM = FavoriteViewModel()
     var onTapped: () -> Void
-    @State private var isRemoveFavorite = false
 
     var body: some View {
         Button(action: {
-            onTapped()
-            isRemoveFavorite.toggle()
+            isShowsAlert.toggle()
         }) {
-            Text(isRemoveFavorite ? "解除済み" : "解除")
-                .foregroundColor(Color.white)
-                .font(.body)
-                .padding(.vertical, 5)
-                .padding(.horizontal, 10)
-                .background(isRemoveFavorite ? Color.gray : Color.orange)
+            Text("ブックマーク解除")
+                .foregroundColor(ColorManager.font_white)
+                .font(.custom(FontManager.Mplus.medium, size: 18))
+                .padding(.vertical, 10)
+                .padding(.horizontal, 30)
+                .background(ColorManager.gray)
                 .cornerRadius(100)
                 .lineLimit(1)
         }
-        .disabled(isRemoveFavorite)
+        .alert(isPresented: $isShowsAlert) {
+            Alert(title: Text("確認"),
+                  message: Text("ブックマークを解除しますか？"),
+                  primaryButton: .default(Text("いいえ")),
+                  secondaryButton: .default(Text("はい"),
+                                            action: {
+                                                onTapped()
+                                                presentationMode.wrappedValue.dismiss()
+                                            }))
+        }
     }
 }
 

@@ -18,7 +18,7 @@ struct FavoriteShopDetailView: View {
                     MapView(latitude: favoriteShopData.latitude, longitude: favoriteShopData.longitude)
                     LogoImage(urlString: favoriteShopData.logoImage)
                         .clipShape(Circle())
-                        .overlay(Circle().stroke(Color.white, lineWidth: 4))
+                        .overlay(Circle().stroke(ColorManager.white, lineWidth: 4))
                         .shadow(radius: 7)
                         .offset(x: -130, y: 155)
                 }
@@ -29,8 +29,16 @@ struct FavoriteShopDetailView: View {
                                            average: favoriteShopData.average,
                                            open: favoriteShopData.open,
                                            genreName: favoriteShopData.genreName,
+                                           urlString: favoriteShopData.urlString,
                                            documentID: favoriteShopData.documentID)
-                ShopDetailButtonView(shopUrlString: favoriteShopData.urlString)
+            }
+        }
+        .onAppear {
+            switch favoriteVM.recordFavoriteShopDetailLaunchCount() {
+            case true:
+                NendInterstitialView().showInterstitiaStillessAD()
+            case false:
+                break
             }
         }
     }

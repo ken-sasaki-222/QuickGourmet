@@ -16,12 +16,12 @@ struct FavoriteButton: View {
             action()
             isFavorite.toggle()
         }) {
-            Text(isFavorite ? "保存済み" : "保存")
-                .foregroundColor(Color.white)
-                .font(.body)
-                .padding(.vertical, 5)
-                .padding(.horizontal, 10)
-                .background(isFavorite ? Color.gray : Color.red)
+            Text(isFavorite ? "保存済み" : "ブックマーク")
+                .foregroundColor(ColorManager.font_white)
+                .font(.custom(FontManager.Mplus.medium, size: 18))
+                .padding(.vertical, 10)
+                .padding(.horizontal, 30)
+                .background(isFavorite ? ColorManager.gray : ColorManager.icon_red)
                 .cornerRadius(100)
                 .lineLimit(1)
         }
