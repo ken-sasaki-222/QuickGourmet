@@ -33,6 +33,14 @@ struct FavoriteShopDetailView: View {
                                            documentID: favoriteShopData.documentID)
             }
         }
+        .onAppear {
+            switch favoriteVM.recordFavoriteShopDetailLaunchCount() {
+            case true:
+                NendInterstitialView().showInterstitiaStillessAD()
+            case false:
+                break
+            }
+        }
     }
 }
 

@@ -22,6 +22,14 @@ struct FavoriteListView: View {
                         FavoriteShopRowView(favoriteShopData: shopData)
                     }
                 }
+                .onAppear {
+                    switch favoriteVM.recordFavoriteListLaunchCount() {
+                    case true:
+                        NendInterstitialView().showInterstitiaStillessAD()
+                    case false:
+                        break
+                    }
+                }
             } else {
                 ZStack {
                     ColorManager.gray.opacity(0.5)
