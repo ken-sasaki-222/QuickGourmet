@@ -12,6 +12,9 @@ class UserDefaultsDataStore {
         case latitudeInformation = "latitude_information"
         case longitudeInformation = "longitude_information"
         case shopDetailLaunchCount = "shopdetail_launchcount"
+        case favoriteShopDetailLaunchCount = "favoriteshopdetail_launchcount"
+        case searchListLaunchCount = "searchlist_launchcount"
+        case favoriteListLaunchCount = "favoritelist_launchcount"
     }
 
     var defalts: UserDefaults {
@@ -42,6 +45,33 @@ class UserDefaultsDataStore {
         }
         set(newValue) {
             defalts.setValue(newValue + 1, forKey: UserDefaultsKey.shopDetailLaunchCount.rawValue)
+        }
+    }
+
+    var favoriteShopDetailLaunchCount: Int {
+        get {
+            defalts.integer(forKey: UserDefaultsKey.favoriteShopDetailLaunchCount.rawValue)
+        }
+        set(newValue) {
+            defalts.setValue(newValue + 1, forKey: UserDefaultsKey.favoriteShopDetailLaunchCount.rawValue)
+        }
+    }
+
+    var searchListLaunchCount: Int {
+        get {
+            defalts.integer(forKey: UserDefaultsKey.searchListLaunchCount.rawValue)
+        }
+        set(newValue) {
+            defalts.setValue(newValue + 1, forKey: UserDefaultsKey.searchListLaunchCount.rawValue)
+        }
+    }
+
+    var favoriteListLaunchCount: Int {
+        get {
+            defalts.integer(forKey: UserDefaultsKey.favoriteListLaunchCount.rawValue)
+        }
+        set(newValue) {
+            defalts.setValue(newValue + 1, forKey: UserDefaultsKey.favoriteListLaunchCount.rawValue)
         }
     }
 }
