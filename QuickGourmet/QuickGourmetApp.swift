@@ -13,7 +13,6 @@ import SwiftUI
 
 @main
 struct QuickGourmetApp: App {
-    // AppDelegateの設定を可能に
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
 
     var body: some Scene {

@@ -49,7 +49,7 @@ struct MailView: UIViewControllerRepresentable {
             default:
                 break
             }
-            parent.isShow = false // MailView閉じる
+            parent.isShow = false
         }
     }
 

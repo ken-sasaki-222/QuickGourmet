@@ -33,7 +33,6 @@ struct TabBarView: View {
     }
 
     private func setTabBar() {
-        // UITabBar.appearance().backgroundColor = UIColor(ColorManager.baseColor)
         UITabBar.appearance().unselectedItemTintColor = UIColor(ColorManager.gray)
     }
 }

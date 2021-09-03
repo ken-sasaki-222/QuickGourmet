@@ -27,8 +27,7 @@ struct QuickSearchView: View {
     init() {
         setNavigation()
     }
-
-    // searchTODO: 距離指定ではなく徒歩００分で指定させる
+    
     var body: some View {
         GeometryReader { geometry in
             ZStack {
@@ -82,7 +81,6 @@ struct QuickSearchView: View {
                         }
                     }
                     .background(ColorManager.baseColor)
-                    // .edgesIgnoringSafeArea(.bottom)
                 }
                 .onAppear {
                     quickSearchVM.requestIDFA()

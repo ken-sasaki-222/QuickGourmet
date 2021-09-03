@@ -8,11 +8,6 @@
 import SwiftUI
 
 struct SearchListView: View {
-    // インターフェース定義用Mock
-    // let shopData: [Response] = mockShopesDate
-    // @ObservedObject var shopSearchFetcher = ShopSearchFetcher()
-
-    // @ObservedObject var searchVM: SearchViewModel
     @ObservedObject var quickSearchVM: QuickSearchViewModel
     private let userDefaultsDataStore = UserDefaultsDataStore()
 
