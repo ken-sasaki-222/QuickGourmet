@@ -139,7 +139,14 @@ class QuickSearchViewModel: ObservableObject {
         }
     }
 
-    func recordShopDetailLaunchCount() {}
+    func recordShopDetailLaunchCount() -> Bool {
+        userDefaultsDataStore.shopDetailLaunchCount = userDefaultsDataStore.shopDetailLaunchCount
+        if userDefaultsDataStore.shopDetailLaunchCount % 5 == 0 {
+            return true
+        } else {
+            return false
+        }
+    }
 
     func requestIDFA() {
         ATTrackingManager.requestTrackingAuthorization(completionHandler: { _ in

@@ -39,8 +39,12 @@ struct ShopDetailView: View {
             }
         }
         .onAppear(perform: {
-            quickSearchVM.recordShopDetailLaunchCount()
-            // NendInterstitialView().showInterstitiaStillessAD()
+            switch quickSearchVM.recordShopDetailLaunchCount() {
+            case true:
+                NendInterstitialView().showInterstitiaStillessAD()
+            case false:
+                return
+            }
         })
     }
 }
