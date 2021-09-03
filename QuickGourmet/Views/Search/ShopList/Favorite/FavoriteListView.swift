@@ -23,6 +23,7 @@ struct FavoriteListView: View {
                     }
                 }
                 .onAppear {
+                    favoriteVM.getFavoriteShop()
                     switch favoriteVM.recordFavoriteListLaunchCount() {
                     case true:
                         NendInterstitialView().showInterstitiaStillessAD()
