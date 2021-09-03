@@ -139,19 +139,28 @@ class QuickSearchViewModel: ObservableObject {
         }
     }
 
-    func recordShopDetailLaunchCount() -> Bool {
-        userDefaultsDataStore.shopDetailLaunchCount = userDefaultsDataStore.shopDetailLaunchCount
-        if userDefaultsDataStore.shopDetailLaunchCount % 5 == 0 {
+    func requestIDFA() {
+        ATTrackingManager.requestTrackingAuthorization(completionHandler: { _ in
+            // Tracking authorization completed. Start loading ads here.
+            // loadAd()
+        })
+    }
+    
+    func recordSearchListLaunchCount() -> Bool {
+        userDefaultsDataStore.searchListLaunchCount = userDefaultsDataStore.searchListLaunchCount
+        if userDefaultsDataStore.searchListLaunchCount % 10 == 0 {
             return true
         } else {
             return false
         }
     }
 
-    func requestIDFA() {
-        ATTrackingManager.requestTrackingAuthorization(completionHandler: { _ in
-            // Tracking authorization completed. Start loading ads here.
-            // loadAd()
-        })
+    func recordShopDetailLaunchCount() -> Bool {
+        userDefaultsDataStore.shopDetailLaunchCount = userDefaultsDataStore.shopDetailLaunchCount
+        if userDefaultsDataStore.shopDetailLaunchCount % 6 == 0 {
+            return true
+        } else {
+            return false
+        }
     }
 }

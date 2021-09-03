@@ -43,7 +43,7 @@ struct ShopDetailView: View {
             case true:
                 NendInterstitialView().showInterstitiaStillessAD()
             case false:
-                return
+                break
             }
         })
     }

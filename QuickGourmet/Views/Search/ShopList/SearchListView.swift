@@ -14,6 +14,7 @@ struct SearchListView: View {
 
     // @ObservedObject var searchVM: SearchViewModel
     @ObservedObject var quickSearchVM: QuickSearchViewModel
+    private let userDefaultsDataStore = UserDefaultsDataStore()
 
     var body: some View {
         if quickSearchVM.shopData.count != 0 {
@@ -25,6 +26,12 @@ struct SearchListView: View {
             .listStyle(PlainListStyle())
             .onAppear {
                 UITableView.appearance().backgroundColor = UIColor(ColorManager.white_black)
+                switch quickSearchVM.recordSearchListLaunchCount() {
+                case true:
+                    NendInterstitialView().showInterstitiaStillessAD()
+                case false:
+                    break
+                }
             }
         } else {
             ZStack {
