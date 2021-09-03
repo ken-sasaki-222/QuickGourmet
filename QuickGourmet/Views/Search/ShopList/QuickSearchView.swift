@@ -101,7 +101,7 @@ struct QuickSearchView: View {
                     .animation(.default)
             }
         }
-        .accentColor(ColorManager.white)
+        .accentColor(ColorManager.font_white)
     }
 
     private func setNavigation() {
@@ -110,7 +110,7 @@ struct QuickSearchView: View {
         appearance.backgroundColor = UIColor(ColorManager.mainColor)
         appearance.titleTextAttributes = [
             .font: UIFont(name: FontManager.Mplus.medium, size: 20) as Any,
-            .foregroundColor: UIColor(ColorManager.white)
+            .foregroundColor: UIColor(ColorManager.font_white)
         ]
         UINavigationBar.appearance().standardAppearance = appearance
     }

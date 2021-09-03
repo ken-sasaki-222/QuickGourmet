@@ -19,7 +19,7 @@ struct QuickSearchRowView: View {
                 .aspectRatio(contentMode: .fit)
                 .cornerRadius(20)
             Text("周辺の\(genreName)を検索")
-                .foregroundColor(ColorManager.black)
+                .foregroundColor(ColorManager.font_black)
                 .font(.custom(FontManager.Mplus.regular, size: 18))
                 .padding(5)
                 .background(ColorManager.white.opacity(0.5))

@@ -28,7 +28,7 @@ struct LoginView: View {
             VStack {
                 Text("食いっくグルメ")
                     .font(.custom(FontManager.Mplus.bold, size: 36))
-                    .foregroundColor(ColorManager.white)
+                    .foregroundColor(ColorManager.font_white)
                     .padding(.top, 60)
                     .padding(.bottom, 30)
                     .padding(.horizontal, 10)
@@ -70,7 +70,7 @@ struct LoginView: View {
                 }) {
                     Text("利用規約")
                         .font(.custom(FontManager.Mplus.regular, size: 18))
-                        .foregroundColor(ColorManager.white)
+                        .foregroundColor(ColorManager.font_white)
                         .padding(.bottom, 30)
                         .padding(.horizontal, 10)
                 }
@@ -85,7 +85,7 @@ struct LoginView: View {
                     VStack {
                         ActivityIndicator()
                         Text("Loading...")
-                            .foregroundColor(ColorManager.white)
+                            .foregroundColor(ColorManager.font_white)
                             .font(.custom(FontManager.Mplus.medium, size: 18))
                             .padding(.top, 5)
                     }

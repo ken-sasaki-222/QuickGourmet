@@ -16,7 +16,7 @@ struct SearchButtonView: View {
             action()
         }) {
             Text(text)
-                .foregroundColor(ColorManager.white)
+                .foregroundColor(ColorManager.font_white)
                 .font(.custom(FontManager.Mplus.medium, size: 18))
                 .padding(.vertical, 10)
                 .padding(.horizontal, 30)

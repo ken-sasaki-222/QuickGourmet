@@ -44,7 +44,7 @@ struct FavoriteListView: View {
                 .listStyle(PlainListStyle())
             }
         }
-        .accentColor(ColorManager.white)
+        .accentColor(ColorManager.font_white)
         .onAppear {
             favoriteVM.getFavoriteShop()
         }

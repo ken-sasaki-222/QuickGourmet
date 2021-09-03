@@ -25,7 +25,7 @@ struct SearchListView: View {
             }
             .listStyle(PlainListStyle())
             .onAppear {
-                UITableView.appearance().backgroundColor = UIColor(ColorManager.white_black)
+                UITableView.appearance().backgroundColor = UIColor(ColorManager.baseColor)
                 switch quickSearchVM.recordSearchListLaunchCount() {
                 case true:
                     NendInterstitialView().showInterstitiaStillessAD()

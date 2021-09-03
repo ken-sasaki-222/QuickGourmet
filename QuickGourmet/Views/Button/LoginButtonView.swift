@@ -15,7 +15,7 @@ struct LoginButtonView: View {
             tapAction()
         }) {
             Text("ログイン")
-                .foregroundColor(Color.white)
+                .foregroundColor(ColorManager.font_white)
                 .font(.custom(FontManager.Mplus.medium, size: 18))
                 .padding(.vertical, 10)
                 .padding(.horizontal, 70)

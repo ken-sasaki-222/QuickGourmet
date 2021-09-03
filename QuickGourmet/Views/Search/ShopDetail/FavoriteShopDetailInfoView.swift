@@ -28,7 +28,7 @@ struct FavoriteShopDetailInfoView: View {
             VStack(alignment: .leading) {
                 Text(name)
                     .font(.custom(FontManager.Mplus.medium, size: 18))
-                    .foregroundColor(ColorManager.black_white)
+                    .foregroundColor(ColorManager.font_light_dark)
                     .lineLimit(2)
                     .padding(.init(top: 10, leading: 30, bottom: 0, trailing: 30))
                     .padding(.init(top: 10, leading: 30, bottom: 0, trailing: 30))
@@ -36,7 +36,7 @@ struct FavoriteShopDetailInfoView: View {
                     MenuIconView(image: "pin_icon", color: ColorManager.icon_blue)
                     Text(address)
                         .font(.custom(FontManager.Mplus.regular, size: 16))
-                        .foregroundColor(ColorManager.black_white)
+                        .foregroundColor(ColorManager.font_light_dark)
                         .lineLimit(3)
                 }
                 .padding(.init(top: 10, leading: 30, bottom: 0, trailing: 30))
@@ -44,7 +44,7 @@ struct FavoriteShopDetailInfoView: View {
                     MenuIconView(image: "walk_icon", color: ColorManager.icon_green)
                     Text(mobileAccess)
                         .font(.custom(FontManager.Mplus.regular, size: 16))
-                        .foregroundColor(ColorManager.black_white)
+                        .foregroundColor(ColorManager.font_light_dark)
                         .lineLimit(3)
                 }
                 .padding(.init(top: 10, leading: 30, bottom: 0, trailing: 30))
@@ -52,7 +52,7 @@ struct FavoriteShopDetailInfoView: View {
                     MenuIconView(image: "time_icon", color: ColorManager.icon_orange)
                     Text(open)
                         .font(.custom(FontManager.Mplus.regular, size: 16))
-                        .foregroundColor(ColorManager.black_white)
+                        .foregroundColor(ColorManager.font_light_dark)
                         .lineLimit(5)
                 }
                 .padding(.init(top: 10, leading: 30, bottom: 5, trailing: 30))
@@ -60,7 +60,7 @@ struct FavoriteShopDetailInfoView: View {
                     MenuIconView(image: "maney_icon", color: ColorManager.icon_purple)
                     Text(average)
                         .font(.custom(FontManager.Mplus.regular, size: 16))
-                        .foregroundColor(ColorManager.black_white)
+                        .foregroundColor(ColorManager.font_light_dark)
                         .lineLimit(3)
                 }
                 .padding(.init(top: 10, leading: 30, bottom: 10, trailing: 30))
