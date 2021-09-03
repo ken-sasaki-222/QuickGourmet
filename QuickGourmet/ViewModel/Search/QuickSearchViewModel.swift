@@ -8,6 +8,7 @@
 import AdSupport
 import AppTrackingTransparency
 import Foundation
+import StoreKit
 import SwiftUI
 
 class QuickSearchViewModel: ObservableObject {
@@ -144,6 +145,14 @@ class QuickSearchViewModel: ObservableObject {
             // Tracking authorization completed. Start loading ads here.
             // loadAd()
         })
+    }
+
+    func askForReview() {
+        if userDefaultsDataStore.launchCount % 7 == 0 {
+            if let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
+                SKStoreReviewController.requestReview(in: scene)
+            }
+        }
     }
 
     func recordSearchListLaunchCount() -> Bool {

@@ -86,6 +86,7 @@ struct QuickSearchView: View {
                 }
                 .onAppear {
                     quickSearchVM.requestIDFA()
+                    quickSearchVM.askForReview()
                 }
                 PopupWindowView(show: $isShowsPopUp, searchAction: { selection in
                     communicateQuickSearchVM(index: index, selection: selection)
