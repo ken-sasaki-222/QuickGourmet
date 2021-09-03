@@ -22,6 +22,9 @@ struct FavoriteListView: View {
                         FavoriteShopRowView(favoriteShopData: shopData)
                     }
                 }
+                .navigationTitle("ブックマーク一覧")
+                .navigationBarTitleDisplayMode(.inline)
+                .listStyle(PlainListStyle())
                 .onAppear {
                     favoriteVM.getFavoriteShop()
                     switch favoriteVM.recordFavoriteListLaunchCount() {
@@ -36,11 +39,11 @@ struct FavoriteListView: View {
                     ColorManager.gray.opacity(0.5)
                         .frame(width: 320, height: 45, alignment: .center)
                         .cornerRadius(10)
-                    Text("ブックマークされた店舗がありません")
+                    Text("ブックマークされたお店がありません")
                         .font(.custom(FontManager.Mplus.regular, size: 18))
                     NendBannerView()
                 }
-                .navigationTitle("お気に入り店舗一覧")
+                .navigationTitle("ブックマーク一覧")
                 .navigationBarTitleDisplayMode(.inline)
                 .listStyle(PlainListStyle())
             }
