@@ -15,6 +15,7 @@ class QuickSearchViewModel: ObservableObject {
     @Published var shopSearchFetcher = ShopSearchFetcher()
     @Published var shopData: [Shop] = []
     private let userDefaultsDataStore = UserDefaultsDataStore()
+    private var reviewed = false
     var genreIndex: Int = 0
     var pickerSelection: Int = 0
     var latitude: Double = 0.0
@@ -148,9 +149,13 @@ class QuickSearchViewModel: ObservableObject {
     }
 
     func askForReview() {
+        if reviewed == true {
+            return
+        }
         if userDefaultsDataStore.launchCount % 7 == 0 {
             if let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
                 SKStoreReviewController.requestReview(in: scene)
+                reviewed = true
             }
         }
     }
