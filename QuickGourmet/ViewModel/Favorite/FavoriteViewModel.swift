@@ -37,7 +37,7 @@ class FavoriteViewModel: ObservableObject {
     }
 
     func recordFavoriteShopDetailLaunchCount() -> Bool {
-        userDefaultsDataStore.favoriteListLaunchCount = userDefaultsDataStore.favoriteListLaunchCount
+        userDefaultsDataStore.favoriteShopDetailLaunchCount = userDefaultsDataStore.favoriteShopDetailLaunchCount
         if userDefaultsDataStore.favoriteListLaunchCount % 6 == 0 {
             return true
         } else {

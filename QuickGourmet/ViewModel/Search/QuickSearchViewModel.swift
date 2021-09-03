@@ -145,7 +145,7 @@ class QuickSearchViewModel: ObservableObject {
             // loadAd()
         })
     }
-    
+
     func recordSearchListLaunchCount() -> Bool {
         userDefaultsDataStore.searchListLaunchCount = userDefaultsDataStore.searchListLaunchCount
         if userDefaultsDataStore.searchListLaunchCount % 10 == 0 {
