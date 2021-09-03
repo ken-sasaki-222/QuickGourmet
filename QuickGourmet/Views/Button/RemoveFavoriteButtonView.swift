@@ -22,7 +22,7 @@ struct RemoveFavoriteButtonView: View {
                 .font(.custom(FontManager.Mplus.medium, size: 18))
                 .padding(.vertical, 10)
                 .padding(.horizontal, 30)
-                .background(ColorManager.icon_gold)
+                .background(ColorManager.gray)
                 .cornerRadius(100)
                 .lineLimit(1)
         }
