@@ -27,7 +27,7 @@ struct QuickSearchView: View {
     init() {
         setNavigation()
     }
-    
+
     var body: some View {
         GeometryReader { geometry in
             ZStack {

@@ -42,7 +42,6 @@ struct SearchListView: View {
 }
 
 struct SearchListView_Previews: PreviewProvider {
-    var searchVM: SearchViewModel
     static var previews: some View {
         SearchListView(quickSearchVM: QuickSearchViewModel())
     }
