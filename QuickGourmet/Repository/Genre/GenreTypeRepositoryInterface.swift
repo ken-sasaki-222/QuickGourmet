@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+protocol GenreTypeRepositoryInterface {
+    func getGenreCode(genre: GenreType) -> String
+}
