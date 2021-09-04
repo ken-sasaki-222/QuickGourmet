@@ -286,7 +286,7 @@
 		D8550488269D0DAA0053334A /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				D8ED9EBB269E7A1200AFE337 /* ShopModel */,
+				D8ED9EBB269E7A1200AFE337 /* Shop */,
 				D8ED9EBA269E79EF00AFE337 /* Mocks */,
 			);
 			path = Model;
@@ -522,13 +522,13 @@
 			path = Mocks;
 			sourceTree = "<group>";
 		};
-		D8ED9EBB269E7A1200AFE337 /* ShopModel */ = {
+		D8ED9EBB269E7A1200AFE337 /* Shop */ = {
 			isa = PBXGroup;
 			children = (
 				D855048C269D0F1B0053334A /* HotPepperResponseResponse.swift */,
 				D81E428D26D258C500DB5AD6 /* FavoriteShop.swift */,
 			);
-			path = ShopModel;
+			path = Shop;
 			sourceTree = "<group>";
 		};
 		D8F73EE126C34D5B00B26993 /* Login */ = {
