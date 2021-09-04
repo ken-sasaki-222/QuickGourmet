@@ -8,7 +8,7 @@
 import Foundation
 
 class GenreTypeTranslator {
-    func translate(genre: GenreType) -> String {
+    static func translate(genre: GenreType) -> String {
         switch genre {
         case .izakaya:
             return "G001"
