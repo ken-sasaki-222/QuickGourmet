@@ -61,8 +61,8 @@
 		D8C5DE3826E336A600617F6D /* GenreTypeRepositoryInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C5DE3726E336A600617F6D /* GenreTypeRepositoryInterface.swift */; };
 		D8C5DE3A26E336B200617F6D /* MockGenreTypeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C5DE3926E336B200617F6D /* MockGenreTypeRepository.swift */; };
 		D8C5DE3C26E3489100617F6D /* RepositoryLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C5DE3B26E3489100617F6D /* RepositoryLocator.swift */; };
-		D8C5DE3E26E3594200617F6D /* PickerSelectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C5DE3D26E3594200617F6D /* PickerSelectionType.swift */; };
-		D8C5DE4026E359CB00617F6D /* PickerSelectionTypeTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C5DE3F26E359CB00617F6D /* PickerSelectionTypeTranslator.swift */; };
+		D8C5DE3E26E3594200617F6D /* PickerSelectType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C5DE3D26E3594200617F6D /* PickerSelectType.swift */; };
+		D8C5DE4026E359CB00617F6D /* PickerSelectTypeTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C5DE3F26E359CB00617F6D /* PickerSelectTypeTranslator.swift */; };
 		D8C5DE4326E35DCE00617F6D /* PickerSelectTypeRepositoryInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C5DE4226E35DCE00617F6D /* PickerSelectTypeRepositoryInterface.swift */; };
 		D8C5DE4526E35E4300617F6D /* PickerSelectTypeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C5DE4426E35E4300617F6D /* PickerSelectTypeRepository.swift */; };
 		D8C5DE4726E35E5000617F6D /* MockPickerSelectTypeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C5DE4626E35E5000617F6D /* MockPickerSelectTypeRepository.swift */; };
@@ -142,8 +142,8 @@
 		D8C5DE3726E336A600617F6D /* GenreTypeRepositoryInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreTypeRepositoryInterface.swift; sourceTree = "<group>"; };
 		D8C5DE3926E336B200617F6D /* MockGenreTypeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockGenreTypeRepository.swift; sourceTree = "<group>"; };
 		D8C5DE3B26E3489100617F6D /* RepositoryLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryLocator.swift; sourceTree = "<group>"; };
-		D8C5DE3D26E3594200617F6D /* PickerSelectionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerSelectionType.swift; sourceTree = "<group>"; };
-		D8C5DE3F26E359CB00617F6D /* PickerSelectionTypeTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerSelectionTypeTranslator.swift; sourceTree = "<group>"; };
+		D8C5DE3D26E3594200617F6D /* PickerSelectType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerSelectType.swift; sourceTree = "<group>"; };
+		D8C5DE3F26E359CB00617F6D /* PickerSelectTypeTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerSelectTypeTranslator.swift; sourceTree = "<group>"; };
 		D8C5DE4226E35DCE00617F6D /* PickerSelectTypeRepositoryInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerSelectTypeRepositoryInterface.swift; sourceTree = "<group>"; };
 		D8C5DE4426E35E4300617F6D /* PickerSelectTypeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerSelectTypeRepository.swift; sourceTree = "<group>"; };
 		D8C5DE4626E35E5000617F6D /* MockPickerSelectTypeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPickerSelectTypeRepository.swift; sourceTree = "<group>"; };
@@ -313,7 +313,7 @@
 			children = (
 				D8ED9EBB269E7A1200AFE337 /* Shop */,
 				D8ED9EBA269E79EF00AFE337 /* Mocks */,
-				D8C5DE3D26E3594200617F6D /* PickerSelectionType.swift */,
+				D8C5DE3D26E3594200617F6D /* PickerSelectType.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -499,7 +499,7 @@
 			isa = PBXGroup;
 			children = (
 				D8C5DE2E26E332EC00617F6D /* GenreTypeTranslator.swift */,
-				D8C5DE3F26E359CB00617F6D /* PickerSelectionTypeTranslator.swift */,
+				D8C5DE3F26E359CB00617F6D /* PickerSelectTypeTranslator.swift */,
 			);
 			path = Translator;
 			sourceTree = "<group>";
@@ -822,7 +822,7 @@
 				D8A8E5BF269DEA66009F9C0C /* ImageDownloder.swift in Sources */,
 				D8ED9EB4269E798700AFE337 /* ShopRowView.swift in Sources */,
 				D8C58FC126B8D2590020AC57 /* TransitionImage.swift in Sources */,
-				D8C5DE4026E359CB00617F6D /* PickerSelectionTypeTranslator.swift in Sources */,
+				D8C5DE4026E359CB00617F6D /* PickerSelectTypeTranslator.swift in Sources */,
 				D81E428E26D258C500DB5AD6 /* FavoriteShop.swift in Sources */,
 				D8E300A526CE895E0032B666 /* ActivityIndicatorView.swift in Sources */,
 				D8087FD626DDD1C1008BFFEE /* MenuIconView.swift in Sources */,
@@ -847,7 +847,7 @@
 				D8C5DE3626E3368A00617F6D /* GenreTypeRepository.swift in Sources */,
 				D83D600E26AAB387002A6CEC /* MapView.swift in Sources */,
 				D8C5DE3A26E336B200617F6D /* MockGenreTypeRepository.swift in Sources */,
-				D8C5DE3E26E3594200617F6D /* PickerSelectionType.swift in Sources */,
+				D8C5DE3E26E3594200617F6D /* PickerSelectType.swift in Sources */,
 				D8C5DE3826E336A600617F6D /* GenreTypeRepositoryInterface.swift in Sources */,
 				D8C5DE2F26E332EC00617F6D /* GenreTypeTranslator.swift in Sources */,
 				D8ED9EB6269E799000AFE337 /* SearchListView.swift in Sources */,

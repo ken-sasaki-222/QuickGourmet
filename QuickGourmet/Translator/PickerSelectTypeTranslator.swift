@@ -7,8 +7,8 @@
 
 import Foundation
 
-class PickerSelectionTypeTranslator {
-    static func translate(pickerType: PickerSelectionType) -> Int {
+class PickerSelectTypeTranslator {
+    static func translate(pickerType: PickerSelectType) -> Int {
         switch pickerType {
         case .fourMinutesWalk:
             return 1

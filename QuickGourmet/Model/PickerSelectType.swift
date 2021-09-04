@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum PickerSelectionType: Int {
+enum PickerSelectType: Int {
     case fourMinutesWalk = 0
     case sevenMinutesWalk = 1
     case thirteenMinuteWalk = 2

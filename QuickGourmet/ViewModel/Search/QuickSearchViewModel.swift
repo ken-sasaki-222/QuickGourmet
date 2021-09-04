@@ -15,6 +15,7 @@ class QuickSearchViewModel: NSObject, ObservableObject {
     @Published var shopSearchFetcher = ShopSearchFetcher()
     @Published var shopData: [Shop] = []
     private let genreTypeRepository: GenreTypeRepositoryInterface
+    private let pickerSelectTypeRepository: PickerSelectTypeRepositoryInterface
     private let userDefaultsDataStore = UserDefaultsDataStore()
     private var reviewed = false
     var genreIndex: Int = 0
@@ -22,21 +23,22 @@ class QuickSearchViewModel: NSObject, ObservableObject {
     var latitude: Double = 0.0
     var longitude: Double = 0.0
 
-    init(genreTypeRepository: GenreTypeRepositoryInterface) {
+    init(genreTypeRepository: GenreTypeRepositoryInterface, pickerSelectTypeRepository: PickerSelectTypeRepositoryInterface) {
         self.genreTypeRepository = genreTypeRepository
+        self.pickerSelectTypeRepository = pickerSelectTypeRepository
         super.init()
     }
 
     override convenience init() {
-        self.init(genreTypeRepository: RepositoryLocator.getGenreTypeRepository())
+        self.init(genreTypeRepository: RepositoryLocator.getGenreTypeRepository(), pickerSelectTypeRepository: RepositoryLocator.getPickerSelectTypeRepository())
     }
 
-    private var range: Int {
-        guard let rangeCode = PickerSelectionType(rawValue: pickerSelection)?.rangeCode else {
-            return 5
-        }
-        return rangeCode
-    }
+//    private var range: Int {
+//        guard let rangeCode = PickerSelectType(rawValue: pickerSelection)?.rangeCode else {
+//            return 5
+//        }
+//        return rangeCode
+//    }
 
     private var genre: String {
         guard let genreType = GenreType(rawValue: genreIndex) else {

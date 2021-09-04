@@ -19,4 +19,12 @@ class RepositoryLocator: NSObject {
             return GenreTypeRepository()
         }
     }
+
+    static func getPickerSelectTypeRepository() -> PickerSelectTypeRepositoryInterface {
+        if isMock {
+            return MockPickerSelectTypeRepository()
+        } else {
+            return PickerSelectTypeRepository()
+        }
+    }
 }
