@@ -7,3 +7,10 @@
 
 import Foundation
 
+enum PickerSelectionType: Int {
+    case fourMinutesWalk = 0
+    case sevenMinutesWalk = 1
+    case thirteenMinuteWalk = 2
+    case twentyFiveMinutes = 3
+    case thirtyEightMinuteWalk = 4
+}

@@ -31,29 +31,6 @@ class QuickSearchViewModel: NSObject, ObservableObject {
         self.init(genreTypeRepository: RepositoryLocator.getGenreTypeRepository())
     }
 
-    private enum PickerSelectionType: Int {
-        case fourMinutesWalk = 0
-        case sevenMinutesWalk = 1
-        case thirteenMinuteWalk = 2
-        case twentyFiveMinutes = 3
-        case thirtyEightMinuteWalk = 4
-
-        var rangeCode: Int {
-            switch self {
-            case .fourMinutesWalk:
-                return 1
-            case .sevenMinutesWalk:
-                return 2
-            case .thirteenMinuteWalk:
-                return 3
-            case .twentyFiveMinutes:
-                return 4
-            case .thirtyEightMinuteWalk:
-                return 5
-            }
-        }
-    }
-
     private var range: Int {
         guard let rangeCode = PickerSelectionType(rawValue: pickerSelection)?.rangeCode else {
             return 5
