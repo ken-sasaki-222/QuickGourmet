@@ -219,8 +219,8 @@
 		D81E428626D2556500DB5AD6 /* Favorite */ = {
 			isa = PBXGroup;
 			children = (
-				D81E428726D255A000DB5AD6 /* FavoriteRepositoryInterface.swift */,
 				D81E428926D255FA00DB5AD6 /* FavoriteRepository.swift */,
+				D81E428726D255A000DB5AD6 /* FavoriteRepositoryInterface.swift */,
 				D81E428B26D2560D00DB5AD6 /* MockFavoriteRepository.swift */,
 			);
 			path = Favorite;
@@ -229,9 +229,9 @@
 		D82895C426A05FC50030FACB /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				D81E428326D23F6000DB5AD6 /* Favorite */,
 				D864626D26CBEACE0021092E /* Auth */,
 				D88426F426AA740C0073B3F2 /* Search */,
+				D81E428326D23F6000DB5AD6 /* Favorite */,
 				D87B8C3B26B045D900BB945C /* Menu */,
 			);
 			path = ViewModel;
@@ -248,11 +248,11 @@
 		D834146226CCFD22002D7ED0 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				D8C5DE4126E35D8500617F6D /* PickerSelectTypeRepository */,
-				D8C5DE3426E335A000617F6D /* Genre */,
+				D8C5DE4C26E36B4700617F6D /* Locator */,
 				D834146926CCFE5B002D7ED0 /* User */,
 				D81E428626D2556500DB5AD6 /* Favorite */,
-				D8C5DE3B26E3489100617F6D /* RepositoryLocator.swift */,
+				D8C5DE3426E335A000617F6D /* Genre */,
+				D8C5DE4126E35D8500617F6D /* Picker */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -260,9 +260,9 @@
 		D834146926CCFE5B002D7ED0 /* User */ = {
 			isa = PBXGroup;
 			children = (
+				D834146726CCFE19002D7ED0 /* MockUserRepository.swift */,
 				D834146326CCFDBC002D7ED0 /* UserRepository.swift */,
 				D834146526CCFDFC002D7ED0 /* UserRepositoryInterface.swift */,
-				D834146726CCFE19002D7ED0 /* MockUserRepository.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -294,8 +294,9 @@
 		D8550486269D0BA00053334A /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				D8ED9EAA269E791800AFE337 /* ShopList */,
-				D8A8E5B7269DB3DA009F9C0C /* ShopDetail */,
+				D8C5DE4826E3696700617F6D /* Top */,
+				D8ED9EAA269E791800AFE337 /* List */,
+				D8C5DE4926E3698600617F6D /* Detail */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -311,9 +312,9 @@
 		D8550488269D0DAA0053334A /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				D8ED9EBB269E7A1200AFE337 /* Shop */,
+				D8C5DE4D26E36C8E00617F6D /* Shop */,
 				D8ED9EBA269E79EF00AFE337 /* Mocks */,
-				D8C5DE3D26E3594200617F6D /* PickerSelectType.swift */,
+				D8C5DE4E26E36CDC00617F6D /* Type */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -343,13 +344,13 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		D872240026D125010017D405 /* Favorite */ = {
+		D872240026D125010017D405 /* Bookmark */ = {
 			isa = PBXGroup;
 			children = (
-				D872240126D125300017D405 /* FavoriteListView.swift */,
-				D80803E426D49C41009FACC8 /* FavoriteShopRowView.swift */,
+				D8C5DE4A26E369E700617F6D /* List */,
+				D8C5DE4B26E36A0700617F6D /* Detail */,
 			);
-			path = Favorite;
+			path = Bookmark;
 			sourceTree = "<group>";
 		};
 		D87B8C3B26B045D900BB945C /* Menu */ = {
@@ -366,6 +367,7 @@
 				D8F73EE126C34D5B00B26993 /* Login */,
 				D8550485269D0B8B0053334A /* TabBar */,
 				D8550486269D0BA00053334A /* Search */,
+				D872240026D125010017D405 /* Bookmark */,
 				D8550487269D0C4B0053334A /* Menu */,
 				D8307BC226BC042E00DAB08C /* PopUp */,
 				D8A8E5C5269DF275009F9C0C /* Image */,
@@ -396,18 +398,6 @@
 				D88426F926AA7B680073B3F2 /* SafariView.swift */,
 			);
 			path = Safari;
-			sourceTree = "<group>";
-		};
-		D8A8E5B7269DB3DA009F9C0C /* ShopDetail */ = {
-			isa = PBXGroup;
-			children = (
-				D8A8E5B3269DAEB3009F9C0C /* ShopDetailView.swift */,
-				D83D600826AAA0E8002A6CEC /* ShopDetailButtonView.swift */,
-				D889E16026AED67100F18681 /* ShopDetailInfoView.swift */,
-				D84E5C7A26D5DFFD00BB79CE /* FavoriteShopDetailInfoView.swift */,
-				D80803E226D49C1A009FACC8 /* FavoriteShopDetailView.swift */,
-			);
-			path = ShopDetail;
 			sourceTree = "<group>";
 		};
 		D8A8E5B9269DBEA4009F9C0C /* API */ = {
@@ -468,12 +458,12 @@
 		D8BA1186269661460007DCE5 /* QuickGourmet */ = {
 			isa = PBXGroup;
 			children = (
-				D8C5DE2D26E332B600617F6D /* Translator */,
 				D8BA1187269661460007DCE5 /* QuickGourmetApp.swift */,
 				D8550488269D0DAA0053334A /* Model */,
 				D87C9C3C269703B80051FA77 /* Views */,
 				D82895C426A05FC50030FACB /* ViewModel */,
 				D8A8E5B9269DBEA4009F9C0C /* API */,
+				D8C5DE2D26E332B600617F6D /* Translator */,
 				D834146226CCFD22002D7ED0 /* Repository */,
 				D8DB885026B962BE0057F807 /* DataStore */,
 				D85D9DE126A2B98200F4B5C5 /* Utils */,
@@ -507,21 +497,84 @@
 		D8C5DE3426E335A000617F6D /* Genre */ = {
 			isa = PBXGroup;
 			children = (
-				D8C5DE3726E336A600617F6D /* GenreTypeRepositoryInterface.swift */,
 				D8C5DE3526E3368A00617F6D /* GenreTypeRepository.swift */,
+				D8C5DE3726E336A600617F6D /* GenreTypeRepositoryInterface.swift */,
 				D8C5DE3926E336B200617F6D /* MockGenreTypeRepository.swift */,
 			);
 			path = Genre;
 			sourceTree = "<group>";
 		};
-		D8C5DE4126E35D8500617F6D /* PickerSelectTypeRepository */ = {
+		D8C5DE4126E35D8500617F6D /* Picker */ = {
 			isa = PBXGroup;
 			children = (
-				D8C5DE4226E35DCE00617F6D /* PickerSelectTypeRepositoryInterface.swift */,
-				D8C5DE4426E35E4300617F6D /* PickerSelectTypeRepository.swift */,
 				D8C5DE4626E35E5000617F6D /* MockPickerSelectTypeRepository.swift */,
+				D8C5DE4426E35E4300617F6D /* PickerSelectTypeRepository.swift */,
+				D8C5DE4226E35DCE00617F6D /* PickerSelectTypeRepositoryInterface.swift */,
 			);
-			path = PickerSelectTypeRepository;
+			path = Picker;
+			sourceTree = "<group>";
+		};
+		D8C5DE4826E3696700617F6D /* Top */ = {
+			isa = PBXGroup;
+			children = (
+				D8BD192D26B816C900E0BBCB /* QuickSearchView.swift */,
+				D8BD192F26B8282B00E0BBCB /* QuickSearchRowView.swift */,
+			);
+			path = Top;
+			sourceTree = "<group>";
+		};
+		D8C5DE4926E3698600617F6D /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				D8A8E5B3269DAEB3009F9C0C /* ShopDetailView.swift */,
+				D83D600826AAA0E8002A6CEC /* ShopDetailButtonView.swift */,
+				D889E16026AED67100F18681 /* ShopDetailInfoView.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		D8C5DE4A26E369E700617F6D /* List */ = {
+			isa = PBXGroup;
+			children = (
+				D872240126D125300017D405 /* FavoriteListView.swift */,
+				D80803E426D49C41009FACC8 /* FavoriteShopRowView.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		D8C5DE4B26E36A0700617F6D /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				D80803E226D49C1A009FACC8 /* FavoriteShopDetailView.swift */,
+				D84E5C7A26D5DFFD00BB79CE /* FavoriteShopDetailInfoView.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		D8C5DE4C26E36B4700617F6D /* Locator */ = {
+			isa = PBXGroup;
+			children = (
+				D8C5DE3B26E3489100617F6D /* RepositoryLocator.swift */,
+			);
+			path = Locator;
+			sourceTree = "<group>";
+		};
+		D8C5DE4D26E36C8E00617F6D /* Shop */ = {
+			isa = PBXGroup;
+			children = (
+				D855048C269D0F1B0053334A /* HotPepperResponseResponse.swift */,
+				D81E428D26D258C500DB5AD6 /* FavoriteShop.swift */,
+			);
+			path = Shop;
+			sourceTree = "<group>";
+		};
+		D8C5DE4E26E36CDC00617F6D /* Type */ = {
+			isa = PBXGroup;
+			children = (
+				D8C5DE2B26E331C500617F6D /* GenreType.swift */,
+				D8C5DE3D26E3594200617F6D /* PickerSelectType.swift */,
+			);
+			path = Type;
 			sourceTree = "<group>";
 		};
 		D8D1198726C7B8CD00F9CD65 /* InterstitialAd */ = {
@@ -557,16 +610,13 @@
 			path = Indicator;
 			sourceTree = "<group>";
 		};
-		D8ED9EAA269E791800AFE337 /* ShopList */ = {
+		D8ED9EAA269E791800AFE337 /* List */ = {
 			isa = PBXGroup;
 			children = (
-				D872240026D125010017D405 /* Favorite */,
 				D8ED9EB5269E799000AFE337 /* SearchListView.swift */,
 				D8ED9EB3269E798700AFE337 /* ShopRowView.swift */,
-				D8BD192D26B816C900E0BBCB /* QuickSearchView.swift */,
-				D8BD192F26B8282B00E0BBCB /* QuickSearchRowView.swift */,
 			);
-			path = ShopList;
+			path = List;
 			sourceTree = "<group>";
 		};
 		D8ED9EBA269E79EF00AFE337 /* Mocks */ = {
@@ -576,16 +626,6 @@
 				D80803E626D49E93009FACC8 /* MockFavoriteShopData.swift */,
 			);
 			path = Mocks;
-			sourceTree = "<group>";
-		};
-		D8ED9EBB269E7A1200AFE337 /* Shop */ = {
-			isa = PBXGroup;
-			children = (
-				D855048C269D0F1B0053334A /* HotPepperResponseResponse.swift */,
-				D81E428D26D258C500DB5AD6 /* FavoriteShop.swift */,
-				D8C5DE2B26E331C500617F6D /* GenreType.swift */,
-			);
-			path = Shop;
 			sourceTree = "<group>";
 		};
 		D8F73EE126C34D5B00B26993 /* Login */ = {
