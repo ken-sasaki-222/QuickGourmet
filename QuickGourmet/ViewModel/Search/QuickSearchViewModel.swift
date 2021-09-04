@@ -11,9 +11,10 @@ import Foundation
 import StoreKit
 import SwiftUI
 
-class QuickSearchViewModel: ObservableObject {
+class QuickSearchViewModel: NSObject, ObservableObject {
     @Published var shopSearchFetcher = ShopSearchFetcher()
     @Published var shopData: [Shop] = []
+    private let genreTypeRepository: GenreTypeRepositoryInterface
     private let userDefaultsDataStore = UserDefaultsDataStore()
     private var reviewed = false
     var genreIndex: Int = 0
@@ -21,63 +22,13 @@ class QuickSearchViewModel: ObservableObject {
     var latitude: Double = 0.0
     var longitude: Double = 0.0
 
-    private enum GenreType: Int {
-        case izakaya = 0
-        case dainingubar = 1
-        case sousakuryouri = 2
-        case wasyoku = 3
-        case yousyoku = 4
-        case italian = 5
-        case tyuuka = 6
-        case yakiniku = 7
-        case aziaryouri = 8
-        case kakukokuryouri = 9
-        case karaoke = 10
-        case kakuteru = 11
-        case ramen = 12
-        case cafe = 13
-        case other = 14
-        case okonomiyaki = 15
-        case corearyouri = 16
+    init(genreTypeRepository: GenreTypeRepositoryInterface) {
+        self.genreTypeRepository = genreTypeRepository
+        super.init()
+    }
 
-        var genreCode: String {
-            switch self {
-            case .izakaya:
-                return "G001"
-            case .dainingubar:
-                return "G002"
-            case .sousakuryouri:
-                return "G003"
-            case .wasyoku:
-                return "G004"
-            case .yousyoku:
-                return "G005"
-            case .italian:
-                return "G006"
-            case .tyuuka:
-                return "G007"
-            case .yakiniku:
-                return "G008"
-            case .aziaryouri:
-                return "G009"
-            case .kakukokuryouri:
-                return "G010"
-            case .karaoke:
-                return "G011"
-            case .kakuteru:
-                return "G012"
-            case .ramen:
-                return "G013"
-            case .cafe:
-                return "G014"
-            case .other:
-                return "G015"
-            case .okonomiyaki:
-                return "G016"
-            case .corearyouri:
-                return "G017"
-            }
-        }
+    override convenience init() {
+        self.init(genreTypeRepository: RepositoryLocator.getGenreTypeRepository())
     }
 
     private enum PickerSelectionType: Int {
@@ -111,10 +62,11 @@ class QuickSearchViewModel: ObservableObject {
     }
 
     private var genre: String {
-        guard let genreCode = GenreType(rawValue: genreIndex)?.genreCode else {
+        guard let genreType = GenreType(rawValue: genreIndex) else {
             return ""
         }
-        return genreCode
+        let genre = genreTypeRepository.getGenreCode(genre: genreType)
+        return genre
     }
 
     // HotPepper API.
