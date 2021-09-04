@@ -8,8 +8,8 @@
 import Foundation
 import SwiftUI
 
-class UserAuthViewModel: ObservableObject {
-    @Published var userRepository = UserRepository() // refactorTODO: ＠Pub不要
+class UserAuthViewModel {
+    private var userRepository = UserRepository()
 
     func canLogin(_ callback: @escaping (Result<Bool, Error>) -> Void) {
         userRepository.login { result in
