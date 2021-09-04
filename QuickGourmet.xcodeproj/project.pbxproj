@@ -60,6 +60,7 @@
 		D8C5DE3626E3368A00617F6D /* GenreTypeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C5DE3526E3368A00617F6D /* GenreTypeRepository.swift */; };
 		D8C5DE3826E336A600617F6D /* GenreTypeRepositoryInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C5DE3726E336A600617F6D /* GenreTypeRepositoryInterface.swift */; };
 		D8C5DE3A26E336B200617F6D /* MockGenreTypeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C5DE3926E336B200617F6D /* MockGenreTypeRepository.swift */; };
+		D8C5DE3C26E3489100617F6D /* RepositoryLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C5DE3B26E3489100617F6D /* RepositoryLocator.swift */; };
 		D8D1198626C7B2A500F9CD65 /* NendBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D1198526C7B2A500F9CD65 /* NendBannerView.swift */; };
 		D8DB885226B962DA0057F807 /* UserDefaultsDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DB885126B962DA0057F807 /* UserDefaultsDataStore.swift */; };
 		D8E300A526CE895E0032B666 /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E300A426CE895E0032B666 /* ActivityIndicatorView.swift */; };
@@ -135,6 +136,7 @@
 		D8C5DE3526E3368A00617F6D /* GenreTypeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreTypeRepository.swift; sourceTree = "<group>"; };
 		D8C5DE3726E336A600617F6D /* GenreTypeRepositoryInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreTypeRepositoryInterface.swift; sourceTree = "<group>"; };
 		D8C5DE3926E336B200617F6D /* MockGenreTypeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockGenreTypeRepository.swift; sourceTree = "<group>"; };
+		D8C5DE3B26E3489100617F6D /* RepositoryLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryLocator.swift; sourceTree = "<group>"; };
 		D8D1198526C7B2A500F9CD65 /* NendBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NendBannerView.swift; sourceTree = "<group>"; };
 		D8DB885126B962DA0057F807 /* UserDefaultsDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsDataStore.swift; sourceTree = "<group>"; };
 		D8E300A426CE895E0032B666 /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 				D8C5DE3426E335A000617F6D /* Genre */,
 				D834146926CCFE5B002D7ED0 /* User */,
 				D81E428626D2556500DB5AD6 /* Favorite */,
+				D8C5DE3B26E3489100617F6D /* RepositoryLocator.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -842,6 +845,7 @@
 				D829713226B26AA9005C4454 /* ApiKey.swift in Sources */,
 				D87C9C3B269701A30051FA77 /* HamburgerMenuView.swift in Sources */,
 				D834146626CCFDFC002D7ED0 /* UserRepositoryInterface.swift in Sources */,
+				D8C5DE3C26E3489100617F6D /* RepositoryLocator.swift in Sources */,
 				D84E5C7B26D5DFFD00BB79CE /* FavoriteShopDetailInfoView.swift in Sources */,
 				D8D1198626C7B2A500F9CD65 /* NendBannerView.swift in Sources */,
 				D8FC157926B19DDA00B22408 /* MailView.swift in Sources */,
