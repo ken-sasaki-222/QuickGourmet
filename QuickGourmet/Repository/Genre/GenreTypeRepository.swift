@@ -7,8 +7,8 @@
 
 import Foundation
 
-class GenreTypeRepository {
-    func getGenreCode(genre: GenreType) -> String? {
+class GenreTypeRepository: GenreTypeRepositoryInterface {
+    func getGenreCode(genre: GenreType) -> String {
         let genreCode = GenreTypeTranslator.translate(genre: genre)
         return genreCode
     }
