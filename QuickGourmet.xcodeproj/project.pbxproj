@@ -63,6 +63,9 @@
 		D8C5DE3C26E3489100617F6D /* RepositoryLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C5DE3B26E3489100617F6D /* RepositoryLocator.swift */; };
 		D8C5DE3E26E3594200617F6D /* PickerSelectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C5DE3D26E3594200617F6D /* PickerSelectionType.swift */; };
 		D8C5DE4026E359CB00617F6D /* PickerSelectionTypeTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C5DE3F26E359CB00617F6D /* PickerSelectionTypeTranslator.swift */; };
+		D8C5DE4326E35DCE00617F6D /* PickerSelectTypeRepositoryInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C5DE4226E35DCE00617F6D /* PickerSelectTypeRepositoryInterface.swift */; };
+		D8C5DE4526E35E4300617F6D /* PickerSelectTypeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C5DE4426E35E4300617F6D /* PickerSelectTypeRepository.swift */; };
+		D8C5DE4726E35E5000617F6D /* MockPickerSelectTypeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C5DE4626E35E5000617F6D /* MockPickerSelectTypeRepository.swift */; };
 		D8D1198626C7B2A500F9CD65 /* NendBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D1198526C7B2A500F9CD65 /* NendBannerView.swift */; };
 		D8DB885226B962DA0057F807 /* UserDefaultsDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DB885126B962DA0057F807 /* UserDefaultsDataStore.swift */; };
 		D8E300A526CE895E0032B666 /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E300A426CE895E0032B666 /* ActivityIndicatorView.swift */; };
@@ -141,6 +144,9 @@
 		D8C5DE3B26E3489100617F6D /* RepositoryLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryLocator.swift; sourceTree = "<group>"; };
 		D8C5DE3D26E3594200617F6D /* PickerSelectionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerSelectionType.swift; sourceTree = "<group>"; };
 		D8C5DE3F26E359CB00617F6D /* PickerSelectionTypeTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerSelectionTypeTranslator.swift; sourceTree = "<group>"; };
+		D8C5DE4226E35DCE00617F6D /* PickerSelectTypeRepositoryInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerSelectTypeRepositoryInterface.swift; sourceTree = "<group>"; };
+		D8C5DE4426E35E4300617F6D /* PickerSelectTypeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerSelectTypeRepository.swift; sourceTree = "<group>"; };
+		D8C5DE4626E35E5000617F6D /* MockPickerSelectTypeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPickerSelectTypeRepository.swift; sourceTree = "<group>"; };
 		D8D1198526C7B2A500F9CD65 /* NendBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NendBannerView.swift; sourceTree = "<group>"; };
 		D8DB885126B962DA0057F807 /* UserDefaultsDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsDataStore.swift; sourceTree = "<group>"; };
 		D8E300A426CE895E0032B666 /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
@@ -242,6 +248,7 @@
 		D834146226CCFD22002D7ED0 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				D8C5DE4126E35D8500617F6D /* PickerSelectTypeRepository */,
 				D8C5DE3426E335A000617F6D /* Genre */,
 				D834146926CCFE5B002D7ED0 /* User */,
 				D81E428626D2556500DB5AD6 /* Favorite */,
@@ -505,6 +512,16 @@
 				D8C5DE3926E336B200617F6D /* MockGenreTypeRepository.swift */,
 			);
 			path = Genre;
+			sourceTree = "<group>";
+		};
+		D8C5DE4126E35D8500617F6D /* PickerSelectTypeRepository */ = {
+			isa = PBXGroup;
+			children = (
+				D8C5DE4226E35DCE00617F6D /* PickerSelectTypeRepositoryInterface.swift */,
+				D8C5DE4426E35E4300617F6D /* PickerSelectTypeRepository.swift */,
+				D8C5DE4626E35E5000617F6D /* MockPickerSelectTypeRepository.swift */,
+			);
+			path = PickerSelectTypeRepository;
 			sourceTree = "<group>";
 		};
 		D8D1198726C7B8CD00F9CD65 /* InterstitialAd */ = {
@@ -820,8 +837,10 @@
 				D81E428A26D255FA00DB5AD6 /* FavoriteRepository.swift in Sources */,
 				D8F1495D26C7A12700F2C159 /* NendBannerViewController.swift in Sources */,
 				D8DB885226B962DA0057F807 /* UserDefaultsDataStore.swift in Sources */,
+				D8C5DE4526E35E4300617F6D /* PickerSelectTypeRepository.swift in Sources */,
 				D8A8E5B4269DAEB3009F9C0C /* ShopDetailView.swift in Sources */,
 				D889303B26B914C2008C0F60 /* QuickSearchViewModel.swift in Sources */,
+				D8C5DE4326E35DCE00617F6D /* PickerSelectTypeRepositoryInterface.swift in Sources */,
 				D8C5DE2C26E331C500617F6D /* GenreType.swift in Sources */,
 				D80803E326D49C1A009FACC8 /* FavoriteShopDetailView.swift in Sources */,
 				D81E428C26D2560D00DB5AD6 /* MockFavoriteRepository.swift in Sources */,
@@ -856,6 +875,7 @@
 				D8C5DE3C26E3489100617F6D /* RepositoryLocator.swift in Sources */,
 				D84E5C7B26D5DFFD00BB79CE /* FavoriteShopDetailInfoView.swift in Sources */,
 				D8D1198626C7B2A500F9CD65 /* NendBannerView.swift in Sources */,
+				D8C5DE4726E35E5000617F6D /* MockPickerSelectTypeRepository.swift in Sources */,
 				D8FC157926B19DDA00B22408 /* MailView.swift in Sources */,
 				D855048D269D0F1B0053334A /* HotPepperResponseResponse.swift in Sources */,
 				D88426FA26AA7B680073B3F2 /* SafariView.swift in Sources */,
