@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+class MockGenreTypeRepository: GenreTypeRepositoryInterface {
+    func getGenreCode(genre: GenreType) -> String {
+        let genreCode = GenreTypeTranslator.translate(genre: genre)
+        return genreCode
+    }
+}
