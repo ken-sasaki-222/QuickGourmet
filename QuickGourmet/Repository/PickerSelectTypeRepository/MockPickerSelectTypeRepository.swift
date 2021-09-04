@@ -7,4 +7,9 @@
 
 import Foundation
 
-class MockPickerSelectTypeRepository: PickerSelectTypeRepositoryInterface {}
+class MockPickerSelectTypeRepository: PickerSelectTypeRepositoryInterface {
+    func getPickerSelectType(selectType: PickerSelectType) -> Int {
+        let pickerSelectType = PickerSelectTypeTranslator.translate(selectType: selectType)
+        return pickerSelectType
+    }
+}

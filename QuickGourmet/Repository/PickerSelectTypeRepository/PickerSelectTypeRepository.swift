@@ -7,4 +7,9 @@
 
 import Foundation
 
-class PickerSelectTypeRepository: PickerSelectTypeRepositoryInterface {}
+class PickerSelectTypeRepository: PickerSelectTypeRepositoryInterface {
+    func getPickerSelectType(selectType: PickerSelectType) -> Int {
+        let pickerSelectType = PickerSelectTypeTranslator.translate(selectType: selectType)
+        return pickerSelectType
+    }
+}

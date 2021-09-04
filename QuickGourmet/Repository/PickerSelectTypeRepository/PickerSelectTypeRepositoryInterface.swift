@@ -7,4 +7,6 @@
 
 import Foundation
 
-protocol PickerSelectTypeRepositoryInterface {}
+protocol PickerSelectTypeRepositoryInterface {
+    func getPickerSelectType(selectType: PickerSelectType) -> Int
+}

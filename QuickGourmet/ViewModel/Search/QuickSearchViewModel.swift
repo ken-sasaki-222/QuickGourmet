@@ -33,12 +33,13 @@ class QuickSearchViewModel: NSObject, ObservableObject {
         self.init(genreTypeRepository: RepositoryLocator.getGenreTypeRepository(), pickerSelectTypeRepository: RepositoryLocator.getPickerSelectTypeRepository())
     }
 
-//    private var range: Int {
-//        guard let rangeCode = PickerSelectType(rawValue: pickerSelection)?.rangeCode else {
-//            return 5
-//        }
-//        return rangeCode
-//    }
+    private var range: Int {
+        guard let pickerSelectType = PickerSelectType(rawValue: pickerSelection) else {
+            return 5
+        }
+        let rangeCode = pickerSelectTypeRepository.getPickerSelectType(selectType: pickerSelectType)
+        return rangeCode
+    }
 
     private var genre: String {
         guard let genreType = GenreType(rawValue: genreIndex) else {
