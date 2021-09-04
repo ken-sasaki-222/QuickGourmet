@@ -8,5 +8,15 @@
 import Foundation
 
 class RepositoryLocator: NSObject {
-    
+    static var isMock: Bool {
+        ProcessInfo.processInfo.environment["MOCK"] == "MOCK"
+    }
+
+    static func getGenreTypeRepository() -> GenreTypeRepositoryInterface {
+        if isMock {
+            return MockGenreTypeRepository()
+        } else {
+            return GenreTypeRepository()
+        }
+    }
 }
