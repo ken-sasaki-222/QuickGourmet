@@ -8,15 +8,15 @@
 import Foundation
 import SwiftUI
 
-class UserAuthViewModel: NSObject  {
+class UserAuthViewModel: NSObject {
     private let userRepository: UserRepositoryInterface
-    
+
     init(userRepository: UserRepositoryInterface) {
         self.userRepository = userRepository
         super.init()
     }
-    
-    convenience override init() {
+
+    override convenience init() {
         self.init(userRepository: RepositoryLocator.getUserRepository())
     }
 
