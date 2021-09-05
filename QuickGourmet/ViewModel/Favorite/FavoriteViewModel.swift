@@ -7,10 +7,19 @@
 
 import Foundation
 
-class FavoriteViewModel: ObservableObject {
+class FavoriteViewModel: NSObject, ObservableObject {
     @Published var favoriteShopData: [FavoriteShop] = []
-    private let favoriteRepository = FavoriteRepository()
+    private let favoriteRepository: FavoriteRepositoryInterface
     private let userDefaultsDataStore = UserDefaultsDataStore()
+    
+    init(favoriteRepository: FavoriteRepositoryInterface) {
+        self.favoriteRepository = favoriteRepository
+        super.init()
+    }
+    
+    convenience override init() {
+        self.init(favoriteRepository: RepositoryLocator.getFavoriteRepository())
+    }
 
     func saveFavoriteShop(favoriteShop: FavoriteShop) {
         favoriteRepository.saveFavoriteShopData(favoriteShop: favoriteShop)
@@ -19,7 +28,7 @@ class FavoriteViewModel: ObservableObject {
     func getFavoriteShop() {
         favoriteRepository.getFavoriteShopData { shopes in
             self.favoriteShopData = shopes
-            print("kenken", self.favoriteShopData)
+            print("favoriteShopData", self.favoriteShopData)
         }
     }
 

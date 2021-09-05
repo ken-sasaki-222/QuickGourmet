@@ -19,6 +19,14 @@ class RepositoryLocator: NSObject {
             return UserRepository()
         }
     }
+    
+    static func getFavoriteRepository() -> FavoriteRepositoryInterface {
+        if isMock {
+            return MockFavoriteRepository()
+        } else {
+            return FavoriteRepository()
+        }
+    }
 
     static func getGenreTypeRepository() -> GenreTypeRepositoryInterface {
         if isMock {
