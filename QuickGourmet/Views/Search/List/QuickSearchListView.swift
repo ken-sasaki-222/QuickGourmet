@@ -1,5 +1,5 @@
 //
-//  SearchListView.swift
+//  QuickSearchListView.swift
 //  QuickGourmet
 //
 //  Created by sasaki.ken on 2021/07/13.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SearchListView: View {
+struct QuickSearchListView: View {
     @ObservedObject var quickSearchVM: QuickSearchViewModel
     private let userDefaultsDataStore = UserDefaultsDataStore()
 
@@ -15,7 +15,7 @@ struct SearchListView: View {
         if quickSearchVM.shopData.count != 0 {
             List(quickSearchVM.shopData) { shop in
                 NavigationLink(destination: ShopDetailView(shopData: shop)) {
-                    ShopRowView(shopData: shop)
+                    QuickSearchListRowView(shopData: shop)
                 }
             }
             .listStyle(PlainListStyle())
@@ -43,6 +43,6 @@ struct SearchListView: View {
 
 struct SearchListView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchListView(quickSearchVM: QuickSearchViewModel())
+        QuickSearchListView(quickSearchVM: QuickSearchViewModel())
     }
 }

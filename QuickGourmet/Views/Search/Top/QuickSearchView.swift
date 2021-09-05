@@ -37,7 +37,7 @@ struct QuickSearchView: View {
                             ZStack {
                                 VStack(spacing: 10) {
                                     ForEach(0 ..< quickSearchImages.count) { index in
-                                        NavigationLink(destination: SearchListView(quickSearchVM: quickSearchVM), isActive: $isTapActive) {}
+                                        NavigationLink(destination: QuickSearchListView(quickSearchVM: quickSearchVM), isActive: $isTapActive) {}
                                         Button(action: {
                                             switch locationManager.authorizationStatus {
                                             case .notDetermined: // 許諾とっていない

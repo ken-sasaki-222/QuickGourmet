@@ -1,5 +1,5 @@
 //
-//  ShopRowView.swift
+//  QuickSearchListRowView.swift
 //  QuickGourmet
 //
 //  Created by sasaki.ken on 2021/07/13.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ShopRowView: View {
+struct QuickSearchListRowView: View {
     @State var image: UIImage?
     var shopData: Shop
 
@@ -40,6 +40,6 @@ struct ShopRowView: View {
 
 struct ShopRowView_Previews: PreviewProvider {
     static var previews: some View {
-        ShopRowView(shopData: mockShopesData[0].results.shop[0])
+        QuickSearchListRowView(shopData: mockShopesData[0].results.shop[0])
     }
 }
