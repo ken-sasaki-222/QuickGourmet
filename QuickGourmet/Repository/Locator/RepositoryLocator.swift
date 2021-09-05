@@ -11,6 +11,14 @@ class RepositoryLocator: NSObject {
     static var isMock: Bool {
         ProcessInfo.processInfo.environment["MOCK"] == "MOCK"
     }
+    
+    static func getUserRepository() -> UserRepositoryInterface {
+        if isMock {
+            return MockUserRepository()
+        } else {
+            return UserRepository()
+        }
+    }
 
     static func getGenreTypeRepository() -> GenreTypeRepositoryInterface {
         if isMock {
