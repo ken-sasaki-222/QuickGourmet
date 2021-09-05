@@ -5,34 +5,31 @@
 //  Created by sasaki.ken on 2021/08/18.
 //
 
-import Firebase
-import FirebaseAuth
 import Foundation
 
 class MockUserRepository: UserRepositoryInterface {
+    var error: Error?
+    var result: Bool?
+
     func login(_ completion: @escaping (Result<Bool, Error>) -> Void) {
-        Auth.auth().signInAnonymously { mockAuthResult, error in
-            if let error = error {
-                completion(.failure(error))
-            }
-            guard let user = mockAuthResult?.user else {
+        if let error = error {
+            completion(.failure(error))
+        } else {
+            guard let result = result else {
                 return
             }
-            let isAnonymous = user.isAnonymous
-            completion(.success(isAnonymous))
+            completion(.success(result))
         }
     }
 
     func logout(_ completion: @escaping (Result<Bool, Error>) -> Void) {
-        Auth.auth().currentUser?.delete { [weak self] error in
-            guard self != nil else {
+        if let error = error {
+            completion(.failure(error))
+        } else {
+            guard let result = result else {
                 return
             }
-            if let error = error {
-                completion(.failure(error))
-            } else {
-                completion(.success(true))
-            }
+            completion(.success(result))
         }
     }
 }
