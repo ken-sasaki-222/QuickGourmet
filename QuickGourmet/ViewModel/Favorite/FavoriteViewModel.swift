@@ -11,29 +11,39 @@ class FavoriteViewModel: NSObject, ObservableObject {
     @Published var favoriteShopData: [FavoriteShop] = []
     private let favoriteRepository: FavoriteRepositoryInterface
     private let userDefaultsDataStore = UserDefaultsDataStore()
-    
+    private var result: Result<Bool, Error> = .failure(NSError())
+    private var error: Error?
+
     init(favoriteRepository: FavoriteRepositoryInterface) {
         self.favoriteRepository = favoriteRepository
         super.init()
     }
-    
-    convenience override init() {
+
+    // studyTODO: ①override convenienceの意味調べる、②swiftUIっぽいButtonActionの書き方の件
+    override convenience init() {
         self.init(favoriteRepository: RepositoryLocator.getFavoriteRepository())
     }
 
     func saveFavoriteShop(favoriteShop: FavoriteShop) {
-        favoriteRepository.saveFavoriteShopData(favoriteShop: favoriteShop)
+        favoriteRepository.saveFavoriteShopData(favoriteShop: favoriteShop) { result in
+            self.result = result
+        }
     }
 
     func getFavoriteShop() {
         favoriteRepository.getFavoriteShopData { shopes in
             self.favoriteShopData = shopes
             print("favoriteShopData", self.favoriteShopData)
+        } onFailure: { error in
+            self.error = error
+            print("getFavoriteShop.error", self.error as Any)
         }
     }
 
     func deleateFavoriteShop(documentID: String) {
-        favoriteRepository.deleteFavoriteShopData(documentID: documentID)
+        favoriteRepository.deleteFavoriteShopData(documentID: documentID) { result in
+            self.result = result
+        }
     }
 
     func recordFavoriteListLaunchCount() -> Bool {

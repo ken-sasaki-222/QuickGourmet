@@ -24,6 +24,9 @@ class RepositoryLocator: NSObject {
 
     static func getFavoriteRepository() -> FavoriteRepositoryInterface {
         if isMock {
+            MockFavoriteRepository().error = NSError()
+            MockFavoriteRepository().result = true
+            MockFavoriteRepository().favoriteShopes = mockFavoriteShopesData
             return MockFavoriteRepository()
         } else {
             return FavoriteRepository()
