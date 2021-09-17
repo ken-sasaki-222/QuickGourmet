@@ -12,10 +12,9 @@ import StoreKit
 import SwiftUI
 
 class QuickSearchViewModel: NSObject, ObservableObject {
-    @Published var shopSearchFetcher = ShopSearchFetcher()
     @Published var shopData: [Shop] = []
     private let genreTypeRepository: GenreTypeRepositoryInterface
-    private let shopSearchRepository: ShopSearchRepositoryInterface
+    private var shopSearchRepository: ShopSearchRepositoryInterface
     private let pickerSelectTypeRepository: PickerSelectTypeRepositoryInterface
     private let userDefaultsDataStore = UserDefaultsDataStore()
     private var reviewed = false
@@ -61,9 +60,8 @@ class QuickSearchViewModel: NSObject, ObservableObject {
         guard let encodeString = requestString.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed) else {
             return
         }
-
-        shopSearchFetcher.requestString = encodeString
-        shopSearchFetcher.fetchShopData { shopes in
+        shopSearchRepository.requestString = encodeString
+        shopSearchRepository.fetchShopData { shopes in
             self.shopData = shopes
             print("shopData", self.shopData)
         }
