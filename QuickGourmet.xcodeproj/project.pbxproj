@@ -46,7 +46,6 @@
 		D897A27226F49E3C00496839 /* MockShopSearchRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D897A27126F49E3C00496839 /* MockShopSearchRepository.swift */; };
 		D897A27426F49E4900496839 /* ShopSearchRepositoryInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = D897A27326F49E4900496839 /* ShopSearchRepositoryInterface.swift */; };
 		D8A8E5B4269DAEB3009F9C0C /* ShopDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A8E5B3269DAEB3009F9C0C /* ShopDetailView.swift */; };
-		D8A8E5BB269DC047009F9C0C /* ShopSearchFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A8E5BA269DC047009F9C0C /* ShopSearchFetcher.swift */; };
 		D8A8E5BF269DEA66009F9C0C /* ImageDownloder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A8E5BE269DEA66009F9C0C /* ImageDownloder.swift */; };
 		D8A8E5C4269DEFBF009F9C0C /* URLImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A8E5C3269DEFBF009F9C0C /* URLImage.swift */; };
 		D8ADBBFA26C400E10003002F /* NendInterstitialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8ADBBF926C400E10003002F /* NendInterstitialView.swift */; };
@@ -128,7 +127,6 @@
 		D897A27126F49E3C00496839 /* MockShopSearchRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockShopSearchRepository.swift; sourceTree = "<group>"; };
 		D897A27326F49E4900496839 /* ShopSearchRepositoryInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopSearchRepositoryInterface.swift; sourceTree = "<group>"; };
 		D8A8E5B3269DAEB3009F9C0C /* ShopDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopDetailView.swift; sourceTree = "<group>"; };
-		D8A8E5BA269DC047009F9C0C /* ShopSearchFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopSearchFetcher.swift; sourceTree = "<group>"; };
 		D8A8E5BE269DEA66009F9C0C /* ImageDownloder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloder.swift; sourceTree = "<group>"; };
 		D8A8E5C3269DEFBF009F9C0C /* URLImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLImage.swift; sourceTree = "<group>"; };
 		D8ADBBF926C400E10003002F /* NendInterstitialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NendInterstitialView.swift; sourceTree = "<group>"; };
@@ -421,7 +419,6 @@
 		D8A8E5B9269DBEA4009F9C0C /* API */ = {
 			isa = PBXGroup;
 			children = (
-				D8A8E5BA269DC047009F9C0C /* ShopSearchFetcher.swift */,
 				D829713126B26AA9005C4454 /* ApiKey.swift */,
 			);
 			path = API;
@@ -891,7 +888,6 @@
 				D87B8C3D26B045EF00BB945C /* HamburgerMenuViewModel.swift in Sources */,
 				D80803E726D49E93009FACC8 /* MockFavoriteShopData.swift in Sources */,
 				D889E16326AF09EA00F18681 /* LogoImage.swift in Sources */,
-				D8A8E5BB269DC047009F9C0C /* ShopSearchFetcher.swift in Sources */,
 				D81E428A26D255FA00DB5AD6 /* FavoriteRepository.swift in Sources */,
 				D8F1495D26C7A12700F2C159 /* NendBannerViewController.swift in Sources */,
 				D8DB885226B962DA0057F807 /* UserDefaultsDataStore.swift in Sources */,

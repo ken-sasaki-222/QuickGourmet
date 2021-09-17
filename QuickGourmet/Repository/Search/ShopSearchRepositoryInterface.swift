@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+protocol ShopSearchRepositoryInterface {
+    func fetchShopData(completion: @escaping ([Shop]) -> Void)
+}

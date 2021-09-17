@@ -15,6 +15,7 @@ class QuickSearchViewModel: NSObject, ObservableObject {
     @Published var shopSearchFetcher = ShopSearchFetcher()
     @Published var shopData: [Shop] = []
     private let genreTypeRepository: GenreTypeRepositoryInterface
+    private let shopSearchRepository: ShopSearchRepositoryInterface
     private let pickerSelectTypeRepository: PickerSelectTypeRepositoryInterface
     private let userDefaultsDataStore = UserDefaultsDataStore()
     private var reviewed = false
@@ -23,14 +24,15 @@ class QuickSearchViewModel: NSObject, ObservableObject {
     var latitude: Double = 0.0
     var longitude: Double = 0.0
 
-    init(genreTypeRepository: GenreTypeRepositoryInterface, pickerSelectTypeRepository: PickerSelectTypeRepositoryInterface) {
+    init(genreTypeRepository: GenreTypeRepositoryInterface, shopSearchRepository: ShopSearchRepositoryInterface, pickerSelectTypeRepository: PickerSelectTypeRepositoryInterface) {
         self.genreTypeRepository = genreTypeRepository
+        self.shopSearchRepository = shopSearchRepository
         self.pickerSelectTypeRepository = pickerSelectTypeRepository
         super.init()
     }
 
     override convenience init() {
-        self.init(genreTypeRepository: RepositoryLocator.getGenreTypeRepository(), pickerSelectTypeRepository: RepositoryLocator.getPickerSelectTypeRepository())
+        self.init(genreTypeRepository: RepositoryLocator.getGenreTypeRepository(), shopSearchRepository: RepositoryLocator.getShopSearchRepository(), pickerSelectTypeRepository: RepositoryLocator.getPickerSelectTypeRepository())
     }
 
     private var range: Int {
@@ -54,7 +56,7 @@ class QuickSearchViewModel: NSObject, ObservableObject {
         "https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=\(APIKEY)&lat=\(latitude)&lng=\(longitude)&range=\(range)&genre=\(genre)&count=100&format=json"
     }
 
-    func callShopSearchFetcher() {
+    func getShopData() {
         print("requestString:", requestString)
         guard let encodeString = requestString.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed) else {
             return

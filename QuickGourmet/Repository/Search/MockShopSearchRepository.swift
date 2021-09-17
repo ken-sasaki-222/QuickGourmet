@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+class MockShopSearchRepository: ShopSearchRepositoryInterface {
+    func fetchShopData(completion: @escaping ([Shop]) -> Void) {
+        completion(mockShopesData[0].results.shop)
+    }
+}

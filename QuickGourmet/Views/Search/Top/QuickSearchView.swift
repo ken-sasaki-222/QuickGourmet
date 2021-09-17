@@ -132,7 +132,7 @@ struct QuickSearchView: View {
         quickSearchVM.longitude = userDefaultsDataStore.longitudeInformation
         quickSearchVM.genreIndex = index
         quickSearchVM.pickerSelection = selection
-        quickSearchVM.callShopSearchFetcher()
+        quickSearchVM.getShopData()
     }
 }
 
