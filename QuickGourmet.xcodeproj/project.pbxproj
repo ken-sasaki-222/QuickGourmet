@@ -329,7 +329,6 @@
 			isa = PBXGroup;
 			children = (
 				D8F854B526DE43C800BDBF8E /* Downloder */,
-				D8F854B426DE43BA00BDBF8E /* Fonts */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -416,6 +415,14 @@
 			path = Search;
 			sourceTree = "<group>";
 		};
+		D897A27526F4A34400496839 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D8F854B426DE43BA00BDBF8E /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		D8A8E5B9269DBEA4009F9C0C /* API */ = {
 			isa = PBXGroup;
 			children = (
@@ -483,6 +490,7 @@
 				D8A8E5B9269DBEA4009F9C0C /* API */,
 				D85D9DE126A2B98200F4B5C5 /* Utils */,
 				D871222926B988C6000D094A /* Extension */,
+				D897A27526F4A34400496839 /* Resources */,
 				D8BA118D269661490007DCE5 /* Preview Content */,
 				D8BA118B269661490007DCE5 /* Assets.xcassets */,
 				D83EF2C726DCD4330022868E /* Colors.xcassets */,
