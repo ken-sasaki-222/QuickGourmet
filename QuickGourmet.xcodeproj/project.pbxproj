@@ -42,6 +42,9 @@
 		D889303B26B914C2008C0F60 /* QuickSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D889303A26B914C2008C0F60 /* QuickSearchViewModel.swift */; };
 		D889E16126AED67100F18681 /* ShopDetailInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D889E16026AED67100F18681 /* ShopDetailInfoView.swift */; };
 		D889E16326AF09EA00F18681 /* LogoImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D889E16226AF09EA00F18681 /* LogoImage.swift */; };
+		D897A27026F49E2000496839 /* ShopSearchRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D897A26F26F49E2000496839 /* ShopSearchRepository.swift */; };
+		D897A27226F49E3C00496839 /* MockShopSearchRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D897A27126F49E3C00496839 /* MockShopSearchRepository.swift */; };
+		D897A27426F49E4900496839 /* ShopSearchRepositoryInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = D897A27326F49E4900496839 /* ShopSearchRepositoryInterface.swift */; };
 		D8A8E5B4269DAEB3009F9C0C /* ShopDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A8E5B3269DAEB3009F9C0C /* ShopDetailView.swift */; };
 		D8A8E5BB269DC047009F9C0C /* ShopSearchFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A8E5BA269DC047009F9C0C /* ShopSearchFetcher.swift */; };
 		D8A8E5BF269DEA66009F9C0C /* ImageDownloder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A8E5BE269DEA66009F9C0C /* ImageDownloder.swift */; };
@@ -121,6 +124,9 @@
 		D889303A26B914C2008C0F60 /* QuickSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickSearchViewModel.swift; sourceTree = "<group>"; };
 		D889E16026AED67100F18681 /* ShopDetailInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopDetailInfoView.swift; sourceTree = "<group>"; };
 		D889E16226AF09EA00F18681 /* LogoImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoImage.swift; sourceTree = "<group>"; };
+		D897A26F26F49E2000496839 /* ShopSearchRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopSearchRepository.swift; sourceTree = "<group>"; };
+		D897A27126F49E3C00496839 /* MockShopSearchRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockShopSearchRepository.swift; sourceTree = "<group>"; };
+		D897A27326F49E4900496839 /* ShopSearchRepositoryInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopSearchRepositoryInterface.swift; sourceTree = "<group>"; };
 		D8A8E5B3269DAEB3009F9C0C /* ShopDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopDetailView.swift; sourceTree = "<group>"; };
 		D8A8E5BA269DC047009F9C0C /* ShopSearchFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopSearchFetcher.swift; sourceTree = "<group>"; };
 		D8A8E5BE269DEA66009F9C0C /* ImageDownloder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloder.swift; sourceTree = "<group>"; };
@@ -251,6 +257,7 @@
 			children = (
 				D8C5DE4C26E36B4700617F6D /* Locator */,
 				D834146926CCFE5B002D7ED0 /* User */,
+				D897A26E26F49DEA00496839 /* Search */,
 				D81E428626D2556500DB5AD6 /* Favorite */,
 				D8C5DE3426E335A000617F6D /* Genre */,
 				D8C5DE4126E35D8500617F6D /* Picker */,
@@ -399,6 +406,16 @@
 				D88426F926AA7B680073B3F2 /* SafariView.swift */,
 			);
 			path = Safari;
+			sourceTree = "<group>";
+		};
+		D897A26E26F49DEA00496839 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				D897A27126F49E3C00496839 /* MockShopSearchRepository.swift */,
+				D897A26F26F49E2000496839 /* ShopSearchRepository.swift */,
+				D897A27326F49E4900496839 /* ShopSearchRepositoryInterface.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 		D8A8E5B9269DBEA4009F9C0C /* API */ = {
@@ -870,6 +887,7 @@
 				D8C5DE3326E3342700617F6D /* LoginView.swift in Sources */,
 				D8307BC426BC045B00DAB08C /* PopupWindowView.swift in Sources */,
 				D833880F26CC9F6A003446B1 /* UIApplication+Keyboard.swift in Sources */,
+				D897A27026F49E2000496839 /* ShopSearchRepository.swift in Sources */,
 				D87B8C3D26B045EF00BB945C /* HamburgerMenuViewModel.swift in Sources */,
 				D80803E726D49E93009FACC8 /* MockFavoriteShopData.swift in Sources */,
 				D889E16326AF09EA00F18681 /* LogoImage.swift in Sources */,
@@ -884,6 +902,7 @@
 				D8C5DE2C26E331C500617F6D /* GenreType.swift in Sources */,
 				D80803E326D49C1A009FACC8 /* FavoriteShopDetailView.swift in Sources */,
 				D81E428C26D2560D00DB5AD6 /* MockFavoriteRepository.swift in Sources */,
+				D897A27226F49E3C00496839 /* MockShopSearchRepository.swift in Sources */,
 				D8C5DE3626E3368A00617F6D /* GenreTypeRepository.swift in Sources */,
 				D83D600E26AAB387002A6CEC /* MapView.swift in Sources */,
 				D8C5DE3A26E336B200617F6D /* MockGenreTypeRepository.swift in Sources */,
@@ -898,6 +917,7 @@
 				D8BD193026B8282B00E0BBCB /* QuickSearchRowView.swift in Sources */,
 				D8ADBBFA26C400E10003002F /* NendInterstitialView.swift in Sources */,
 				D833881126CCA4B5003446B1 /* LoginButtonView.swift in Sources */,
+				D897A27426F49E4900496839 /* ShopSearchRepositoryInterface.swift in Sources */,
 				D8F854C926DE463500BDBF8E /* FontManager.swift in Sources */,
 				D81E428826D255A000DB5AD6 /* FavoriteRepositoryInterface.swift in Sources */,
 				D81CB62D26A9405F004807E1 /* SearchButtonView.swift in Sources */,
