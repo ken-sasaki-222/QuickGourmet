@@ -22,6 +22,14 @@ class RepositoryLocator: NSObject {
         }
     }
 
+    static func getShopSearchRepository() -> ShopSearchRepositoryInterface {
+        if isMock {
+            return MockShopSearchRepository()
+        } else {
+            return ShopSearchRepository()
+        }
+    }
+
     static func getFavoriteRepository() -> FavoriteRepositoryInterface {
         if isMock {
             MockFavoriteRepository().error = NSError()
