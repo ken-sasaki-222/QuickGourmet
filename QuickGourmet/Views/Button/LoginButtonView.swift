@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LoginButtonView: View {
-    var tapAction = {}
+    var tapAction: () -> Void
 
     var body: some View {
         Button(action: {
@@ -28,6 +28,6 @@ struct LoginButtonView: View {
 
 struct LoginButton_Previews: PreviewProvider {
     static var previews: some View {
-        LoginButtonView()
+        LoginButtonView {}
     }
 }
