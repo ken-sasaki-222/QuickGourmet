@@ -9,7 +9,6 @@ import SwiftUI
 
 struct QuickSearchListView: View {
     @ObservedObject var quickSearchVM: QuickSearchViewModel
-    private let userDefaultsDataStore = UserDefaultsDataStore()
 
     var body: some View {
         if quickSearchVM.shopData.count != 0 {
