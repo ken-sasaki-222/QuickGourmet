@@ -15,4 +15,6 @@ protocol UserRepositoryInterface {
     var launchCount: Int { get set }
     var searchListLaunchCount: Int { get set }
     var shopDetailLaunchCount: Int { get set }
+    var favoriteListLaunchCount: Int { get set }
+    var favoriteShopDetailLaunchCount: Int { get set }
 }

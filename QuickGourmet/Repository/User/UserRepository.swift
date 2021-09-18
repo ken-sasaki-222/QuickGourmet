@@ -82,4 +82,22 @@ class UserRepository: UserRepositoryInterface {
             userDefaultsDataStore.shopDetailLaunchCount = newValue
         }
     }
+
+    var favoriteListLaunchCount: Int {
+        get {
+            userDefaultsDataStore.favoriteListLaunchCount
+        }
+        set(newValue) {
+            userDefaultsDataStore.favoriteListLaunchCount = newValue
+        }
+    }
+
+    var favoriteShopDetailLaunchCount: Int {
+        get {
+            userDefaultsDataStore.favoriteShopDetailLaunchCount
+        }
+        set(newValue) {
+            userDefaultsDataStore.favoriteShopDetailLaunchCount = newValue
+        }
+    }
 }

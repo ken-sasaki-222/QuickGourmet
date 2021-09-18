@@ -78,4 +78,22 @@ class MockUserRepository: UserRepositoryInterface {
             userDefaultsDataStore.shopDetailLaunchCount = newValue
         }
     }
+    
+    var favoriteListLaunchCount: Int {
+        get {
+            0
+        }
+        set(newValue) {
+            userDefaultsDataStore.favoriteListLaunchCount = newValue
+        }
+    }
+
+    var favoriteShopDetailLaunchCount: Int {
+        get {
+            0
+        }
+        set(newValue) {
+            userDefaultsDataStore.favoriteShopDetailLaunchCount = newValue
+        }
+    }
 }

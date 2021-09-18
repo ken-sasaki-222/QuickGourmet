@@ -9,19 +9,21 @@ import Foundation
 
 class FavoriteViewModel: NSObject, ObservableObject {
     @Published var favoriteShopData: [FavoriteShop] = []
+    private var userRepository: UserRepositoryInterface
     private let favoriteRepository: FavoriteRepositoryInterface
-    private let userDefaultsDataStore = UserDefaultsDataStore()
     private var result: Result<Bool, Error> = .failure(NSError())
     private var error: Error?
 
-    init(favoriteRepository: FavoriteRepositoryInterface) {
+    init(userRepository: UserRepositoryInterface, favoriteRepository: FavoriteRepositoryInterface) {
+        self.userRepository = userRepository
         self.favoriteRepository = favoriteRepository
         super.init()
     }
 
     // studyTODO: ①override convenienceの意味調べる、②swiftUIっぽいButtonActionの書き方の件
     override convenience init() {
-        self.init(favoriteRepository: RepositoryLocator.getFavoriteRepository())
+        self.init(userRepository: RepositoryLocator.getUserRepository(),
+                  favoriteRepository: RepositoryLocator.getFavoriteRepository())
     }
 
     func saveFavoriteShop(favoriteShop: FavoriteShop) {
@@ -47,8 +49,8 @@ class FavoriteViewModel: NSObject, ObservableObject {
     }
 
     func recordFavoriteListLaunchCount() -> Bool {
-        userDefaultsDataStore.favoriteListLaunchCount = userDefaultsDataStore.favoriteListLaunchCount
-        if userDefaultsDataStore.favoriteListLaunchCount % 10 == 0 {
+        userRepository.favoriteListLaunchCount = userRepository.favoriteListLaunchCount
+        if userRepository.favoriteListLaunchCount % 10 == 0 {
             return true
         } else {
             return false
@@ -56,8 +58,8 @@ class FavoriteViewModel: NSObject, ObservableObject {
     }
 
     func recordFavoriteShopDetailLaunchCount() -> Bool {
-        userDefaultsDataStore.favoriteShopDetailLaunchCount = userDefaultsDataStore.favoriteShopDetailLaunchCount
-        if userDefaultsDataStore.favoriteListLaunchCount % 6 == 0 {
+        userRepository.favoriteShopDetailLaunchCount = userRepository.favoriteShopDetailLaunchCount
+        if userRepository.favoriteListLaunchCount % 6 == 0 {
             return true
         } else {
             return false
