@@ -20,7 +20,6 @@ class FavoriteViewModel: NSObject, ObservableObject {
         super.init()
     }
 
-    // studyTODO: ①override convenienceの意味調べる、②swiftUIっぽいButtonActionの書き方の件
     override convenience init() {
         self.init(userRepository: RepositoryLocator.getUserRepository(),
                   favoriteRepository: RepositoryLocator.getFavoriteRepository())
