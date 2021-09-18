@@ -78,7 +78,7 @@ class MockUserRepository: UserRepositoryInterface {
             userDefaultsDataStore.shopDetailLaunchCount = newValue
         }
     }
-    
+
     var favoriteListLaunchCount: Int {
         get {
             0

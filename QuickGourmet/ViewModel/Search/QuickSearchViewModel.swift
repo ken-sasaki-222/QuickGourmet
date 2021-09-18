@@ -20,8 +20,6 @@ class QuickSearchViewModel: NSObject, ObservableObject {
     private var reviewed = false
     var genreIndex: Int = 0
     var pickerSelection: Int = 0
-    var latitude: Double = 0.0
-    var longitude: Double = 0.0
 
     init(userRepository: UserRepositoryInterface, genreTypeRepository: GenreTypeRepositoryInterface, shopSearchRepository: ShopSearchRepositoryInterface, pickerSelectTypeRepository: PickerSelectTypeRepositoryInterface) {
         self.userRepository = userRepository
@@ -52,6 +50,14 @@ class QuickSearchViewModel: NSObject, ObservableObject {
         }
         let genre = genreTypeRepository.getGenreCode(genre: genreType)
         return genre
+    }
+
+    private var latitude: Double {
+        userRepository.latitude
+    }
+
+    private var longitude: Double {
+        userRepository.longitude
     }
 
     // HotPepper API.

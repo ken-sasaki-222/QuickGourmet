@@ -128,8 +128,6 @@ struct QuickSearchView: View {
     }
 
     private func communicateQuickSearchVM(index: Int, selection: Int) {
-        quickSearchVM.latitude = userDefaultsDataStore.latitudeInformation
-        quickSearchVM.longitude = userDefaultsDataStore.longitudeInformation
         quickSearchVM.genreIndex = index
         quickSearchVM.pickerSelection = selection
         quickSearchVM.getShopData()
