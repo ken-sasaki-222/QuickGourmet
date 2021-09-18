@@ -8,6 +8,7 @@
 import Foundation
 
 class MockUserRepository: UserRepositoryInterface {
+    let userDefaultsDataStore = UserDefaultsDataStore()
     var error: Error?
     var result: Bool?
 
@@ -30,6 +31,24 @@ class MockUserRepository: UserRepositoryInterface {
                 return
             }
             completion(.success(result))
+        }
+    }
+
+    var latitude: Double {
+        get {
+            35.646850154618406
+        }
+        set(newValue) {
+            userDefaultsDataStore.latitudeInformation = newValue
+        }
+    }
+
+    var longitude: Double {
+        get {
+            139.6297479552915
+        }
+        set(newValue) {
+            userDefaultsDataStore.longitudeInformation = newValue
         }
     }
 }

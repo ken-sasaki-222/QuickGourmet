@@ -28,8 +28,18 @@ struct QuickGourmetApp: App {
 
 // アプリの起動時に位置情報を利用できるように設定
 class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
-    let locationManager = CLLocationManager()
-    let userDefaultsDataStore = UserDefaultsDataStore()
+    private let locationManager = CLLocationManager()
+    private var userRepository: UserRepositoryInterface
+    private let userDefaultsDataStore = UserDefaultsDataStore()
+
+    init(userRepository: UserRepositoryInterface) {
+        self.userRepository = userRepository
+        super.init()
+    }
+
+    override convenience init() {
+        self.init(userRepository: RepositoryLocator.getUserRepository())
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
         // インタースティシャル静止広告のロード
@@ -69,8 +79,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             newLocation.coordinate.longitude
         )
 
-        userDefaultsDataStore.latitudeInformation = location.latitude
-        userDefaultsDataStore.longitudeInformation = location.longitude
+        userRepository.latitude = location.latitude
+        userRepository.longitude = location.longitude
         print("緯度: ", location.latitude, "経度: ", location.longitude)
     }
 

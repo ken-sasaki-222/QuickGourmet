@@ -10,6 +10,8 @@ import FirebaseAuth
 import Foundation
 
 class UserRepository: UserRepositoryInterface {
+    let userDefaultsDataStore = UserDefaultsDataStore()
+
     func login(_ completion: @escaping (Result<Bool, Error>) -> Void) {
         Auth.auth().signInAnonymously { authResult, error in
             if let error = error {
@@ -33,6 +35,24 @@ class UserRepository: UserRepositoryInterface {
             } else {
                 completion(.success(true))
             }
+        }
+    }
+
+    var latitude: Double {
+        get {
+            userDefaultsDataStore.latitudeInformation
+        }
+        set(newValue) {
+            userDefaultsDataStore.latitudeInformation = newValue
+        }
+    }
+
+    var longitude: Double {
+        get {
+            userDefaultsDataStore.longitudeInformation
+        }
+        set(newValue) {
+            userDefaultsDataStore.longitudeInformation = newValue
         }
     }
 }
