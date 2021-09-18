@@ -25,8 +25,6 @@ class HamburgerMenuViewModel {
 
     func shareOnTwitter() {
         let message = "飲食店をクイック検索！ \n 『食いっくグルメ』をダウンロードしよう。"
-
-        // URLクエリ内で使用できる文字列に変換
         guard let encodedMessage = message.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
             return
         }
@@ -34,7 +32,6 @@ class HamburgerMenuViewModel {
         guard let tweetURL = URL(string: "https://twitter.com/intent/tweet?text=\(encodedMessage)") else {
             return
         }
-
         UIApplication.shared.open(tweetURL, options: [:], completionHandler: nil)
     }
 

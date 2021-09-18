@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ShopDetailView: View {
     private let quickSearchVM = QuickSearchViewModel()
-    private let userDefaultsDataStore = UserDefaultsDataStore()
     var shopData: Shop
 
     var body: some View {

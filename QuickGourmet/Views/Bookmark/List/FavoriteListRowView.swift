@@ -1,5 +1,5 @@
 //
-//  FavoriteShopRowView.swift
+//  FavoriteListRowView.swift
 //  QuickGourmet
 //
 //  Created by sasaki.ken on 2021/08/24.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct FavoriteShopRowView: View {
+struct FavoriteListRowView: View {
     var favoriteShopData: FavoriteShop
 
     var body: some View {
@@ -41,6 +41,6 @@ struct FavoriteShopRowView: View {
 
 struct FavoriteShopRowView_Previews: PreviewProvider {
     static var previews: some View {
-        FavoriteShopRowView(favoriteShopData: mockFavoriteShopesData[0])
+        FavoriteListRowView(favoriteShopData: mockFavoriteShopesData[0])
     }
 }

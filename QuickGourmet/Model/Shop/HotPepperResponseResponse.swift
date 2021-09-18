@@ -7,9 +7,6 @@
 
 import Foundation
 
-// JSONのレスポンスに合わせて構造体をネストする必要がある
-// resultsから読み込み始める
-
 struct HotPepperResponse: Decodable {
     let results: Results
 }

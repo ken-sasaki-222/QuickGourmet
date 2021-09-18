@@ -10,6 +10,8 @@ import FirebaseAuth
 import Foundation
 
 class UserRepository: UserRepositoryInterface {
+    let userDefaultsDataStore = UserDefaultsDataStore()
+
     func login(_ completion: @escaping (Result<Bool, Error>) -> Void) {
         Auth.auth().signInAnonymously { authResult, error in
             if let error = error {
@@ -33,6 +35,69 @@ class UserRepository: UserRepositoryInterface {
             } else {
                 completion(.success(true))
             }
+        }
+    }
+
+    var latitude: Double {
+        get {
+            userDefaultsDataStore.latitudeInformation
+        }
+        set(newValue) {
+            userDefaultsDataStore.latitudeInformation = newValue
+        }
+    }
+
+    var longitude: Double {
+        get {
+            userDefaultsDataStore.longitudeInformation
+        }
+        set(newValue) {
+            userDefaultsDataStore.longitudeInformation = newValue
+        }
+    }
+
+    var launchCount: Int {
+        get {
+            userDefaultsDataStore.launchCount
+        }
+        set(newValue) {
+            userDefaultsDataStore.launchCount = newValue
+        }
+    }
+
+    var searchListLaunchCount: Int {
+        get {
+            userDefaultsDataStore.searchListLaunchCount
+        }
+        set(newValue) {
+            userDefaultsDataStore.searchListLaunchCount = newValue
+        }
+    }
+
+    var shopDetailLaunchCount: Int {
+        get {
+            userDefaultsDataStore.shopDetailLaunchCount
+        }
+        set(newValue) {
+            userDefaultsDataStore.shopDetailLaunchCount = newValue
+        }
+    }
+
+    var favoriteListLaunchCount: Int {
+        get {
+            userDefaultsDataStore.favoriteListLaunchCount
+        }
+        set(newValue) {
+            userDefaultsDataStore.favoriteListLaunchCount = newValue
+        }
+    }
+
+    var favoriteShopDetailLaunchCount: Int {
+        get {
+            userDefaultsDataStore.favoriteShopDetailLaunchCount
+        }
+        set(newValue) {
+            userDefaultsDataStore.favoriteShopDetailLaunchCount = newValue
         }
     }
 }

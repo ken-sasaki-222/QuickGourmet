@@ -1,14 +1,14 @@
 //
-//  ShopSearchFetcher.swift
+//  ShopSearchRepository.swift
 //  QuickGourmet
 //
-//  Created by sasaki.ken on 2021/07/13.
+//  Created by sasaki.ken on 2021/09/17.
 //
 
 import Foundation
 
-class ShopSearchFetcher {
-    var requestString = String()
+class ShopSearchRepository: ShopSearchRepositoryInterface {
+    var requestString: String = ""
 
     func fetchShopData(completion: @escaping ([Shop]) -> Void) {
         guard let requestUrl = URL(string: requestString) else {

@@ -13,7 +13,7 @@ class FavoriteRepository: FavoriteRepositoryInterface {
     private let db = Firestore.firestore()
     private var favoriteShopes = [FavoriteShop]()
 
-    func saveFavoriteShopData(favoriteShop: FavoriteShop) {
+    func saveFavoriteShopData(favoriteShop: FavoriteShop, completion: @escaping (Result<Bool, Error>) -> Void) {
         guard let uid = Auth.auth().currentUser?.uid else {
             return
         }
@@ -34,13 +34,15 @@ class FavoriteRepository: FavoriteRepositoryInterface {
             ]) { error in
                 if let error = error {
                     print("Error adding document:", error)
+                    completion(.failure(error))
                 } else {
                     print("Success adding document:")
+                    completion(.success(true))
                 }
             }
     }
 
-    func getFavoriteShopData(_ completion: @escaping ([FavoriteShop]) -> Void) {
+    func getFavoriteShopData(_ onSuccess: @escaping ([FavoriteShop]) -> Void, onFailure: @escaping (Error) -> Void) {
         guard let uid = Auth.auth().currentUser?.uid else {
             return
         }
@@ -48,7 +50,7 @@ class FavoriteRepository: FavoriteRepositoryInterface {
         db.collection("shopInfo").document(uid).collection("favorite").getDocuments { snapshot, error in
             if let error = error {
                 print("Error getting documents: \(error)")
-                return
+                onFailure(error)
             }
 
             self.favoriteShopes = []
@@ -89,13 +91,13 @@ class FavoriteRepository: FavoriteRepositoryInterface {
                         documentID: documentID
                     )
                     self.favoriteShopes.append(favoriteShop)
-                    completion(self.favoriteShopes)
+                    onSuccess(self.favoriteShopes)
                 }
             }
         }
     }
 
-    func deleteFavoriteShopData(documentID: String) {
+    func deleteFavoriteShopData(documentID: String, completion: @escaping (Result<Bool, Error>) -> Void) {
         guard let uid = Auth.auth().currentUser?.uid else {
             return
         }
@@ -103,8 +105,10 @@ class FavoriteRepository: FavoriteRepositoryInterface {
         db.collection("shopInfo").document(uid).collection("favorite").document(documentID).delete { error in
             if let error = error {
                 print("Error removing document:", error)
+                completion(.failure(error))
             } else {
                 print("Document successfully removed.")
+                completion(.success(true))
             }
         }
     }

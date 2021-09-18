@@ -19,7 +19,7 @@ struct FavoriteListView: View {
             if favoriteVM.favoriteShopData.count != 0 {
                 List(favoriteVM.favoriteShopData) { shopData in
                     NavigationLink(destination: FavoriteShopDetailView(favoriteShopData: shopData)) {
-                        FavoriteShopRowView(favoriteShopData: shopData)
+                        FavoriteListRowView(favoriteShopData: shopData)
                     }
                 }
                 .navigationTitle("ブックマーク一覧")

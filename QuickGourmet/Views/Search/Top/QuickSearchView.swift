@@ -17,7 +17,6 @@ struct QuickSearchView: View {
     @State private var openOffset = CGFloat()
     @State private var index = 0
     private let quickSearchVM = QuickSearchViewModel()
-    private let userDefaultsDataStore = UserDefaultsDataStore()
     private let locationManager = CLLocationManager()
 
     private let quickSearchImages = ["food_izakaya", "food_baru", "food_sousaku", "food_wasyoku", "food_yosyoku", "food_italia", "food_tyuka", "food_yakiniku", "food_asia", "food_kakukoku", "food_karaoke", "food_bar", "food_ramen", "food_cafe", "food_other", "food_okonomiyaki", "food_korea"]
@@ -28,7 +27,6 @@ struct QuickSearchView: View {
         setNavigation()
     }
 
-    // searchTODO: 距離指定ではなく徒歩００分で指定させる
     var body: some View {
         GeometryReader { geometry in
             ZStack {
@@ -38,7 +36,7 @@ struct QuickSearchView: View {
                             ZStack {
                                 VStack(spacing: 10) {
                                     ForEach(0 ..< quickSearchImages.count) { index in
-                                        NavigationLink(destination: SearchListView(quickSearchVM: quickSearchVM), isActive: $isTapActive) {}
+                                        NavigationLink(destination: QuickSearchListView(quickSearchVM: quickSearchVM), isActive: $isTapActive) {}
                                         Button(action: {
                                             switch locationManager.authorizationStatus {
                                             case .notDetermined: // 許諾とっていない
@@ -82,7 +80,6 @@ struct QuickSearchView: View {
                         }
                     }
                     .background(ColorManager.baseColor)
-                    // .edgesIgnoringSafeArea(.bottom)
                 }
                 .onAppear {
                     quickSearchVM.requestIDFA()
@@ -130,11 +127,9 @@ struct QuickSearchView: View {
     }
 
     private func communicateQuickSearchVM(index: Int, selection: Int) {
-        quickSearchVM.latitude = userDefaultsDataStore.latitudeInformation
-        quickSearchVM.longitude = userDefaultsDataStore.longitudeInformation
         quickSearchVM.genreIndex = index
         quickSearchVM.pickerSelection = selection
-        quickSearchVM.callShopSearchFetcher()
+        quickSearchVM.getShopData()
     }
 }
 

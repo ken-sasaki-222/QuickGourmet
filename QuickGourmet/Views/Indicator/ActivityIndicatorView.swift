@@ -13,7 +13,6 @@ struct ActivityIndicator: UIViewRepresentable {
         UIActivityIndicatorView(style: .large)
     }
 
-    // indicatorTODO: クルクルに背景色つけてより鮮明にする
     func updateUIView(_ uiView: UIActivityIndicatorView, context: UIViewRepresentableContext<ActivityIndicator>) {
         uiView.startAnimating()
         uiView.color = .white

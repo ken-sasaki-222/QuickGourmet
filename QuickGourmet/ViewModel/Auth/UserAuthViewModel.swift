@@ -8,8 +8,17 @@
 import Foundation
 import SwiftUI
 
-class UserAuthViewModel: ObservableObject {
-    @Published var userRepository = UserRepository() // refactorTODO: ＠Pub不要
+class UserAuthViewModel: NSObject {
+    private let userRepository: UserRepositoryInterface
+
+    init(userRepository: UserRepositoryInterface) {
+        self.userRepository = userRepository
+        super.init()
+    }
+
+    override convenience init() {
+        self.init(userRepository: RepositoryLocator.getUserRepository())
+    }
 
     func canLogin(_ callback: @escaping (Result<Bool, Error>) -> Void) {
         userRepository.login { result in

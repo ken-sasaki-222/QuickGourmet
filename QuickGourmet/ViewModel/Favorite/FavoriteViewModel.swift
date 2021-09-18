@@ -7,29 +7,49 @@
 
 import Foundation
 
-class FavoriteViewModel: ObservableObject {
+class FavoriteViewModel: NSObject, ObservableObject {
     @Published var favoriteShopData: [FavoriteShop] = []
-    private let favoriteRepository = FavoriteRepository()
-    private let userDefaultsDataStore = UserDefaultsDataStore()
+    private var userRepository: UserRepositoryInterface
+    private let favoriteRepository: FavoriteRepositoryInterface
+    private var result: Result<Bool, Error> = .failure(NSError())
+    private var error: Error?
+
+    init(userRepository: UserRepositoryInterface, favoriteRepository: FavoriteRepositoryInterface) {
+        self.userRepository = userRepository
+        self.favoriteRepository = favoriteRepository
+        super.init()
+    }
+
+    override convenience init() {
+        self.init(userRepository: RepositoryLocator.getUserRepository(),
+                  favoriteRepository: RepositoryLocator.getFavoriteRepository())
+    }
 
     func saveFavoriteShop(favoriteShop: FavoriteShop) {
-        favoriteRepository.saveFavoriteShopData(favoriteShop: favoriteShop)
+        favoriteRepository.saveFavoriteShopData(favoriteShop: favoriteShop) { result in
+            self.result = result
+        }
     }
 
     func getFavoriteShop() {
         favoriteRepository.getFavoriteShopData { shopes in
             self.favoriteShopData = shopes
-            print("kenken", self.favoriteShopData)
+            print("favoriteShopData", self.favoriteShopData)
+        } onFailure: { error in
+            self.error = error
+            print("getFavoriteShop.error", self.error as Any)
         }
     }
 
     func deleateFavoriteShop(documentID: String) {
-        favoriteRepository.deleteFavoriteShopData(documentID: documentID)
+        favoriteRepository.deleteFavoriteShopData(documentID: documentID) { result in
+            self.result = result
+        }
     }
 
     func recordFavoriteListLaunchCount() -> Bool {
-        userDefaultsDataStore.favoriteListLaunchCount = userDefaultsDataStore.favoriteListLaunchCount
-        if userDefaultsDataStore.favoriteListLaunchCount % 10 == 0 {
+        userRepository.favoriteListLaunchCount = userRepository.favoriteListLaunchCount
+        if userRepository.favoriteListLaunchCount % 10 == 0 {
             return true
         } else {
             return false
@@ -37,8 +57,8 @@ class FavoriteViewModel: ObservableObject {
     }
 
     func recordFavoriteShopDetailLaunchCount() -> Bool {
-        userDefaultsDataStore.favoriteShopDetailLaunchCount = userDefaultsDataStore.favoriteShopDetailLaunchCount
-        if userDefaultsDataStore.favoriteListLaunchCount % 6 == 0 {
+        userRepository.favoriteShopDetailLaunchCount = userRepository.favoriteShopDetailLaunchCount
+        if userRepository.favoriteListLaunchCount % 6 == 0 {
             return true
         } else {
             return false

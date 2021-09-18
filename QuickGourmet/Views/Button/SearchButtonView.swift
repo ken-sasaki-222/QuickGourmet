@@ -9,11 +9,11 @@ import SwiftUI
 
 struct SearchButtonView: View {
     var text: String
-    var action = {}
+    var tapAction: () -> Void
 
     var body: some View {
         Button(action: {
-            action()
+            tapAction()
         }) {
             Text(text)
                 .foregroundColor(ColorManager.font_white)
@@ -29,6 +29,6 @@ struct SearchButtonView: View {
 
 struct SearchButton_Previews: PreviewProvider {
     static var previews: some View {
-        SearchButtonView(text: "検索")
+        SearchButtonView(text: "検索") {}
     }
 }

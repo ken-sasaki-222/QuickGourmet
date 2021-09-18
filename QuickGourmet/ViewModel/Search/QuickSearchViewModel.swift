@@ -11,110 +11,53 @@ import Foundation
 import StoreKit
 import SwiftUI
 
-class QuickSearchViewModel: ObservableObject {
-    @Published var shopSearchFetcher = ShopSearchFetcher()
+class QuickSearchViewModel: NSObject, ObservableObject {
     @Published var shopData: [Shop] = []
-    private let userDefaultsDataStore = UserDefaultsDataStore()
+    private var userRepository: UserRepositoryInterface
+    private let genreTypeRepository: GenreTypeRepositoryInterface
+    private var shopSearchRepository: ShopSearchRepositoryInterface
+    private let pickerSelectTypeRepository: PickerSelectTypeRepositoryInterface
     private var reviewed = false
     var genreIndex: Int = 0
     var pickerSelection: Int = 0
-    var latitude: Double = 0.0
-    var longitude: Double = 0.0
 
-    private enum GenreType: Int {
-        case izakaya = 0
-        case dainingubar = 1
-        case sousakuryouri = 2
-        case wasyoku = 3
-        case yousyoku = 4
-        case italian = 5
-        case tyuuka = 6
-        case yakiniku = 7
-        case aziaryouri = 8
-        case kakukokuryouri = 9
-        case karaoke = 10
-        case kakuteru = 11
-        case ramen = 12
-        case cafe = 13
-        case other = 14
-        case okonomiyaki = 15
-        case corearyouri = 16
-
-        var genreCode: String {
-            switch self {
-            case .izakaya:
-                return "G001"
-            case .dainingubar:
-                return "G002"
-            case .sousakuryouri:
-                return "G003"
-            case .wasyoku:
-                return "G004"
-            case .yousyoku:
-                return "G005"
-            case .italian:
-                return "G006"
-            case .tyuuka:
-                return "G007"
-            case .yakiniku:
-                return "G008"
-            case .aziaryouri:
-                return "G009"
-            case .kakukokuryouri:
-                return "G010"
-            case .karaoke:
-                return "G011"
-            case .kakuteru:
-                return "G012"
-            case .ramen:
-                return "G013"
-            case .cafe:
-                return "G014"
-            case .other:
-                return "G015"
-            case .okonomiyaki:
-                return "G016"
-            case .corearyouri:
-                return "G017"
-            }
-        }
+    init(userRepository: UserRepositoryInterface, genreTypeRepository: GenreTypeRepositoryInterface, shopSearchRepository: ShopSearchRepositoryInterface, pickerSelectTypeRepository: PickerSelectTypeRepositoryInterface) {
+        self.userRepository = userRepository
+        self.genreTypeRepository = genreTypeRepository
+        self.shopSearchRepository = shopSearchRepository
+        self.pickerSelectTypeRepository = pickerSelectTypeRepository
+        super.init()
     }
 
-    private enum PickerSelectionType: Int {
-        case fourMinutesWalk = 0
-        case sevenMinutesWalk = 1
-        case thirteenMinuteWalk = 2
-        case twentyFiveMinutes = 3
-        case thirtyEightMinuteWalk = 4
-
-        var rangeCode: Int {
-            switch self {
-            case .fourMinutesWalk:
-                return 1
-            case .sevenMinutesWalk:
-                return 2
-            case .thirteenMinuteWalk:
-                return 3
-            case .twentyFiveMinutes:
-                return 4
-            case .thirtyEightMinuteWalk:
-                return 5
-            }
-        }
+    override convenience init() {
+        self.init(userRepository: RepositoryLocator.getUserRepository(),
+                  genreTypeRepository: RepositoryLocator.getGenreTypeRepository(),
+                  shopSearchRepository: RepositoryLocator.getShopSearchRepository(),
+                  pickerSelectTypeRepository: RepositoryLocator.getPickerSelectTypeRepository())
     }
 
     private var range: Int {
-        guard let rangeCode = PickerSelectionType(rawValue: pickerSelection)?.rangeCode else {
+        guard let pickerSelectType = PickerSelectType(rawValue: pickerSelection) else {
             return 5
         }
+        let rangeCode = pickerSelectTypeRepository.getPickerSelectType(selectType: pickerSelectType)
         return rangeCode
     }
 
     private var genre: String {
-        guard let genreCode = GenreType(rawValue: genreIndex)?.genreCode else {
+        guard let genreType = GenreType(rawValue: genreIndex) else {
             return ""
         }
-        return genreCode
+        let genre = genreTypeRepository.getGenreCode(genre: genreType)
+        return genre
+    }
+
+    private var latitude: Double {
+        userRepository.latitude
+    }
+
+    private var longitude: Double {
+        userRepository.longitude
     }
 
     // HotPepper API.
@@ -122,14 +65,13 @@ class QuickSearchViewModel: ObservableObject {
         "https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=\(APIKEY)&lat=\(latitude)&lng=\(longitude)&range=\(range)&genre=\(genre)&count=100&format=json"
     }
 
-    func callShopSearchFetcher() {
+    func getShopData() {
         print("requestString:", requestString)
         guard let encodeString = requestString.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed) else {
             return
         }
-
-        shopSearchFetcher.requestString = encodeString
-        shopSearchFetcher.fetchShopData { shopes in
+        shopSearchRepository.requestString = encodeString
+        shopSearchRepository.fetchShopData { shopes in
             self.shopData = shopes
             print("shopData", self.shopData)
         }
@@ -152,7 +94,7 @@ class QuickSearchViewModel: ObservableObject {
         if reviewed == true {
             return
         }
-        if userDefaultsDataStore.launchCount % 7 == 0 {
+        if userRepository.launchCount % 7 == 0 {
             if let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
                 SKStoreReviewController.requestReview(in: scene)
                 reviewed = true
@@ -161,8 +103,8 @@ class QuickSearchViewModel: ObservableObject {
     }
 
     func recordSearchListLaunchCount() -> Bool {
-        userDefaultsDataStore.searchListLaunchCount = userDefaultsDataStore.searchListLaunchCount
-        if userDefaultsDataStore.searchListLaunchCount % 10 == 0 {
+        userRepository.searchListLaunchCount = userRepository.searchListLaunchCount
+        if userRepository.searchListLaunchCount % 10 == 0 {
             return true
         } else {
             return false
@@ -170,8 +112,8 @@ class QuickSearchViewModel: ObservableObject {
     }
 
     func recordShopDetailLaunchCount() -> Bool {
-        userDefaultsDataStore.shopDetailLaunchCount = userDefaultsDataStore.shopDetailLaunchCount
-        if userDefaultsDataStore.shopDetailLaunchCount % 6 == 0 {
+        userRepository.shopDetailLaunchCount = userRepository.shopDetailLaunchCount
+        if userRepository.shopDetailLaunchCount % 6 == 0 {
             return true
         } else {
             return false

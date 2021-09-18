@@ -8,8 +8,6 @@
 import SwiftUI
 
 struct URLImage: View {
-    // ObservableObjectに準拠したクラスのインスタンス
-    // これで@Publishedなプロパティを監視できる（この場合downloadData）
     @ObservedObject private var imageDownloader = ImageDownloader()
 
     let urlString: String
@@ -20,9 +18,7 @@ struct URLImage: View {
     }
 
     var body: some View {
-        // downloadDataに値が無ければSF Symbolを返す
         if let imageData = self.imageDownloader.downloadData {
-            // force unwrap! 使いたくないのでguard
             guard let img = UIImage(data: imageData) else {
                 return VStack {
                     Image("not_image")
@@ -30,7 +26,6 @@ struct URLImage: View {
                         .frame(width: 120, height: 120, alignment: .center)
                 }
             }
-            // Viewを返す
             return VStack {
                 Image(uiImage: img)
                     .resizable()

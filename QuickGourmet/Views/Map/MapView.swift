@@ -17,8 +17,8 @@ struct MapView: View {
     @State private var region = MKCoordinateRegion() // 座標領域
     @State private var userTrackingMode: MapUserTrackingMode = .none
     var coordinate: CLLocationCoordinate2D? // 表示領域の中心位置
-    var latitude: Double // 緯度
-    var longitude: Double // 経度
+    var latitude: Double
+    var longitude: Double
 
     var body: some View {
         Map(coordinateRegion: $region,
