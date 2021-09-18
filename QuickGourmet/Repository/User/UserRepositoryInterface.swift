@@ -13,4 +13,6 @@ protocol UserRepositoryInterface {
     var latitude: Double { get set }
     var longitude: Double { get set }
     var launchCount: Int { get set }
+    var searchListLaunchCount: Int { get set }
+    var shopDetailLaunchCount: Int { get set }
 }

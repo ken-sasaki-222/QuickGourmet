@@ -13,17 +13,18 @@ import SwiftUI
 
 class QuickSearchViewModel: NSObject, ObservableObject {
     @Published var shopData: [Shop] = []
+    private var userRepository: UserRepositoryInterface
     private let genreTypeRepository: GenreTypeRepositoryInterface
     private var shopSearchRepository: ShopSearchRepositoryInterface
     private let pickerSelectTypeRepository: PickerSelectTypeRepositoryInterface
-    private let userDefaultsDataStore = UserDefaultsDataStore()
     private var reviewed = false
     var genreIndex: Int = 0
     var pickerSelection: Int = 0
     var latitude: Double = 0.0
     var longitude: Double = 0.0
 
-    init(genreTypeRepository: GenreTypeRepositoryInterface, shopSearchRepository: ShopSearchRepositoryInterface, pickerSelectTypeRepository: PickerSelectTypeRepositoryInterface) {
+    init(userRepository: UserRepositoryInterface, genreTypeRepository: GenreTypeRepositoryInterface, shopSearchRepository: ShopSearchRepositoryInterface, pickerSelectTypeRepository: PickerSelectTypeRepositoryInterface) {
+        self.userRepository = userRepository
         self.genreTypeRepository = genreTypeRepository
         self.shopSearchRepository = shopSearchRepository
         self.pickerSelectTypeRepository = pickerSelectTypeRepository
@@ -31,7 +32,10 @@ class QuickSearchViewModel: NSObject, ObservableObject {
     }
 
     override convenience init() {
-        self.init(genreTypeRepository: RepositoryLocator.getGenreTypeRepository(), shopSearchRepository: RepositoryLocator.getShopSearchRepository(), pickerSelectTypeRepository: RepositoryLocator.getPickerSelectTypeRepository())
+        self.init(userRepository: RepositoryLocator.getUserRepository(),
+                  genreTypeRepository: RepositoryLocator.getGenreTypeRepository(),
+                  shopSearchRepository: RepositoryLocator.getShopSearchRepository(),
+                  pickerSelectTypeRepository: RepositoryLocator.getPickerSelectTypeRepository())
     }
 
     private var range: Int {
@@ -84,7 +88,7 @@ class QuickSearchViewModel: NSObject, ObservableObject {
         if reviewed == true {
             return
         }
-        if userDefaultsDataStore.launchCount % 7 == 0 {
+        if userRepository.launchCount % 7 == 0 {
             if let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
                 SKStoreReviewController.requestReview(in: scene)
                 reviewed = true
@@ -93,8 +97,8 @@ class QuickSearchViewModel: NSObject, ObservableObject {
     }
 
     func recordSearchListLaunchCount() -> Bool {
-        userDefaultsDataStore.searchListLaunchCount = userDefaultsDataStore.searchListLaunchCount
-        if userDefaultsDataStore.searchListLaunchCount % 10 == 0 {
+        userRepository.searchListLaunchCount = userRepository.searchListLaunchCount
+        if userRepository.searchListLaunchCount % 10 == 0 {
             return true
         } else {
             return false
@@ -102,8 +106,8 @@ class QuickSearchViewModel: NSObject, ObservableObject {
     }
 
     func recordShopDetailLaunchCount() -> Bool {
-        userDefaultsDataStore.shopDetailLaunchCount = userDefaultsDataStore.shopDetailLaunchCount
-        if userDefaultsDataStore.shopDetailLaunchCount % 6 == 0 {
+        userRepository.shopDetailLaunchCount = userRepository.shopDetailLaunchCount
+        if userRepository.shopDetailLaunchCount % 6 == 0 {
             return true
         } else {
             return false

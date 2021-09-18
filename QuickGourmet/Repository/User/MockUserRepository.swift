@@ -60,4 +60,22 @@ class MockUserRepository: UserRepositoryInterface {
             userDefaultsDataStore.launchCount = newValue
         }
     }
+
+    var searchListLaunchCount: Int {
+        get {
+            0
+        }
+        set(newValue) {
+            userDefaultsDataStore.searchListLaunchCount = newValue
+        }
+    }
+
+    var shopDetailLaunchCount: Int {
+        get {
+            0
+        }
+        set(newValue) {
+            userDefaultsDataStore.shopDetailLaunchCount = newValue
+        }
+    }
 }
