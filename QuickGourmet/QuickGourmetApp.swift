@@ -85,6 +85,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     }
 
     func recordLaunchCount() {
-        userDefaultsDataStore.launchCount = userDefaultsDataStore.launchCount
+        userRepository.launchCount = userRepository.launchCount
     }
 }

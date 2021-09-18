@@ -12,4 +12,5 @@ protocol UserRepositoryInterface {
     func logout(_ completion: @escaping (Result<Bool, Error>) -> Void)
     var latitude: Double { get set }
     var longitude: Double { get set }
+    var launchCount: Int { get set }
 }

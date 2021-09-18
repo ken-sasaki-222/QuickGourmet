@@ -55,4 +55,13 @@ class UserRepository: UserRepositoryInterface {
             userDefaultsDataStore.longitudeInformation = newValue
         }
     }
+
+    var launchCount: Int {
+        get {
+            userDefaultsDataStore.launchCount
+        }
+        set(newValue) {
+            userDefaultsDataStore.launchCount = newValue
+        }
+    }
 }

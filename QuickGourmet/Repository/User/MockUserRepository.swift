@@ -51,4 +51,13 @@ class MockUserRepository: UserRepositoryInterface {
             userDefaultsDataStore.longitudeInformation = newValue
         }
     }
+
+    var launchCount: Int {
+        get {
+            0
+        }
+        set(newValue) {
+            userDefaultsDataStore.launchCount = newValue
+        }
+    }
 }
