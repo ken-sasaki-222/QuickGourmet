@@ -86,6 +86,16 @@
 		D8FC157926B19DDA00B22408 /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FC157826B19DDA00B22408 /* MailView.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		D870EFDF26F5F8DB000E6D09 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D8BA117C269661460007DCE5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D8BA1183269661460007DCE5;
+			remoteInfo = QuickGourmet;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		2D426BF4E1A63986FA4520FC /* Pods-QuickGourmet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuickGourmet.debug.xcconfig"; path = "Target Support Files/Pods-QuickGourmet/Pods-QuickGourmet.debug.xcconfig"; sourceTree = "<group>"; };
 		6DF1E1FFD30D2807F5F3C09B /* Pods-QuickGourmet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuickGourmet.release.xcconfig"; path = "Target Support Files/Pods-QuickGourmet/Pods-QuickGourmet.release.xcconfig"; sourceTree = "<group>"; };
@@ -115,6 +125,8 @@
 		D84E5C7A26D5DFFD00BB79CE /* FavoriteShopDetailInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteShopDetailInfoView.swift; sourceTree = "<group>"; };
 		D855048C269D0F1B0053334A /* HotPepperResponseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotPepperResponseResponse.swift; sourceTree = "<group>"; };
 		D864626E26CBEAE90021092E /* UserAuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuthViewModel.swift; sourceTree = "<group>"; };
+		D870EFDA26F5F8DB000E6D09 /* QuickGourmetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuickGourmetTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D870EFDE26F5F8DB000E6D09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D872240126D125300017D405 /* FavoriteListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteListView.swift; sourceTree = "<group>"; };
 		D87B8C3C26B045EF00BB945C /* HamburgerMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamburgerMenuViewModel.swift; sourceTree = "<group>"; };
 		D87C9C382696FDB70051FA77 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
@@ -171,6 +183,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		D870EFD726F5F8DB000E6D09 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D8BA1181269661460007DCE5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -341,6 +360,14 @@
 			path = Auth;
 			sourceTree = "<group>";
 		};
+		D870EFDB26F5F8DB000E6D09 /* QuickGourmetTests */ = {
+			isa = PBXGroup;
+			children = (
+				D870EFDE26F5F8DB000E6D09 /* Info.plist */,
+			);
+			path = QuickGourmetTests;
+			sourceTree = "<group>";
+		};
 		D871222926B988C6000D094A /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -463,6 +490,7 @@
 			isa = PBXGroup;
 			children = (
 				D8BA1186269661460007DCE5 /* QuickGourmet */,
+				D870EFDB26F5F8DB000E6D09 /* QuickGourmetTests */,
 				D8BA1185269661460007DCE5 /* Products */,
 				2AB96C0BE4D98F4978856322 /* Pods */,
 				82F4305A5EDFBC96D78AA438 /* Frameworks */,
@@ -473,6 +501,7 @@
 			isa = PBXGroup;
 			children = (
 				D8BA1184269661460007DCE5 /* QuickGourmet.app */,
+				D870EFDA26F5F8DB000E6D09 /* QuickGourmetTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -708,6 +737,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		D870EFD926F5F8DB000E6D09 /* QuickGourmetTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D870EFE326F5F8DB000E6D09 /* Build configuration list for PBXNativeTarget "QuickGourmetTests" */;
+			buildPhases = (
+				D870EFD626F5F8DB000E6D09 /* Sources */,
+				D870EFD726F5F8DB000E6D09 /* Frameworks */,
+				D870EFD826F5F8DB000E6D09 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D870EFE026F5F8DB000E6D09 /* PBXTargetDependency */,
+			);
+			name = QuickGourmetTests;
+			productName = QuickGourmetTests;
+			productReference = D870EFDA26F5F8DB000E6D09 /* QuickGourmetTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		D8BA1183269661460007DCE5 /* QuickGourmet */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D8BA1193269661490007DCE5 /* Build configuration list for PBXNativeTarget "QuickGourmet" */;
@@ -739,6 +786,10 @@
 				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 1250;
 				TargetAttributes = {
+					D870EFD926F5F8DB000E6D09 = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = D8BA1183269661460007DCE5;
+					};
 					D8BA1183269661460007DCE5 = {
 						CreatedOnToolsVersion = 12.5.1;
 					};
@@ -758,11 +809,19 @@
 			projectRoot = "";
 			targets = (
 				D8BA1183269661460007DCE5 /* QuickGourmet */,
+				D870EFD926F5F8DB000E6D09 /* QuickGourmetTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		D870EFD826F5F8DB000E6D09 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D8BA1182269661460007DCE5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -876,6 +935,13 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		D870EFD626F5F8DB000E6D09 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D8BA1180269661460007DCE5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -951,7 +1017,55 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		D870EFE026F5F8DB000E6D09 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D8BA1183269661460007DCE5 /* QuickGourmet */;
+			targetProxy = D870EFDF26F5F8DB000E6D09 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		D870EFE126F5F8DB000E6D09 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7FV88S27UR;
+				INFOPLIST_FILE = QuickGourmetTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ken.QuickGourmetTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/QuickGourmet.app/QuickGourmet";
+			};
+			name = Debug;
+		};
+		D870EFE226F5F8DB000E6D09 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7FV88S27UR;
+				INFOPLIST_FILE = QuickGourmetTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ken.QuickGourmetTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/QuickGourmet.app/QuickGourmet";
+			};
+			name = Release;
+		};
 		D8BA1191269661490007DCE5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1117,6 +1231,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		D870EFE326F5F8DB000E6D09 /* Build configuration list for PBXNativeTarget "QuickGourmetTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D870EFE126F5F8DB000E6D09 /* Debug */,
+				D870EFE226F5F8DB000E6D09 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		D8BA117F269661460007DCE5 /* Build configuration list for PBXProject "QuickGourmet" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
