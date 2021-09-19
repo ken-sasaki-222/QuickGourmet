@@ -8,9 +8,7 @@
 import Foundation
 
 class MockShopSearchRepository: ShopSearchRepositoryInterface {
-    var requestString: String = ""
-
-    func fetchShopData(completion: @escaping ([Shop]) -> Void) {
+    func fetchShopData(requestString: String, completion: @escaping ([Shop]) -> Void) {
         completion(mockShopesData[0].results.shop)
     }
 }
