@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		30289446D1E3B0797CB28608 /* Pods_QuickGourmet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1B982FE3AEA28CD50ABBD5C /* Pods_QuickGourmet.framework */; };
+		7172544AF30AC13EF0B90C34 /* Pods_QuickGourmet_QuickGourmetTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3832230ABC60D93D21F04356 /* Pods_QuickGourmet_QuickGourmetTests.framework */; };
 		D80803E326D49C1A009FACC8 /* FavoriteShopDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80803E226D49C1A009FACC8 /* FavoriteShopDetailView.swift */; };
 		D80803E526D49C41009FACC8 /* FavoriteListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80803E426D49C41009FACC8 /* FavoriteListRowView.swift */; };
 		D80803E726D49E93009FACC8 /* MockFavoriteShopData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80803E626D49E93009FACC8 /* MockFavoriteShopData.swift */; };
@@ -34,7 +35,7 @@
 		D84E5C7B26D5DFFD00BB79CE /* FavoriteShopDetailInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84E5C7A26D5DFFD00BB79CE /* FavoriteShopDetailInfoView.swift */; };
 		D855048D269D0F1B0053334A /* HotPepperResponseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D855048C269D0F1B0053334A /* HotPepperResponseResponse.swift */; };
 		D864626F26CBEAE90021092E /* UserAuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D864626E26CBEAE90021092E /* UserAuthViewModel.swift */; };
-		D870EFE626F5FE4A000E6D09 /* PickerSelectTypeTranslatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D870EFE526F5FE4A000E6D09 /* PickerSelectTypeTranslatorTests.swift */; };
+		D870EFF326F6DC40000E6D09 /* PickerSelectTypeTranslatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D870EFF226F6DC40000E6D09 /* PickerSelectTypeTranslatorTests.swift */; };
 		D872240226D125300017D405 /* FavoriteListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D872240126D125300017D405 /* FavoriteListView.swift */; };
 		D87B8C3D26B045EF00BB945C /* HamburgerMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87B8C3C26B045EF00BB945C /* HamburgerMenuViewModel.swift */; };
 		D87C9C392696FDB70051FA77 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87C9C382696FDB70051FA77 /* TabBarView.swift */; };
@@ -99,7 +100,10 @@
 
 /* Begin PBXFileReference section */
 		2D426BF4E1A63986FA4520FC /* Pods-QuickGourmet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuickGourmet.debug.xcconfig"; path = "Target Support Files/Pods-QuickGourmet/Pods-QuickGourmet.debug.xcconfig"; sourceTree = "<group>"; };
+		3832230ABC60D93D21F04356 /* Pods_QuickGourmet_QuickGourmetTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuickGourmet_QuickGourmetTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F523DAC8B1646255C9C195E /* Pods-QuickGourmet-QuickGourmetTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuickGourmet-QuickGourmetTests.debug.xcconfig"; path = "Target Support Files/Pods-QuickGourmet-QuickGourmetTests/Pods-QuickGourmet-QuickGourmetTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6DF1E1FFD30D2807F5F3C09B /* Pods-QuickGourmet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuickGourmet.release.xcconfig"; path = "Target Support Files/Pods-QuickGourmet/Pods-QuickGourmet.release.xcconfig"; sourceTree = "<group>"; };
+		B792B12BBC8CB53B63AB91B3 /* Pods-QuickGourmet-QuickGourmetTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuickGourmet-QuickGourmetTests.release.xcconfig"; path = "Target Support Files/Pods-QuickGourmet-QuickGourmetTests/Pods-QuickGourmet-QuickGourmetTests.release.xcconfig"; sourceTree = "<group>"; };
 		D80803E226D49C1A009FACC8 /* FavoriteShopDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteShopDetailView.swift; sourceTree = "<group>"; };
 		D80803E426D49C41009FACC8 /* FavoriteListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteListRowView.swift; sourceTree = "<group>"; };
 		D80803E626D49E93009FACC8 /* MockFavoriteShopData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFavoriteShopData.swift; sourceTree = "<group>"; };
@@ -129,7 +133,7 @@
 		D870EFDA26F5F8DB000E6D09 /* QuickGourmetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuickGourmetTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D870EFDE26F5F8DB000E6D09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D870EFE426F5FE4A000E6D09 /* QuickGourmetTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "QuickGourmetTests-Bridging-Header.h"; sourceTree = "<group>"; };
-		D870EFE526F5FE4A000E6D09 /* PickerSelectTypeTranslatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerSelectTypeTranslatorTests.swift; sourceTree = "<group>"; };
+		D870EFF226F6DC40000E6D09 /* PickerSelectTypeTranslatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PickerSelectTypeTranslatorTests.swift; path = Translator/PickerSelectTypeTranslatorTests.swift; sourceTree = "<group>"; };
 		D872240126D125300017D405 /* FavoriteListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteListView.swift; sourceTree = "<group>"; };
 		D87B8C3C26B045EF00BB945C /* HamburgerMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamburgerMenuViewModel.swift; sourceTree = "<group>"; };
 		D87C9C382696FDB70051FA77 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
@@ -190,6 +194,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7172544AF30AC13EF0B90C34 /* Pods_QuickGourmet_QuickGourmetTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,6 +215,8 @@
 			children = (
 				2D426BF4E1A63986FA4520FC /* Pods-QuickGourmet.debug.xcconfig */,
 				6DF1E1FFD30D2807F5F3C09B /* Pods-QuickGourmet.release.xcconfig */,
+				3F523DAC8B1646255C9C195E /* Pods-QuickGourmet-QuickGourmetTests.debug.xcconfig */,
+				B792B12BBC8CB53B63AB91B3 /* Pods-QuickGourmet-QuickGourmetTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -219,6 +226,7 @@
 			children = (
 				D8F12E7826B423D000118C63 /* CoreLocation.framework */,
 				E1B982FE3AEA28CD50ABBD5C /* Pods_QuickGourmet.framework */,
+				3832230ABC60D93D21F04356 /* Pods_QuickGourmet_QuickGourmetTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -366,8 +374,8 @@
 		D870EFDB26F5F8DB000E6D09 /* QuickGourmetTests */ = {
 			isa = PBXGroup;
 			children = (
+				D870EFF226F6DC40000E6D09 /* PickerSelectTypeTranslatorTests.swift */,
 				D870EFDE26F5F8DB000E6D09 /* Info.plist */,
-				D870EFE526F5FE4A000E6D09 /* PickerSelectTypeTranslatorTests.swift */,
 				D870EFE426F5FE4A000E6D09 /* QuickGourmetTests-Bridging-Header.h */,
 			);
 			path = QuickGourmetTests;
@@ -746,9 +754,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D870EFE326F5F8DB000E6D09 /* Build configuration list for PBXNativeTarget "QuickGourmetTests" */;
 			buildPhases = (
+				7844A1DE4BE4DB94489C2908 /* [CP] Check Pods Manifest.lock */,
 				D870EFD626F5F8DB000E6D09 /* Sources */,
 				D870EFD726F5F8DB000E6D09 /* Frameworks */,
 				D870EFD826F5F8DB000E6D09 /* Resources */,
+				69D0AF432466012C76BED41E /* [CP] Embed Pods Frameworks */,
+				68B15DC44755B91A92756D6C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -903,6 +914,62 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-QuickGourmet/Pods-QuickGourmet-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		68B15DC44755B91A92756D6C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-QuickGourmet-QuickGourmetTests/Pods-QuickGourmet-QuickGourmetTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-QuickGourmet-QuickGourmetTests/Pods-QuickGourmet-QuickGourmetTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-QuickGourmet-QuickGourmetTests/Pods-QuickGourmet-QuickGourmetTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		69D0AF432466012C76BED41E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-QuickGourmet-QuickGourmetTests/Pods-QuickGourmet-QuickGourmetTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-QuickGourmet-QuickGourmetTests/Pods-QuickGourmet-QuickGourmetTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-QuickGourmet-QuickGourmetTests/Pods-QuickGourmet-QuickGourmetTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7844A1DE4BE4DB94489C2908 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-QuickGourmet-QuickGourmetTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		D83A6DEF26B27A5D008F1A7B /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -945,7 +1012,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D870EFE626F5FE4A000E6D09 /* PickerSelectTypeTranslatorTests.swift in Sources */,
+				D870EFF326F6DC40000E6D09 /* PickerSelectTypeTranslatorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1035,6 +1102,7 @@
 /* Begin XCBuildConfiguration section */
 		D870EFE126F5F8DB000E6D09 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F523DAC8B1646255C9C195E /* Pods-QuickGourmet-QuickGourmetTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
@@ -1058,6 +1126,7 @@
 		};
 		D870EFE226F5F8DB000E6D09 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B792B12BBC8CB53B63AB91B3 /* Pods-QuickGourmet-QuickGourmetTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
