@@ -21,14 +21,27 @@ class QuickSearchViewModelTests: XCTestCase {
     }
 
     func testRecordSearchListLaunchCount_ValidateTrueOrFalse() throws {
-        XCTContext.runActivity(named: "SearchListLaunchCountが10回目の場合") { _ in
+        XCTContext.runActivity(named: "searchListLaunchCountが10の倍数の場合") { _ in
             userRepository.searchListLaunchCount = 8
             let expect = quickSearchVM.recordSearchListLaunchCount()
             XCTAssertTrue(expect)
         }
-        XCTContext.runActivity(named: "SearchListLaunchCountが10回目じゃない場合") { _ in
-            userRepository.searchListLaunchCount = 5
+        XCTContext.runActivity(named: "searchListLaunchCountが10の倍数じゃない場合") { _ in
+            userRepository.searchListLaunchCount = 0
             let expect = quickSearchVM.recordSearchListLaunchCount()
+            XCTAssertFalse(expect)
+        }
+    }
+
+    func testRecordShopDetailLaunchCount_ValidateTrueOrFalse() throws {
+        XCTContext.runActivity(named: "shopDetailLaunchCountが6の倍数の場合") { _ in
+            userRepository.shopDetailLaunchCount = 4
+            let expect = quickSearchVM.recordShopDetailLaunchCount()
+            XCTAssertTrue(expect)
+        }
+        XCTContext.runActivity(named: "shopDetailLaunchCountが6の倍数じゃない場合") { _ in
+            userRepository.shopDetailLaunchCount = 0
+            let expect = quickSearchVM.recordShopDetailLaunchCount()
             XCTAssertFalse(expect)
         }
     }
