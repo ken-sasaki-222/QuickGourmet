@@ -22,6 +22,7 @@
 		D81E428E26D258C500DB5AD6 /* FavoriteShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81E428D26D258C500DB5AD6 /* FavoriteShop.swift */; };
 		D829713226B26AA9005C4454 /* ApiKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D829713126B26AA9005C4454 /* ApiKey.swift */; };
 		D82EFF6F26F6E2B1002B0D6F /* PickerSelectTypeTranslatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82EFF6E26F6E2B1002B0D6F /* PickerSelectTypeTranslatorTests.swift */; };
+		D82EFF7126F6E2FE002B0D6F /* GenreTypeTranslatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82EFF7026F6E2FE002B0D6F /* GenreTypeTranslatorTests.swift */; };
 		D8307BC426BC045B00DAB08C /* PopupWindowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8307BC326BC045B00DAB08C /* PopupWindowView.swift */; };
 		D833880F26CC9F6A003446B1 /* UIApplication+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D833880E26CC9F6A003446B1 /* UIApplication+Keyboard.swift */; };
 		D833881126CCA4B5003446B1 /* LoginButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D833881026CCA4B5003446B1 /* LoginButtonView.swift */; };
@@ -117,6 +118,7 @@
 		D81E428D26D258C500DB5AD6 /* FavoriteShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteShop.swift; sourceTree = "<group>"; };
 		D829713126B26AA9005C4454 /* ApiKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiKey.swift; sourceTree = "<group>"; };
 		D82EFF6E26F6E2B1002B0D6F /* PickerSelectTypeTranslatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerSelectTypeTranslatorTests.swift; sourceTree = "<group>"; };
+		D82EFF7026F6E2FE002B0D6F /* GenreTypeTranslatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreTypeTranslatorTests.swift; sourceTree = "<group>"; };
 		D8307BC326BC045B00DAB08C /* PopupWindowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupWindowView.swift; sourceTree = "<group>"; };
 		D833880E26CC9F6A003446B1 /* UIApplication+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Keyboard.swift"; sourceTree = "<group>"; };
 		D833881026CCA4B5003446B1 /* LoginButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButtonView.swift; sourceTree = "<group>"; };
@@ -276,6 +278,7 @@
 			isa = PBXGroup;
 			children = (
 				D82EFF6E26F6E2B1002B0D6F /* PickerSelectTypeTranslatorTests.swift */,
+				D82EFF7026F6E2FE002B0D6F /* GenreTypeTranslatorTests.swift */,
 			);
 			path = Translator;
 			sourceTree = "<group>";
@@ -1021,6 +1024,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D82EFF6F26F6E2B1002B0D6F /* PickerSelectTypeTranslatorTests.swift in Sources */,
+				D82EFF7126F6E2FE002B0D6F /* GenreTypeTranslatorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
