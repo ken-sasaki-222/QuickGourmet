@@ -258,7 +258,6 @@
 			children = (
 				D81E428926D255FA00DB5AD6 /* FavoriteRepository.swift */,
 				D81E428726D255A000DB5AD6 /* FavoriteRepositoryInterface.swift */,
-				D81E428B26D2560D00DB5AD6 /* MockFavoriteRepository.swift */,
 			);
 			path = Favorite;
 			sourceTree = "<group>";
@@ -307,7 +306,6 @@
 		D834146926CCFE5B002D7ED0 /* User */ = {
 			isa = PBXGroup;
 			children = (
-				D834146726CCFE19002D7ED0 /* MockUserRepository.swift */,
 				D834146326CCFDBC002D7ED0 /* UserRepository.swift */,
 				D834146526CCFDFC002D7ED0 /* UserRepositoryInterface.swift */,
 			);
@@ -360,7 +358,6 @@
 			isa = PBXGroup;
 			children = (
 				D8C5DE4D26E36C8E00617F6D /* Shop */,
-				D8ED9EBA269E79EF00AFE337 /* Mocks */,
 				D8C5DE4E26E36CDC00617F6D /* Type */,
 			);
 			path = Model;
@@ -385,6 +382,7 @@
 		D870EFDB26F5F8DB000E6D09 /* QuickGourmetTests */ = {
 			isa = PBXGroup;
 			children = (
+				D8ED9EBA269E79EF00AFE337 /* Mocks */,
 				D82EFF6D26F6E2B1002B0D6F /* Translator */,
 				D870EFDE26F5F8DB000E6D09 /* Info.plist */,
 				D870EFE426F5FE4A000E6D09 /* QuickGourmetTests-Bridging-Header.h */,
@@ -459,7 +457,6 @@
 		D897A26E26F49DEA00496839 /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				D897A27126F49E3C00496839 /* MockShopSearchRepository.swift */,
 				D897A26F26F49E2000496839 /* ShopSearchRepository.swift */,
 				D897A27326F49E4900496839 /* ShopSearchRepositoryInterface.swift */,
 			);
@@ -575,7 +572,6 @@
 			children = (
 				D8C5DE3526E3368A00617F6D /* GenreTypeRepository.swift */,
 				D8C5DE3726E336A600617F6D /* GenreTypeRepositoryInterface.swift */,
-				D8C5DE3926E336B200617F6D /* MockGenreTypeRepository.swift */,
 			);
 			path = Genre;
 			sourceTree = "<group>";
@@ -583,7 +579,6 @@
 		D8C5DE4126E35D8500617F6D /* Picker */ = {
 			isa = PBXGroup;
 			children = (
-				D8C5DE4626E35E5000617F6D /* MockPickerSelectTypeRepository.swift */,
 				D8C5DE4426E35E4300617F6D /* PickerSelectTypeRepository.swift */,
 				D8C5DE4226E35DCE00617F6D /* PickerSelectTypeRepositoryInterface.swift */,
 			);
@@ -697,8 +692,13 @@
 		D8ED9EBA269E79EF00AFE337 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
-				D8ED9EB1269E795F00AFE337 /* MockShopData.swift */,
+				D81E428B26D2560D00DB5AD6 /* MockFavoriteRepository.swift */,
 				D80803E626D49E93009FACC8 /* MockFavoriteShopData.swift */,
+				D8C5DE3926E336B200617F6D /* MockGenreTypeRepository.swift */,
+				D8C5DE4626E35E5000617F6D /* MockPickerSelectTypeRepository.swift */,
+				D8ED9EB1269E795F00AFE337 /* MockShopData.swift */,
+				D897A27126F49E3C00496839 /* MockShopSearchRepository.swift */,
+				D834146726CCFE19002D7ED0 /* MockUserRepository.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
