@@ -24,6 +24,7 @@
 		D82EFF6F26F6E2B1002B0D6F /* PickerSelectTypeTranslatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82EFF6E26F6E2B1002B0D6F /* PickerSelectTypeTranslatorTests.swift */; };
 		D82EFF7126F6E2FE002B0D6F /* GenreTypeTranslatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82EFF7026F6E2FE002B0D6F /* GenreTypeTranslatorTests.swift */; };
 		D82EFF7526F6EDAF002B0D6F /* ShopSearchRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82EFF7426F6EDAF002B0D6F /* ShopSearchRepositoryTests.swift */; };
+		D82EFF7B26F706BD002B0D6F /* QuickSearchViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82EFF7A26F706BD002B0D6F /* QuickSearchViewModelTests.swift */; };
 		D8307BC426BC045B00DAB08C /* PopupWindowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8307BC326BC045B00DAB08C /* PopupWindowView.swift */; };
 		D833880F26CC9F6A003446B1 /* UIApplication+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D833880E26CC9F6A003446B1 /* UIApplication+Keyboard.swift */; };
 		D833881126CCA4B5003446B1 /* LoginButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D833881026CCA4B5003446B1 /* LoginButtonView.swift */; };
@@ -121,6 +122,7 @@
 		D82EFF6E26F6E2B1002B0D6F /* PickerSelectTypeTranslatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerSelectTypeTranslatorTests.swift; sourceTree = "<group>"; };
 		D82EFF7026F6E2FE002B0D6F /* GenreTypeTranslatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreTypeTranslatorTests.swift; sourceTree = "<group>"; };
 		D82EFF7426F6EDAF002B0D6F /* ShopSearchRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopSearchRepositoryTests.swift; sourceTree = "<group>"; };
+		D82EFF7A26F706BD002B0D6F /* QuickSearchViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickSearchViewModelTests.swift; sourceTree = "<group>"; };
 		D8307BC326BC045B00DAB08C /* PopupWindowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupWindowView.swift; sourceTree = "<group>"; };
 		D833880E26CC9F6A003446B1 /* UIApplication+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Keyboard.swift"; sourceTree = "<group>"; };
 		D833881026CCA4B5003446B1 /* LoginButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButtonView.swift; sourceTree = "<group>"; };
@@ -292,6 +294,14 @@
 			path = Repository;
 			sourceTree = "<group>";
 		};
+		D82EFF7926F70692002B0D6F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D82EFF7A26F706BD002B0D6F /* QuickSearchViewModelTests.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		D8307BC226BC042E00DAB08C /* PopUp */ = {
 			isa = PBXGroup;
 			children = (
@@ -393,6 +403,7 @@
 			isa = PBXGroup;
 			children = (
 				D8ED9EBA269E79EF00AFE337 /* Mocks */,
+				D82EFF7926F70692002B0D6F /* ViewModel */,
 				D82EFF7326F6ED87002B0D6F /* Repository */,
 				D82EFF6D26F6E2B1002B0D6F /* Translator */,
 				D870EFDE26F5F8DB000E6D09 /* Info.plist */,
@@ -1034,6 +1045,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D82EFF7B26F706BD002B0D6F /* QuickSearchViewModelTests.swift in Sources */,
 				D82EFF6F26F6E2B1002B0D6F /* PickerSelectTypeTranslatorTests.swift in Sources */,
 				D82EFF7526F6EDAF002B0D6F /* ShopSearchRepositoryTests.swift in Sources */,
 				D82EFF7126F6E2FE002B0D6F /* GenreTypeTranslatorTests.swift in Sources */,
