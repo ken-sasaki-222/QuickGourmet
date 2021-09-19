@@ -8,7 +8,6 @@
 import Foundation
 
 class ShopSearchRepository: ShopSearchRepositoryInterface {
-    
     func fetchShopData(requestString: String, completion: @escaping ([Shop]) -> Void) {
         guard let requestUrl = URL(string: requestString) else {
             return
