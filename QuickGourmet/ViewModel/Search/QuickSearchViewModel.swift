@@ -13,6 +13,7 @@ import SwiftUI
 
 class QuickSearchViewModel: NSObject, ObservableObject {
     @Published var shopData: [Shop] = []
+    @Published var error: Error?
     private var userRepository: UserRepositoryInterface
     private let genreTypeRepository: GenreTypeRepositoryInterface
     private var shopSearchRepository: ShopSearchRepositoryInterface
@@ -71,9 +72,14 @@ class QuickSearchViewModel: NSObject, ObservableObject {
             return
         }
 
-        shopSearchRepository.fetchShopData(requestString: encodeString) { shopes in
-            self.shopData = shopes
-            print("shopData", self.shopData)
+        shopSearchRepository.fetchShopData(requestString: encodeString) { result in
+            switch result {
+            case let .success(shopes):
+                self.shopData = shopes
+                print("shopData", self.shopData)
+            case let .failure(error):
+                self.error = error
+            }
         }
     }
 
