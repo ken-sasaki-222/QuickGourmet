@@ -45,9 +45,9 @@ class QuickSearchViewModel: NSObject, ObservableObject {
         return rangeCode
     }
 
-    private var genre: String {
+    private var genre: String? {
         guard let genreType = GenreType(rawValue: genreIndex) else {
-            return ""
+            return nil
         }
         let genre = genreTypeRepository.getGenreCode(genre: genreType)
         return genre
@@ -63,7 +63,7 @@ class QuickSearchViewModel: NSObject, ObservableObject {
 
     // HotPepper API.
     private var requestString: String {
-        guard let range = range else {
+        guard let range = range, let genre = genre else {
             return ""
         }
         return "https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=\(APIKEY)&lat=\(latitude)&lng=\(longitude)&range=\(range)&genre=\(genre)&count=100&format=json"
@@ -71,6 +71,8 @@ class QuickSearchViewModel: NSObject, ObservableObject {
 
     func getShopData() {
         print("requestString:", requestString)
+        
+        
         guard let encodeString = requestString.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed) else {
             return
         }
