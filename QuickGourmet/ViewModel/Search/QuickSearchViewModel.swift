@@ -37,9 +37,9 @@ class QuickSearchViewModel: NSObject, ObservableObject {
                   pickerSelectTypeRepository: RepositoryLocator.getPickerSelectTypeRepository())
     }
 
-    private var range: Int {
+    private var range: Int? {
         guard let pickerSelectType = PickerSelectType(rawValue: pickerSelection) else {
-            return 5
+            return nil
         }
         let rangeCode = pickerSelectTypeRepository.getPickerSelectType(selectType: pickerSelectType)
         return rangeCode
@@ -63,7 +63,10 @@ class QuickSearchViewModel: NSObject, ObservableObject {
 
     // HotPepper API.
     private var requestString: String {
-        "https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=\(APIKEY)&lat=\(latitude)&lng=\(longitude)&range=\(range)&genre=\(genre)&count=100&format=json"
+        guard let range = range else {
+            return ""
+        }
+        return "https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=\(APIKEY)&lat=\(latitude)&lng=\(longitude)&range=\(range)&genre=\(genre)&count=100&format=json"
     }
 
     func getShopData() {
