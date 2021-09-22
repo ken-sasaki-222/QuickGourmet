@@ -8,7 +8,25 @@
 import Foundation
 
 class MockShopSearchRepository: ShopSearchRepositoryInterface {
-    func fetchShopData(requestString: String, completion: @escaping ([Shop]) -> Void) {
-        completion(mockShopesData[0].results.shop)
+    func fetchShopData(requestString: String, completion: @escaping (Result<[Shop], Error>) -> Void) {
+        guard let requestUrl = URL(string: requestString) else {
+            return
+        }
+        URLSession.shared.dataTask(with: URLRequest(url: requestUrl)) { data, _, error in
+            guard let data = data else {
+                return
+            }
+            let decoder = JSONDecoder()
+            decoder.keyDecodingStrategy = .convertFromSnakeCase
+            do {
+                let searchResponseData = try decoder.decode(HotPepperResponse.self, from: data)
+                print("JSONDecode succeeded.")
+
+                completion(.success(searchResponseData.results.shop))
+            } catch {
+                print(".failure:", error)
+                completion(.failure(error))
+            }
+        }.resume()
     }
 }

@@ -8,7 +8,7 @@
 import Foundation
 
 class ShopSearchRepository: ShopSearchRepositoryInterface {
-    func fetchShopData(requestString: String, completion: @escaping ([Shop]) -> Void) {
+    func fetchShopData(requestString: String, completion: @escaping (Result<[Shop], Error>) -> Void) {
         guard let requestUrl = URL(string: requestString) else {
             return
         }
@@ -26,9 +26,12 @@ class ShopSearchRepository: ShopSearchRepositoryInterface {
                 print("JSONDecode succeeded.")
 
                 DispatchQueue.main.async {
-                    completion(searchResponseData.results.shop)
+                    completion(.success(searchResponseData.results.shop))
                 }
             } catch {
+                DispatchQueue.main.async {
+                    completion(.failure(error))
+                }
                 print("JSONDecode Failure Overview.: \(error.localizedDescription)")
                 print("Details of JSONDecode failure.: \(error)")
             }
