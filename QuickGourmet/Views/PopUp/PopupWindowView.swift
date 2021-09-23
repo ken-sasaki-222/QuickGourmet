@@ -30,7 +30,7 @@ struct PopupWindowView: View {
                                 Text(selectTexts[index])
                             }
                         }
-                        .pickerStyle(DefaultPickerStyle())
+                        .pickerStyle(InlinePickerStyle())
                         .frame(maxWidth: 200)
                         .foregroundColor(ColorManager.font_light_dark)
                         SearchButtonView(text: "検索") {
