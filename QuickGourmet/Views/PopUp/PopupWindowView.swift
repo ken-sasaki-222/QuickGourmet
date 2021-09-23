@@ -11,7 +11,7 @@ struct PopupWindowView: View {
     @Binding var show: Bool
     @State private var selection = 2
     var searchAction: (Int) -> Void
-    private let selectTexts = ["徒歩4分", "徒歩7分", "徒歩13分", "徒歩25分", "徒歩38分"]
+    private let selectTexts = ["徒歩4分（約300m）", "徒歩7分（約500m）", "徒歩13分（約1km）", "徒歩25分（約2km）", "徒歩38分（約3km）"]
 
     var body: some View {
         if show {
