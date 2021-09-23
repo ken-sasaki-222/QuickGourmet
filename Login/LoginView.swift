@@ -11,8 +11,13 @@ struct LoginView: View {
     @State private var isTapActived = false
     @State private var isShowsAlert = false
     @State private var isShowsIndicator = false
+    @State private var isShowsRules = false
     @State private var anonymity = ""
     private let userAuthVM = UserAuthViewModel()
+
+    private var rulesUrl: String {
+        "https://peraichi.com/landing_pages/view/quickgourmet"
+    }
 
     var body: some View {
         ZStack(alignment: .center) {
@@ -66,13 +71,19 @@ struct LoginView: View {
                     Alert(title: Text("確認"), message: Text("匿名情報を入力してください"), dismissButton: .default(Text("OK")) {})
                 }
                 Button(action: {
-                    print("利用規約の表示")
+                    isShowsRules.toggle()
                 }) {
                     Text("利用規約")
                         .font(.custom(FontManager.Mplus.regular, size: 18))
                         .foregroundColor(ColorManager.font_white)
                         .padding(.bottom, 30)
                         .padding(.horizontal, 10)
+                }
+                .sheet(isPresented: $isShowsRules) {
+                    if let url = URL(string: rulesUrl) {
+                        SafariView(url: url)
+                            .edgesIgnoringSafeArea(.all)
+                    }
                 }
             }
             if isShowsIndicator {

@@ -2,15 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>UIAppFonts</key>
-	<array>
-		<string>MPLUSRounded1c-Bold.ttf</string>
-		<string>MPLUSRounded1c-Light.ttf</string>
-		<string>MPLUSRounded1c-Medium.ttf</string>
-		<string>MPLUSRounded1c-Regular.ttf</string>
-	</array>
-	<key>NSUserTrackingUsageDescription</key>
-	<string>許可するとユーザーに無関係な広告が表示されにくくなります</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
@@ -35,6 +26,15 @@
 	<string>食いっくグルメは位置情報を使用します。</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>食いっくグルメは位置情報を使用します。</string>
+	<key>NSUserTrackingUsageDescription</key>
+	<string>許可するとユーザーに無関係な広告が表示されにくくなります</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>MPLUSRounded1c-Bold.ttf</string>
+		<string>MPLUSRounded1c-Light.ttf</string>
+		<string>MPLUSRounded1c-Medium.ttf</string>
+		<string>MPLUSRounded1c-Regular.ttf</string>
+	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -48,6 +48,8 @@
 	</array>
 	<key>UILaunchScreen</key>
 	<dict/>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
