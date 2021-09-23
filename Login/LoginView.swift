@@ -15,7 +15,7 @@ struct LoginView: View {
     @State private var anonymity = ""
     private let userAuthVM = UserAuthViewModel()
     
-    private let rulesUrl: String {
+    private var rulesUrl: String {
         "https://peraichi.com/landing_pages/view/quickgourmet"
     }
 
