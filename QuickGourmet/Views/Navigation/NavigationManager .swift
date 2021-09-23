@@ -18,5 +18,6 @@ struct NavigationManager {
             .foregroundColor: UIColor(ColorManager.font_white)
         ]
         UINavigationBar.appearance().standardAppearance = appearance
+        UINavigationBar.appearance().scrollEdgeAppearance = appearance
     }
 }
