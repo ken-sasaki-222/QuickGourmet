@@ -71,8 +71,6 @@ class QuickSearchViewModel: NSObject, ObservableObject {
 
     func getShopData() {
         print("requestString:", requestString)
-        
-        
         guard let encodeString = requestString.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed) else {
             return
         }
