@@ -10,14 +10,31 @@ import XCTest
 
 class FavoriteViewModelTests: XCTestCase {
     let userRepository = UserRepository()
+    let mockFavoriteRepository = MockFavoriteRepository()
     let favoriteVM = FavoriteViewModel()
 
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        // FirebaseTestHelper().setUpFirestoreEmulator()
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        // FirebaseTestHelper().deleteFirebaseApp()
+    }
+
+    // 現状本番DBでテストしてしまっている
+    func testSaveFavoriteShop_expectAndResultEqual() throws {
+        let expectation: XCTestExpectation = expectation(description: "wait for finish")
+        mockFavoriteRepository.saveFavoriteShopData(favoriteShop: mockFavoriteShopesData[0]) { result in
+            switch result {
+            case let .success(result):
+                let expect = true
+                XCTAssertEqual(expect, result)
+            case .failure:
+                return
+            }
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 10)
     }
 
     func testRecordFavoriteListLaunchCount_ValidateTrueOrFalse() throws {
