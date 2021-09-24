@@ -51,7 +51,7 @@ struct QuickSearchView: View {
                                                 }
                                             }
                                         }) {
-                                            QuickSearchRowView(imageString: quickSearchImages[index], genreName: quickSearchTextes[index])
+                                            QuickSearchRowView(imageString: quickSearchImages[index], genreName: quickSearchTextes[index], width: geometry.size.width * 0.9)
                                         }
                                         .alert(isPresented: $isShowsAlert) {
                                             Alert(title: Text("確認"), message: Text("位置情報を許可してください"), dismissButton: .default(Text("OK")) {
