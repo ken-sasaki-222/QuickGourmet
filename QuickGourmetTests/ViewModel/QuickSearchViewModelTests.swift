@@ -32,7 +32,7 @@ class QuickSearchViewModelTests: XCTestCase {
                 return
             case let .failure(error):
                 let result = error.localizedDescription
-                XCTAssertEqual(result, expectMessage)
+                XCTAssertEqual(expectMessage, result)
             }
             expectation.fulfill()
         }
@@ -48,7 +48,7 @@ class QuickSearchViewModelTests: XCTestCase {
             case let .success(shopes):
                 let result = shopes
                 let expect = 0
-                XCTAssertEqual(result.count, expect)
+                XCTAssertEqual(expect, result.count)
             case .failure:
                 return
             }
