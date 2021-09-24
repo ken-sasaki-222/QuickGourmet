@@ -39,7 +39,6 @@
 		D84E5C7926D5DF7A00BB79CE /* RemoveFavoriteButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84E5C7826D5DF7A00BB79CE /* RemoveFavoriteButtonView.swift */; };
 		D84E5C7B26D5DFFD00BB79CE /* FavoriteShopDetailInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84E5C7A26D5DFFD00BB79CE /* FavoriteShopDetailInfoView.swift */; };
 		D855048D269D0F1B0053334A /* HotPepperResponseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D855048C269D0F1B0053334A /* HotPepperResponseResponse.swift */; };
-		D860592326FC4B400016C8AE /* FirebaseTestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D860592226FC4B400016C8AE /* FirebaseTestHelper.swift */; };
 		D864626F26CBEAE90021092E /* UserAuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D864626E26CBEAE90021092E /* UserAuthViewModel.swift */; };
 		D872240226D125300017D405 /* FavoriteListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D872240126D125300017D405 /* FavoriteListView.swift */; };
 		D87B8C3D26B045EF00BB945C /* HamburgerMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87B8C3C26B045EF00BB945C /* HamburgerMenuViewModel.swift */; };
@@ -139,7 +138,6 @@
 		D84E5C7826D5DF7A00BB79CE /* RemoveFavoriteButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveFavoriteButtonView.swift; sourceTree = "<group>"; };
 		D84E5C7A26D5DFFD00BB79CE /* FavoriteShopDetailInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteShopDetailInfoView.swift; sourceTree = "<group>"; };
 		D855048C269D0F1B0053334A /* HotPepperResponseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotPepperResponseResponse.swift; sourceTree = "<group>"; };
-		D860592226FC4B400016C8AE /* FirebaseTestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseTestHelper.swift; sourceTree = "<group>"; };
 		D864626E26CBEAE90021092E /* UserAuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuthViewModel.swift; sourceTree = "<group>"; };
 		D870EFDA26F5F8DB000E6D09 /* QuickGourmetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuickGourmetTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D870EFDE26F5F8DB000E6D09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -396,14 +394,6 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
-		D860592126FC4B230016C8AE /* Helper */ = {
-			isa = PBXGroup;
-			children = (
-				D860592226FC4B400016C8AE /* FirebaseTestHelper.swift */,
-			);
-			path = Helper;
-			sourceTree = "<group>";
-		};
 		D864626D26CBEACE0021092E /* Auth */ = {
 			isa = PBXGroup;
 			children = (
@@ -417,7 +407,6 @@
 			children = (
 				D8ED9EBA269E79EF00AFE337 /* Mocks */,
 				D82EFF7926F70692002B0D6F /* ViewModel */,
-				D860592126FC4B230016C8AE /* Helper */,
 				D82EFF7326F6ED87002B0D6F /* Repository */,
 				D82EFF6D26F6E2B1002B0D6F /* Translator */,
 				D870EFDE26F5F8DB000E6D09 /* Info.plist */,
@@ -1088,7 +1077,6 @@
 				D80803E726D49E93009FACC8 /* MockFavoriteShopData.swift in Sources */,
 				D889E16326AF09EA00F18681 /* LogoImage.swift in Sources */,
 				D81E428A26D255FA00DB5AD6 /* FavoriteRepository.swift in Sources */,
-				D860592326FC4B400016C8AE /* FirebaseTestHelper.swift in Sources */,
 				D8F1495D26C7A12700F2C159 /* NendBannerViewController.swift in Sources */,
 				D8DB885226B962DA0057F807 /* UserDefaultsDataStore.swift in Sources */,
 				D8C5DE4526E35E4300617F6D /* PickerSelectTypeRepository.swift in Sources */,
