@@ -27,7 +27,12 @@ class FavoriteViewModel: NSObject, ObservableObject {
 
     func saveFavoriteShop(favoriteShop: FavoriteShop) {
         favoriteRepository.saveFavoriteShopData(favoriteShop: favoriteShop) { result in
-            self.result = result
+            switch result {
+            case let .success(success):
+                self.result = .success(success)
+            case let .failure(error):
+                self.result = .failure(error)
+            }
         }
     }
 
@@ -58,7 +63,7 @@ class FavoriteViewModel: NSObject, ObservableObject {
 
     func recordFavoriteShopDetailLaunchCount() -> Bool {
         userRepository.favoriteShopDetailLaunchCount = userRepository.favoriteShopDetailLaunchCount
-        if userRepository.favoriteListLaunchCount % 6 == 0 {
+        if userRepository.favoriteShopDetailLaunchCount % 6 == 0 {
             return true
         } else {
             return false

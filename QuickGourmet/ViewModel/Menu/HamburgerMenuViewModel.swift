@@ -35,7 +35,8 @@ class HamburgerMenuViewModel {
         UIApplication.shared.open(tweetURL, options: [:], completionHandler: nil)
     }
 
-    func goToDeveloperSNSPage(snsString: String) {
+    @discardableResult
+    func goToDeveloperSNSPage(snsString: String) -> URL? {
         var snsUrlString = String()
 
         switch snsString {
@@ -46,15 +47,18 @@ class HamburgerMenuViewModel {
         case "qiita":
             snsUrlString = DevelopperUrlType.qiita.rawValue
         default:
-            break
+            return nil
         }
 
         guard let snsUrl = URL(string: snsUrlString) else {
-            return
+            return nil
         }
 
         if UIApplication.shared.canOpenURL(snsUrl) {
             UIApplication.shared.open(snsUrl, options: [:], completionHandler: nil)
+            return snsUrl
+        } else {
+            return nil
         }
     }
 }

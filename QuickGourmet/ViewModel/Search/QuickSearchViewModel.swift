@@ -13,6 +13,7 @@ import SwiftUI
 
 class QuickSearchViewModel: NSObject, ObservableObject {
     @Published var shopData: [Shop] = []
+    @Published var error: Error?
     private var userRepository: UserRepositoryInterface
     private let genreTypeRepository: GenreTypeRepositoryInterface
     private var shopSearchRepository: ShopSearchRepositoryInterface
@@ -36,17 +37,17 @@ class QuickSearchViewModel: NSObject, ObservableObject {
                   pickerSelectTypeRepository: RepositoryLocator.getPickerSelectTypeRepository())
     }
 
-    private var range: Int {
+    private var range: Int? {
         guard let pickerSelectType = PickerSelectType(rawValue: pickerSelection) else {
-            return 5
+            return nil
         }
         let rangeCode = pickerSelectTypeRepository.getPickerSelectType(selectType: pickerSelectType)
         return rangeCode
     }
 
-    private var genre: String {
+    private var genre: String? {
         guard let genreType = GenreType(rawValue: genreIndex) else {
-            return ""
+            return nil
         }
         let genre = genreTypeRepository.getGenreCode(genre: genreType)
         return genre
@@ -62,7 +63,10 @@ class QuickSearchViewModel: NSObject, ObservableObject {
 
     // HotPepper API.
     private var requestString: String {
-        "https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=\(APIKEY)&lat=\(latitude)&lng=\(longitude)&range=\(range)&genre=\(genre)&count=100&format=json"
+        guard let range = range, let genre = genre else {
+            return ""
+        }
+        return "https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=\(APIKEY)&lat=\(latitude)&lng=\(longitude)&range=\(range)&genre=\(genre)&count=100&format=json"
     }
 
     func getShopData() {
@@ -70,10 +74,15 @@ class QuickSearchViewModel: NSObject, ObservableObject {
         guard let encodeString = requestString.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed) else {
             return
         }
-        shopSearchRepository.requestString = encodeString
-        shopSearchRepository.fetchShopData { shopes in
-            self.shopData = shopes
-            print("shopData", self.shopData)
+
+        shopSearchRepository.fetchShopData(requestString: encodeString) { result in
+            switch result {
+            case let .success(shopes):
+                self.shopData = shopes
+                print("shopData", self.shopData)
+            case let .failure(error):
+                self.error = error
+            }
         }
     }
 

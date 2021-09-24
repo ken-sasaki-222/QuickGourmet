@@ -8,6 +8,5 @@
 import Foundation
 
 protocol ShopSearchRepositoryInterface {
-    var requestString: String { get set }
-    func fetchShopData(completion: @escaping ([Shop]) -> Void)
+    func fetchShopData(requestString: String, completion: @escaping (Result<[Shop], Error>) -> Void)
 }
