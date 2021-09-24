@@ -10,12 +10,13 @@ import SwiftUI
 struct QuickSearchRowView: View {
     var imageString: String
     var genreName: String
+    var width: CGFloat
 
     var body: some View {
         ZStack(alignment: .leading) {
             Image(imageString)
                 .resizable()
-                .frame(width: 380, height: 200)
+                .frame(width: width, height: 200)
                 .aspectRatio(contentMode: .fit)
                 .cornerRadius(20)
             Text("周辺の\(genreName)を検索")
@@ -25,7 +26,7 @@ struct QuickSearchRowView: View {
                 .background(ColorManager.white.opacity(0.5))
                 .offset(y: 50)
             TransitionImage()
-                .offset(x: 300, y: 95)
+                .offset(x: width * 0.8, y: 95)
         }
         .padding(.bottom, 25)
     }
@@ -33,6 +34,6 @@ struct QuickSearchRowView: View {
 
 struct QuickSearchImage_Previews: PreviewProvider {
     static var previews: some View {
-        QuickSearchRowView(imageString: "food_izakaya", genreName: "居酒屋")
+        QuickSearchRowView(imageString: "food_izakaya", genreName: "居酒屋", width: 380)
     }
 }
