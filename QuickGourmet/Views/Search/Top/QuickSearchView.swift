@@ -24,7 +24,7 @@ struct QuickSearchView: View {
     private let quickSearchTextes = ["居酒屋", "ダイニングバー・バル", "創作料理", "和食", "洋食", "イタリアン・フレンチ", "中華", "焼肉・ホルモン", "アジア・エスニック料理", "各国料理", "カラオケ・パーティ", "バー・カクテル", "ラーメン", "カフェ・スイーツ", "その他グルメ", "お好み焼き・もんじゃ", "韓国料理"]
 
     init() {
-        setNavigation()
+        NavigationManager().setNavigation()
     }
 
     var body: some View {
@@ -51,7 +51,7 @@ struct QuickSearchView: View {
                                                 }
                                             }
                                         }) {
-                                            QuickSearchRowView(imageString: quickSearchImages[index], genreName: quickSearchTextes[index])
+                                            QuickSearchRowView(imageString: quickSearchImages[index], genreName: quickSearchTextes[index], width: geometry.size.width * 0.9)
                                         }
                                         .alert(isPresented: $isShowsAlert) {
                                             Alert(title: Text("確認"), message: Text("位置情報を許可してください"), dismissButton: .default(Text("OK")) {
@@ -99,17 +99,6 @@ struct QuickSearchView: View {
             }
         }
         .accentColor(ColorManager.font_white)
-    }
-
-    private func setNavigation() {
-        let appearance = UINavigationBarAppearance()
-        appearance.configureWithOpaqueBackground()
-        appearance.backgroundColor = UIColor(ColorManager.mainColor)
-        appearance.titleTextAttributes = [
-            .font: UIFont(name: FontManager.Mplus.medium, size: 20) as Any,
-            .foregroundColor: UIColor(ColorManager.font_white)
-        ]
-        UINavigationBar.appearance().standardAppearance = appearance
     }
 
     private func setHumburgerMenuPosition(viewWidth: CGFloat) {
