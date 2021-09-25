@@ -37,7 +37,7 @@ struct LoginView: View {
                     .padding(.top, 60)
                     .padding(.bottom, 2)
                     .padding(.horizontal, 10)
-                Text("現在地から近い飲食店を探そう")
+                Text("現在地周辺の飲食店を探そう")
                     .font(.custom(FontManager.Mplus.bold, size: 20))
                     .foregroundColor(ColorManager.font_white)
                     .padding(.bottom, 30)
