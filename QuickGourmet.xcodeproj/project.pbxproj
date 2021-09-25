@@ -538,6 +538,7 @@
 		D8BA117B269661460007DCE5 = {
 			isa = PBXGroup;
 			children = (
+				D88408FD26FF1FB7004B4156 /* README.md */,
 				D8BA1186269661460007DCE5 /* QuickGourmet */,
 				D870EFDB26F5F8DB000E6D09 /* QuickGourmetTests */,
 				D8BA1185269661460007DCE5 /* Products */,
@@ -559,7 +560,6 @@
 			isa = PBXGroup;
 			children = (
 				D8BA1187269661460007DCE5 /* QuickGourmetApp.swift */,
-				D88408FD26FF1FB7004B4156 /* README.md */,
 				D8550488269D0DAA0053334A /* Model */,
 				D87C9C3C269703B80051FA77 /* Views */,
 				D82895C426A05FC50030FACB /* ViewModel */,
