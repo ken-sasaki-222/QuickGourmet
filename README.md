@@ -34,6 +34,22 @@
 - API通信（ホットペッパーグルメAPI）
 - XCTest
 
+#### 利用したライブラリ
+
+```
+- AdSupport
+- AppTrackingTransparency
+- CoreLocation
+- Firebase
+- FirebaseAuth
+- MapKit
+- MessageUI
+- NendAd
+- StoreKit
+- SafariServices
+- XCTest
+```
+
 #### 利用したCocoaPods
 
 ```
