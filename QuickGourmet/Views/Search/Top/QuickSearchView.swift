@@ -45,7 +45,7 @@ struct QuickSearchView: View {
                                                 isShowsAlert = true
                                             default:
                                                 isShowsAlert = false
-                                                withAnimation(.linear(duration: 0.3)) {
+                                                withAnimation {
                                                     isShowsPopUp = true
                                                     self.index = index
                                                 }
