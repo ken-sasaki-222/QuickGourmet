@@ -23,9 +23,9 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>位置情報を利用することで、現在地から徒歩圏内のお店を検索することができます。</string>
+	<string>位置情報を利用することで、あなたの現在地から徒歩圏内のお店を検索することができます。</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>位置情報を利用することで、現在地から徒歩圏内のお店を検索することができます。</string>
+	<string>位置情報を利用することで、あなたの現在地から徒歩圏内のお店を検索することができます。</string>
 	<key>NSUserTrackingUsageDescription</key>
 	<string>許可するとユーザーに無関係な広告が表示されにくくなります。</string>
 	<key>UIAppFonts</key>
