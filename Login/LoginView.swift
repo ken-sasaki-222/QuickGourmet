@@ -46,6 +46,7 @@ struct LoginView: View {
                     .font(.custom(FontManager.Mplus.light, size: 18))
                     .frame(width: 300, height: 44, alignment: .center)
                     .background(ColorManager.white)
+                    .foregroundColor(ColorManager.font_black)
                     .cornerRadius(6)
                     .padding(.bottom, 30)
                     .padding(.horizontal, 10)
