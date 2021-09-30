@@ -54,7 +54,7 @@ struct QuickSearchView: View {
                                             QuickSearchRowView(imageString: quickSearchImages[index], genreName: quickSearchTextes[index], width: geometry.size.width * 0.9)
                                         }
                                         .alert(isPresented: $isShowsAlert) {
-                                            Alert(title: Text("確認"), message: Text("位置情報を許可してください"), dismissButton: .default(Text("OK")) {
+                                            Alert(title: Text("確認"), message: Text("あなたの現在地から徒歩圏内のお店を検索するためには、位置情報がONである必要があります。"), dismissButton: .default(Text("OK")) {
                                                 quickSearchVM.goToLocationSetting()
                                             })
                                         }
