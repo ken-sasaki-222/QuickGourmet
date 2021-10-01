@@ -33,16 +33,6 @@ struct HamburgerMenuView: View {
                     }
                 }
                 HStack {
-                    MenuIconView(image: "star_icon", color: ColorManager.icon_orange)
-                    Button(action: {
-                        menuVM.askForReview()
-                    }) {
-                        Text("レビュー")
-                            .font(.custom(FontManager.Mplus.regular, size: 13))
-                            .foregroundColor(ColorManager.font_light_dark)
-                    }
-                }
-                HStack {
                     MenuIconView(image: "share_icon", color: ColorManager.icon_gold)
                     Button(action: {
                         menuVM.shareOnTwitter()
@@ -113,7 +103,7 @@ struct HamburgerMenuView: View {
             Section(header: Text("バージョン")) {
                 HStack {
                     MenuIconView(image: "version_icon", color: ColorManager.icon_purple)
-                    Text("バージョン 1.0")
+                    Text("バージョン 1.0.2")
                         .font(.custom(FontManager.Mplus.regular, size: 13))
                         .foregroundColor(ColorManager.font_light_dark)
                 }
