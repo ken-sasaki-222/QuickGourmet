@@ -35,7 +35,6 @@
 		D833881126CCA4B5003446B1 /* LoginButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D833881026CCA4B5003446B1 /* LoginButtonView.swift */; };
 		D834146426CCFDBC002D7ED0 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D834146326CCFDBC002D7ED0 /* UserRepository.swift */; };
 		D834146626CCFDFC002D7ED0 /* UserRepositoryInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = D834146526CCFDFC002D7ED0 /* UserRepositoryInterface.swift */; };
-		D834146826CCFE19002D7ED0 /* MockUserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D834146726CCFE19002D7ED0 /* MockUserRepository.swift */; };
 		D83D600926AAA0E8002A6CEC /* ShopDetailButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83D600826AAA0E8002A6CEC /* ShopDetailButtonView.swift */; };
 		D83D600E26AAB387002A6CEC /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83D600D26AAB387002A6CEC /* MapView.swift */; };
 		D83EF2C826DCD4330022868E /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D83EF2C726DCD4330022868E /* Colors.xcassets */; };
@@ -136,7 +135,6 @@
 		D833881026CCA4B5003446B1 /* LoginButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButtonView.swift; sourceTree = "<group>"; };
 		D834146326CCFDBC002D7ED0 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		D834146526CCFDFC002D7ED0 /* UserRepositoryInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryInterface.swift; sourceTree = "<group>"; };
-		D834146726CCFE19002D7ED0 /* MockUserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserRepository.swift; sourceTree = "<group>"; };
 		D83D600826AAA0E8002A6CEC /* ShopDetailButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopDetailButtonView.swift; sourceTree = "<group>"; };
 		D83D600D26AAB387002A6CEC /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		D83EF2C726DCD4330022868E /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
@@ -701,7 +699,6 @@
 				D8C5DE3926E336B200617F6D /* MockGenreTypeRepository.swift */,
 				D8C5DE4626E35E5000617F6D /* MockPickerSelectTypeRepository.swift */,
 				D8ED9EB1269E795F00AFE337 /* MockShopData.swift */,
-				D834146726CCFE19002D7ED0 /* MockUserRepository.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -1092,7 +1089,6 @@
 				D834146426CCFDBC002D7ED0 /* UserRepository.swift in Sources */,
 				D8BD192E26B816C900E0BBCB /* QuickSearchView.swift in Sources */,
 				D81E428226D21FD100DB5AD6 /* FavoriteButton.swift in Sources */,
-				D834146826CCFE19002D7ED0 /* MockUserRepository.swift in Sources */,
 				D8ED9EB2269E795F00AFE337 /* MockShopData.swift in Sources */,
 				D828135327648CD9002F1DF1 /* ShopDataStore.swift in Sources */,
 				D829713226B26AA9005C4454 /* ApiKey.swift in Sources */,

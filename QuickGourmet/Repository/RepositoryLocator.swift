@@ -13,13 +13,7 @@ class RepositoryLocator: NSObject {
     }
 
     static func getUserRepository() -> UserRepositoryInterface {
-        if isMock {
-            MockUserRepository().error = NSError()
-            MockUserRepository().result = true
-            return MockUserRepository()
-        } else {
-            return UserRepository()
-        }
+        UserRepository()
     }
 
     static func getShopSearchRepository() -> ShopRepositoryInterface {
