@@ -69,20 +69,18 @@ class QuickSearchViewModel: NSObject, ObservableObject {
         return "https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=\(APIKEY)&lat=\(latitude)&lng=\(longitude)&range=\(range)&genre=\(genre)&count=100&format=json"
     }
 
-    func getShopData() {
+    func getShopData() async {
         print("requestString:", requestString)
-        guard let encodeString = requestString.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed) else {
-            return
-        }
+        let requestString = requestString.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed) ?? ""
 
-        shopSearchRepository.fetchShopData(requestString: encodeString) { result in
-            switch result {
-            case let .success(shopes):
-                self.shopData = shopes
-                print("shopData", self.shopData)
-            case let .failure(error):
-                self.error = error
+        do {
+            let response = try await shopSearchRepository.fetchShopDate(requestString: requestString)
+            // refactorTODO: 新しい書き方にしたい
+            DispatchQueue.main.async {
+                self.shopData = response
             }
+        } catch {
+            self.error = error
         }
     }
 

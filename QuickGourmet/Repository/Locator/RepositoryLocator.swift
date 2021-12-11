@@ -23,7 +23,7 @@ class RepositoryLocator: NSObject {
     }
 
     static func getShopSearchRepository() -> ShopRepositoryInterface {
-        return ShopSearchRepository()
+        ShopSearchRepository()
     }
 
     static func getFavoriteRepository() -> FavoriteRepositoryInterface {

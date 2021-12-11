@@ -12,8 +12,8 @@ class ShopSearchRepository: ShopRepositoryInterface {
 
     func fetchShopDate(requestString: String) async throws -> [Shop] {
         do {
-            let shopes = try await shopDataStore.fetchShopDate(requestString: requestString)
-            return shopes
+            let shopDate = try await shopDataStore.fetchShopDate(requestString: requestString)
+            return shopDate
         } catch {
             throw error
         }
