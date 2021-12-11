@@ -324,12 +324,15 @@
 		D834146226CCFD22002D7ED0 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				D8C5DE4C26E36B4700617F6D /* Locator */,
+				D8C5DE3B26E3489100617F6D /* RepositoryLocator.swift */,
+				D897A26F26F49E2000496839 /* ShopSearchRepository.swift */,
+				D897A27326F49E4900496839 /* ShopRepositoryInterface.swift */,
+				D8C5DE3526E3368A00617F6D /* GenreTypeRepository.swift */,
+				D8C5DE3726E336A600617F6D /* GenreTypeRepositoryInterface.swift */,
+				D8C5DE4426E35E4300617F6D /* PickerSelectTypeRepository.swift */,
+				D8C5DE4226E35DCE00617F6D /* PickerSelectTypeRepositoryInterface.swift */,
 				D834146926CCFE5B002D7ED0 /* User */,
-				D897A26E26F49DEA00496839 /* Search */,
 				D81E428626D2556500DB5AD6 /* Favorite */,
-				D8C5DE3426E335A000617F6D /* Genre */,
-				D8C5DE4126E35D8500617F6D /* Picker */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -487,15 +490,6 @@
 			path = Safari;
 			sourceTree = "<group>";
 		};
-		D897A26E26F49DEA00496839 /* Search */ = {
-			isa = PBXGroup;
-			children = (
-				D897A26F26F49E2000496839 /* ShopSearchRepository.swift */,
-				D897A27326F49E4900496839 /* ShopRepositoryInterface.swift */,
-			);
-			path = Search;
-			sourceTree = "<group>";
-		};
 		D897A27526F4A34400496839 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -602,24 +596,6 @@
 			path = Translator;
 			sourceTree = "<group>";
 		};
-		D8C5DE3426E335A000617F6D /* Genre */ = {
-			isa = PBXGroup;
-			children = (
-				D8C5DE3526E3368A00617F6D /* GenreTypeRepository.swift */,
-				D8C5DE3726E336A600617F6D /* GenreTypeRepositoryInterface.swift */,
-			);
-			path = Genre;
-			sourceTree = "<group>";
-		};
-		D8C5DE4126E35D8500617F6D /* Picker */ = {
-			isa = PBXGroup;
-			children = (
-				D8C5DE4426E35E4300617F6D /* PickerSelectTypeRepository.swift */,
-				D8C5DE4226E35DCE00617F6D /* PickerSelectTypeRepositoryInterface.swift */,
-			);
-			path = Picker;
-			sourceTree = "<group>";
-		};
 		D8C5DE4826E3696700617F6D /* Top */ = {
 			isa = PBXGroup;
 			children = (
@@ -654,14 +630,6 @@
 				D84E5C7A26D5DFFD00BB79CE /* FavoriteShopDetailInfoView.swift */,
 			);
 			path = Detail;
-			sourceTree = "<group>";
-		};
-		D8C5DE4C26E36B4700617F6D /* Locator */ = {
-			isa = PBXGroup;
-			children = (
-				D8C5DE3B26E3489100617F6D /* RepositoryLocator.swift */,
-			);
-			path = Locator;
 			sourceTree = "<group>";
 		};
 		D8C5DE4D26E36C8E00617F6D /* Shop */ = {
