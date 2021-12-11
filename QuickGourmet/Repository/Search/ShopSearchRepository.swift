@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ShopSearchRepository: ShopSearchRepositoryInterface {
+class ShopSearchRepository: ShopRepositoryInterface {
     func fetchShopData(requestString: String, completion: @escaping (Result<[Shop], Error>) -> Void) {
         guard let requestUrl = URL(string: requestString) else {
             return

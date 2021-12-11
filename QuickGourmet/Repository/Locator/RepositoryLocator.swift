@@ -22,7 +22,7 @@ class RepositoryLocator: NSObject {
         }
     }
 
-    static func getShopSearchRepository() -> ShopSearchRepositoryInterface {
+    static func getShopSearchRepository() -> ShopRepositoryInterface {
         if isMock {
             return MockShopSearchRepository()
         } else {

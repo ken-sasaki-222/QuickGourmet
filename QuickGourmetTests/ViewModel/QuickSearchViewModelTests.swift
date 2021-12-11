@@ -20,7 +20,7 @@ class QuickSearchViewModelTests: XCTestCase {
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-    
+
     func testRecordSearchListLaunchCount_ValidateTrueOrFalse() throws {
         XCTContext.runActivity(named: "searchListLaunchCountが10の倍数の場合") { _ in
             userRepository.searchListLaunchCount = 8

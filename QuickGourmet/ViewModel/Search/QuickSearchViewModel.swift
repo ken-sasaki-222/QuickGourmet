@@ -16,13 +16,13 @@ class QuickSearchViewModel: NSObject, ObservableObject {
     @Published var error: Error?
     private var userRepository: UserRepositoryInterface
     private let genreTypeRepository: GenreTypeRepositoryInterface
-    private var shopSearchRepository: ShopSearchRepositoryInterface
+    private var shopSearchRepository: ShopRepositoryInterface
     private let pickerSelectTypeRepository: PickerSelectTypeRepositoryInterface
     private var reviewed = false
     var genreIndex: Int = 0
     var pickerSelection: Int = 0
 
-    init(userRepository: UserRepositoryInterface, genreTypeRepository: GenreTypeRepositoryInterface, shopSearchRepository: ShopSearchRepositoryInterface, pickerSelectTypeRepository: PickerSelectTypeRepositoryInterface) {
+    init(userRepository: UserRepositoryInterface, genreTypeRepository: GenreTypeRepositoryInterface, shopSearchRepository: ShopRepositoryInterface, pickerSelectTypeRepository: PickerSelectTypeRepositoryInterface) {
         self.userRepository = userRepository
         self.genreTypeRepository = genreTypeRepository
         self.shopSearchRepository = shopSearchRepository
