@@ -8,5 +8,5 @@
 import Foundation
 
 protocol ShopRepositoryInterface {
-    func fetchShopData(requestString: String, completion: @escaping (Result<[Shop], Error>) -> Void)
+    func fetchShopDate(requestString: String) async throws -> [Shop] 
 }

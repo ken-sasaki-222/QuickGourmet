@@ -8,33 +8,14 @@
 import Foundation
 
 class ShopSearchRepository: ShopRepositoryInterface {
-    func fetchShopData(requestString: String, completion: @escaping (Result<[Shop], Error>) -> Void) {
-        guard let requestUrl = URL(string: requestString) else {
-            return
+    private let shopDataStore = ShopDataStore()
+
+    func fetchShopDate(requestString: String) async throws -> [Shop] {
+        do {
+            let shopes = try await shopDataStore.fetchShopDate(requestString: requestString)
+            return shopes
+        } catch {
+            throw error
         }
-        print("requestURL: \(requestUrl)")
-
-        URLSession.shared.dataTask(with: URLRequest(url: requestUrl)) { data, _, error in
-            guard let data = data else {
-                return
-            }
-
-            let decoder = JSONDecoder()
-            decoder.keyDecodingStrategy = .convertFromSnakeCase
-            do {
-                let searchResponseData = try decoder.decode(HotPepperResponse.self, from: data)
-                print("JSONDecode succeeded.")
-
-                DispatchQueue.main.async {
-                    completion(.success(searchResponseData.results.shop))
-                }
-            } catch {
-                DispatchQueue.main.async {
-                    completion(.failure(error))
-                }
-                print("JSONDecode Failure Overview.: \(error.localizedDescription)")
-                print("Details of JSONDecode failure.: \(error)")
-            }
-        }.resume()
     }
 }

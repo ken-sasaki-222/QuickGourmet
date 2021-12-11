@@ -54,7 +54,6 @@
 		D889E16126AED67100F18681 /* ShopDetailInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D889E16026AED67100F18681 /* ShopDetailInfoView.swift */; };
 		D889E16326AF09EA00F18681 /* LogoImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D889E16226AF09EA00F18681 /* LogoImage.swift */; };
 		D897A27026F49E2000496839 /* ShopSearchRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D897A26F26F49E2000496839 /* ShopSearchRepository.swift */; };
-		D897A27226F49E3C00496839 /* MockShopSearchRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D897A27126F49E3C00496839 /* MockShopSearchRepository.swift */; };
 		D897A27426F49E4900496839 /* ShopRepositoryInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = D897A27326F49E4900496839 /* ShopRepositoryInterface.swift */; };
 		D8A8E5B4269DAEB3009F9C0C /* ShopDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A8E5B3269DAEB3009F9C0C /* ShopDetailView.swift */; };
 		D8A8E5BF269DEA66009F9C0C /* ImageDownloder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A8E5BE269DEA66009F9C0C /* ImageDownloder.swift */; };
@@ -160,7 +159,6 @@
 		D889E16026AED67100F18681 /* ShopDetailInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopDetailInfoView.swift; sourceTree = "<group>"; };
 		D889E16226AF09EA00F18681 /* LogoImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoImage.swift; sourceTree = "<group>"; };
 		D897A26F26F49E2000496839 /* ShopSearchRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopSearchRepository.swift; sourceTree = "<group>"; };
-		D897A27126F49E3C00496839 /* MockShopSearchRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockShopSearchRepository.swift; sourceTree = "<group>"; };
 		D897A27326F49E4900496839 /* ShopRepositoryInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopRepositoryInterface.swift; sourceTree = "<group>"; };
 		D8A8E5B3269DAEB3009F9C0C /* ShopDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopDetailView.swift; sourceTree = "<group>"; };
 		D8A8E5BE269DEA66009F9C0C /* ImageDownloder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloder.swift; sourceTree = "<group>"; };
@@ -735,7 +733,6 @@
 				D8C5DE3926E336B200617F6D /* MockGenreTypeRepository.swift */,
 				D8C5DE4626E35E5000617F6D /* MockPickerSelectTypeRepository.swift */,
 				D8ED9EB1269E795F00AFE337 /* MockShopData.swift */,
-				D897A27126F49E3C00496839 /* MockShopSearchRepository.swift */,
 				D834146726CCFE19002D7ED0 /* MockUserRepository.swift */,
 			);
 			path = Mocks;
@@ -1103,7 +1100,6 @@
 				D8C5DE2C26E331C500617F6D /* GenreType.swift in Sources */,
 				D80803E326D49C1A009FACC8 /* FavoriteShopDetailView.swift in Sources */,
 				D81E428C26D2560D00DB5AD6 /* MockFavoriteRepository.swift in Sources */,
-				D897A27226F49E3C00496839 /* MockShopSearchRepository.swift in Sources */,
 				D8C5DE3626E3368A00617F6D /* GenreTypeRepository.swift in Sources */,
 				D83D600E26AAB387002A6CEC /* MapView.swift in Sources */,
 				D8C5DE3A26E336B200617F6D /* MockGenreTypeRepository.swift in Sources */,
