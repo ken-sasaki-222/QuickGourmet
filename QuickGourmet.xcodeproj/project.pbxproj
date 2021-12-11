@@ -22,6 +22,9 @@
 		D81E428C26D2560D00DB5AD6 /* MockFavoriteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81E428B26D2560D00DB5AD6 /* MockFavoriteRepository.swift */; };
 		D81E428E26D258C500DB5AD6 /* FavoriteShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81E428D26D258C500DB5AD6 /* FavoriteShop.swift */; };
 		D828135327648CD9002F1DF1 /* ShopDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D828135227648CD9002F1DF1 /* ShopDataStore.swift */; };
+		D8281355276497BB002F1DF1 /* ShopDataStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8281354276497BB002F1DF1 /* ShopDataStoreTests.swift */; };
+		D8281356276497C0002F1DF1 /* ShopDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D828135227648CD9002F1DF1 /* ShopDataStore.swift */; };
+		D828135827649969002F1DF1 /* HotPepperResponseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D855048C269D0F1B0053334A /* HotPepperResponseResponse.swift */; };
 		D829713226B26AA9005C4454 /* ApiKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D829713126B26AA9005C4454 /* ApiKey.swift */; };
 		D82EFF6F26F6E2B1002B0D6F /* PickerSelectTypeTranslatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82EFF6E26F6E2B1002B0D6F /* PickerSelectTypeTranslatorTests.swift */; };
 		D82EFF7126F6E2FE002B0D6F /* GenreTypeTranslatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82EFF7026F6E2FE002B0D6F /* GenreTypeTranslatorTests.swift */; };
@@ -123,6 +126,7 @@
 		D81E428B26D2560D00DB5AD6 /* MockFavoriteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFavoriteRepository.swift; sourceTree = "<group>"; };
 		D81E428D26D258C500DB5AD6 /* FavoriteShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteShop.swift; sourceTree = "<group>"; };
 		D828135227648CD9002F1DF1 /* ShopDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopDataStore.swift; sourceTree = "<group>"; };
+		D8281354276497BB002F1DF1 /* ShopDataStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopDataStoreTests.swift; sourceTree = "<group>"; };
 		D829713126B26AA9005C4454 /* ApiKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiKey.swift; sourceTree = "<group>"; };
 		D82EFF6E26F6E2B1002B0D6F /* PickerSelectTypeTranslatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerSelectTypeTranslatorTests.swift; sourceTree = "<group>"; };
 		D82EFF7026F6E2FE002B0D6F /* GenreTypeTranslatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreTypeTranslatorTests.swift; sourceTree = "<group>"; };
@@ -293,11 +297,12 @@
 			path = Translator;
 			sourceTree = "<group>";
 		};
-		D82EFF7326F6ED87002B0D6F /* Repository */ = {
+		D82EFF7326F6ED87002B0D6F /* DataStore */ = {
 			isa = PBXGroup;
 			children = (
+				D8281354276497BB002F1DF1 /* ShopDataStoreTests.swift */,
 			);
-			path = Repository;
+			path = DataStore;
 			sourceTree = "<group>";
 		};
 		D82EFF7926F70692002B0D6F /* ViewModel */ = {
@@ -412,7 +417,7 @@
 			children = (
 				D8ED9EBA269E79EF00AFE337 /* Mocks */,
 				D82EFF7926F70692002B0D6F /* ViewModel */,
-				D82EFF7326F6ED87002B0D6F /* Repository */,
+				D82EFF7326F6ED87002B0D6F /* DataStore */,
 				D82EFF6D26F6E2B1002B0D6F /* Translator */,
 				D870EFDE26F5F8DB000E6D09 /* Info.plist */,
 				D870EFE426F5FE4A000E6D09 /* QuickGourmetTests-Bridging-Header.h */,
@@ -1058,10 +1063,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				D82EFF7B26F706BD002B0D6F /* QuickSearchViewModelTests.swift in Sources */,
+				D8281356276497C0002F1DF1 /* ShopDataStore.swift in Sources */,
 				D82EFF6F26F6E2B1002B0D6F /* PickerSelectTypeTranslatorTests.swift in Sources */,
 				D82EFF7126F6E2FE002B0D6F /* GenreTypeTranslatorTests.swift in Sources */,
 				D82EFF7D26F71825002B0D6F /* FavoriteViewModelTests.swift in Sources */,
 				D8132EED26FB5A9B0099CB5D /* HamburgerMenuViewModelTests.swift in Sources */,
+				D8281355276497BB002F1DF1 /* ShopDataStoreTests.swift in Sources */,
+				D828135827649969002F1DF1 /* HotPepperResponseResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1248,7 +1256,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1303,7 +1311,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -1325,7 +1333,7 @@
 				DEVELOPMENT_TEAM = ZXZ96723Y7;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = QuickGourmet/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1350,7 +1358,7 @@
 				DEVELOPMENT_TEAM = ZXZ96723Y7;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = QuickGourmet/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
