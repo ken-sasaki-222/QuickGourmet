@@ -10,7 +10,6 @@ import XCTest
 
 class QuickSearchViewModelTests: XCTestCase {
     let quickSearchVM = QuickSearchViewModel()
-    let mockShopSearchRepository = MockShopSearchRepository()
     let userRepository = UserRepository()
 
     override func setUpWithError() throws {

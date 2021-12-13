@@ -10,7 +10,6 @@ import XCTest
 
 class FavoriteViewModelTests: XCTestCase {
     let userRepository = UserRepository()
-    let mockFavoriteRepository = MockFavoriteRepository()
     let favoriteVM = FavoriteViewModel()
 
     override func setUpWithError() throws {
@@ -23,18 +22,18 @@ class FavoriteViewModelTests: XCTestCase {
 
     // 現状本番DBでテストしてしまっている
     func testSaveFavoriteShop_expectAndResultEqual() throws {
-        let expectation: XCTestExpectation = expectation(description: "wait for finish")
-        mockFavoriteRepository.saveFavoriteShopData(favoriteShop: mockFavoriteShopesData[0]) { result in
-            switch result {
-            case let .success(result):
-                let expect = true
-                XCTAssertEqual(expect, result)
-            case .failure:
-                return
-            }
-            expectation.fulfill()
-        }
-        wait(for: [expectation], timeout: 10)
+//        let expectation: XCTestExpectation = expectation(description: "wait for finish")
+//        mockFavoriteRepository.saveFavoriteShopData(favoriteShop: mockFavoriteShopesData[0]) { result in
+//            switch result {
+//            case let .success(result):
+//                let expect = true
+//                XCTAssertEqual(expect, result)
+//            case .failure:
+//                return
+//            }
+//            expectation.fulfill()
+//        }
+//        wait(for: [expectation], timeout: 10)
     }
 
     func testRecordFavoriteListLaunchCount_ValidateTrueOrFalse() throws {
