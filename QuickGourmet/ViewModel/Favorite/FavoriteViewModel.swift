@@ -26,13 +26,11 @@ class FavoriteViewModel: NSObject, ObservableObject {
     }
 
     func saveFavoriteShop(favoriteShop: FavoriteShop) {
-        favoriteRepository.saveFavoriteShopData(favoriteShop: favoriteShop) { result in
-            switch result {
-            case let .success(success):
-                self.result = .success(success)
-            case let .failure(error):
-                self.result = .failure(error)
-            }
+        let deviceId = userRepository.deviceId
+        favoriteRepository.saveFavoriteShopData(favoriteShop: favoriteShop, deviceId: deviceId) {
+            // success
+        } onFailure: {
+            // failure
         }
     }
 

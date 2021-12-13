@@ -13,33 +13,14 @@ class FavoriteRepository: FavoriteRepositoryInterface {
     private let db = Firestore.firestore()
     private var favoriteShopes = [FavoriteShop]()
 
-    func saveFavoriteShopData(favoriteShop: FavoriteShop, completion: @escaping (Result<Bool, Error>) -> Void) {
-        guard let uid = Auth.auth().currentUser?.uid else {
-            return
-        }
+    private let favoriteDataStore = FavoriteDataStore()
 
-        db.collection("shopInfo").document(uid).collection("favorite")
-            .addDocument(data: [
-                "name": favoriteShop.name,
-                "address": favoriteShop.address,
-                "mobileAccess": favoriteShop.mobileAccess,
-                "average": favoriteShop.average,
-                "open": favoriteShop.open,
-                "genreName": favoriteShop.genreName,
-                "logoImage": favoriteShop.logoImage,
-                "photo": favoriteShop.photo,
-                "latitude": favoriteShop.latitude,
-                "longitude": favoriteShop.longitude,
-                "urlString": favoriteShop.urlString
-            ]) { error in
-                if let error = error {
-                    print("Error adding document:", error)
-                    completion(.failure(error))
-                } else {
-                    print("Success adding document:")
-                    completion(.success(true))
-                }
-            }
+    func saveFavoriteShopData(favoriteShop: FavoriteShop, deviceId: String, onSuccess: @escaping () -> Void, onFailure: @escaping () -> Void) {
+        favoriteDataStore.saveFavoriteShopData(favoriteShop: favoriteShop, deviceId: deviceId) {
+            onSuccess()
+        } onFailure: {
+            onFailure()
+        }
     }
 
     func getFavoriteShopData(_ onSuccess: @escaping ([FavoriteShop]) -> Void, onFailure: @escaping (Error) -> Void) {
