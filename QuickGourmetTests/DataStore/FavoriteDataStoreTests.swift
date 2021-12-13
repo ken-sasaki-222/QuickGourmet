@@ -20,11 +20,15 @@ class FavoriteDataStoreTests: XCTestCase {
         let dataStore = FavoriteDataStore()
         let favoriteShop = mockFavoriteShopesData[0]
         let deviceId = "3407941F-7845-40C5-B59D-2A41D2D6AFE6"
+        let exp = XCTestExpectation(description: "wait async")
 
         dataStore.saveFavoriteShopData(favoriteShop: favoriteShop, deviceId: deviceId) {
             print("Success save favorite shop data.")
+            exp.fulfill()
         } onFailure: {
             XCTFail("Fail save favorite shop data.")
+            exp.fulfill()
         }
+        wait(for: [exp], timeout: 20)
     }
 }
