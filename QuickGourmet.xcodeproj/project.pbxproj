@@ -93,6 +93,11 @@
 		D8F854C626DE441E00BDBF8E /* MPLUSRounded1c-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D8F854BE26DE441E00BDBF8E /* MPLUSRounded1c-Regular.ttf */; };
 		D8F854C926DE463500BDBF8E /* FontManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F854C826DE463500BDBF8E /* FontManager.swift */; };
 		D8FC157926B19DDA00B22408 /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FC157826B19DDA00B22408 /* MailView.swift */; };
+		D8FD39DD276743BF00F1C69E /* FavoriteDataStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FD39DC276743BF00F1C69E /* FavoriteDataStoreTests.swift */; };
+		D8FD39DE276743E200F1C69E /* FavoriteShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81E428D26D258C500DB5AD6 /* FavoriteShop.swift */; };
+		D8FD39DF276743ED00F1C69E /* FavoriteDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82813592764B049002F1DF1 /* FavoriteDataStore.swift */; };
+		D8FD39E02767452800F1C69E /* MockFavoriteShopData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80803E626D49E93009FACC8 /* MockFavoriteShopData.swift */; };
+		D8FD3A44276754B100F1C69E /* GoogleService-Stage-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D8FD39E6276752EE00F1C69E /* GoogleService-Stage-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -199,6 +204,8 @@
 		D8F854BE26DE441E00BDBF8E /* MPLUSRounded1c-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MPLUSRounded1c-Regular.ttf"; sourceTree = "<group>"; };
 		D8F854C826DE463500BDBF8E /* FontManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontManager.swift; sourceTree = "<group>"; };
 		D8FC157826B19DDA00B22408 /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
+		D8FD39DC276743BF00F1C69E /* FavoriteDataStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDataStoreTests.swift; sourceTree = "<group>"; };
+		D8FD39E6276752EE00F1C69E /* GoogleService-Stage-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Stage-Info.plist"; sourceTree = "<group>"; };
 		E1B982FE3AEA28CD50ABBD5C /* Pods_QuickGourmet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuickGourmet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -297,6 +304,7 @@
 			isa = PBXGroup;
 			children = (
 				D8281354276497BB002F1DF1 /* ShopDataStoreTests.swift */,
+				D8FD39DC276743BF00F1C69E /* FavoriteDataStoreTests.swift */,
 			);
 			path = DataStore;
 			sourceTree = "<group>";
@@ -572,6 +580,7 @@
 				D8BA118B269661490007DCE5 /* Assets.xcassets */,
 				D83EF2C726DCD4330022868E /* Colors.xcassets */,
 				D8BA1190269661490007DCE5 /* Info.plist */,
+				D8FD39E6276752EE00F1C69E /* GoogleService-Stage-Info.plist */,
 				D8E9B75626CFB93700DC817F /* GoogleService-Info.plist */,
 			);
 			path = QuickGourmet;
@@ -854,6 +863,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8FD3A44276754B100F1C69E /* GoogleService-Stage-Info.plist in Resources */,
 				D8F854C526DE441E00BDBF8E /* MPLUSRounded1c-Medium.ttf in Resources */,
 				D8F854C426DE441E00BDBF8E /* OFL.txt in Resources */,
 				D8F854C626DE441E00BDBF8E /* MPLUSRounded1c-Regular.ttf in Resources */,
@@ -1025,9 +1035,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				D82EFF7B26F706BD002B0D6F /* QuickSearchViewModelTests.swift in Sources */,
+				D8FD39DE276743E200F1C69E /* FavoriteShop.swift in Sources */,
 				D8281356276497C0002F1DF1 /* ShopDataStore.swift in Sources */,
 				D82EFF6F26F6E2B1002B0D6F /* PickerSelectTypeTranslatorTests.swift in Sources */,
 				D82EFF7126F6E2FE002B0D6F /* GenreTypeTranslatorTests.swift in Sources */,
+				D8FD39DD276743BF00F1C69E /* FavoriteDataStoreTests.swift in Sources */,
+				D8FD39DF276743ED00F1C69E /* FavoriteDataStore.swift in Sources */,
+				D8FD39E02767452800F1C69E /* MockFavoriteShopData.swift in Sources */,
 				D82EFF7D26F71825002B0D6F /* FavoriteViewModelTests.swift in Sources */,
 				D8132EED26FB5A9B0099CB5D /* HamburgerMenuViewModelTests.swift in Sources */,
 				D8281355276497BB002F1DF1 /* ShopDataStoreTests.swift in Sources */,
