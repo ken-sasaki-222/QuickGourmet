@@ -53,6 +53,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         // 起動回数記録
         recordLaunchCount()
 
+        saveDeviceId()
+
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
 
@@ -83,7 +85,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         print("緯度: ", location.latitude, "経度: ", location.longitude)
     }
 
-    func recordLaunchCount() {
+    private func recordLaunchCount() {
         userRepository.launchCount = userRepository.launchCount
+    }
+
+    private func saveDeviceId() {
+        if let device = UIDevice.current.identifierForVendor {
+            let deviceId = device.uuidString
+            if deviceId == "" {
+                userRepository.deviceId = deviceId
+            }
+        }
     }
 }

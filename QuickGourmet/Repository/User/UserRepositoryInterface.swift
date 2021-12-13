@@ -17,4 +17,5 @@ protocol UserRepositoryInterface {
     var shopDetailLaunchCount: Int { get set }
     var favoriteListLaunchCount: Int { get set }
     var favoriteShopDetailLaunchCount: Int { get set }
+    var deviceId: String { get set }
 }

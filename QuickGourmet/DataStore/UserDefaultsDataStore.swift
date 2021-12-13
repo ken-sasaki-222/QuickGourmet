@@ -16,6 +16,7 @@ class UserDefaultsDataStore {
         case favoriteShopDetailLaunchCount = "favoriteshopdetail_launchcount"
         case searchListLaunchCount = "searchlist_launchcount"
         case favoriteListLaunchCount = "favoritelist_launchcount"
+        case deviceId = "device_id"
     }
 
     var defalts: UserDefaults {
@@ -82,6 +83,15 @@ class UserDefaultsDataStore {
         }
         set(newValue) {
             defalts.setValue(newValue + 1, forKey: UserDefaultsKey.favoriteListLaunchCount.rawValue)
+        }
+    }
+
+    var deviceId: String {
+        get {
+            defalts.string(forKey: UserDefaultsKey.deviceId.rawValue) ?? ""
+        }
+        set(newValue) {
+            defalts.set(newValue, forKey: UserDefaultsKey.deviceId.rawValue)
         }
     }
 }

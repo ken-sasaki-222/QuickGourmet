@@ -100,4 +100,13 @@ class UserRepository: UserRepositoryInterface {
             userDefaultsDataStore.favoriteShopDetailLaunchCount = newValue
         }
     }
+
+    var deviceId: String {
+        get {
+            userDefaultsDataStore.deviceId
+        }
+        set(newValue) {
+            userDefaultsDataStore.deviceId = newValue
+        }
+    }
 }
