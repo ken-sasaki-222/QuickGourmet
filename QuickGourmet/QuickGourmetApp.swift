@@ -46,13 +46,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         NADInterstitial.sharedInstance().loadAd(withSpotID: NEND_INTERSTITIAL_STILLNESS_SPOTID, apiKey: NEND_INTERSTITIAL_STILLNESS_AD_APIKEY)
         // バナー広告のロード
         NADInterstitial.sharedInstance().loadAd(withSpotID: NEND_INTERSTITIAL_BANNER_SPOTID, apiKey: NEND_INTERSTITIAL_BANNER_AD_APIKEY)
-        // Firebase共有インスタンスの作成
-        FirebaseApp.configure()
-        // Cloud Firestoreの初期化
-        _ = Firestore.firestore()
-        // 起動回数記録
-        recordLaunchCount()
 
+        // 最新
+        firebaseConfigure()
+        recordLaunchCount()
         saveDeviceId()
 
         locationManager.delegate = self
@@ -90,11 +87,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     }
 
     private func saveDeviceId() {
-        if let device = UIDevice.current.identifierForVendor {
-            let deviceId = device.uuidString
-            if deviceId == "" {
+        if let deviceId = UIDevice.current.identifierForVendor?.uuidString {
+            if userRepository.deviceId == "" {
                 userRepository.deviceId = deviceId
             }
         }
+    }
+
+    private func firebaseConfigure() {
+        #if DEBUG
+            let filePath = Bundle.main.path(forResource: "GoogleService-Stage-Info", ofType: "plist")
+        #else
+            let filePath = Bundle.main.path(forResource: "GoogleService-Info", ofType: "plist")
+        #endif
+
+        guard let filePath = filePath else {
+            return
+        }
+
+        guard let options = FirebaseOptions(contentsOfFile: filePath) else {
+            return
+        }
+
+        FirebaseApp.configure(options: options)
     }
 }
