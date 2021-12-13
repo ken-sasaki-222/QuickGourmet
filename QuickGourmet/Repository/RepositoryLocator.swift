@@ -11,24 +11,24 @@ class RepositoryLocator: NSObject {
     static var isMock: Bool {
         ProcessInfo.processInfo.environment["MOCK"] == "MOCK"
     }
-    
+
     static func getUserRepository() -> UserRepositoryInterface {
         UserRepository()
     }
-    
+
     static func getShopSearchRepository() -> ShopRepositoryInterface {
         ShopSearchRepository()
     }
-    
+
     static func getFavoriteRepository() -> FavoriteRepositoryInterface {
         FavoriteRepository()
     }
-    
+
     static func getGenreTypeRepository() -> GenreTypeRepositoryInterface {
-        return GenreTypeRepository()
+        GenreTypeRepository()
     }
-    
+
     static func getPickerSelectTypeRepository() -> PickerSelectTypeRepositoryInterface {
-        return PickerSelectTypeRepository()
+        PickerSelectTypeRepository()
     }
 }
