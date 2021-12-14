@@ -9,7 +9,31 @@ import SwiftUI
 
 struct CurrentLocationView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            Image("food_location")
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .edgesIgnoringSafeArea(.all)
+            ColorManager.black.opacity(0.3)
+                .edgesIgnoringSafeArea(.all)
+            VStack {
+                Spacer()
+                Text("位置情報をオンにする")
+                    .font(.custom(FontManager.Mplus.medium, size: 32))
+                    .foregroundColor(ColorManager.white)
+                    .lineLimit(1)
+                    .padding(.bottom, 3)
+                Text("食いっくグルメの機能を利用するには、\n位置情報をオンにする必要があります")
+                    .font(.custom(FontManager.Mplus.medium, size: 16))
+                    .foregroundColor(ColorManager.white)
+                    .lineLimit(2)
+                    .padding(.bottom, 30)
+                PermissionButtonView {
+                    // 位置情報処理開始
+                }
+                .padding(.bottom, 50)
+            }
+        }
     }
 }
 
