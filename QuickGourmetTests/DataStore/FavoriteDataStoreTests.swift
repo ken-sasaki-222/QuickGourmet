@@ -8,7 +8,6 @@
 import XCTest
 
 class FavoriteDataStoreTests: XCTestCase {
-    let dataStore = FavoriteDataStore()
     let deviceId = "3407941F-7845-40C5-B59D-2A41D2D6AFE6"
     let exp = XCTestExpectation(description: "wait async")
 
@@ -24,6 +23,7 @@ class FavoriteDataStoreTests: XCTestCase {
     // UnitTestはデバック版コンソールで確認
 
     func testSaveFavoriteShopData() throws {
+        let dataStore = FavoriteDataStore()
         let favoriteShop = mockFavoriteShopesData[0]
 
         dataStore.saveFavoriteShopData(favoriteShop: favoriteShop, deviceId: deviceId) {
@@ -37,9 +37,23 @@ class FavoriteDataStoreTests: XCTestCase {
         wait(for: [exp], timeout: 20)
     }
 
-    func testGetFavoriteShopData() throws {}
+    func testGetFavoriteShopData() throws {
+        let dataStore = FavoriteDataStore()
+        dataStore.getFavoriteShopData(deviceId: deviceId) { shopes in
+            print("Success get favorite shop data.")
+            print("shopes:", shopes)
+            XCTAssertNotNil(shopes)
+            self.exp.fulfill()
+        } onFailure: { error in
+            print("Fail get favorite shop data.")
+            XCTFail(error.localizedDescription)
+            self.exp.fulfill()
+        }
+        wait(for: [exp], timeout: 20)
+    }
 
     func testDeleteFavoriteShopData() async throws {
+        let dataStore = FavoriteDataStore()
         let documentId = ""
 
         dataStore.deleteFavoriteShopData(documentId: documentId, deviceId: deviceId) {
