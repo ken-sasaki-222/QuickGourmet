@@ -14,7 +14,7 @@ class FavoriteDataStore {
     private let shopData = "shopData"
     private let favorite = "favorite"
 
-    func saveFavoriteShopData(favoriteShop: FavoriteShop, deviceId: String, onSuccess: @escaping () -> Void, onFailure: @escaping () -> Void) {
+    func saveFavoriteShopData(favoriteShop: FavoriteShop, deviceId: String, onSuccess: @escaping () -> Void, onFailure: @escaping (Error) -> Void) {
         db.collection(shopData).document(deviceId).collection(favorite).addDocument(data: [
             "name": favoriteShop.name,
             "address": favoriteShop.address,
@@ -30,7 +30,7 @@ class FavoriteDataStore {
         ]) { error in
             if let error = error {
                 print("Error adding document:", error)
-                onFailure()
+                onFailure(error)
             } else {
                 print("Success adding document.")
                 onSuccess()
@@ -38,14 +38,11 @@ class FavoriteDataStore {
         }
     }
 
-    // get, delete書く
-    // get delete test書く
-
-    func deleteFavoriteShopData(documentId: String, deviceId: String, onSuccess: @escaping () -> Void, onFailure: @escaping () -> Void) {
+    func deleteFavoriteShopData(documentId: String, deviceId: String, onSuccess: @escaping () -> Void, onFailure: @escaping (Error) -> Void) {
         db.collection(shopData).document(deviceId).collection(favorite).document(documentId).delete { error in
             if let error = error {
                 print("Error removing document:", error)
-                onFailure()
+                onFailure(error)
             } else {
                 print("Document successfully removed.")
                 onSuccess()

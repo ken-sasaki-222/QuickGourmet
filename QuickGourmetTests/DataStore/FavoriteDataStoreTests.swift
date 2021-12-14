@@ -29,8 +29,9 @@ class FavoriteDataStoreTests: XCTestCase {
         dataStore.saveFavoriteShopData(favoriteShop: favoriteShop, deviceId: deviceId) {
             print("Success save favorite shop data.")
             self.exp.fulfill()
-        } onFailure: {
-            XCTFail("Fail save favorite shop data.")
+        } onFailure: { error in
+            print("Fail save favorite shop data.")
+            XCTFail(error.localizedDescription)
             self.exp.fulfill()
         }
         wait(for: [exp], timeout: 20)
@@ -44,8 +45,9 @@ class FavoriteDataStoreTests: XCTestCase {
         dataStore.deleteFavoriteShopData(documentId: documentId, deviceId: deviceId) {
             print("Success delete favorite shop data.")
             self.exp.fulfill()
-        } onFailure: {
-            XCTFail("Fail delete favorite shop data.")
+        } onFailure: { error in
+            print("Fail delete favorite shop data.")
+            XCTFail(error.localizedDescription)
             self.exp.fulfill()
         }
         wait(for: [exp], timeout: 20)
