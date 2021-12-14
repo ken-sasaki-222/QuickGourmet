@@ -41,7 +41,7 @@ class FavoriteDataStoreTests: XCTestCase {
 
     func testDeleteFavoriteShopData() async throws {
         let documentId = ""
-        
+
         dataStore.deleteFavoriteShopData(documentId: documentId, deviceId: deviceId) {
             print("Success delete favorite shop data.")
             self.exp.fulfill()
