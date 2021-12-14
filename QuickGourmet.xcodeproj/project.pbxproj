@@ -32,7 +32,6 @@
 		D82EFF7D26F71825002B0D6F /* FavoriteViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82EFF7C26F71825002B0D6F /* FavoriteViewModelTests.swift */; };
 		D8307BC426BC045B00DAB08C /* PopupWindowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8307BC326BC045B00DAB08C /* PopupWindowView.swift */; };
 		D833880F26CC9F6A003446B1 /* UIApplication+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D833880E26CC9F6A003446B1 /* UIApplication+Keyboard.swift */; };
-		D833881126CCA4B5003446B1 /* LoginButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D833881026CCA4B5003446B1 /* LoginButtonView.swift */; };
 		D834146426CCFDBC002D7ED0 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D834146326CCFDBC002D7ED0 /* UserRepository.swift */; };
 		D834146626CCFDFC002D7ED0 /* UserRepositoryInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = D834146526CCFDFC002D7ED0 /* UserRepositoryInterface.swift */; };
 		D83D600926AAA0E8002A6CEC /* ShopDetailButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83D600826AAA0E8002A6CEC /* ShopDetailButtonView.swift */; };
@@ -133,7 +132,6 @@
 		D82EFF7C26F71825002B0D6F /* FavoriteViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModelTests.swift; sourceTree = "<group>"; };
 		D8307BC326BC045B00DAB08C /* PopupWindowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupWindowView.swift; sourceTree = "<group>"; };
 		D833880E26CC9F6A003446B1 /* UIApplication+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Keyboard.swift"; sourceTree = "<group>"; };
-		D833881026CCA4B5003446B1 /* LoginButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButtonView.swift; sourceTree = "<group>"; };
 		D834146326CCFDBC002D7ED0 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		D834146526CCFDFC002D7ED0 /* UserRepositoryInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryInterface.swift; sourceTree = "<group>"; };
 		D83D600826AAA0E8002A6CEC /* ShopDetailButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopDetailButtonView.swift; sourceTree = "<group>"; };
@@ -247,7 +245,6 @@
 			isa = PBXGroup;
 			children = (
 				D81CB62C26A9405F004807E1 /* SearchButtonView.swift */,
-				D833881026CCA4B5003446B1 /* LoginButtonView.swift */,
 				D81E428126D21FD100DB5AD6 /* FavoriteButton.swift */,
 				D83D600826AAA0E8002A6CEC /* ShopDetailButtonView.swift */,
 				D84E5C7826D5DF7A00BB79CE /* RemoveFavoriteButtonView.swift */,
@@ -1012,7 +1009,6 @@
 				D83EF2CB26DCD66D0022868E /* ColorManager.swift in Sources */,
 				D8BD193026B8282B00E0BBCB /* QuickSearchRowView.swift in Sources */,
 				D8ADBBFA26C400E10003002F /* NendInterstitialView.swift in Sources */,
-				D833881126CCA4B5003446B1 /* LoginButtonView.swift in Sources */,
 				D897A27426F49E4900496839 /* ShopRepositoryInterface.swift in Sources */,
 				D8F854C926DE463500BDBF8E /* FontManager.swift in Sources */,
 				D81E428826D255A000DB5AD6 /* FavoriteRepositoryInterface.swift in Sources */,
