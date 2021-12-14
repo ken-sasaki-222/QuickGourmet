@@ -12,7 +12,6 @@ import Foundation
 class FavoriteRepository: FavoriteRepositoryInterface {
     private let db = Firestore.firestore()
     private var favoriteShopes = [FavoriteShop]()
-
     private let favoriteDataStore = FavoriteDataStore()
 
     func saveFavoriteShopData(favoriteShop: FavoriteShop, deviceId: String, onSuccess: @escaping () -> Void, onFailure: @escaping () -> Void) {
@@ -78,19 +77,11 @@ class FavoriteRepository: FavoriteRepositoryInterface {
         }
     }
 
-    func deleteFavoriteShopData(documentID: String, completion: @escaping (Result<Bool, Error>) -> Void) {
-        guard let uid = Auth.auth().currentUser?.uid else {
-            return
-        }
-
-        db.collection("shopInfo").document(uid).collection("favorite").document(documentID).delete { error in
-            if let error = error {
-                print("Error removing document:", error)
-                completion(.failure(error))
-            } else {
-                print("Document successfully removed.")
-                completion(.success(true))
-            }
+    func deleteFavoriteShopData(documentID: String, deviceId: String, onSuccess: @escaping () -> Void, onFailure: @escaping () -> Void) {
+        favoriteDataStore.deleteFavoriteShopData(documentId: documentID, deviceId: deviceId) {
+            onSuccess()
+        } onFailure: {
+            onFailure()
         }
     }
 }
