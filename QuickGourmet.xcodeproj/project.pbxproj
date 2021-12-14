@@ -57,6 +57,7 @@
 		D8A25A8E2768D47700D9F92F /* CurrentLocationRepositoryInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A25A8D2768D47700D9F92F /* CurrentLocationRepositoryInterface.swift */; };
 		D8A25A902768D4AA00D9F92F /* CurrentLocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A25A8F2768D4AA00D9F92F /* CurrentLocationViewModel.swift */; };
 		D8A25A942768D56700D9F92F /* CurrentLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A25A932768D56700D9F92F /* CurrentLocationView.swift */; };
+		D8A25A972768DC7A00D9F92F /* PermissionButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A25A962768DC7A00D9F92F /* PermissionButtonView.swift */; };
 		D8A8E5B4269DAEB3009F9C0C /* ShopDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A8E5B3269DAEB3009F9C0C /* ShopDetailView.swift */; };
 		D8A8E5BF269DEA66009F9C0C /* ImageDownloder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A8E5BE269DEA66009F9C0C /* ImageDownloder.swift */; };
 		D8A8E5C4269DEFBF009F9C0C /* URLImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A8E5C3269DEFBF009F9C0C /* URLImage.swift */; };
@@ -166,6 +167,7 @@
 		D8A25A8D2768D47700D9F92F /* CurrentLocationRepositoryInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocationRepositoryInterface.swift; sourceTree = "<group>"; };
 		D8A25A8F2768D4AA00D9F92F /* CurrentLocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocationViewModel.swift; sourceTree = "<group>"; };
 		D8A25A932768D56700D9F92F /* CurrentLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocationView.swift; sourceTree = "<group>"; };
+		D8A25A962768DC7A00D9F92F /* PermissionButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionButtonView.swift; sourceTree = "<group>"; };
 		D8A8E5B3269DAEB3009F9C0C /* ShopDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopDetailView.swift; sourceTree = "<group>"; };
 		D8A8E5BE269DEA66009F9C0C /* ImageDownloder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloder.swift; sourceTree = "<group>"; };
 		D8A8E5C3269DEFBF009F9C0C /* URLImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLImage.swift; sourceTree = "<group>"; };
@@ -258,6 +260,7 @@
 				D81E428126D21FD100DB5AD6 /* FavoriteButton.swift */,
 				D83D600826AAA0E8002A6CEC /* ShopDetailButtonView.swift */,
 				D84E5C7826D5DF7A00BB79CE /* RemoveFavoriteButtonView.swift */,
+				D8A25A962768DC7A00D9F92F /* PermissionButtonView.swift */,
 			);
 			path = Button;
 			sourceTree = "<group>";
@@ -1016,6 +1019,7 @@
 				D80803E726D49E93009FACC8 /* MockFavoriteShopData.swift in Sources */,
 				D889E16326AF09EA00F18681 /* LogoImage.swift in Sources */,
 				D81E428A26D255FA00DB5AD6 /* FavoriteRepository.swift in Sources */,
+				D8A25A972768DC7A00D9F92F /* PermissionButtonView.swift in Sources */,
 				D8F1495D26C7A12700F2C159 /* NendBannerViewController.swift in Sources */,
 				D8DB885226B962DA0057F807 /* UserDefaultsDataStore.swift in Sources */,
 				D8C5DE4526E35E4300617F6D /* PickerSelectTypeRepository.swift in Sources */,
