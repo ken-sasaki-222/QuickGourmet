@@ -11,8 +11,6 @@ class FavoriteViewModel: NSObject, ObservableObject {
     @Published var favoriteShopData: [FavoriteShop] = []
     private var userRepository: UserRepositoryInterface
     private let favoriteRepository: FavoriteRepositoryInterface
-    private var result: Result<Bool, Error> = .failure(NSError())
-    private var error: Error?
 
     init(userRepository: UserRepositoryInterface, favoriteRepository: FavoriteRepositoryInterface) {
         self.userRepository = userRepository
@@ -26,29 +24,33 @@ class FavoriteViewModel: NSObject, ObservableObject {
     }
 
     func saveFavoriteShop(favoriteShop: FavoriteShop) {
-        favoriteRepository.saveFavoriteShopData(favoriteShop: favoriteShop) { result in
-            switch result {
-            case let .success(success):
-                self.result = .success(success)
-            case let .failure(error):
-                self.result = .failure(error)
-            }
+        let deviceId = userRepository.deviceId
+
+        favoriteRepository.saveFavoriteShopData(favoriteShop: favoriteShop, deviceId: deviceId) {
+            // success
+        } onFailure: { error in
+            print("Save favorite shop error.", error)
         }
     }
 
     func getFavoriteShop() {
-        favoriteRepository.getFavoriteShopData { shopes in
+        let deviceId = userRepository.deviceId
+
+        favoriteRepository.getFavoriteShopData(deviceId: deviceId) { shopes in
             self.favoriteShopData = shopes
             print("favoriteShopData", self.favoriteShopData)
         } onFailure: { error in
-            self.error = error
-            print("getFavoriteShop.error", self.error as Any)
+            print("Get favorite shop error.", error)
         }
     }
 
     func deleateFavoriteShop(documentID: String) {
-        favoriteRepository.deleteFavoriteShopData(documentID: documentID) { result in
-            self.result = result
+        let deviceId = userRepository.deviceId
+
+        favoriteRepository.deleteFavoriteShopData(documentID: documentID, deviceId: deviceId) {
+            // success
+        } onFailure: { error in
+            print("Delete favorite shop error.", error)
         }
     }
 

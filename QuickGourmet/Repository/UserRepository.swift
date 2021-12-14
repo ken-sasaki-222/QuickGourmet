@@ -1,42 +1,46 @@
 //
-//  MockUserRepository.swift
+//  UserRepository.swift
 //  QuickGourmet
 //
 //  Created by sasaki.ken on 2021/08/18.
 //
 
+import Firebase
+import FirebaseAuth
 import Foundation
 
-class MockUserRepository: UserRepositoryInterface {
+class UserRepository: UserRepositoryInterface {
     let userDefaultsDataStore = UserDefaultsDataStore()
-    var error: Error?
-    var result: Bool?
 
     func login(_ completion: @escaping (Result<Bool, Error>) -> Void) {
-        if let error = error {
-            completion(.failure(error))
-        } else {
-            guard let result = result else {
+        Auth.auth().signInAnonymously { authResult, error in
+            if let error = error {
+                completion(.failure(error))
+            }
+            guard let user = authResult?.user else {
                 return
             }
-            completion(.success(result))
+            let isAnonymous = user.isAnonymous
+            completion(.success(isAnonymous))
         }
     }
 
     func logout(_ completion: @escaping (Result<Bool, Error>) -> Void) {
-        if let error = error {
-            completion(.failure(error))
-        } else {
-            guard let result = result else {
+        Auth.auth().currentUser?.delete { [weak self] error in
+            guard self != nil else {
                 return
             }
-            completion(.success(result))
+            if let error = error {
+                completion(.failure(error))
+            } else {
+                completion(.success(true))
+            }
         }
     }
 
     var latitude: Double {
         get {
-            35.646850154618406
+            userDefaultsDataStore.latitudeInformation
         }
         set(newValue) {
             userDefaultsDataStore.latitudeInformation = newValue
@@ -45,7 +49,7 @@ class MockUserRepository: UserRepositoryInterface {
 
     var longitude: Double {
         get {
-            139.6297479552915
+            userDefaultsDataStore.longitudeInformation
         }
         set(newValue) {
             userDefaultsDataStore.longitudeInformation = newValue
@@ -54,7 +58,7 @@ class MockUserRepository: UserRepositoryInterface {
 
     var launchCount: Int {
         get {
-            0
+            userDefaultsDataStore.launchCount
         }
         set(newValue) {
             userDefaultsDataStore.launchCount = newValue
@@ -63,7 +67,7 @@ class MockUserRepository: UserRepositoryInterface {
 
     var searchListLaunchCount: Int {
         get {
-            0
+            userDefaultsDataStore.searchListLaunchCount
         }
         set(newValue) {
             userDefaultsDataStore.searchListLaunchCount = newValue
@@ -72,7 +76,7 @@ class MockUserRepository: UserRepositoryInterface {
 
     var shopDetailLaunchCount: Int {
         get {
-            0
+            userDefaultsDataStore.shopDetailLaunchCount
         }
         set(newValue) {
             userDefaultsDataStore.shopDetailLaunchCount = newValue
@@ -81,7 +85,7 @@ class MockUserRepository: UserRepositoryInterface {
 
     var favoriteListLaunchCount: Int {
         get {
-            0
+            userDefaultsDataStore.favoriteListLaunchCount
         }
         set(newValue) {
             userDefaultsDataStore.favoriteListLaunchCount = newValue
@@ -90,10 +94,19 @@ class MockUserRepository: UserRepositoryInterface {
 
     var favoriteShopDetailLaunchCount: Int {
         get {
-            0
+            userDefaultsDataStore.favoriteShopDetailLaunchCount
         }
         set(newValue) {
             userDefaultsDataStore.favoriteShopDetailLaunchCount = newValue
+        }
+    }
+
+    var deviceId: String {
+        get {
+            userDefaultsDataStore.deviceId
+        }
+        set(newValue) {
+            userDefaultsDataStore.deviceId = newValue
         }
     }
 }

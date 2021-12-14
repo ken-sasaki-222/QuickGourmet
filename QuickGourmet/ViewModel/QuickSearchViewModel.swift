@@ -16,13 +16,13 @@ class QuickSearchViewModel: NSObject, ObservableObject {
     @Published var error: Error?
     private var userRepository: UserRepositoryInterface
     private let genreTypeRepository: GenreTypeRepositoryInterface
-    private var shopSearchRepository: ShopSearchRepositoryInterface
+    private var shopSearchRepository: ShopRepositoryInterface
     private let pickerSelectTypeRepository: PickerSelectTypeRepositoryInterface
     private var reviewed = false
     var genreIndex: Int = 0
     var pickerSelection: Int = 0
 
-    init(userRepository: UserRepositoryInterface, genreTypeRepository: GenreTypeRepositoryInterface, shopSearchRepository: ShopSearchRepositoryInterface, pickerSelectTypeRepository: PickerSelectTypeRepositoryInterface) {
+    init(userRepository: UserRepositoryInterface, genreTypeRepository: GenreTypeRepositoryInterface, shopSearchRepository: ShopRepositoryInterface, pickerSelectTypeRepository: PickerSelectTypeRepositoryInterface) {
         self.userRepository = userRepository
         self.genreTypeRepository = genreTypeRepository
         self.shopSearchRepository = shopSearchRepository
@@ -69,20 +69,18 @@ class QuickSearchViewModel: NSObject, ObservableObject {
         return "https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=\(APIKEY)&lat=\(latitude)&lng=\(longitude)&range=\(range)&genre=\(genre)&count=100&format=json"
     }
 
-    func getShopData() {
+    func getShopData() async {
         print("requestString:", requestString)
-        guard let encodeString = requestString.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed) else {
-            return
-        }
+        let requestString = requestString.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed) ?? ""
 
-        shopSearchRepository.fetchShopData(requestString: encodeString) { result in
-            switch result {
-            case let .success(shopes):
-                self.shopData = shopes
-                print("shopData", self.shopData)
-            case let .failure(error):
-                self.error = error
+        do {
+            let response = try await shopSearchRepository.fetchShopDate(requestString: requestString)
+            // refactorTODO: 新しい書き方にしたい
+            DispatchQueue.main.async {
+                self.shopData = response
             }
+        } catch {
+            self.error = error
         }
     }
 
