@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct CurrentLocationView: View {
+    @ObservedObject var currentLocationVM = CurrentLocationViewModel()
+
     var body: some View {
         ZStack {
             Image("food_location")
