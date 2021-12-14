@@ -13,7 +13,7 @@ struct HamburgerMenuView: View {
     @State private var isShowMailView = false
     @State private var isShowsAlert = false
     private let menuVM = HamburgerMenuViewModel()
-    private let userAuthVM = UserAuthViewModel()
+//    private let userAuthVM = UserAuthViewModel()
 
     var body: some View {
         Form {
@@ -72,31 +72,6 @@ struct HamburgerMenuView: View {
                         Text("Qiita")
                             .font(.custom(FontManager.Mplus.regular, size: 13))
                             .foregroundColor(ColorManager.font_light_dark)
-                    }
-                }
-            }
-            Section(header: Text("ログアウト")) {
-                HStack {
-                    MenuIconView(image: "logout_icon", color: ColorManager.gray)
-                    Button(action: {
-                        isShowsAlert.toggle()
-                    }) {
-                        Text("アカウント削除")
-                            .font(.custom(FontManager.Mplus.regular, size: 13))
-                            .foregroundColor(ColorManager.icon_red)
-                    }
-                    .alert(isPresented: $isShowsAlert) {
-                        Alert(title: Text("確認"), message: Text("アカウントを削除しますか？"), primaryButton: .default(Text("いいえ")), secondaryButton: .default(Text("はい"), action: {
-                            userAuthVM.canLogout { result in
-                                switch result {
-                                case .success:
-                                    print("Logout success.")
-                                    UIApplication.shared.windows.first { $0.isKeyWindow }?.rootViewController?.dismiss(animated: true, completion: nil)
-                                case .failure:
-                                    print("Logout failure", result)
-                                }
-                            }
-                        }))
                     }
                 }
             }

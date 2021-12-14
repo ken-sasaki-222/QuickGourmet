@@ -7,7 +7,6 @@
 
 import CoreLocation
 import Firebase
-import FirebaseAuth
 import NendAd
 import SwiftUI
 
@@ -17,16 +16,11 @@ struct QuickGourmetApp: App {
 
     var body: some Scene {
         WindowGroup {
-            if Auth.auth().currentUser?.uid == nil {
-                LoginView()
-            } else {
-                TabBarView()
-            }
+            TabBarView()
         }
     }
 }
 
-// アプリの起動時に位置情報を利用できるように設定
 class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
     private let locationManager = CLLocationManager()
     private var userRepository: UserRepositoryInterface
