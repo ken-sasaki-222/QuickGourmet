@@ -8,6 +8,10 @@
 import XCTest
 
 class FavoriteDataStoreTests: XCTestCase {
+    let dataStore = FavoriteDataStore()
+    let deviceId = "3407941F-7845-40C5-B59D-2A41D2D6AFE6"
+    let exp = XCTestExpectation(description: "wait async")
+
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
@@ -16,18 +20,33 @@ class FavoriteDataStoreTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
+    // Firebaseを本番 or デバックで分岐している
+    // UnitTestはデバック版コンソールで確認
+
     func testSaveFavoriteShopData() throws {
-        let dataStore = FavoriteDataStore()
         let favoriteShop = mockFavoriteShopesData[0]
-        let deviceId = "3407941F-7845-40C5-B59D-2A41D2D6AFE6"
-        let exp = XCTestExpectation(description: "wait async")
 
         dataStore.saveFavoriteShopData(favoriteShop: favoriteShop, deviceId: deviceId) {
             print("Success save favorite shop data.")
-            exp.fulfill()
+            self.exp.fulfill()
         } onFailure: {
             XCTFail("Fail save favorite shop data.")
-            exp.fulfill()
+            self.exp.fulfill()
+        }
+        wait(for: [exp], timeout: 20)
+    }
+
+    func testGetFavoriteShopData() throws {}
+
+    func testDeleteFavoriteShopData() async throws {
+        let documentId = ""
+        
+        dataStore.deleteFavoriteShopData(documentId: documentId, deviceId: deviceId) {
+            print("Success delete favorite shop data.")
+            self.exp.fulfill()
+        } onFailure: {
+            XCTFail("Fail delete favorite shop data.")
+            self.exp.fulfill()
         }
         wait(for: [exp], timeout: 20)
     }
