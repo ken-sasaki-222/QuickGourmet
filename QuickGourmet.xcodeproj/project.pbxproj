@@ -267,15 +267,6 @@
 			path = Favorite;
 			sourceTree = "<group>";
 		};
-		D81E428626D2556500DB5AD6 /* Favorite */ = {
-			isa = PBXGroup;
-			children = (
-				D81E428926D255FA00DB5AD6 /* FavoriteRepository.swift */,
-				D81E428726D255A000DB5AD6 /* FavoriteRepositoryInterface.swift */,
-			);
-			path = Favorite;
-			sourceTree = "<group>";
-		};
 		D82895C426A05FC50030FACB /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -326,15 +317,16 @@
 		D834146226CCFD22002D7ED0 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				D8C5DE3B26E3489100617F6D /* RepositoryLocator.swift */,
-				D897A26F26F49E2000496839 /* ShopSearchRepository.swift */,
-				D897A27326F49E4900496839 /* ShopRepositoryInterface.swift */,
+				D81E428926D255FA00DB5AD6 /* FavoriteRepository.swift */,
+				D81E428726D255A000DB5AD6 /* FavoriteRepositoryInterface.swift */,
 				D8C5DE3526E3368A00617F6D /* GenreTypeRepository.swift */,
 				D8C5DE3726E336A600617F6D /* GenreTypeRepositoryInterface.swift */,
 				D8C5DE4426E35E4300617F6D /* PickerSelectTypeRepository.swift */,
 				D8C5DE4226E35DCE00617F6D /* PickerSelectTypeRepositoryInterface.swift */,
+				D8C5DE3B26E3489100617F6D /* RepositoryLocator.swift */,
+				D897A26F26F49E2000496839 /* ShopSearchRepository.swift */,
+				D897A27326F49E4900496839 /* ShopRepositoryInterface.swift */,
 				D834146926CCFE5B002D7ED0 /* User */,
-				D81E428626D2556500DB5AD6 /* Favorite */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
