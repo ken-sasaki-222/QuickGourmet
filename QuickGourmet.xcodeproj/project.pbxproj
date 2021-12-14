@@ -32,7 +32,6 @@
 		D82EFF7D26F71825002B0D6F /* FavoriteViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82EFF7C26F71825002B0D6F /* FavoriteViewModelTests.swift */; };
 		D8307BC426BC045B00DAB08C /* PopupWindowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8307BC326BC045B00DAB08C /* PopupWindowView.swift */; };
 		D833880F26CC9F6A003446B1 /* UIApplication+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D833880E26CC9F6A003446B1 /* UIApplication+Keyboard.swift */; };
-		D833881126CCA4B5003446B1 /* LoginButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D833881026CCA4B5003446B1 /* LoginButtonView.swift */; };
 		D834146426CCFDBC002D7ED0 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D834146326CCFDBC002D7ED0 /* UserRepository.swift */; };
 		D834146626CCFDFC002D7ED0 /* UserRepositoryInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = D834146526CCFDFC002D7ED0 /* UserRepositoryInterface.swift */; };
 		D83D600926AAA0E8002A6CEC /* ShopDetailButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83D600826AAA0E8002A6CEC /* ShopDetailButtonView.swift */; };
@@ -43,7 +42,6 @@
 		D84E5C7B26D5DFFD00BB79CE /* FavoriteShopDetailInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84E5C7A26D5DFFD00BB79CE /* FavoriteShopDetailInfoView.swift */; };
 		D855048D269D0F1B0053334A /* HotPepperResponseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D855048C269D0F1B0053334A /* HotPepperResponseResponse.swift */; };
 		D860592726FCBB800016C8AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D860592626FCBB800016C8AE /* LaunchScreen.storyboard */; };
-		D864626F26CBEAE90021092E /* UserAuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D864626E26CBEAE90021092E /* UserAuthViewModel.swift */; };
 		D872240226D125300017D405 /* FavoriteListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D872240126D125300017D405 /* FavoriteListView.swift */; };
 		D87B8C3D26B045EF00BB945C /* HamburgerMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87B8C3C26B045EF00BB945C /* HamburgerMenuViewModel.swift */; };
 		D87C9C392696FDB70051FA77 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87C9C382696FDB70051FA77 /* TabBarView.swift */; };
@@ -67,7 +65,6 @@
 		D8C58FC126B8D2590020AC57 /* TransitionImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C58FC026B8D2590020AC57 /* TransitionImage.swift */; };
 		D8C5DE2C26E331C500617F6D /* GenreType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C5DE2B26E331C500617F6D /* GenreType.swift */; };
 		D8C5DE2F26E332EC00617F6D /* GenreTypeTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C5DE2E26E332EC00617F6D /* GenreTypeTranslator.swift */; };
-		D8C5DE3326E3342700617F6D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C5DE3226E3342700617F6D /* LoginView.swift */; };
 		D8C5DE3626E3368A00617F6D /* GenreTypeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C5DE3526E3368A00617F6D /* GenreTypeRepository.swift */; };
 		D8C5DE3826E336A600617F6D /* GenreTypeRepositoryInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C5DE3726E336A600617F6D /* GenreTypeRepositoryInterface.swift */; };
 		D8C5DE3C26E3489100617F6D /* RepositoryLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C5DE3B26E3489100617F6D /* RepositoryLocator.swift */; };
@@ -135,7 +132,6 @@
 		D82EFF7C26F71825002B0D6F /* FavoriteViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModelTests.swift; sourceTree = "<group>"; };
 		D8307BC326BC045B00DAB08C /* PopupWindowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupWindowView.swift; sourceTree = "<group>"; };
 		D833880E26CC9F6A003446B1 /* UIApplication+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Keyboard.swift"; sourceTree = "<group>"; };
-		D833881026CCA4B5003446B1 /* LoginButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButtonView.swift; sourceTree = "<group>"; };
 		D834146326CCFDBC002D7ED0 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		D834146526CCFDFC002D7ED0 /* UserRepositoryInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryInterface.swift; sourceTree = "<group>"; };
 		D83D600826AAA0E8002A6CEC /* ShopDetailButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopDetailButtonView.swift; sourceTree = "<group>"; };
@@ -146,7 +142,6 @@
 		D84E5C7A26D5DFFD00BB79CE /* FavoriteShopDetailInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteShopDetailInfoView.swift; sourceTree = "<group>"; };
 		D855048C269D0F1B0053334A /* HotPepperResponseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotPepperResponseResponse.swift; sourceTree = "<group>"; };
 		D860592626FCBB800016C8AE /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		D864626E26CBEAE90021092E /* UserAuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuthViewModel.swift; sourceTree = "<group>"; };
 		D870EFDA26F5F8DB000E6D09 /* QuickGourmetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuickGourmetTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D870EFDE26F5F8DB000E6D09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D870EFE426F5FE4A000E6D09 /* QuickGourmetTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "QuickGourmetTests-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -176,7 +171,6 @@
 		D8C58FC026B8D2590020AC57 /* TransitionImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionImage.swift; sourceTree = "<group>"; };
 		D8C5DE2B26E331C500617F6D /* GenreType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreType.swift; sourceTree = "<group>"; };
 		D8C5DE2E26E332EC00617F6D /* GenreTypeTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreTypeTranslator.swift; sourceTree = "<group>"; };
-		D8C5DE3226E3342700617F6D /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		D8C5DE3526E3368A00617F6D /* GenreTypeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreTypeRepository.swift; sourceTree = "<group>"; };
 		D8C5DE3726E336A600617F6D /* GenreTypeRepositoryInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreTypeRepositoryInterface.swift; sourceTree = "<group>"; };
 		D8C5DE3B26E3489100617F6D /* RepositoryLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryLocator.swift; sourceTree = "<group>"; };
@@ -251,7 +245,6 @@
 			isa = PBXGroup;
 			children = (
 				D81CB62C26A9405F004807E1 /* SearchButtonView.swift */,
-				D833881026CCA4B5003446B1 /* LoginButtonView.swift */,
 				D81E428126D21FD100DB5AD6 /* FavoriteButton.swift */,
 				D83D600826AAA0E8002A6CEC /* ShopDetailButtonView.swift */,
 				D84E5C7826D5DF7A00BB79CE /* RemoveFavoriteButtonView.swift */,
@@ -265,7 +258,6 @@
 				D81E428426D23F7800DB5AD6 /* FavoriteViewModel.swift */,
 				D87B8C3C26B045EF00BB945C /* HamburgerMenuViewModel.swift */,
 				D889303A26B914C2008C0F60 /* QuickSearchViewModel.swift */,
-				D864626E26CBEAE90021092E /* UserAuthViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -416,7 +408,6 @@
 		D87C9C3C269703B80051FA77 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				D8F73EE126C34D5B00B26993 /* Login */,
 				D8550485269D0B8B0053334A /* TabBar */,
 				D8550486269D0BA00053334A /* Search */,
 				D872240026D125010017D405 /* Bookmark */,
@@ -656,15 +647,6 @@
 				D8ED9EB1269E795F00AFE337 /* MockShopData.swift */,
 			);
 			path = Mocks;
-			sourceTree = "<group>";
-		};
-		D8F73EE126C34D5B00B26993 /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				D8C5DE3226E3342700617F6D /* LoginView.swift */,
-			);
-			name = Login;
-			path = ../../Login;
 			sourceTree = "<group>";
 		};
 		D8F854B426DE43BA00BDBF8E /* Fonts */ = {
@@ -1000,7 +982,6 @@
 				D8E300A526CE895E0032B666 /* ActivityIndicatorView.swift in Sources */,
 				D8087FD626DDD1C1008BFFEE /* MenuIconView.swift in Sources */,
 				D872240226D125300017D405 /* FavoriteListView.swift in Sources */,
-				D8C5DE3326E3342700617F6D /* LoginView.swift in Sources */,
 				D8307BC426BC045B00DAB08C /* PopupWindowView.swift in Sources */,
 				D833880F26CC9F6A003446B1 /* UIApplication+Keyboard.swift in Sources */,
 				D897A27026F49E2000496839 /* ShopSearchRepository.swift in Sources */,
@@ -1024,12 +1005,10 @@
 				D8C5DE2F26E332EC00617F6D /* GenreTypeTranslator.swift in Sources */,
 				D8ED9EB6269E799000AFE337 /* QuickSearchListView.swift in Sources */,
 				D81E428526D23F7800DB5AD6 /* FavoriteViewModel.swift in Sources */,
-				D864626F26CBEAE90021092E /* UserAuthViewModel.swift in Sources */,
 				D80803E526D49C41009FACC8 /* FavoriteListRowView.swift in Sources */,
 				D83EF2CB26DCD66D0022868E /* ColorManager.swift in Sources */,
 				D8BD193026B8282B00E0BBCB /* QuickSearchRowView.swift in Sources */,
 				D8ADBBFA26C400E10003002F /* NendInterstitialView.swift in Sources */,
-				D833881126CCA4B5003446B1 /* LoginButtonView.swift in Sources */,
 				D897A27426F49E4900496839 /* ShopRepositoryInterface.swift in Sources */,
 				D8F854C926DE463500BDBF8E /* FontManager.swift in Sources */,
 				D81E428826D255A000DB5AD6 /* FavoriteRepositoryInterface.swift in Sources */,
