@@ -54,7 +54,7 @@ class FavoriteDataStoreTests: XCTestCase {
 
     func testDeleteFavoriteShopData() async throws {
         let dataStore = FavoriteDataStore()
-        let documentId = ""
+        let documentId = "" // Firestoreからコピペする
 
         dataStore.deleteFavoriteShopData(documentId: documentId, deviceId: deviceId) {
             print("Success delete favorite shop data.")
