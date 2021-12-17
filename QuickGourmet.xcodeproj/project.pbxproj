@@ -20,6 +20,7 @@
 		D81E428826D255A000DB5AD6 /* FavoriteRepositoryInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81E428726D255A000DB5AD6 /* FavoriteRepositoryInterface.swift */; };
 		D81E428A26D255FA00DB5AD6 /* FavoriteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81E428926D255FA00DB5AD6 /* FavoriteRepository.swift */; };
 		D81E428E26D258C500DB5AD6 /* FavoriteShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81E428D26D258C500DB5AD6 /* FavoriteShop.swift */; };
+		D8242669276C6ED800746EC0 /* LocationStatusType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8242668276C6ED800746EC0 /* LocationStatusType.swift */; };
 		D828135327648CD9002F1DF1 /* ShopDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D828135227648CD9002F1DF1 /* ShopDataStore.swift */; };
 		D8281355276497BB002F1DF1 /* ShopDataStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8281354276497BB002F1DF1 /* ShopDataStoreTests.swift */; };
 		D8281356276497C0002F1DF1 /* ShopDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D828135227648CD9002F1DF1 /* ShopDataStore.swift */; };
@@ -128,6 +129,7 @@
 		D81E428726D255A000DB5AD6 /* FavoriteRepositoryInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRepositoryInterface.swift; sourceTree = "<group>"; };
 		D81E428926D255FA00DB5AD6 /* FavoriteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRepository.swift; sourceTree = "<group>"; };
 		D81E428D26D258C500DB5AD6 /* FavoriteShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteShop.swift; sourceTree = "<group>"; };
+		D8242668276C6ED800746EC0 /* LocationStatusType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationStatusType.swift; sourceTree = "<group>"; };
 		D828135227648CD9002F1DF1 /* ShopDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopDataStore.swift; sourceTree = "<group>"; };
 		D8281354276497BB002F1DF1 /* ShopDataStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopDataStoreTests.swift; sourceTree = "<group>"; };
 		D82813592764B049002F1DF1 /* FavoriteDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDataStore.swift; sourceTree = "<group>"; };
@@ -617,6 +619,7 @@
 			children = (
 				D8C5DE2B26E331C500617F6D /* GenreType.swift */,
 				D8C5DE3D26E3594200617F6D /* PickerSelectType.swift */,
+				D8242668276C6ED800746EC0 /* LocationStatusType.swift */,
 			);
 			path = Type;
 			sourceTree = "<group>";
@@ -1022,6 +1025,7 @@
 				D8A25A972768DC7A00D9F92F /* PermissionButtonView.swift in Sources */,
 				D8F1495D26C7A12700F2C159 /* NendBannerViewController.swift in Sources */,
 				D8DB885226B962DA0057F807 /* UserDefaultsDataStore.swift in Sources */,
+				D8242669276C6ED800746EC0 /* LocationStatusType.swift in Sources */,
 				D8C5DE4526E35E4300617F6D /* PickerSelectTypeRepository.swift in Sources */,
 				D8A8E5B4269DAEB3009F9C0C /* ShopDetailView.swift in Sources */,
 				D889303B26B914C2008C0F60 /* QuickSearchViewModel.swift in Sources */,
