@@ -7,4 +7,42 @@
 
 import Foundation
 
-class CurrentLocationRepository: CurrentLocationRepositoryInterface {}
+protocol CurrentLocationRepositoryDelegate: AnyObject {
+    func updatedLocation()
+    func didFailUpdateLocation()
+}
+
+class CurrentLocationRepository: CurrentLocationRepositoryInterface {
+    private let currentLocationDataStore = CurrentLocationDataStore()
+    private let userDefaultsDataStore = UserDefaultsDataStore()
+    weak var delegate: CurrentLocationRepositoryDelegate?
+
+    func getStatus() -> LocationStatusType {
+        let status = currentLocationDataStore.statusType
+        return status
+    }
+
+    func callRequestWhenInUse(complication: @escaping (LocationStatusType) -> Void) {
+        currentLocationDataStore.requestWhenInUse { status in
+            complication(status)
+        }
+    }
+
+    func callStartUpdateLocation() {
+        currentLocationDataStore.delegate = self
+        currentLocationDataStore.startUpdateLocation()
+    }
+}
+
+extension CurrentLocationRepository: CurrentLocationDataStoreDelegate {
+    func updatedLocation(lat: Double, lng: Double) {
+        userDefaultsDataStore.latitude = lat
+        userDefaultsDataStore.longitude = lng
+
+        delegate?.updatedLocation()
+    }
+
+    func didFailUpdateLocation() {
+        delegate?.didFailUpdateLocation()
+    }
+}

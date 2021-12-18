@@ -31,7 +31,7 @@ struct CurrentLocationView: View {
                     .lineLimit(2)
                     .padding(.bottom, 30)
                 PermissionButtonView {
-                    // 位置情報処理開始
+                    currentLocationVM.getStatus()
                 }
                 .padding(.bottom, 50)
             }

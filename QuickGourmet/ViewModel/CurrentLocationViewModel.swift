@@ -8,7 +8,7 @@
 import Foundation
 
 class CurrentLocationViewModel: NSObject, ObservableObject {
-    private let currentLocationRepository: CurrentLocationRepositoryInterface
+    private var currentLocationRepository: CurrentLocationRepositoryInterface
 
     init(currentLocationRepository: CurrentLocationRepositoryInterface) {
         self.currentLocationRepository = currentLocationRepository
@@ -17,5 +17,52 @@ class CurrentLocationViewModel: NSObject, ObservableObject {
 
     override convenience init() {
         self.init(currentLocationRepository: RepositoryLocator.getCurrentLocationRepository())
+    }
+
+    func getStatus() {
+        let status = currentLocationRepository.getStatus()
+        tapNextPageButton(status: status)
+    }
+
+    func callRequestWhenInUse() {
+        currentLocationRepository.callRequestWhenInUse { status in
+            self.tapNextPageButton(status: status)
+        }
+    }
+
+    func callStartUpdateLocation() {
+        currentLocationRepository.delegate = self
+        currentLocationRepository.callStartUpdateLocation()
+    }
+
+    func notAllowedAction() {}
+
+    func tapNextPageButton(status: LocationStatusType) {
+        switch status {
+        case .notDetermined:
+            callRequestWhenInUse()
+        case .restricted:
+            notAllowedAction()
+        case .denied:
+            notAllowedAction()
+        case .authorizedAlways:
+            callStartUpdateLocation()
+        case .authorizedWhenInUse:
+            callStartUpdateLocation()
+        case .authorized:
+            callStartUpdateLocation()
+        case .unknown:
+            return
+        }
+    }
+}
+
+extension CurrentLocationViewModel: CurrentLocationRepositoryDelegate {
+    func updatedLocation() {
+        print("登録完了")
+    }
+
+    func didFailUpdateLocation() {
+        print("登録失敗")
     }
 }
