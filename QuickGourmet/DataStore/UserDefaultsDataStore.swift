@@ -9,8 +9,8 @@ import Foundation
 
 class UserDefaultsDataStore {
     enum UserDefaultsKey: String {
-        case latitudeInformation = "latitude_information"
-        case longitudeInformation = "longitude_information"
+        case latitude
+        case longitude
         case launchCount = "launch_count"
         case shopDetailLaunchCount = "shopdetail_launchcount"
         case favoriteShopDetailLaunchCount = "favoriteshopdetail_launchcount"
@@ -23,21 +23,21 @@ class UserDefaultsDataStore {
         UserDefaults.standard
     }
 
-    var latitudeInformation: Double {
+    var latitude: Double {
         get {
-            defalts.double(forKey: UserDefaultsKey.latitudeInformation.rawValue)
+            defalts.double(forKey: UserDefaultsKey.latitude.rawValue)
         }
         set(newValue) {
-            defalts.setValue(newValue, forKey: UserDefaultsKey.latitudeInformation.rawValue)
+            defalts.setValue(newValue, forKey: UserDefaultsKey.latitude.rawValue)
         }
     }
 
-    var longitudeInformation: Double {
+    var longitude: Double {
         get {
-            defalts.double(forKey: UserDefaultsKey.longitudeInformation.rawValue)
+            defalts.double(forKey: UserDefaultsKey.longitude.rawValue)
         }
         set(newValue) {
-            defalts.setValue(newValue, forKey: UserDefaultsKey.longitudeInformation.rawValue)
+            defalts.setValue(newValue, forKey: UserDefaultsKey.longitude.rawValue)
         }
     }
 

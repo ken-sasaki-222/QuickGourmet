@@ -12,19 +12,19 @@ class UserRepository: UserRepositoryInterface {
 
     var latitude: Double {
         get {
-            userDefaultsDataStore.latitudeInformation
+            userDefaultsDataStore.latitude
         }
         set(newValue) {
-            userDefaultsDataStore.latitudeInformation = newValue
+            userDefaultsDataStore.latitude = newValue
         }
     }
 
     var longitude: Double {
         get {
-            userDefaultsDataStore.longitudeInformation
+            userDefaultsDataStore.longitude
         }
         set(newValue) {
-            userDefaultsDataStore.longitudeInformation = newValue
+            userDefaultsDataStore.longitude = newValue
         }
     }
 
