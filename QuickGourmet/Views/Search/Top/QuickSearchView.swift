@@ -12,6 +12,7 @@ struct QuickSearchView: View {
     @State private var isTapActive = false
     @State private var isShowsAlert = false
     @State private var isShowsPopUp = false
+    @State private var isShowsLocationSettingView = false
     @State private var currentOffset = CGFloat()
     @State private var closeOffset = CGFloat()
     @State private var openOffset = CGFloat()
@@ -82,6 +83,7 @@ struct QuickSearchView: View {
                     .background(ColorManager.baseColor)
                 }
                 .onAppear {
+                    openCurrentLocationView()
                     quickSearchVM.requestIDFA()
                     quickSearchVM.askForReview()
                 }
@@ -96,6 +98,9 @@ struct QuickSearchView: View {
                     })
                     .offset(x: self.currentOffset)
                     .animation(.default)
+            }
+            .fullScreenCover(isPresented: $isShowsLocationSettingView) {
+                CurrentLocationView()
             }
         }
         .accentColor(ColorManager.font_white)
@@ -121,6 +126,11 @@ struct QuickSearchView: View {
         Task {
             await quickSearchVM.getShopData()
         }
+    }
+
+    private func openCurrentLocationView() {
+        let isShow = quickSearchVM.openCurrentLocationView()
+        isShowsLocationSettingView = isShow
     }
 }
 

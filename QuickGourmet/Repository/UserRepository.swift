@@ -28,6 +28,15 @@ class UserRepository: UserRepositoryInterface {
         }
     }
 
+    var locationSaved: Bool {
+        get {
+            userDefaultsDataStore.locationSaved
+        }
+        set(newValue) {
+            userDefaultsDataStore.locationSaved = newValue
+        }
+    }
+
     var launchCount: Int {
         get {
             userDefaultsDataStore.launchCount
