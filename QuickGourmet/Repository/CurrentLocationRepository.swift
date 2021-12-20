@@ -36,8 +36,10 @@ class CurrentLocationRepository: CurrentLocationRepositoryInterface {
 
 extension CurrentLocationRepository: CurrentLocationDataStoreDelegate {
     func updatedLocation(lat: Double, lng: Double) {
+        // nextTODO: もしかして位置情報保存しても意味ないかも
         userDefaultsDataStore.latitude = lat
         userDefaultsDataStore.longitude = lng
+        userDefaultsDataStore.locationSaved = true
 
         delegate?.updatedLocation()
     }
