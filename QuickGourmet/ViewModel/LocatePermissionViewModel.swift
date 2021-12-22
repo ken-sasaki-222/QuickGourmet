@@ -82,7 +82,7 @@ class LocatePermissionViewModel: NSObject {
 extension LocatePermissionViewModel: LocatePermissionRepositoryDelegate {
     func updatedLocation() {
         DispatchQueue.main.async {
-            AppState.shared.changeRootView(rootView: .home)
+            RootViewHelper.shared.changeRootView(rootView: .home)
         }
     }
 

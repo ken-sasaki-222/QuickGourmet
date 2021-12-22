@@ -81,7 +81,7 @@
 		D8C5DE4526E35E4300617F6D /* PickerSelectTypeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C5DE4426E35E4300617F6D /* PickerSelectTypeRepository.swift */; };
 		D8D1198626C7B2A500F9CD65 /* NendBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D1198526C7B2A500F9CD65 /* NendBannerView.swift */; };
 		D8D16FF227733FE600C22E20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D16FF127733FE600C22E20 /* AppDelegate.swift */; };
-		D8D16FF6277345C100C22E20 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D16FF5277345C100C22E20 /* AppState.swift */; };
+		D8D16FF6277345C100C22E20 /* RootViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D16FF5277345C100C22E20 /* RootViewHelper.swift */; };
 		D8DB885226B962DA0057F807 /* UserDefaultsDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DB885126B962DA0057F807 /* UserDefaultsDataStore.swift */; };
 		D8E300A526CE895E0032B666 /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E300A426CE895E0032B666 /* ActivityIndicatorView.swift */; };
 		D8E9B75726CFB93700DC817F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D8E9B75626CFB93700DC817F /* GoogleService-Info.plist */; };
@@ -196,7 +196,7 @@
 		D8C5DE4426E35E4300617F6D /* PickerSelectTypeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerSelectTypeRepository.swift; sourceTree = "<group>"; };
 		D8D1198526C7B2A500F9CD65 /* NendBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NendBannerView.swift; sourceTree = "<group>"; };
 		D8D16FF127733FE600C22E20 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D8D16FF5277345C100C22E20 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		D8D16FF5277345C100C22E20 /* RootViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewHelper.swift; sourceTree = "<group>"; };
 		D8DB885126B962DA0057F807 /* UserDefaultsDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsDataStore.swift; sourceTree = "<group>"; };
 		D8E300A426CE895E0032B666 /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
 		D8E9B75626CFB93700DC817F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -321,7 +321,7 @@
 		D831896127735DFD002B1130 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				D8D16FF5277345C100C22E20 /* AppState.swift */,
+				D8D16FF5277345C100C22E20 /* RootViewHelper.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -1079,7 +1079,7 @@
 				D84E5C7B26D5DFFD00BB79CE /* FavoriteShopDetailInfoView.swift in Sources */,
 				D8D1198626C7B2A500F9CD65 /* NendBannerView.swift in Sources */,
 				D8FC157926B19DDA00B22408 /* MailView.swift in Sources */,
-				D8D16FF6277345C100C22E20 /* AppState.swift in Sources */,
+				D8D16FF6277345C100C22E20 /* RootViewHelper.swift in Sources */,
 				D855048D269D0F1B0053334A /* HotPepperResponseResponse.swift in Sources */,
 				D88426FA26AA7B680073B3F2 /* SafariView.swift in Sources */,
 				D87C9C392696FDB70051FA77 /* TabBarView.swift in Sources */,

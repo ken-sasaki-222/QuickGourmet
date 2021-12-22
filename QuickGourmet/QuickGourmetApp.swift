@@ -9,12 +9,12 @@ import SwiftUI
 
 @main
 struct QuickGourmetApp: App {
-    @StateObject private var appState = AppState.shared
+    @StateObject private var rootViewHelper = RootViewHelper.shared
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
 
     var body: some Scene {
         WindowGroup {
-            switch appState.rootView {
+            switch rootViewHelper.rootView {
             case .location:
                 LocatePermissionView()
             case .home:

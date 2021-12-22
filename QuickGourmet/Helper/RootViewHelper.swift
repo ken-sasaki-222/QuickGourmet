@@ -1,5 +1,5 @@
 //
-//  AppState.swift
+//  RootViewHelper.swift
 //  QuickGourmet
 //
 //  Created by sasaki.ken on 2021/12/22.
@@ -7,9 +7,9 @@
 
 import Foundation
 
-class AppState: ObservableObject {
+class RootViewHelper: ObservableObject {
     @Published private(set) var rootView: RootViews = .home
-    static let shared = AppState()
+    static let shared = RootViewHelper()
 
     private init() {
         // no action..

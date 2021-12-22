@@ -10,7 +10,7 @@ import SwiftUI
 struct TabBarView: View {
     @State private var section = 0
     private let locatePermissionVM = LocatePermissionViewModel()
-    
+
     init() {
         setTabBar()
     }
@@ -36,7 +36,7 @@ struct TabBarView: View {
             DispatchQueue.main.async {
                 switch isOpen {
                 case true:
-                    AppState.shared.changeRootView(rootView: .location)
+                    RootViewHelper.shared.changeRootView(rootView: .location)
                 case false:
                     return
                 }
