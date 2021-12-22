@@ -131,7 +131,7 @@ class QuickSearchViewModel: NSObject, ObservableObject {
         let isFirstLaunch = userRepository.launchCount == 1
         let locationSaved = userRepository.locationSaved
 
-        if isFirstLaunch && !locationSaved {
+        if isFirstLaunch || !locationSaved {
             return true
         } else {
             return false

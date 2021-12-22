@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct TabBarView: View {
+    private let quickSearchVM = QuickSearchViewModel()
     @State private var section = 0
 
     init() {
@@ -30,6 +31,16 @@ struct TabBarView: View {
                 .tag(1)
         }
         .accentColor(ColorManager.mainColor)
+        .onAppear {
+            DispatchQueue.main.async {
+                switch quickSearchVM.openCurrentLocationView() {
+                case true:
+                    AppState.shared.changeRootView(rootView: .location)
+                case false:
+                    return
+                }
+            }
+        }
     }
 
     private func setTabBar() {
