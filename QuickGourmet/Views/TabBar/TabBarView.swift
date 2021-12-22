@@ -32,9 +32,8 @@ struct TabBarView: View {
         }
         .accentColor(ColorManager.mainColor)
         .onAppear {
-            let isEnabled = locatePermissionVM.openLocatePermissionViewEnabled
             DispatchQueue.main.async {
-                switch isEnabled {
+                switch locatePermissionVM.openLocatePermissionViewEnabled {
                 case true:
                     RootViewHelper.shared.changeRootView(rootView: .location)
                 case false:
