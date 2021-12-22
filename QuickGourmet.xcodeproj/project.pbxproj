@@ -43,6 +43,7 @@
 		D84E5C7B26D5DFFD00BB79CE /* FavoriteShopDetailInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84E5C7A26D5DFFD00BB79CE /* FavoriteShopDetailInfoView.swift */; };
 		D855048D269D0F1B0053334A /* HotPepperResponseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D855048C269D0F1B0053334A /* HotPepperResponseResponse.swift */; };
 		D860592726FCBB800016C8AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D860592626FCBB800016C8AE /* LaunchScreen.storyboard */; };
+		D86F6A32277370A800910B15 /* LocatePermissionAlertType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86F6A31277370A800910B15 /* LocatePermissionAlertType.swift */; };
 		D872240226D125300017D405 /* FavoriteListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D872240126D125300017D405 /* FavoriteListView.swift */; };
 		D87B8C3D26B045EF00BB945C /* HamburgerMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87B8C3C26B045EF00BB945C /* HamburgerMenuViewModel.swift */; };
 		D87C9C392696FDB70051FA77 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87C9C382696FDB70051FA77 /* TabBarView.swift */; };
@@ -152,6 +153,7 @@
 		D84E5C7A26D5DFFD00BB79CE /* FavoriteShopDetailInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteShopDetailInfoView.swift; sourceTree = "<group>"; };
 		D855048C269D0F1B0053334A /* HotPepperResponseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotPepperResponseResponse.swift; sourceTree = "<group>"; };
 		D860592626FCBB800016C8AE /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D86F6A31277370A800910B15 /* LocatePermissionAlertType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocatePermissionAlertType.swift; sourceTree = "<group>"; };
 		D870EFDA26F5F8DB000E6D09 /* QuickGourmetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuickGourmetTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D870EFDE26F5F8DB000E6D09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D870EFE426F5FE4A000E6D09 /* QuickGourmetTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "QuickGourmetTests-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -634,6 +636,7 @@
 				D8C5DE2B26E331C500617F6D /* GenreType.swift */,
 				D8C5DE3D26E3594200617F6D /* PickerSelectType.swift */,
 				D8242668276C6ED800746EC0 /* LocationStatusType.swift */,
+				D86F6A31277370A800910B15 /* LocatePermissionAlertType.swift */,
 			);
 			path = Type;
 			sourceTree = "<group>";
@@ -1022,6 +1025,7 @@
 				D8ED9EB4269E798700AFE337 /* QuickSearchListRowView.swift in Sources */,
 				D8C58FC126B8D2590020AC57 /* TransitionImage.swift in Sources */,
 				D8C5DE4026E359CB00617F6D /* PickerSelectTypeTranslator.swift in Sources */,
+				D86F6A32277370A800910B15 /* LocatePermissionAlertType.swift in Sources */,
 				D81E428E26D258C500DB5AD6 /* FavoriteShop.swift in Sources */,
 				D8E300A526CE895E0032B666 /* ActivityIndicatorView.swift in Sources */,
 				D8087FD626DDD1C1008BFFEE /* MenuIconView.swift in Sources */,
