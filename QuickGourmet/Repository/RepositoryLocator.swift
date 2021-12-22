@@ -32,7 +32,7 @@ class RepositoryLocator: NSObject {
         PickerSelectTypeRepository()
     }
 
-    static func getCurrentLocationRepository() -> CurrentLocationRepositoryInterface {
-        CurrentLocationRepository()
+    static func getLocatePermissionRepository() -> LocatePermissionRepositoryInterface {
+        LocatePermissionRepository()
     }
 }

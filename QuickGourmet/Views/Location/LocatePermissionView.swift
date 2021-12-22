@@ -1,5 +1,5 @@
 //
-//  CurrentLocationView.swift
+//  LocatePermissionView.swift
 //  QuickGourmet
 //
 //  Created by sasaki.ken on 2021/12/14.
@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct CurrentLocationView: View {
-    @ObservedObject var currentLocationVM = CurrentLocationViewModel()
+struct LocatePermissionView: View {
+    @ObservedObject var locatePermissionVM = LocatePermissionViewModel()
 
     var body: some View {
         ZStack {
@@ -31,7 +31,7 @@ struct CurrentLocationView: View {
                     .lineLimit(2)
                     .padding(.bottom, 30)
                 PermissionButtonView {
-                    currentLocationVM.getStatus()
+                    locatePermissionVM.getStatus()
                 }
                 .padding(.bottom, 50)
             }
@@ -41,6 +41,6 @@ struct CurrentLocationView: View {
 
 struct CurrentLocationView_Previews: PreviewProvider {
     static var previews: some View {
-        CurrentLocationView()
+        LocatePermissionView()
     }
 }

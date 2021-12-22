@@ -1,5 +1,5 @@
 //
-//  CurrentLocationDataStore.swift
+//  LocatePermissionDataStore.swift
 //  QuickGourmet
 //
 //  Created by sasaki.ken on 2021/12/14.
@@ -7,15 +7,15 @@
 
 import CoreLocation
 
-protocol CurrentLocationDataStoreDelegate: AnyObject {
+protocol LocatePermissionDataStoreDelegate: AnyObject {
     func updatedLocation()
     func didFailUpdateLocation()
 }
 
-class CurrentLocationDataStore: NSObject, ObservableObject, CLLocationManagerDelegate {
+class LocatePermissionDataStore: NSObject, CLLocationManagerDelegate {
     private let locationManager: CLLocationManager
     private var requestCallback: ((LocationStatusType) -> Void)?
-    weak var delegate: CurrentLocationDataStoreDelegate?
+    weak var delegate: LocatePermissionDataStoreDelegate?
     var statusType: LocationStatusType
 
     override init() {

@@ -1,5 +1,5 @@
 //
-//  CurrentLocationRepository.swift
+//  LocatePermissionRepository.swift
 //  QuickGourmet
 //
 //  Created by sasaki.ken on 2021/12/14.
@@ -7,34 +7,34 @@
 
 import Foundation
 
-protocol CurrentLocationRepositoryDelegate: AnyObject {
+protocol LocatePermissionRepositoryDelegate: AnyObject {
     func updatedLocation()
     func didFailUpdateLocation()
 }
 
-class CurrentLocationRepository: CurrentLocationRepositoryInterface {
-    private let currentLocationDataStore = CurrentLocationDataStore()
+class LocatePermissionRepository: LocatePermissionRepositoryInterface {
+    private let locatePermissionDataStore = LocatePermissionDataStore()
     private let userDefaultsDataStore = UserDefaultsDataStore()
-    weak var delegate: CurrentLocationRepositoryDelegate?
+    weak var delegate: LocatePermissionRepositoryDelegate?
 
     func getStatus() -> LocationStatusType {
-        let status = currentLocationDataStore.statusType
+        let status = locatePermissionDataStore.statusType
         return status
     }
 
     func callRequestWhenInUse(complication: @escaping (LocationStatusType) -> Void) {
-        currentLocationDataStore.requestWhenInUse { status in
+        locatePermissionDataStore.requestWhenInUse { status in
             complication(status)
         }
     }
 
     func callStartUpdateLocation() {
-        currentLocationDataStore.delegate = self
-        currentLocationDataStore.startUpdateLocation()
+        locatePermissionDataStore.delegate = self
+        locatePermissionDataStore.startUpdateLocation()
     }
 }
 
-extension CurrentLocationRepository: CurrentLocationDataStoreDelegate {
+extension LocatePermissionRepository: LocatePermissionDataStoreDelegate {
     func updatedLocation() {
         userDefaultsDataStore.locationSaved = true
 

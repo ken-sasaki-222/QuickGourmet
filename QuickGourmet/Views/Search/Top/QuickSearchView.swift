@@ -99,7 +99,7 @@ struct QuickSearchView: View {
                     .animation(.default)
             }
             .fullScreenCover(isPresented: $isShowsLocationSettingView) {
-                CurrentLocationView()
+                LocatePermissionView()
             }
         }
         .accentColor(ColorManager.font_white)
