@@ -24,6 +24,16 @@ class LocatePermissionViewModel: NSObject {
         )
     }
 
+    var openLocatePermissionViewEnabled: Bool {
+        let locatePermission = userRepository.locatePermission
+
+        if !locatePermission {
+            return true
+        } else {
+            return false
+        }
+    }
+
     func getStatus() -> LocationStatusType {
         let status = locatePermissionRepository.getStatus()
         return status
@@ -64,17 +74,6 @@ class LocatePermissionViewModel: NSObject {
             callStartUpdateLocation()
         case .unknown:
             return
-        }
-    }
-
-    func openLocatePermissionView() -> Bool {
-        let isFirstLaunch = userRepository.launchCount == 1
-        let locatePermission = userRepository.locatePermission
-
-        if !locatePermission {
-            return true
-        } else {
-            return false
         }
     }
 }
