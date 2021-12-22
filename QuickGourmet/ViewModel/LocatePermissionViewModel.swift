@@ -7,7 +7,9 @@
 
 import SwiftUI
 
-class LocatePermissionViewModel: NSObject {
+class LocatePermissionViewModel: NSObject, ObservableObject {
+    @Published var isShowsAlert: Bool = false
+    @Published var alertType: LocatePermissionAlertType = .failLocatePermission
     private var locatePermissionRepository: LocatePermissionRepositoryInterface
     private var userRepository: UserRepositoryInterface
 
@@ -80,12 +82,12 @@ class LocatePermissionViewModel: NSObject {
 
 extension LocatePermissionViewModel: LocatePermissionRepositoryDelegate {
     func updatedLocation() {
-        DispatchQueue.main.async {
-            RootViewHelper.shared.changeRootView(rootView: .home)
-        }
+        alertType = .successLocatePermission
+        isShowsAlert = true
     }
 
     func didFailUpdateLocation() {
-        print("登録失敗")
+        alertType = .failLocatePermission
+        isShowsAlert = true
     }
 }

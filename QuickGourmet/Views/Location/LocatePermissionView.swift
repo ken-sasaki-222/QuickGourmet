@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LocatePermissionView: View {
-    var locatePermissionVM = LocatePermissionViewModel()
+    @ObservedObject var locatePermissionVM = LocatePermissionViewModel()
 
     var body: some View {
         ZStack {
@@ -35,6 +35,22 @@ struct LocatePermissionView: View {
                     locatePermissionVM.tapNextPageButton(status: status)
                 }
                 .padding(.bottom, 50)
+            }
+            .alert(isPresented: $locatePermissionVM.isShowsAlert) {
+                switch locatePermissionVM.alertType {
+                case .failLocatePermission:
+                    return Alert(title: Text("エラー"),
+                                 message: Text("位置情報の許可に失敗しました"),
+                                 dismissButton: .default(Text("やり直す")))
+                case .successLocatePermission:
+                    return Alert(title: Text("確認"),
+                                 message: Text("位置情報を許可しました"),
+                                 dismissButton: .default(Text("OK"), action: {
+                                     DispatchQueue.main.async {
+                                         RootViewHelper.shared.changeRootView(rootView: .home)
+                                     }
+                                 }))
+                }
             }
         }
     }
