@@ -43,7 +43,7 @@ class UserDefaultsDataStore {
         }
     }
 
-    var locationSaved: Bool {
+    var locatePermission: Bool {
         get {
             defalts.bool(forKey: UserDefaultsKey.locationSaved.rawValue)
         }

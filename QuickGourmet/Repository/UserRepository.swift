@@ -28,12 +28,12 @@ class UserRepository: UserRepositoryInterface {
         }
     }
 
-    var locationSaved: Bool {
+    var locatePermission: Bool {
         get {
-            userDefaultsDataStore.locationSaved
+            userDefaultsDataStore.locatePermission
         }
         set(newValue) {
-            userDefaultsDataStore.locationSaved = newValue
+            userDefaultsDataStore.locatePermission = newValue
         }
     }
 
