@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LocatePermissionView: View {
-    @ObservedObject var locatePermissionVM = LocatePermissionViewModel()
+    var locatePermissionVM = LocatePermissionViewModel()
 
     var body: some View {
         ZStack {
