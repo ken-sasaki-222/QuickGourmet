@@ -83,7 +83,6 @@ struct QuickSearchView: View {
                     .background(ColorManager.baseColor)
                 }
                 .onAppear {
-                    openCurrentLocationView()
                     quickSearchVM.requestIDFA()
                     quickSearchVM.askForReview()
                 }
@@ -126,11 +125,6 @@ struct QuickSearchView: View {
         Task {
             await quickSearchVM.getShopData()
         }
-    }
-
-    private func openCurrentLocationView() {
-        let isShow = quickSearchVM.openCurrentLocationView()
-        isShowsLocationSettingView = isShow
     }
 }
 
