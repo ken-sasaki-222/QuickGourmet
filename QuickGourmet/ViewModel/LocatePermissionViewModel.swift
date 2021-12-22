@@ -71,7 +71,7 @@ class LocatePermissionViewModel: NSObject {
         let isFirstLaunch = userRepository.launchCount == 1
         let locatePermission = userRepository.locatePermission
 
-        if isFirstLaunch || !locatePermission {
+        if !locatePermission {
             return true
         } else {
             return false
