@@ -5,9 +5,9 @@
 //  Created by sasaki.ken on 2021/12/22.
 //
 
-import SwiftUI
-import NendAd
 import Firebase
+import NendAd
+import SwiftUI
 
 class AppDelegate: UIResponder, UIApplicationDelegate {
     private var userRepository: UserRepositoryInterface
