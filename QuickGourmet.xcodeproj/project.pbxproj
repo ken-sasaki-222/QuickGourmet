@@ -81,6 +81,7 @@
 		D8C5DE4526E35E4300617F6D /* PickerSelectTypeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C5DE4426E35E4300617F6D /* PickerSelectTypeRepository.swift */; };
 		D8D1198626C7B2A500F9CD65 /* NendBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D1198526C7B2A500F9CD65 /* NendBannerView.swift */; };
 		D8D16FF227733FE600C22E20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D16FF127733FE600C22E20 /* AppDelegate.swift */; };
+		D8D16FF6277345C100C22E20 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D16FF5277345C100C22E20 /* AppState.swift */; };
 		D8DB885226B962DA0057F807 /* UserDefaultsDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DB885126B962DA0057F807 /* UserDefaultsDataStore.swift */; };
 		D8E300A526CE895E0032B666 /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E300A426CE895E0032B666 /* ActivityIndicatorView.swift */; };
 		D8E9B75726CFB93700DC817F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D8E9B75626CFB93700DC817F /* GoogleService-Info.plist */; };
@@ -195,6 +196,7 @@
 		D8C5DE4426E35E4300617F6D /* PickerSelectTypeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerSelectTypeRepository.swift; sourceTree = "<group>"; };
 		D8D1198526C7B2A500F9CD65 /* NendBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NendBannerView.swift; sourceTree = "<group>"; };
 		D8D16FF127733FE600C22E20 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D8D16FF5277345C100C22E20 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		D8DB885126B962DA0057F807 /* UserDefaultsDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsDataStore.swift; sourceTree = "<group>"; };
 		D8E300A426CE895E0032B666 /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
 		D8E9B75626CFB93700DC817F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -532,25 +534,26 @@
 		D8BA1186269661460007DCE5 /* QuickGourmet */ = {
 			isa = PBXGroup;
 			children = (
-				D8BA1187269661460007DCE5 /* QuickGourmetApp.swift */,
 				D8D16FF127733FE600C22E20 /* AppDelegate.swift */,
+				D8D16FF5277345C100C22E20 /* AppState.swift */,
+				D8BA1187269661460007DCE5 /* QuickGourmetApp.swift */,
+				D834146226CCFD22002D7ED0 /* Repository */,
+				D8DB885026B962BE0057F807 /* DataStore */,
+				D8C5DE2D26E332B600617F6D /* Translator */,
+				D871222926B988C6000D094A /* Extension */,
 				D8550488269D0DAA0053334A /* Model */,
 				D87C9C3C269703B80051FA77 /* Views */,
 				D82895C426A05FC50030FACB /* ViewModel */,
-				D834146226CCFD22002D7ED0 /* Repository */,
-				D8C5DE2D26E332B600617F6D /* Translator */,
-				D8DB885026B962BE0057F807 /* DataStore */,
-				D8A8E5B9269DBEA4009F9C0C /* API */,
 				D85D9DE126A2B98200F4B5C5 /* Utils */,
-				D871222926B988C6000D094A /* Extension */,
+				D8A8E5B9269DBEA4009F9C0C /* API */,
 				D897A27526F4A34400496839 /* Resources */,
 				D8BA118D269661490007DCE5 /* Preview Content */,
 				D860592626FCBB800016C8AE /* LaunchScreen.storyboard */,
 				D8BA118B269661490007DCE5 /* Assets.xcassets */,
 				D83EF2C726DCD4330022868E /* Colors.xcassets */,
-				D8BA1190269661490007DCE5 /* Info.plist */,
-				D8FD3AA527675BF700F1C69E /* GoogleService-Stage-Info.plist */,
 				D8E9B75626CFB93700DC817F /* GoogleService-Info.plist */,
+				D8FD3AA527675BF700F1C69E /* GoogleService-Stage-Info.plist */,
+				D8BA1190269661490007DCE5 /* Info.plist */,
 			);
 			path = QuickGourmet;
 			sourceTree = "<group>";
@@ -1068,6 +1071,7 @@
 				D84E5C7B26D5DFFD00BB79CE /* FavoriteShopDetailInfoView.swift in Sources */,
 				D8D1198626C7B2A500F9CD65 /* NendBannerView.swift in Sources */,
 				D8FC157926B19DDA00B22408 /* MailView.swift in Sources */,
+				D8D16FF6277345C100C22E20 /* AppState.swift in Sources */,
 				D855048D269D0F1B0053334A /* HotPepperResponseResponse.swift in Sources */,
 				D88426FA26AA7B680073B3F2 /* SafariView.swift in Sources */,
 				D87C9C392696FDB70051FA77 /* TabBarView.swift in Sources */,
