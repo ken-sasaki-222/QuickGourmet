@@ -8,7 +8,7 @@
 import CoreLocation
 
 protocol CurrentLocationDataStoreDelegate: AnyObject {
-    func updatedLocation(lat: Double, lng: Double)
+    func updatedLocation()
     func didFailUpdateLocation()
 }
 
@@ -73,7 +73,7 @@ class CurrentLocationDataStore: NSObject, ObservableObject, CLLocationManagerDel
         print("緯度: ", location.latitude, "経度: ", location.longitude)
 
         locationManager.stopUpdatingLocation()
-        delegate?.updatedLocation(lat: location.latitude, lng: location.longitude)
+        delegate?.updatedLocation()
     }
 
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
