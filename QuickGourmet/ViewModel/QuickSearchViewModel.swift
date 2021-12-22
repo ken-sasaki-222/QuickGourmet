@@ -126,15 +126,4 @@ class QuickSearchViewModel: NSObject, ObservableObject {
             return false
         }
     }
-
-    func openCurrentLocationView() -> Bool {
-        let isFirstLaunch = userRepository.launchCount == 1
-        let locationSaved = userRepository.locationSaved
-
-        if isFirstLaunch || !locationSaved {
-            return true
-        } else {
-            return false
-        }
-    }
 }

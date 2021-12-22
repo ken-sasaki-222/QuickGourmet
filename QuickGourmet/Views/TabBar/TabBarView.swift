@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct TabBarView: View {
-    private let quickSearchVM = QuickSearchViewModel()
     @State private var section = 0
-
+    private let locatePermissionVM = LocatePermissionViewModel()
+    
     init() {
         setTabBar()
     }
@@ -32,8 +32,9 @@ struct TabBarView: View {
         }
         .accentColor(ColorManager.mainColor)
         .onAppear {
+            let isOpen = locatePermissionVM.openLocatePermissionView()
             DispatchQueue.main.async {
-                switch quickSearchVM.openCurrentLocationView() {
+                switch isOpen {
                 case true:
                     AppState.shared.changeRootView(rootView: .location)
                 case false:

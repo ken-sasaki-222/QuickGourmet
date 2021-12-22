@@ -9,14 +9,17 @@ import SwiftUI
 
 class LocatePermissionViewModel: NSObject {
     private var locatePermissionRepository: LocatePermissionRepositoryInterface
+    private var userRepository: UserRepositoryInterface
 
-    init(currentLocationRepository: LocatePermissionRepositoryInterface) {
+    init(currentLocationRepository: LocatePermissionRepositoryInterface, userRepository: UserRepositoryInterface) {
         self.locatePermissionRepository = currentLocationRepository
+        self.userRepository = userRepository
         super.init()
     }
 
     override convenience init() {
-        self.init(currentLocationRepository: RepositoryLocator.getLocatePermissionRepository())
+        self.init(currentLocationRepository: RepositoryLocator.getLocatePermissionRepository(),
+                  userRepository: RepositoryLocator.getUserRepository())
     }
 
     func getStatus() {
@@ -59,6 +62,17 @@ class LocatePermissionViewModel: NSObject {
             callStartUpdateLocation()
         case .unknown:
             return
+        }
+    }
+    
+    func openLocatePermissionView() -> Bool {
+        let isFirstLaunch = userRepository.launchCount == 1
+        let locatePermission = userRepository.locatePermission
+
+        if isFirstLaunch || !locatePermission {
+            return true
+        } else {
+            return false
         }
     }
 }
