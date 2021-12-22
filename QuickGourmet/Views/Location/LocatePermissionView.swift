@@ -31,7 +31,8 @@ struct LocatePermissionView: View {
                     .lineLimit(2)
                     .padding(.bottom, 30)
                 PermissionButtonView {
-                    locatePermissionVM.getStatus()
+                    let status = locatePermissionVM.getStatus()
+                    locatePermissionVM.tapNextPageButton(status: status)
                 }
                 .padding(.bottom, 50)
             }

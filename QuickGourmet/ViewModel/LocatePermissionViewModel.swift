@@ -24,9 +24,9 @@ class LocatePermissionViewModel: NSObject {
         )
     }
 
-    func getStatus() {
+    func getStatus() -> LocationStatusType {
         let status = locatePermissionRepository.getStatus()
-        tapNextPageButton(status: status)
+        return status
     }
 
     func callRequestWhenInUse() {
