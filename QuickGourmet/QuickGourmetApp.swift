@@ -9,11 +9,17 @@ import SwiftUI
 
 @main
 struct QuickGourmetApp: App {
+    @StateObject private var appState = AppState.shared
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
 
     var body: some Scene {
         WindowGroup {
-            TabBarView()
+            switch appState.rootView {
+            case .location:
+                LocatePermissionView()
+            case .home:
+                TabBarView()
+            }
         }
     }
 }
