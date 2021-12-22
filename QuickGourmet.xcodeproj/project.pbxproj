@@ -80,6 +80,7 @@
 		D8C5DE4326E35DCE00617F6D /* PickerSelectTypeRepositoryInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C5DE4226E35DCE00617F6D /* PickerSelectTypeRepositoryInterface.swift */; };
 		D8C5DE4526E35E4300617F6D /* PickerSelectTypeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C5DE4426E35E4300617F6D /* PickerSelectTypeRepository.swift */; };
 		D8D1198626C7B2A500F9CD65 /* NendBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D1198526C7B2A500F9CD65 /* NendBannerView.swift */; };
+		D8D16FF227733FE600C22E20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D16FF127733FE600C22E20 /* AppDelegate.swift */; };
 		D8DB885226B962DA0057F807 /* UserDefaultsDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DB885126B962DA0057F807 /* UserDefaultsDataStore.swift */; };
 		D8E300A526CE895E0032B666 /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E300A426CE895E0032B666 /* ActivityIndicatorView.swift */; };
 		D8E9B75726CFB93700DC817F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D8E9B75626CFB93700DC817F /* GoogleService-Info.plist */; };
@@ -193,6 +194,7 @@
 		D8C5DE4226E35DCE00617F6D /* PickerSelectTypeRepositoryInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerSelectTypeRepositoryInterface.swift; sourceTree = "<group>"; };
 		D8C5DE4426E35E4300617F6D /* PickerSelectTypeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerSelectTypeRepository.swift; sourceTree = "<group>"; };
 		D8D1198526C7B2A500F9CD65 /* NendBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NendBannerView.swift; sourceTree = "<group>"; };
+		D8D16FF127733FE600C22E20 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8DB885126B962DA0057F807 /* UserDefaultsDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsDataStore.swift; sourceTree = "<group>"; };
 		D8E300A426CE895E0032B666 /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
 		D8E9B75626CFB93700DC817F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -531,6 +533,7 @@
 			isa = PBXGroup;
 			children = (
 				D8BA1187269661460007DCE5 /* QuickGourmetApp.swift */,
+				D8D16FF127733FE600C22E20 /* AppDelegate.swift */,
 				D8550488269D0DAA0053334A /* Model */,
 				D87C9C3C269703B80051FA77 /* Views */,
 				D82895C426A05FC50030FACB /* ViewModel */,
@@ -1034,6 +1037,7 @@
 				D80803E326D49C1A009FACC8 /* FavoriteShopDetailView.swift in Sources */,
 				D8C5DE3626E3368A00617F6D /* GenreTypeRepository.swift in Sources */,
 				D83D600E26AAB387002A6CEC /* MapView.swift in Sources */,
+				D8D16FF227733FE600C22E20 /* AppDelegate.swift in Sources */,
 				D8C5DE3E26E3594200617F6D /* PickerSelectType.swift in Sources */,
 				D8C5DE3826E336A600617F6D /* GenreTypeRepositoryInterface.swift in Sources */,
 				D8C5DE2F26E332EC00617F6D /* GenreTypeTranslator.swift in Sources */,
