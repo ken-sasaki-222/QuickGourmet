@@ -5,7 +5,6 @@
 //  Created by sasaki.ken on 2021/08/02.
 //
 
-import CoreLocation
 import SwiftUI
 
 struct QuickSearchView: View {
@@ -18,7 +17,7 @@ struct QuickSearchView: View {
     @State private var openOffset = CGFloat()
     @State private var index = 0
     private let quickSearchVM = QuickSearchViewModel()
-    private let locationManager = CLLocationManager()
+    private let locatePermissionVM = LocatePermissionViewModel()
 
     private let quickSearchImages = ["food_izakaya", "food_baru", "food_sousaku", "food_wasyoku", "food_yosyoku", "food_italia", "food_tyuka", "food_yakiniku", "food_asia", "food_kakukoku", "food_karaoke", "food_bar", "food_ramen", "food_cafe", "food_other", "food_okonomiyaki", "food_korea"]
 
@@ -39,18 +38,7 @@ struct QuickSearchView: View {
                                     ForEach(0 ..< quickSearchImages.count) { index in
                                         NavigationLink(destination: QuickSearchListView(quickSearchVM: quickSearchVM), isActive: $isTapActive) {}
                                         Button(action: {
-                                            switch locationManager.authorizationStatus {
-                                            case .notDetermined: // 許諾とっていない
-                                                isShowsAlert = true
-                                            case .denied: // 許可されていない
-                                                isShowsAlert = true
-                                            default:
-                                                isShowsAlert = false
-                                                withAnimation {
-                                                    isShowsPopUp = true
-                                                    self.index = index
-                                                }
-                                            }
+                                            onTapQuickSearchRow()
                                         }) {
                                             QuickSearchRowView(imageString: quickSearchImages[index], genreName: quickSearchTextes[index], width: geometry.size.width * 0.9)
                                         }
@@ -124,6 +112,36 @@ struct QuickSearchView: View {
         quickSearchVM.pickerSelection = selection
         Task {
             await quickSearchVM.getShopData()
+        }
+    }
+
+    private func onTapQuickSearchRow() {
+        let status = locatePermissionVM.getStatus()
+        switch status {
+        case .notDetermined:
+            isShowsAlert = true
+        case .restricted:
+            isShowsAlert = true
+        case .denied:
+            isShowsAlert = true
+        case .authorizedAlways:
+            isShowsAlert = false
+            openPopUp()
+        case .authorizedWhenInUse:
+            isShowsAlert = false
+            openPopUp()
+        case .authorized:
+            isShowsAlert = false
+            openPopUp()
+        case .unknown:
+            break
+        }
+    }
+
+    private func openPopUp() {
+        withAnimation {
+            isShowsPopUp = true
+            self.index = index
         }
     }
 }
