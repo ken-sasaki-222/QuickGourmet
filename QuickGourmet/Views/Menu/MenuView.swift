@@ -24,7 +24,7 @@ struct MenuView: View {
             Form {
                 Section(header: Text("このアプリについて")) {
                     HStack {
-                        MenuIconView(image: "mail_icon", color: ColorManager.icon_red)
+                        MenuIconView(image: "mail_icon", color: ColorManager.icon_purple)
                         Button(action: {
                             isShowMailView = true
                         }) {
@@ -38,7 +38,7 @@ struct MenuView: View {
                         }
                     }
                     HStack {
-                        MenuIconView(image: "share_icon", color: ColorManager.icon_gold)
+                        MenuIconView(image: "share_icon", color: ColorManager.icon_orange)
                         Button(action: {
                             menuVM.shareOnTwitter()
                         }) {
@@ -74,7 +74,7 @@ struct MenuView: View {
                 }
                 Section(header: Text("バージョン")) {
                     HStack {
-                        MenuIconView(image: "version_icon", color: ColorManager.icon_purple)
+                        MenuIconView(image: "version_icon", color: ColorManager.mainColor)
                         Text("バージョン 1.0.3")
                             .font(.custom(FontManager.Mplus.regular, size: 16))
                             .foregroundColor(ColorManager.font_light_dark)
