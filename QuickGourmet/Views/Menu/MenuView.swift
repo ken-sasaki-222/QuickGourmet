@@ -6,7 +6,6 @@
 //
 
 import MessageUI
-import StoreKit
 import SwiftUI
 
 struct MenuView: View {
@@ -74,7 +73,7 @@ struct MenuView: View {
                 }
                 Section(header: Text("バージョン")) {
                     HStack {
-                        MenuIconView(image: "version_icon", color: ColorManager.mainColor)
+                        MenuIconView(image: "version_icon", color: ColorManager.black)
                         Text("バージョン 1.0.3")
                             .font(.custom(FontManager.Mplus.regular, size: 16))
                             .foregroundColor(ColorManager.font_light_dark)
