@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LogoImage: View {
-    @ObservedObject private var imageDownloader = ImageDownloader()
+    @ObservedObject private var imageDownloader = ImageDownloadHelper()
     let urlString: String
 
     init(urlString: String) {

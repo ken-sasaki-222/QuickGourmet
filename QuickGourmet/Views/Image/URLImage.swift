@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct URLImage: View {
-    @ObservedObject private var imageDownloader = ImageDownloader()
+    @ObservedObject private var imageDownloader = ImageDownloadHelper()
 
     let urlString: String
 

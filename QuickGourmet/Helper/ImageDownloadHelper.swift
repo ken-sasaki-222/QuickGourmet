@@ -1,13 +1,13 @@
 //
-//  ImageDownloder.swift
+//  ImageDownloadHelper.swift
 //  QuickGourmet
 //
-//  Created by sasaki.ken on 2021/07/14.
+//  Created by sasaki.ken on 2021/12/23.
 //
 
 import Foundation
 
-class ImageDownloader: ObservableObject {
+class ImageDownloadHelper: ObservableObject {
     @Published var downloadData: Data?
 
     func downloadImage(url: String) {
