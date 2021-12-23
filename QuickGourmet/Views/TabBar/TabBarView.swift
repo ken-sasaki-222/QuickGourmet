@@ -29,6 +29,12 @@ struct TabBarView: View {
                     Text("ブックマーク")
                 }
                 .tag(1)
+            MenuView()
+                .tabItem {
+                    Image(systemName: "menucard")
+                    Text("メニュー")
+                }
+                .tag(2)
         }
         .accentColor(ColorManager.mainColor)
         .onAppear {
