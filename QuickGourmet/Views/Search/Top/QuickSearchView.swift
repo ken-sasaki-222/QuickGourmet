@@ -46,7 +46,7 @@ struct QuickSearchView: View {
                                     }
                                     .edgesIgnoringSafeArea(.bottom)
                                 }
-                                .navigationTitle("食いっく検索")
+                                .navigationTitle("ホーム")
                                 .navigationBarTitleDisplayMode(.inline)
                             }
                         }
