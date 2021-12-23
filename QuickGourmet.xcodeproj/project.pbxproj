@@ -80,7 +80,6 @@
 		D8C5DE4026E359CB00617F6D /* PickerSelectTypeTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C5DE3F26E359CB00617F6D /* PickerSelectTypeTranslator.swift */; };
 		D8C5DE4326E35DCE00617F6D /* PickerSelectTypeRepositoryInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C5DE4226E35DCE00617F6D /* PickerSelectTypeRepositoryInterface.swift */; };
 		D8C5DE4526E35E4300617F6D /* PickerSelectTypeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C5DE4426E35E4300617F6D /* PickerSelectTypeRepository.swift */; };
-		D8D1198626C7B2A500F9CD65 /* NendBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D1198526C7B2A500F9CD65 /* NendBannerView.swift */; };
 		D8D16FF227733FE600C22E20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D16FF127733FE600C22E20 /* AppDelegate.swift */; };
 		D8D16FF6277345C100C22E20 /* RootViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D16FF5277345C100C22E20 /* RootViewHelper.swift */; };
 		D8DB885226B962DA0057F807 /* UserDefaultsDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DB885126B962DA0057F807 /* UserDefaultsDataStore.swift */; };
@@ -90,7 +89,6 @@
 		D8ED9EB4269E798700AFE337 /* QuickSearchListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8ED9EB3269E798700AFE337 /* QuickSearchListRowView.swift */; };
 		D8ED9EB6269E799000AFE337 /* QuickSearchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8ED9EB5269E799000AFE337 /* QuickSearchListView.swift */; };
 		D8F12E7926B423D000118C63 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8F12E7826B423D000118C63 /* CoreLocation.framework */; };
-		D8F1495D26C7A12700F2C159 /* NendBannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F1495C26C7A12700F2C159 /* NendBannerViewController.swift */; };
 		D8F854C026DE441E00BDBF8E /* MPLUSRounded1c-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D8F854B826DE441E00BDBF8E /* MPLUSRounded1c-Bold.ttf */; };
 		D8F854C226DE441E00BDBF8E /* MPLUSRounded1c-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D8F854BA26DE441E00BDBF8E /* MPLUSRounded1c-Light.ttf */; };
 		D8F854C426DE441E00BDBF8E /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = D8F854BC26DE441E00BDBF8E /* OFL.txt */; };
@@ -196,7 +194,6 @@
 		D8C5DE3F26E359CB00617F6D /* PickerSelectTypeTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerSelectTypeTranslator.swift; sourceTree = "<group>"; };
 		D8C5DE4226E35DCE00617F6D /* PickerSelectTypeRepositoryInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerSelectTypeRepositoryInterface.swift; sourceTree = "<group>"; };
 		D8C5DE4426E35E4300617F6D /* PickerSelectTypeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerSelectTypeRepository.swift; sourceTree = "<group>"; };
-		D8D1198526C7B2A500F9CD65 /* NendBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NendBannerView.swift; sourceTree = "<group>"; };
 		D8D16FF127733FE600C22E20 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8D16FF5277345C100C22E20 /* RootViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewHelper.swift; sourceTree = "<group>"; };
 		D8DB885126B962DA0057F807 /* UserDefaultsDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsDataStore.swift; sourceTree = "<group>"; };
@@ -206,7 +203,6 @@
 		D8ED9EB3269E798700AFE337 /* QuickSearchListRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuickSearchListRowView.swift; sourceTree = "<group>"; };
 		D8ED9EB5269E799000AFE337 /* QuickSearchListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuickSearchListView.swift; sourceTree = "<group>"; };
 		D8F12E7826B423D000118C63 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		D8F1495C26C7A12700F2C159 /* NendBannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NendBannerViewController.swift; sourceTree = "<group>"; };
 		D8F854B826DE441E00BDBF8E /* MPLUSRounded1c-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MPLUSRounded1c-Bold.ttf"; sourceTree = "<group>"; };
 		D8F854BA26DE441E00BDBF8E /* MPLUSRounded1c-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MPLUSRounded1c-Light.ttf"; sourceTree = "<group>"; };
 		D8F854BC26DE441E00BDBF8E /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
@@ -506,8 +502,7 @@
 		D8ADBBF826C4006E0003002F /* Advertisement */ = {
 			isa = PBXGroup;
 			children = (
-				D8D1198726C7B8CD00F9CD65 /* InterstitialAd */,
-				D8D1198826C7B8E900F9CD65 /* BannerAd */,
+				D8ADBBF926C400E10003002F /* NendInterstitialView.swift */,
 			);
 			path = Advertisement;
 			sourceTree = "<group>";
@@ -639,23 +634,6 @@
 				D86F6A31277370A800910B15 /* LocatePermissionAlertType.swift */,
 			);
 			path = Type;
-			sourceTree = "<group>";
-		};
-		D8D1198726C7B8CD00F9CD65 /* InterstitialAd */ = {
-			isa = PBXGroup;
-			children = (
-				D8ADBBF926C400E10003002F /* NendInterstitialView.swift */,
-			);
-			path = InterstitialAd;
-			sourceTree = "<group>";
-		};
-		D8D1198826C7B8E900F9CD65 /* BannerAd */ = {
-			isa = PBXGroup;
-			children = (
-				D8F1495C26C7A12700F2C159 /* NendBannerViewController.swift */,
-				D8D1198526C7B2A500F9CD65 /* NendBannerView.swift */,
-			);
-			path = BannerAd;
 			sourceTree = "<group>";
 		};
 		D8DB885026B962BE0057F807 /* DataStore */ = {
@@ -1041,7 +1019,6 @@
 				D889E16326AF09EA00F18681 /* LogoImage.swift in Sources */,
 				D81E428A26D255FA00DB5AD6 /* FavoriteRepository.swift in Sources */,
 				D8A25A972768DC7A00D9F92F /* PermissionButtonView.swift in Sources */,
-				D8F1495D26C7A12700F2C159 /* NendBannerViewController.swift in Sources */,
 				D8DB885226B962DA0057F807 /* UserDefaultsDataStore.swift in Sources */,
 				D8242669276C6ED800746EC0 /* LocationStatusType.swift in Sources */,
 				D8C5DE4526E35E4300617F6D /* PickerSelectTypeRepository.swift in Sources */,
@@ -1081,7 +1058,6 @@
 				D834146626CCFDFC002D7ED0 /* UserRepositoryInterface.swift in Sources */,
 				D8C5DE3C26E3489100617F6D /* RepositoryLocator.swift in Sources */,
 				D84E5C7B26D5DFFD00BB79CE /* FavoriteShopDetailInfoView.swift in Sources */,
-				D8D1198626C7B2A500F9CD65 /* NendBannerView.swift in Sources */,
 				D8FC157926B19DDA00B22408 /* MailView.swift in Sources */,
 				D8D16FF6277345C100C22E20 /* RootViewHelper.swift in Sources */,
 				D855048D269D0F1B0053334A /* HotPepperResponseResponse.swift in Sources */,
