@@ -14,17 +14,18 @@ struct MenuIconView: View {
     var body: some View {
         ZStack {
             color
-                .frame(width: 25, height: 25, alignment: .center)
-                .cornerRadius(3)
+                .frame(width: 30, height: 30, alignment: .center)
+                .cornerRadius(5)
+                .padding(.vertical, 5)
             Image(image)
                 .resizable()
-                .frame(width: 18, height: 18, alignment: .center)
+                .frame(width: 20, height: 20, alignment: .center)
         }
     }
 }
 
 struct MenuIconView_Previews: PreviewProvider {
     static var previews: some View {
-        MenuIconView(image: "github_icon", color: ColorManager.black)
+        MenuIconView(image: "twitter_icon", color: ColorManager.icon_blue)
     }
 }
