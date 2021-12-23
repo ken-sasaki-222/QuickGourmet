@@ -44,7 +44,7 @@ struct QuickSearchView: View {
                                         }
                                         .alert(isPresented: $isShowsAlert) {
                                             Alert(title: Text("確認"), message: Text("あなたの現在地から徒歩圏内のお店を検索するためには、位置情報がONである必要があります。"), dismissButton: .default(Text("OK")) {
-                                                quickSearchVM.goToLocationSetting()
+                                                locatePermissionVM.goToLocateSetting()
                                             })
                                         }
                                     }

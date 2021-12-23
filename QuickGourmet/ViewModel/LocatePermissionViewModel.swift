@@ -41,18 +41,18 @@ class LocatePermissionViewModel: NSObject, ObservableObject {
         return status
     }
 
-    func callRequestWhenInUse() {
+    private func callRequestWhenInUse() {
         locatePermissionRepository.callRequestWhenInUse { status in
             self.tapNextPageButton(status: status)
         }
     }
 
-    func callStartUpdateLocation() {
+    private func callStartUpdateLocation() {
         locatePermissionRepository.delegate = self
         locatePermissionRepository.callStartUpdateLocation()
     }
 
-    func notAllowedAction() {
+    func goToLocateSetting() {
         guard let url = URL(string: UIApplication.openSettingsURLString) else {
             return
         }
@@ -65,9 +65,9 @@ class LocatePermissionViewModel: NSObject, ObservableObject {
         case .notDetermined:
             callRequestWhenInUse()
         case .restricted:
-            notAllowedAction()
+            goToLocateSetting()
         case .denied:
-            notAllowedAction()
+            goToLocateSetting()
         case .authorizedAlways:
             callStartUpdateLocation()
         case .authorizedWhenInUse:
