@@ -35,7 +35,9 @@ class LocatePermissionRepository: LocatePermissionRepositoryInterface {
 }
 
 extension LocatePermissionRepository: LocatePermissionDataStoreDelegate {
-    func updatedLocation() {
+    func updatedLocation(lat: Double, lng: Double) {
+        userDefaultsDataStore.latitude = lat
+        userDefaultsDataStore.longitude = lng
         userDefaultsDataStore.locatePermission = true
         delegate?.updatedLocation()
     }

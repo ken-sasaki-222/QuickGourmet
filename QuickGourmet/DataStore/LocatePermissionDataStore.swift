@@ -8,7 +8,7 @@
 import CoreLocation
 
 protocol LocatePermissionDataStoreDelegate: AnyObject {
-    func updatedLocation()
+    func updatedLocation(lat: Double, lng: Double)
     func didFailUpdateLocation()
 }
 
@@ -70,10 +70,10 @@ class LocatePermissionDataStore: NSObject, CLLocationManagerDelegate {
             newLocation.coordinate.longitude
         )
 
-        print("緯度: ", location.latitude, "経度: ", location.longitude)
-
         locationManager.stopUpdatingLocation()
-        delegate?.updatedLocation()
+
+        print("緯度: ", location.latitude, "経度: ", location.longitude)
+        delegate?.updatedLocation(lat: location.latitude, lng: location.longitude)
     }
 
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
