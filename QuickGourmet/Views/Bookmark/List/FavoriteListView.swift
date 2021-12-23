@@ -22,7 +22,7 @@ struct FavoriteListView: View {
                         FavoriteListRowView(favoriteShopData: shopData)
                     }
                 }
-                .navigationTitle("ブックマーク一覧")
+                .navigationTitle("ブックマーク")
                 .navigationBarTitleDisplayMode(.inline)
                 .listStyle(PlainListStyle())
                 .onAppear {

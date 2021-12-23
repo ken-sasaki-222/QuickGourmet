@@ -19,8 +19,8 @@ struct TabBarView: View {
         TabView(selection: $section) {
             QuickSearchView()
                 .tabItem {
-                    Image(systemName: "magnifyingglass")
-                    Text("食いっく検索")
+                    Image(systemName: "house")
+                    Text("ホーム")
                 }
                 .tag(0)
             FavoriteListView()
@@ -29,6 +29,12 @@ struct TabBarView: View {
                     Text("ブックマーク")
                 }
                 .tag(1)
+            MenuView()
+                .tabItem {
+                    Image(systemName: "menucard")
+                    Text("メニュー")
+                }
+                .tag(2)
         }
         .accentColor(ColorManager.mainColor)
         .onAppear {
