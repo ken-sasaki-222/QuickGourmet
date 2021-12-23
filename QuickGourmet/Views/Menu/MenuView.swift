@@ -13,6 +13,7 @@ struct MenuView: View {
     @State private var isShowMailView = false
     @State private var isShowsAlert = false
     private let menuVM = HamburgerMenuViewModel()
+    private let locatePermissionVM = LocatePermissionViewModel()
 
     init() {
         NavigationManager().setNavigation()
@@ -28,7 +29,7 @@ struct MenuView: View {
                             isShowMailView = true
                         }) {
                             Text("ご意見・ご要望")
-                                .font(.custom(FontManager.Mplus.regular, size: 13))
+                                .font(.custom(FontManager.Mplus.regular, size: 16))
                                 .foregroundColor(ColorManager.font_light_dark)
                         }
                         .disabled(!MFMailComposeViewController.canSendMail())
@@ -42,7 +43,19 @@ struct MenuView: View {
                             menuVM.shareOnTwitter()
                         }) {
                             Text("シェア")
-                                .font(.custom(FontManager.Mplus.regular, size: 13))
+                                .font(.custom(FontManager.Mplus.regular, size: 16))
+                                .foregroundColor(ColorManager.font_light_dark)
+                        }
+                    }
+                }
+                Section(header: Text("設定")) {
+                    HStack {
+                        MenuIconView(image: "pin_icon", color: ColorManager.icon_green)
+                        Button(action: {
+                            locatePermissionVM.goToLocateSetting()
+                        }) {
+                            Text("位置情報設定")
+                                .font(.custom(FontManager.Mplus.regular, size: 16))
                                 .foregroundColor(ColorManager.font_light_dark)
                         }
                     }
@@ -54,27 +67,7 @@ struct MenuView: View {
                             menuVM.goToDeveloperSNSPage(snsString: "twitter")
                         }) {
                             Text("Twitter")
-                                .font(.custom(FontManager.Mplus.regular, size: 13))
-                                .foregroundColor(ColorManager.font_light_dark)
-                        }
-                    }
-                    HStack {
-                        MenuIconView(image: "github_icon", color: ColorManager.black)
-                        Button(action: {
-                            menuVM.goToDeveloperSNSPage(snsString: "gitHub")
-                        }) {
-                            Text("GitHub")
-                                .font(.custom(FontManager.Mplus.regular, size: 13))
-                                .foregroundColor(ColorManager.font_light_dark)
-                        }
-                    }
-                    HStack {
-                        MenuIconView(image: "qiita_icon", color: ColorManager.icon_green)
-                        Button(action: {
-                            menuVM.goToDeveloperSNSPage(snsString: "qiita")
-                        }) {
-                            Text("Qiita")
-                                .font(.custom(FontManager.Mplus.regular, size: 13))
+                                .font(.custom(FontManager.Mplus.regular, size: 16))
                                 .foregroundColor(ColorManager.font_light_dark)
                         }
                     }
@@ -83,7 +76,7 @@ struct MenuView: View {
                     HStack {
                         MenuIconView(image: "version_icon", color: ColorManager.icon_purple)
                         Text("バージョン 1.0.3")
-                            .font(.custom(FontManager.Mplus.regular, size: 13))
+                            .font(.custom(FontManager.Mplus.regular, size: 16))
                             .foregroundColor(ColorManager.font_light_dark)
                     }
                 }
