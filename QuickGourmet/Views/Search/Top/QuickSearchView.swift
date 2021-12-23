@@ -11,10 +11,6 @@ struct QuickSearchView: View {
     @State private var isTapActive = false
     @State private var isShowsAlert = false
     @State private var isShowsPopUp = false
-    @State private var isShowsLocationSettingView = false
-    @State private var currentOffset = CGFloat()
-    @State private var closeOffset = CGFloat()
-    @State private var openOffset = CGFloat()
     @State private var index = 0
     private let quickSearchVM = QuickSearchViewModel()
     private let locatePermissionVM = LocatePermissionViewModel()
@@ -52,19 +48,6 @@ struct QuickSearchView: View {
                                 }
                                 .navigationTitle("食いっく検索")
                                 .navigationBarTitleDisplayMode(.inline)
-                                .navigationBarItems(leading: Button(action: {
-                                    toggleHamburgerMenu()
-                                }) {
-                                    Image("hamburger_menu_icon")
-                                        .resizable()
-                                        .frame(width: 20, height: 20)
-                                })
-                            }
-                            ColorManager.black.opacity(Double((closeOffset - currentOffset) / closeOffset) - 0.1
-                            )
-                            .edgesIgnoringSafeArea(.all)
-                            .onTapGesture {
-                                toggleHamburgerMenu()
                             }
                         }
                     }
@@ -78,33 +61,9 @@ struct QuickSearchView: View {
                     communicateQuickSearchVM(index: index, selection: selection)
                     isTapActive = true
                 })
-                MenuView()
-                    .frame(width: geometry.size.width * 0.5)
-                    .onAppear(perform: {
-                        setHumburgerMenuPosition(viewWidth: geometry.size.width)
-                    })
-                    .offset(x: self.currentOffset)
-                    .animation(.default)
-            }
-            .fullScreenCover(isPresented: $isShowsLocationSettingView) {
-                LocatePermissionView()
             }
         }
         .accentColor(ColorManager.font_white)
-    }
-
-    private func setHumburgerMenuPosition(viewWidth: CGFloat) {
-        currentOffset = (viewWidth / 2) * -1 + ((viewWidth * 0.5) / 2) * -1
-        closeOffset = currentOffset
-        openOffset = ((viewWidth / 2) * -1) + ((viewWidth * 0.5) / 2)
-    }
-
-    private func toggleHamburgerMenu() {
-        if currentOffset == closeOffset {
-            currentOffset = openOffset
-        } else {
-            currentOffset = closeOffset
-        }
     }
 
     private func communicateQuickSearchVM(index: Int, selection: Int) {
