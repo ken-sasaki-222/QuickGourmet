@@ -78,7 +78,7 @@ struct QuickSearchView: View {
                     communicateQuickSearchVM(index: index, selection: selection)
                     isTapActive = true
                 })
-                HamburgerMenuView()
+                MenuView()
                     .frame(width: geometry.size.width * 0.5)
                     .onAppear(perform: {
                         setHumburgerMenuPosition(viewWidth: geometry.size.width)

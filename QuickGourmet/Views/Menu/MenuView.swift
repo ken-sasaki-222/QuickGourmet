@@ -9,7 +9,7 @@ import MessageUI
 import StoreKit
 import SwiftUI
 
-struct HamburgerMenuView: View {
+struct MenuView: View {
     @State private var isShowMailView = false
     @State private var isShowsAlert = false
     private let menuVM = HamburgerMenuViewModel()
@@ -89,6 +89,6 @@ struct HamburgerMenuView: View {
 
 struct MenuView_Previews: PreviewProvider {
     static var previews: some View {
-        HamburgerMenuView()
+        MenuView()
     }
 }
