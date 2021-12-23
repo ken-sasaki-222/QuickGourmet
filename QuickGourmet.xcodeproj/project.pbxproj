@@ -364,14 +364,6 @@
 			path = Map;
 			sourceTree = "<group>";
 		};
-		D83EF2C926DCD64E0022868E /* Color */ = {
-			isa = PBXGroup;
-			children = (
-				D83EF2CA26DCD66D0022868E /* ColorManager.swift */,
-			);
-			path = Color;
-			sourceTree = "<group>";
-		};
 		D8550485269D0B8B0053334A /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -453,9 +445,7 @@
 				D8FC157726B19DA700B22408 /* Mail */,
 				D8ADBBF826C4006E0003002F /* Advertisement */,
 				D8E300A326CE89160032B666 /* Indicator */,
-				D83EF2C926DCD64E0022868E /* Color */,
-				D8F854C726DE461400BDBF8E /* Font */,
-				D8AE32CA26DF0E5900FDD2B8 /* Navigation */,
+				D8AE32CA26DF0E5900FDD2B8 /* Manager */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -503,12 +493,14 @@
 			path = Advertisement;
 			sourceTree = "<group>";
 		};
-		D8AE32CA26DF0E5900FDD2B8 /* Navigation */ = {
+		D8AE32CA26DF0E5900FDD2B8 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				D83EF2CA26DCD66D0022868E /* ColorManager.swift */,
+				D8F854C826DE463500BDBF8E /* FontManager.swift */,
 				D8AE32CB26DF0E7C00FDD2B8 /* NavigationManager .swift */,
 			);
-			path = Navigation;
+			path = Manager;
 			sourceTree = "<group>";
 		};
 		D8BA117B269661460007DCE5 = {
@@ -688,15 +680,6 @@
 			path = M_PLUS_Rounded_1c;
 			sourceTree = "<group>";
 			usesTabs = 0;
-		};
-		D8F854C726DE461400BDBF8E /* Font */ = {
-			isa = PBXGroup;
-			children = (
-				D8F854C826DE463500BDBF8E /* FontManager.swift */,
-			);
-			name = Font;
-			path = ../Font;
-			sourceTree = "<group>";
 		};
 		D8FC157726B19DA700B22408 /* Mail */ = {
 			isa = PBXGroup;
