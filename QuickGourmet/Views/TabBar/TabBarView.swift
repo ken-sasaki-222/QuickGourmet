@@ -9,6 +9,7 @@ import SwiftUI
 
 struct TabBarView: View {
     @State private var section = 0
+    private let locatePermissionVM = LocatePermissionViewModel()
 
     init() {
         setTabBar()
@@ -30,6 +31,16 @@ struct TabBarView: View {
                 .tag(1)
         }
         .accentColor(ColorManager.mainColor)
+        .onAppear {
+            DispatchQueue.main.async {
+                switch locatePermissionVM.openLocatePermissionViewEnabled {
+                case true:
+                    RootViewHelper.shared.changeRootView(rootView: .location)
+                case false:
+                    return
+                }
+            }
+        }
     }
 
     private func setTabBar() {

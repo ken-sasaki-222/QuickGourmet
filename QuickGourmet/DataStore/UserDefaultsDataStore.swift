@@ -9,8 +9,9 @@ import Foundation
 
 class UserDefaultsDataStore {
     enum UserDefaultsKey: String {
-        case latitudeInformation = "latitude_information"
-        case longitudeInformation = "longitude_information"
+        case latitude
+        case longitude
+        case locationSaved
         case launchCount = "launch_count"
         case shopDetailLaunchCount = "shopdetail_launchcount"
         case favoriteShopDetailLaunchCount = "favoriteshopdetail_launchcount"
@@ -19,79 +20,88 @@ class UserDefaultsDataStore {
         case deviceId = "device_id"
     }
 
-    var defalts: UserDefaults {
+    var defaults: UserDefaults {
         UserDefaults.standard
     }
 
-    var latitudeInformation: Double {
+    var latitude: Double {
         get {
-            defalts.double(forKey: UserDefaultsKey.latitudeInformation.rawValue)
+            defaults.double(forKey: UserDefaultsKey.latitude.rawValue)
         }
         set(newValue) {
-            defalts.setValue(newValue, forKey: UserDefaultsKey.latitudeInformation.rawValue)
+            defaults.setValue(newValue, forKey: UserDefaultsKey.latitude.rawValue)
         }
     }
 
-    var longitudeInformation: Double {
+    var longitude: Double {
         get {
-            defalts.double(forKey: UserDefaultsKey.longitudeInformation.rawValue)
+            defaults.double(forKey: UserDefaultsKey.longitude.rawValue)
         }
         set(newValue) {
-            defalts.setValue(newValue, forKey: UserDefaultsKey.longitudeInformation.rawValue)
+            defaults.setValue(newValue, forKey: UserDefaultsKey.longitude.rawValue)
+        }
+    }
+
+    var locatePermission: Bool {
+        get {
+            defaults.bool(forKey: UserDefaultsKey.locationSaved.rawValue)
+        }
+        set(newValue) {
+            defaults.set(newValue, forKey: UserDefaultsKey.locationSaved.rawValue)
         }
     }
 
     var launchCount: Int {
         get {
-            defalts.integer(forKey: UserDefaultsKey.launchCount.rawValue)
+            defaults.integer(forKey: UserDefaultsKey.launchCount.rawValue)
         }
         set(newValue) {
-            defalts.setValue(newValue + 1, forKey: UserDefaultsKey.launchCount.rawValue)
+            defaults.setValue(newValue + 1, forKey: UserDefaultsKey.launchCount.rawValue)
         }
     }
 
     var shopDetailLaunchCount: Int {
         get {
-            defalts.integer(forKey: UserDefaultsKey.shopDetailLaunchCount.rawValue)
+            defaults.integer(forKey: UserDefaultsKey.shopDetailLaunchCount.rawValue)
         }
         set(newValue) {
-            defalts.setValue(newValue + 1, forKey: UserDefaultsKey.shopDetailLaunchCount.rawValue)
+            defaults.setValue(newValue + 1, forKey: UserDefaultsKey.shopDetailLaunchCount.rawValue)
         }
     }
 
     var favoriteShopDetailLaunchCount: Int {
         get {
-            defalts.integer(forKey: UserDefaultsKey.favoriteShopDetailLaunchCount.rawValue)
+            defaults.integer(forKey: UserDefaultsKey.favoriteShopDetailLaunchCount.rawValue)
         }
         set(newValue) {
-            defalts.setValue(newValue + 1, forKey: UserDefaultsKey.favoriteShopDetailLaunchCount.rawValue)
+            defaults.setValue(newValue + 1, forKey: UserDefaultsKey.favoriteShopDetailLaunchCount.rawValue)
         }
     }
 
     var searchListLaunchCount: Int {
         get {
-            defalts.integer(forKey: UserDefaultsKey.searchListLaunchCount.rawValue)
+            defaults.integer(forKey: UserDefaultsKey.searchListLaunchCount.rawValue)
         }
         set(newValue) {
-            defalts.setValue(newValue + 1, forKey: UserDefaultsKey.searchListLaunchCount.rawValue)
+            defaults.setValue(newValue + 1, forKey: UserDefaultsKey.searchListLaunchCount.rawValue)
         }
     }
 
     var favoriteListLaunchCount: Int {
         get {
-            defalts.integer(forKey: UserDefaultsKey.favoriteListLaunchCount.rawValue)
+            defaults.integer(forKey: UserDefaultsKey.favoriteListLaunchCount.rawValue)
         }
         set(newValue) {
-            defalts.setValue(newValue + 1, forKey: UserDefaultsKey.favoriteListLaunchCount.rawValue)
+            defaults.setValue(newValue + 1, forKey: UserDefaultsKey.favoriteListLaunchCount.rawValue)
         }
     }
 
     var deviceId: String {
         get {
-            defalts.string(forKey: UserDefaultsKey.deviceId.rawValue) ?? ""
+            defaults.string(forKey: UserDefaultsKey.deviceId.rawValue) ?? ""
         }
         set(newValue) {
-            defalts.set(newValue, forKey: UserDefaultsKey.deviceId.rawValue)
+            defaults.set(newValue, forKey: UserDefaultsKey.deviceId.rawValue)
         }
     }
 }

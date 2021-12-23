@@ -7,7 +7,6 @@
 
 import AdSupport
 import AppTrackingTransparency
-import Foundation
 import StoreKit
 import SwiftUI
 
@@ -81,12 +80,6 @@ class QuickSearchViewModel: NSObject, ObservableObject {
             }
         } catch {
             self.error = error
-        }
-    }
-
-    func goToLocationSetting() {
-        if let url = URL(string: "app-settings:root=General&path=com.ken.QuickGourmet") {
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
     }
 

@@ -12,19 +12,28 @@ class UserRepository: UserRepositoryInterface {
 
     var latitude: Double {
         get {
-            userDefaultsDataStore.latitudeInformation
+            userDefaultsDataStore.latitude
         }
         set(newValue) {
-            userDefaultsDataStore.latitudeInformation = newValue
+            userDefaultsDataStore.latitude = newValue
         }
     }
 
     var longitude: Double {
         get {
-            userDefaultsDataStore.longitudeInformation
+            userDefaultsDataStore.longitude
         }
         set(newValue) {
-            userDefaultsDataStore.longitudeInformation = newValue
+            userDefaultsDataStore.longitude = newValue
+        }
+    }
+
+    var locatePermission: Bool {
+        get {
+            userDefaultsDataStore.locatePermission
+        }
+        set(newValue) {
+            userDefaultsDataStore.locatePermission = newValue
         }
     }
 
