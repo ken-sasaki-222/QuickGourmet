@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+protocol AppTrackingTransparencyRepositoryInterface {
+    func requestAuthorization(complication: @escaping () -> Void)
+    func getAuthorizationStatus() -> AppTrackingTransparencyStatusType
+}

@@ -35,4 +35,8 @@ class RepositoryLocator: NSObject {
     static func getLocatePermissionRepository() -> LocatePermissionRepositoryInterface {
         LocatePermissionRepository()
     }
+    
+    static func getAppTrackingTransparencyRepository() -> AppTrackingTransparencyRepositoryInterface {
+        AppTrackingTransparencyRepository()
+    }
 }
