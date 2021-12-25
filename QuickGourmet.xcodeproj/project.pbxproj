@@ -19,9 +19,9 @@
 		D81D05922774AD2700FED1B4 /* AppTrackingTransparencyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81D05912774AD2700FED1B4 /* AppTrackingTransparencyRepository.swift */; };
 		D81D05942774AD3200FED1B4 /* AppTrackingTransparencyRepositoryInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81D05932774AD3200FED1B4 /* AppTrackingTransparencyRepositoryInterface.swift */; };
 		D81D05962774AD5100FED1B4 /* AppTrackingTransparencyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81D05952774AD5100FED1B4 /* AppTrackingTransparencyViewModel.swift */; };
-		D81D05982774AD7300FED1B4 /* AppTrackingTransparencyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81D05972774AD7300FED1B4 /* AppTrackingTransparencyView.swift */; };
 		D81D059A2777062700FED1B4 /* AppTrackingTransparencyStatusTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81D05992777062700FED1B4 /* AppTrackingTransparencyStatusTranslator.swift */; };
 		D81D059C2777068C00FED1B4 /* AppTrackingTransparencyStatusType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81D059B2777068C00FED1B4 /* AppTrackingTransparencyStatusType.swift */; };
+		D81D059E2777091E00FED1B4 /* AppTrackingTransparencyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81D059D2777091E00FED1B4 /* AppTrackingTransparencyView.swift */; };
 		D81E428226D21FD100DB5AD6 /* FavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81E428126D21FD100DB5AD6 /* FavoriteButton.swift */; };
 		D81E428526D23F7800DB5AD6 /* FavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81E428426D23F7800DB5AD6 /* FavoriteViewModel.swift */; };
 		D81E428826D255A000DB5AD6 /* FavoriteRepositoryInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81E428726D255A000DB5AD6 /* FavoriteRepositoryInterface.swift */; };
@@ -137,9 +137,9 @@
 		D81D05912774AD2700FED1B4 /* AppTrackingTransparencyRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTrackingTransparencyRepository.swift; sourceTree = "<group>"; };
 		D81D05932774AD3200FED1B4 /* AppTrackingTransparencyRepositoryInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTrackingTransparencyRepositoryInterface.swift; sourceTree = "<group>"; };
 		D81D05952774AD5100FED1B4 /* AppTrackingTransparencyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTrackingTransparencyViewModel.swift; sourceTree = "<group>"; };
-		D81D05972774AD7300FED1B4 /* AppTrackingTransparencyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTrackingTransparencyView.swift; sourceTree = "<group>"; };
 		D81D05992777062700FED1B4 /* AppTrackingTransparencyStatusTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTrackingTransparencyStatusTranslator.swift; sourceTree = "<group>"; };
 		D81D059B2777068C00FED1B4 /* AppTrackingTransparencyStatusType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTrackingTransparencyStatusType.swift; sourceTree = "<group>"; };
+		D81D059D2777091E00FED1B4 /* AppTrackingTransparencyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTrackingTransparencyView.swift; sourceTree = "<group>"; };
 		D81E428126D21FD100DB5AD6 /* FavoriteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteButton.swift; sourceTree = "<group>"; };
 		D81E428426D23F7800DB5AD6 /* FavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModel.swift; sourceTree = "<group>"; };
 		D81E428726D255A000DB5AD6 /* FavoriteRepositoryInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRepositoryInterface.swift; sourceTree = "<group>"; };
@@ -463,7 +463,6 @@
 				D8ADBBF826C4006E0003002F /* Advertisement */,
 				D8E300A326CE89160032B666 /* Indicator */,
 				D8AE32CA26DF0E5900FDD2B8 /* Manager */,
-				D81D05972774AD7300FED1B4 /* AppTrackingTransparencyView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -488,6 +487,7 @@
 			isa = PBXGroup;
 			children = (
 				D8A25A932768D56700D9F92F /* LocatePermissionView.swift */,
+				D81D059D2777091E00FED1B4 /* AppTrackingTransparencyView.swift */,
 			);
 			path = Location;
 			sourceTree = "<group>";
@@ -1045,7 +1045,6 @@
 				D8BD193026B8282B00E0BBCB /* QuickSearchRowView.swift in Sources */,
 				D826E54827741AC600D02E2B /* FirebaseHelper.swift in Sources */,
 				D8A25A8C2768D45E00D9F92F /* LocatePermissionRepository.swift in Sources */,
-				D81D05982774AD7300FED1B4 /* AppTrackingTransparencyView.swift in Sources */,
 				D8ADBBFA26C400E10003002F /* NendInterstitialView.swift in Sources */,
 				D897A27426F49E4900496839 /* ShopRepositoryInterface.swift in Sources */,
 				D8F854C926DE463500BDBF8E /* FontManager.swift in Sources */,
@@ -1068,6 +1067,7 @@
 				D8FC157926B19DDA00B22408 /* MailView.swift in Sources */,
 				D8D16FF6277345C100C22E20 /* RootViewHelper.swift in Sources */,
 				D855048D269D0F1B0053334A /* HotPepperResponseResponse.swift in Sources */,
+				D81D059E2777091E00FED1B4 /* AppTrackingTransparencyView.swift in Sources */,
 				D88426FA26AA7B680073B3F2 /* SafariView.swift in Sources */,
 				D87C9C392696FDB70051FA77 /* TabBarView.swift in Sources */,
 				D8AE32CC26DF0E7C00FDD2B8 /* NavigationManager .swift in Sources */,
