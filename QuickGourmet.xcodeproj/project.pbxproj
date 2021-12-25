@@ -20,6 +20,8 @@
 		D81D05942774AD3200FED1B4 /* AppTrackingTransparencyRepositoryInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81D05932774AD3200FED1B4 /* AppTrackingTransparencyRepositoryInterface.swift */; };
 		D81D05962774AD5100FED1B4 /* AppTrackingTransparencyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81D05952774AD5100FED1B4 /* AppTrackingTransparencyViewModel.swift */; };
 		D81D05982774AD7300FED1B4 /* AppTrackingTransparencyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81D05972774AD7300FED1B4 /* AppTrackingTransparencyView.swift */; };
+		D81D059A2777062700FED1B4 /* AppTrackingTransparencyStatusTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81D05992777062700FED1B4 /* AppTrackingTransparencyStatusTranslator.swift */; };
+		D81D059C2777068C00FED1B4 /* AppTrackingTransparencyStatusType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81D059B2777068C00FED1B4 /* AppTrackingTransparencyStatusType.swift */; };
 		D81E428226D21FD100DB5AD6 /* FavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81E428126D21FD100DB5AD6 /* FavoriteButton.swift */; };
 		D81E428526D23F7800DB5AD6 /* FavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81E428426D23F7800DB5AD6 /* FavoriteViewModel.swift */; };
 		D81E428826D255A000DB5AD6 /* FavoriteRepositoryInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81E428726D255A000DB5AD6 /* FavoriteRepositoryInterface.swift */; };
@@ -136,6 +138,8 @@
 		D81D05932774AD3200FED1B4 /* AppTrackingTransparencyRepositoryInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTrackingTransparencyRepositoryInterface.swift; sourceTree = "<group>"; };
 		D81D05952774AD5100FED1B4 /* AppTrackingTransparencyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTrackingTransparencyViewModel.swift; sourceTree = "<group>"; };
 		D81D05972774AD7300FED1B4 /* AppTrackingTransparencyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTrackingTransparencyView.swift; sourceTree = "<group>"; };
+		D81D05992777062700FED1B4 /* AppTrackingTransparencyStatusTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTrackingTransparencyStatusTranslator.swift; sourceTree = "<group>"; };
+		D81D059B2777068C00FED1B4 /* AppTrackingTransparencyStatusType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTrackingTransparencyStatusType.swift; sourceTree = "<group>"; };
 		D81E428126D21FD100DB5AD6 /* FavoriteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteButton.swift; sourceTree = "<group>"; };
 		D81E428426D23F7800DB5AD6 /* FavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModel.swift; sourceTree = "<group>"; };
 		D81E428726D255A000DB5AD6 /* FavoriteRepositoryInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRepositoryInterface.swift; sourceTree = "<group>"; };
@@ -577,6 +581,7 @@
 			children = (
 				D8C5DE2E26E332EC00617F6D /* GenreTypeTranslator.swift */,
 				D8C5DE3F26E359CB00617F6D /* PickerSelectTypeTranslator.swift */,
+				D81D05992777062700FED1B4 /* AppTrackingTransparencyStatusTranslator.swift */,
 			);
 			path = Translator;
 			sourceTree = "<group>";
@@ -633,6 +638,7 @@
 				D8C5DE3D26E3594200617F6D /* PickerSelectType.swift */,
 				D8242668276C6ED800746EC0 /* LocationStatusType.swift */,
 				D86F6A31277370A800910B15 /* LocatePermissionAlertType.swift */,
+				D81D059B2777068C00FED1B4 /* AppTrackingTransparencyStatusType.swift */,
 			);
 			path = Type;
 			sourceTree = "<group>";
@@ -1008,6 +1014,7 @@
 				D897A27026F49E2000496839 /* ShopSearchRepository.swift in Sources */,
 				D87B8C3D26B045EF00BB945C /* HamburgerMenuViewModel.swift in Sources */,
 				D828135A2764B049002F1DF1 /* FavoriteDataStore.swift in Sources */,
+				D81D059A2777062700FED1B4 /* AppTrackingTransparencyStatusTranslator.swift in Sources */,
 				D81D05962774AD5100FED1B4 /* AppTrackingTransparencyViewModel.swift in Sources */,
 				D826E54627741A6000D02E2B /* ApiKey.swift in Sources */,
 				D80803E726D49E93009FACC8 /* MockFavoriteShopData.swift in Sources */,
@@ -1015,6 +1022,7 @@
 				D81E428A26D255FA00DB5AD6 /* FavoriteRepository.swift in Sources */,
 				D8A25A972768DC7A00D9F92F /* PermissionButtonView.swift in Sources */,
 				D826E54A27741D4800D02E2B /* ImageDownloadHelper.swift in Sources */,
+				D81D059C2777068C00FED1B4 /* AppTrackingTransparencyStatusType.swift in Sources */,
 				D8DB885226B962DA0057F807 /* UserDefaultsDataStore.swift in Sources */,
 				D8242669276C6ED800746EC0 /* LocationStatusType.swift in Sources */,
 				D8C5DE4526E35E4300617F6D /* PickerSelectTypeRepository.swift in Sources */,
