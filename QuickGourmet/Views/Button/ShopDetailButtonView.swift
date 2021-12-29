@@ -12,8 +12,16 @@ struct ShopDetailButtonView: View {
     var shopUrlString: String
 
     var body: some View {
-        SearchButtonView(text: "お店へ連絡") {
+        Button(action: {
             self.isShown = true
+        }) {
+            Text("お店へ連絡")
+                .foregroundColor(ColorManager.font_white)
+                .font(.custom(FontManager.Mplus.medium, size: 18))
+                .frame(width: 300, height: 44, alignment: .center)
+                .background(ColorManager.mainColor)
+                .cornerRadius(100)
+                .lineLimit(1)
         }
         .sheet(isPresented: $isShown) {
             if let url = URL(string: shopUrlString) {

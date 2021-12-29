@@ -20,21 +20,21 @@ let mockShopesData: [HotPepperResponse] = [
                                                    lng: 139.6968179396,
                                                    logoImage: "https://imgfp.hotp.jp/IMGH/55/97/P036825597/P036825597_69.jpg",
                                                    budget: Shop.Budget(
-                                                    average: "3000円（通常平均）/4000円（飲み放題付き宴会平均）",
-                                                    name: "3001～4000円"
+                                                       average: "3000円（通常平均）/4000円（飲み放題付き宴会平均）",
+                                                       name: "3001～4000円"
                                                    ),
                                                    genre: Shop.Genre(
-                                                    catch: "渋谷 -焼肉食べ放題- 黒毛和牛食べ放題95品",
-                                                         code: "G008",
-                                                         name: "焼肉・ホルモン"
+                                                       catch: "渋谷 -焼肉食べ放題- 黒毛和牛食べ放題95品",
+                                                       code: "G008",
+                                                       name: "焼肉・ホルモン"
                                                    ),
                                                    photo: Shop.Photo(
-                                                    pc: Shop.Pc(
-                                                        l: "https://imgfp.hotp.jp/IMGH/54/14/P037425414/P037425414_238.jpg",
-                                                        s: "https://imgfp.hotp.jp/IMGH/54/14/P037425414/P037425414_58_s.jpg"
-                                                    )),
+                                                       pc: Shop.Pc(
+                                                           l: "https://imgfp.hotp.jp/IMGH/54/14/P037425414/P037425414_238.jpg",
+                                                           s: "https://imgfp.hotp.jp/IMGH/54/14/P037425414/P037425414_58_s.jpg"
+                                                       )),
                                                    urls: Shop.Urls(pc: "https://www.hotpepper.jp/strJ001265507/?vos=nhppalsa000016"))])),
-    
+
     HotPepperResponse(results: Results(shop: [Shop(id: "J001249388",
                                                    name: "蔵玄 恵比寿",
                                                    address: "東京都渋谷区渋谷３-18-5佐藤エステートビル新館４F",
@@ -44,21 +44,21 @@ let mockShopesData: [HotPepperResponse] = [
                                                    lng: 139.708788282,
                                                    logoImage: "https://imgfp.hotp.jp/IMGH/55/97/P036825597/P036825597_69.jpg",
                                                    budget: Shop.Budget(
-                                                    average: "3,500円(ディナー)★飲み放題付き宴会コースは4,500円～",
-                                                    name: "3001～4000円"
+                                                       average: "3,500円(ディナー)★飲み放題付き宴会コースは4,500円～",
+                                                       name: "3001～4000円"
                                                    ),
                                                    genre: Shop.Genre(
-                                                    catch: "駅近徒歩1分/落ち着いた和食処",
-                                                         code: "G001",
-                                                         name: "居酒屋"
+                                                       catch: "駅近徒歩1分/落ち着いた和食処",
+                                                       code: "G001",
+                                                       name: "居酒屋"
                                                    ),
                                                    photo: Shop.Photo(
-                                                    pc: Shop.Pc(
-                                                        l: "https://imgfp.hotp.jp/IMGH/16/96/P036211696/P036211696_238.jpg",
-                                                        s: "https://imgfp.hotp.jp/IMGH/16/96/P036211696/P036211696_58_s.jpg"
-                                                    )),
+                                                       pc: Shop.Pc(
+                                                           l: "https://imgfp.hotp.jp/IMGH/16/96/P036211696/P036211696_238.jpg",
+                                                           s: "https://imgfp.hotp.jp/IMGH/16/96/P036211696/P036211696_58_s.jpg"
+                                                       )),
                                                    urls: Shop.Urls(pc: "https://www.hotpepper.jp/strJ001249388/?vos=nhppalsa000016"))])),
-    
+
     HotPepperResponse(results: Results(shop: [Shop(id: "J001041763",
                                                    name: "安安 渋谷宮益坂店",
                                                    address: "東京都渋谷区渋谷３-18-5佐藤エステートビル新館４F",
@@ -68,21 +68,21 @@ let mockShopesData: [HotPepperResponse] = [
                                                    lng: 139.7036860089,
                                                    logoImage: "https://imgfp.hotp.jp/IMGH/55/97/P036825597/P036825597_69.jpg",
                                                    budget: Shop.Budget(
-                                                    average: "2200円 　「お通し代」「席代」「入場料」は頂いておりません。",
-                                                    name: "2001～3000円"
+                                                       average: "2200円 　「お通し代」「席代」「入場料」は頂いておりません。",
+                                                       name: "2001～3000円"
                                                    ),
                                                    genre: Shop.Genre(
-                                                    catch: "本格七輪焼肉　食べ放題　飲み放題",
-                                                         code: "G008",
-                                                         name: "焼肉・ホルモン"
+                                                       catch: "本格七輪焼肉　食べ放題　飲み放題",
+                                                       code: "G008",
+                                                       name: "焼肉・ホルモン"
                                                    ),
                                                    photo: Shop.Photo(
-                                                    pc: Shop.Pc(
-                                                        l: "https://imgfp.hotp.jp/IMGH/31/63/P038083163/P038083163_238.jpg",
-                                                        s: "https://imgfp.hotp.jp/IMGH/31/63/P038083163/P038083163_58_s.jpg"
-                                                    )),
+                                                       pc: Shop.Pc(
+                                                           l: "https://imgfp.hotp.jp/IMGH/31/63/P038083163/P038083163_238.jpg",
+                                                           s: "https://imgfp.hotp.jp/IMGH/31/63/P038083163/P038083163_58_s.jpg"
+                                                       )),
                                                    urls: Shop.Urls(pc: "https://www.hotpepper.jp/strJ001041763/?vos=nhppalsa000016"))])),
-    
+
     HotPepperResponse(results: Results(shop: [Shop(id: "J001265507",
                                                    name: "焼肉少年團 渋谷店",
                                                    address: "東京都渋谷区渋谷３-18-5佐藤エステートビル新館４F",
@@ -92,21 +92,21 @@ let mockShopesData: [HotPepperResponse] = [
                                                    lng: 139.6968179396,
                                                    logoImage: "https://imgfp.hotp.jp/IMGH/55/97/P036825597/P036825597_69.jpg",
                                                    budget: Shop.Budget(
-                                                    average: "3000円（通常平均）/4000円（飲み放題付き宴会平均）",
-                                                    name: "3001～4000円"
+                                                       average: "3000円（通常平均）/4000円（飲み放題付き宴会平均）",
+                                                       name: "3001～4000円"
                                                    ),
                                                    genre: Shop.Genre(
-                                                    catch: "渋谷 -焼肉食べ放題- 黒毛和牛食べ放題95品",
-                                                         code: "G008",
-                                                         name: "焼肉・ホルモン"
+                                                       catch: "渋谷 -焼肉食べ放題- 黒毛和牛食べ放題95品",
+                                                       code: "G008",
+                                                       name: "焼肉・ホルモン"
                                                    ),
                                                    photo: Shop.Photo(
-                                                    pc: Shop.Pc(
-                                                        l: "https://imgfp.hotp.jp/IMGH/54/14/P037425414/P037425414_238.jpg",
-                                                        s: "https://imgfp.hotp.jp/IMGH/54/14/P037425414/P037425414_58_s.jpg"
-                                                    )),
+                                                       pc: Shop.Pc(
+                                                           l: "https://imgfp.hotp.jp/IMGH/54/14/P037425414/P037425414_238.jpg",
+                                                           s: "https://imgfp.hotp.jp/IMGH/54/14/P037425414/P037425414_58_s.jpg"
+                                                       )),
                                                    urls: Shop.Urls(pc: "https://www.hotpepper.jp/strJ001265507/?vos=nhppalsa000016"))])),
-    
+
     HotPepperResponse(results: Results(shop: [Shop(id: "J001275168",
                                                    name: "肉のち晴れ 渋谷肉横丁",
                                                    address: "東京都渋谷区渋谷３-18-5佐藤エステートビル新館４F",
@@ -116,18 +116,18 @@ let mockShopesData: [HotPepperResponse] = [
                                                    lng: 139.6983994704,
                                                    logoImage: "https://imgfp.hotp.jp/IMGH/55/97/P036825597/P036825597_69.jpg",
                                                    budget: Shop.Budget(
-                                                    average: "コース平均2980円　/　アラカルト平均3000円　◎食べ放題有り◎",
-                                                    name: "2001～3000円"
+                                                       average: "コース平均2980円　/　アラカルト平均3000円　◎食べ放題有り◎",
+                                                       name: "2001～3000円"
                                                    ),
                                                    genre: Shop.Genre(
-                                                    catch: "黒毛和牛ハンバーグ/肉料理/人気の韓国焼酎",
-                                                         code: "G002",
-                                                         name: "焼肉・ホルモン"
+                                                       catch: "黒毛和牛ハンバーグ/肉料理/人気の韓国焼酎",
+                                                       code: "G002",
+                                                       name: "焼肉・ホルモン"
                                                    ),
                                                    photo: Shop.Photo(
-                                                    pc: Shop.Pc(
-                                                        l: "https://imgfp.hotp.jp/IMGH/65/93/P038056593/P038056593_238.jpg",
-                                                        s: "https://imgfp.hotp.jp/IMGH/54/14/P037425414/P037425414_58_s.jpg"
-                                                    )),
+                                                       pc: Shop.Pc(
+                                                           l: "https://imgfp.hotp.jp/IMGH/65/93/P038056593/P038056593_238.jpg",
+                                                           s: "https://imgfp.hotp.jp/IMGH/54/14/P037425414/P037425414_58_s.jpg"
+                                                       )),
                                                    urls: Shop.Urls(pc: "https://imgfp.hotp.jp/IMGH/65/93/P038056593/P038056593_58_s.jpg"))]))
 ]
