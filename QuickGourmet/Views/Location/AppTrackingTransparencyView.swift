@@ -20,8 +20,8 @@ struct AppTrackingTransparencyView: View {
                 .edgesIgnoringSafeArea(.all)
             VStack {
                 Spacer()
-                Text("広告トラッキングを許可してください")
-                    .font(.custom(FontManager.Mplus.medium, size: 22))
+                Text("トラッキングを許可してください")
+                    .font(.custom(FontManager.Mplus.medium, size: 26))
                     .foregroundColor(ColorManager.white)
                     .lineLimit(1)
                     .padding(.bottom, 3)
