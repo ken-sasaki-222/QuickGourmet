@@ -1,5 +1,5 @@
 //
-//  FavoriteButton.swift
+//  FavoriteButtonView.swift
 //  QuickGourmet
 //
 //  Created by sasaki.ken on 2021/08/22.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct FavoriteButton: View {
+struct FavoriteButtonView: View {
     @State private var isFavorite = false
     var action: () -> Void
 
@@ -30,6 +30,6 @@ struct FavoriteButton: View {
 
 struct FavoriteButton_Previews: PreviewProvider {
     static var previews: some View {
-        FavoriteButton(action: {})
+        FavoriteButtonView(action: {})
     }
 }

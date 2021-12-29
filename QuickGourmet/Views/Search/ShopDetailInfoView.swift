@@ -68,7 +68,7 @@ struct ShopDetailInfoView: View {
                 .padding(.init(top: 10, leading: 30, bottom: 10, trailing: 30))
             }
             VStack {
-                FavoriteButton(action: {
+                FavoriteButtonView(action: {
                     // ShopDetailInfoViewではお気に入りするだけ
                     let favoriteShop = FavoriteShop(
                         name: name,
