@@ -16,4 +16,5 @@ opt_in_rules:
 line_length: 800 # 1行あたりの文字数制限を450に変更
 type_name: # Type名が2文字以上なら許可に変更
   min_length: 2
+  max_length: 50
 
