@@ -31,7 +31,7 @@ struct AppTrackingTransparencyView: View {
                     .lineLimit(2)
                     .padding(.bottom, 30)
                 PermissionButtonView {
-                    // ここでステータス取得？
+                    appTrackingTransparencyViewModel.getAuthorizationStatus()
                 }
                 .padding(.bottom, 50)
             }
