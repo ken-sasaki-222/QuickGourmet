@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AppTrackingTransparencyView: View {
-    @ObservedObject var appTrackingTransparencyViewModel = AppTrackingTransparencyViewModel()
+    private let appTrackingTransparencyViewModel = AppTrackingTransparencyViewModel()
 
     var body: some View {
         ZStack {
