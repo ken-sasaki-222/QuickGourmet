@@ -17,6 +17,8 @@ struct QuickGourmetApp: App {
             switch rootViewHelper.rootView {
             case .location:
                 LocatePermissionView()
+            case .tracking:
+                AppTrackingTransparencyView()
             case .home:
                 TabBarView()
             }

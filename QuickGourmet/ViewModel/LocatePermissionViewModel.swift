@@ -82,11 +82,13 @@ class LocatePermissionViewModel: NSObject, ObservableObject {
 
 extension LocatePermissionViewModel: LocatePermissionRepositoryDelegate {
     func updatedLocation() {
+        userRepository.locatePermission = true
         alertType = .successLocatePermission
         isShowsAlert = true
     }
 
     func didFailUpdateLocation() {
+        userRepository.locatePermission = false
         alertType = .failLocatePermission
         isShowsAlert = true
     }

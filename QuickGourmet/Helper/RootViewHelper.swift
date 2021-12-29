@@ -17,6 +17,7 @@ class RootViewHelper: ObservableObject {
 
     enum RootViews {
         case location
+        case tracking
         case home
     }
 
