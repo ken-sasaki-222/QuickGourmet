@@ -22,8 +22,8 @@ struct TabBarView: View {
             TabView(selection: $section) {
                 QuickSearchView()
                     .tabItem {
-                        Image(systemName: "house")
-                        Text("ホーム")
+                        Image(systemName: "magnifyingglass")
+                        Text("探す")
                     }
                     .tag(0)
                 FavoriteListView()
