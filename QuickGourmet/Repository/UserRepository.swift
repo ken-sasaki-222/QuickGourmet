@@ -8,7 +8,7 @@
 import Foundation
 
 class UserRepository: UserRepositoryInterface {
-    let userDefaultsDataStore = UserDefaultsDataStore()
+    private let userDefaultsDataStore = UserDefaultsDataStore()
 
     var latitude: Double {
         get {

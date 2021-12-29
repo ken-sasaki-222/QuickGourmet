@@ -9,8 +9,8 @@
 import XCTest
 
 class QuickSearchViewModelTests: XCTestCase {
-    let quickSearchVM = QuickSearchViewModel()
-    let userRepository = UserRepository()
+    private let quickSearchVM = QuickSearchViewModel()
+    private let userRepository = UserRepository()
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

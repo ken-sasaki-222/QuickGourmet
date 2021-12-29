@@ -8,8 +8,8 @@
 import XCTest
 
 class FavoriteDataStoreTests: XCTestCase {
-    let deviceId = "3407941F-7845-40C5-B59D-2A41D2D6AFE6"
-    let exp = XCTestExpectation(description: "wait async")
+    private let deviceId = "3407941F-7845-40C5-B59D-2A41D2D6AFE6"
+    private let exp = XCTestExpectation(description: "wait async")
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
