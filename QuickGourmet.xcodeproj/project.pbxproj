@@ -57,6 +57,9 @@
 		D87B8C3D26B045EF00BB945C /* HamburgerMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87B8C3C26B045EF00BB945C /* HamburgerMenuViewModel.swift */; };
 		D87C9C392696FDB70051FA77 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87C9C382696FDB70051FA77 /* TabBarView.swift */; };
 		D87C9C3B269701A30051FA77 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87C9C3A269701A30051FA77 /* MenuView.swift */; };
+		D88124E5277C767E00AA3405 /* AppTrackingTransparencyStatusTranslatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88124E4277C767E00AA3405 /* AppTrackingTransparencyStatusTranslatorTests.swift */; };
+		D88124E6277C773F00AA3405 /* AppTrackingTransparencyStatusTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81D05992777062700FED1B4 /* AppTrackingTransparencyStatusTranslator.swift */; };
+		D88124E7277C774100AA3405 /* AppTrackingTransparencyStatusType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81D059B2777068C00FED1B4 /* AppTrackingTransparencyStatusType.swift */; };
 		D88426FA26AA7B680073B3F2 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88426F926AA7B680073B3F2 /* SafariView.swift */; };
 		D889303B26B914C2008C0F60 /* QuickSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D889303A26B914C2008C0F60 /* QuickSearchViewModel.swift */; };
 		D889E16126AED67100F18681 /* ShopDetailInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D889E16026AED67100F18681 /* ShopDetailInfoView.swift */; };
@@ -176,6 +179,7 @@
 		D87B8C3C26B045EF00BB945C /* HamburgerMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamburgerMenuViewModel.swift; sourceTree = "<group>"; };
 		D87C9C382696FDB70051FA77 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		D87C9C3A269701A30051FA77 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		D88124E4277C767E00AA3405 /* AppTrackingTransparencyStatusTranslatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTrackingTransparencyStatusTranslatorTests.swift; sourceTree = "<group>"; };
 		D88408FD26FF1FB7004B4156 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		D88426F926AA7B680073B3F2 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 		D889303A26B914C2008C0F60 /* QuickSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickSearchViewModel.swift; sourceTree = "<group>"; };
@@ -310,6 +314,7 @@
 			children = (
 				D82EFF7026F6E2FE002B0D6F /* GenreTypeTranslatorTests.swift */,
 				D82EFF6E26F6E2B1002B0D6F /* PickerSelectTypeTranslatorTests.swift */,
+				D88124E4277C767E00AA3405 /* AppTrackingTransparencyStatusTranslatorTests.swift */,
 			);
 			path = Translator;
 			sourceTree = "<group>";
@@ -865,11 +870,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D88124E6277C773F00AA3405 /* AppTrackingTransparencyStatusTranslator.swift in Sources */,
 				D82EFF7B26F706BD002B0D6F /* QuickSearchViewModelTests.swift in Sources */,
 				D8FD39DE276743E200F1C69E /* FavoriteShop.swift in Sources */,
 				D8281356276497C0002F1DF1 /* ShopDataStore.swift in Sources */,
 				D82EFF6F26F6E2B1002B0D6F /* PickerSelectTypeTranslatorTests.swift in Sources */,
 				D82EFF7126F6E2FE002B0D6F /* GenreTypeTranslatorTests.swift in Sources */,
+				D88124E5277C767E00AA3405 /* AppTrackingTransparencyStatusTranslatorTests.swift in Sources */,
+				D88124E7277C774100AA3405 /* AppTrackingTransparencyStatusType.swift in Sources */,
 				D8FD39DD276743BF00F1C69E /* FavoriteDataStoreTests.swift in Sources */,
 				D8FD39DF276743ED00F1C69E /* FavoriteDataStore.swift in Sources */,
 				D8FD39E02767452800F1C69E /* MockFavoriteShopData.swift in Sources */,
