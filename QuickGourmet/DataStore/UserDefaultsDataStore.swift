@@ -12,6 +12,7 @@ class UserDefaultsDataStore {
         case latitude
         case longitude
         case locationSaved
+        case trackingPermission
         case launchCount = "launch_count"
         case shopDetailLaunchCount = "shopdetail_launchcount"
         case favoriteShopDetailLaunchCount = "favoriteshopdetail_launchcount"
@@ -48,6 +49,15 @@ class UserDefaultsDataStore {
         }
         set(newValue) {
             defaults.set(newValue, forKey: UserDefaultsKey.locationSaved.rawValue)
+        }
+    }
+
+    var trackingPermission: Bool {
+        get {
+            defaults.bool(forKey: UserDefaultsKey.trackingPermission.rawValue)
+        }
+        set(newValue) {
+            defaults.set(newValue, forKey: UserDefaultsKey.trackingPermission.rawValue)
         }
     }
 

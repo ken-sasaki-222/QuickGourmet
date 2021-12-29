@@ -10,9 +10,10 @@ import SwiftUI
 struct TabBarView: View {
     @State private var section = 0
     private let locatePermissionVM = LocatePermissionViewModel()
+    private let appTrackingTransparencyVM = AppTrackingTransparencyViewModel()
 
     init() {
-        setTabBar()
+        setUpTabBar()
     }
 
     var body: some View {
@@ -39,18 +40,26 @@ struct TabBarView: View {
         .accentColor(ColorManager.mainColor)
         .onAppear {
             DispatchQueue.main.async {
-                switch locatePermissionVM.openLocatePermissionViewEnabled {
-                case true:
-                    RootViewHelper.shared.changeRootView(rootView: .location)
-                case false:
-                    return
-                }
+                setUpRootView()
             }
         }
     }
 
-    private func setTabBar() {
+    private func setUpTabBar() {
         UITabBar.appearance().unselectedItemTintColor = UIColor(ColorManager.gray)
+    }
+
+    private func setUpRootView() {
+        let isLocatePermissionViewEnabled = locatePermissionVM.openLocatePermissionViewEnabled
+        let isTrackingPermissionViewEnabled = appTrackingTransparencyVM.openTrackingPermissionViewEnabled
+
+        if isLocatePermissionViewEnabled {
+            RootViewHelper.shared.changeRootView(rootView: .location)
+        } else if isLocatePermissionViewEnabled == false && isTrackingPermissionViewEnabled == true {
+            RootViewHelper.shared.changeRootView(rootView: .tracking)
+        } else if isLocatePermissionViewEnabled == false && isTrackingPermissionViewEnabled == false {
+            RootViewHelper.shared.changeRootView(rootView: .home)
+        }
     }
 }
 

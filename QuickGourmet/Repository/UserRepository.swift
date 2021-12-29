@@ -37,6 +37,15 @@ class UserRepository: UserRepositoryInterface {
         }
     }
 
+    var trackingPermission: Bool {
+        get {
+            userDefaultsDataStore.trackingPermission
+        }
+        set(newValue) {
+            userDefaultsDataStore.trackingPermission = newValue
+        }
+    }
+
     var launchCount: Int {
         get {
             userDefaultsDataStore.launchCount

@@ -9,14 +9,26 @@ import Foundation
 
 class AppTrackingTransparencyViewModel: NSObject {
     private let appTrackingTransparencyRepository: AppTrackingTransparencyRepositoryInterface
+    private var userRepository: UserRepositoryInterface
 
-    init(appTrackingTransparencyRepository: AppTrackingTransparencyRepositoryInterface) {
+    init(appTrackingTransparencyRepository: AppTrackingTransparencyRepositoryInterface, userRepository: UserRepositoryInterface) {
         self.appTrackingTransparencyRepository = appTrackingTransparencyRepository
+        self.userRepository = userRepository
         super.init()
     }
 
     override convenience init() {
-        self.init(appTrackingTransparencyRepository: RepositoryLocator.getAppTrackingTransparencyRepository())
+        self.init(appTrackingTransparencyRepository: RepositoryLocator.getAppTrackingTransparencyRepository(), userRepository: RepositoryLocator.getUserRepository())
+    }
+
+    var openTrackingPermissionViewEnabled: Bool {
+        let isPermission = userRepository.trackingPermission
+
+        if !isPermission {
+            return true
+        } else {
+            return false
+        }
     }
 
     func getAuthorizationStatus() {
@@ -31,6 +43,7 @@ class AppTrackingTransparencyViewModel: NSObject {
 
     private func requestAuthorization() {
         appTrackingTransparencyRepository.requestAuthorization {
+            self.userRepository.trackingPermission = true
             RootViewHelper.shared.changeRootView(rootView: .home)
         }
     }
