@@ -47,7 +47,7 @@ struct LocatePermissionView: View {
                                  message: Text("位置情報を許可しました"),
                                  dismissButton: .default(Text("OK"), action: {
                                      DispatchQueue.main.async {
-                                         RootViewHelper.shared.changeRootView(rootView: .home)
+                                         RootViewHelper.shared.changeRootView(rootView: .tracking)
                                      }
                                  }))
                 }
