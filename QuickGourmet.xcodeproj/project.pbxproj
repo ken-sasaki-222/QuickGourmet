@@ -59,13 +59,11 @@
 		D88124E5277C767E00AA3405 /* AppTrackingTransparencyStatusTranslatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88124E4277C767E00AA3405 /* AppTrackingTransparencyStatusTranslatorTests.swift */; };
 		D88124E6277C773F00AA3405 /* AppTrackingTransparencyStatusTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81D05992777062700FED1B4 /* AppTrackingTransparencyStatusTranslator.swift */; };
 		D88124E7277C774100AA3405 /* AppTrackingTransparencyStatusType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81D059B2777068C00FED1B4 /* AppTrackingTransparencyStatusType.swift */; };
-		D88124E8277C79BA00AA3405 /* RepositoryLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C5DE3B26E3489100617F6D /* RepositoryLocator.swift */; };
-		D88124E9277C79BD00AA3405 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D834146326CCFDBC002D7ED0 /* UserRepository.swift */; };
 		D88124EA277C79CC00AA3405 /* GenreType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C5DE2B26E331C500617F6D /* GenreType.swift */; };
 		D88124EB277C79D900AA3405 /* GenreTypeTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C5DE2E26E332EC00617F6D /* GenreTypeTranslator.swift */; };
 		D88124EC277C79FD00AA3405 /* PickerSelectType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C5DE3D26E3594200617F6D /* PickerSelectType.swift */; };
 		D88124ED277C7A0400AA3405 /* PickerSelectTypeTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C5DE3F26E359CB00617F6D /* PickerSelectTypeTranslator.swift */; };
-		D88124EE277C7A2300AA3405 /* QuickSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D889303A26B914C2008C0F60 /* QuickSearchViewModel.swift */; };
+		D88124EF277C7AC600AA3405 /* ApiKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D826E54527741A6000D02E2B /* ApiKey.swift */; };
 		D88426FA26AA7B680073B3F2 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88426F926AA7B680073B3F2 /* SafariView.swift */; };
 		D889303B26B914C2008C0F60 /* QuickSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D889303A26B914C2008C0F60 /* QuickSearchViewModel.swift */; };
 		D889E16126AED67100F18681 /* ShopDetailInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D889E16026AED67100F18681 /* ShopDetailInfoView.swift */; };
@@ -877,14 +875,13 @@
 				D88124E6277C773F00AA3405 /* AppTrackingTransparencyStatusTranslator.swift in Sources */,
 				D82EFF7B26F706BD002B0D6F /* QuickSearchViewModelTests.swift in Sources */,
 				D8FD39DE276743E200F1C69E /* FavoriteShop.swift in Sources */,
-				D88124EE277C7A2300AA3405 /* QuickSearchViewModel.swift in Sources */,
+				D88124EF277C7AC600AA3405 /* ApiKey.swift in Sources */,
 				D8281356276497C0002F1DF1 /* ShopDataStore.swift in Sources */,
 				D82EFF6F26F6E2B1002B0D6F /* PickerSelectTypeTranslatorTests.swift in Sources */,
 				D88124EB277C79D900AA3405 /* GenreTypeTranslator.swift in Sources */,
 				D82EFF7126F6E2FE002B0D6F /* GenreTypeTranslatorTests.swift in Sources */,
 				D88124E5277C767E00AA3405 /* AppTrackingTransparencyStatusTranslatorTests.swift in Sources */,
 				D88124E7277C774100AA3405 /* AppTrackingTransparencyStatusType.swift in Sources */,
-				D88124E8277C79BA00AA3405 /* RepositoryLocator.swift in Sources */,
 				D88124ED277C7A0400AA3405 /* PickerSelectTypeTranslator.swift in Sources */,
 				D8FD39DD276743BF00F1C69E /* FavoriteDataStoreTests.swift in Sources */,
 				D8FD39DF276743ED00F1C69E /* FavoriteDataStore.swift in Sources */,
@@ -893,7 +890,6 @@
 				D8FD39E02767452800F1C69E /* MockFavoriteShopData.swift in Sources */,
 				D82EFF7D26F71825002B0D6F /* FavoriteViewModelTests.swift in Sources */,
 				D8281355276497BB002F1DF1 /* ShopDataStoreTests.swift in Sources */,
-				D88124E9277C79BD00AA3405 /* UserRepository.swift in Sources */,
 				D828135827649969002F1DF1 /* HotPepperResponseResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
