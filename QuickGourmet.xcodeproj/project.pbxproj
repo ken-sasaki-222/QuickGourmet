@@ -98,6 +98,8 @@
 		D8D16FF227733FE600C22E20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D16FF127733FE600C22E20 /* AppDelegate.swift */; };
 		D8D16FF6277345C100C22E20 /* RootViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D16FF5277345C100C22E20 /* RootViewHelper.swift */; };
 		D8DB885226B962DA0057F807 /* UserDefaultsDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DB885126B962DA0057F807 /* UserDefaultsDataStore.swift */; };
+		D8DC349A277D827900FCE74E /* ReviewRepositoryInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DC3499277D827900FCE74E /* ReviewRepositoryInterface.swift */; };
+		D8DC349C277D829300FCE74E /* ReviewRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DC349B277D829300FCE74E /* ReviewRepository.swift */; };
 		D8E300A526CE895E0032B666 /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E300A426CE895E0032B666 /* ActivityIndicatorView.swift */; };
 		D8E9B75726CFB93700DC817F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D8E9B75626CFB93700DC817F /* GoogleService-Info.plist */; };
 		D8ED9EB2269E795F00AFE337 /* MockShopData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8ED9EB1269E795F00AFE337 /* MockShopData.swift */; };
@@ -220,6 +222,8 @@
 		D8D16FF127733FE600C22E20 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8D16FF5277345C100C22E20 /* RootViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewHelper.swift; sourceTree = "<group>"; };
 		D8DB885126B962DA0057F807 /* UserDefaultsDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsDataStore.swift; sourceTree = "<group>"; };
+		D8DC3499277D827900FCE74E /* ReviewRepositoryInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewRepositoryInterface.swift; sourceTree = "<group>"; };
+		D8DC349B277D829300FCE74E /* ReviewRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewRepository.swift; sourceTree = "<group>"; };
 		D8E300A426CE895E0032B666 /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
 		D8E9B75626CFB93700DC817F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D8ED9EB1269E795F00AFE337 /* MockShopData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockShopData.swift; sourceTree = "<group>"; };
@@ -368,6 +372,8 @@
 				D897A26F26F49E2000496839 /* ShopSearchRepository.swift */,
 				D834146326CCFDBC002D7ED0 /* UserRepository.swift */,
 				D834146526CCFDFC002D7ED0 /* UserRepositoryInterface.swift */,
+				D8DC3499277D827900FCE74E /* ReviewRepositoryInterface.swift */,
+				D8DC349B277D829300FCE74E /* ReviewRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -905,6 +911,7 @@
 				D8C5DE4026E359CB00617F6D /* PickerSelectTypeTranslator.swift in Sources */,
 				D86F6A32277370A800910B15 /* LocatePermissionAlertType.swift in Sources */,
 				D81E428E26D258C500DB5AD6 /* FavoriteShop.swift in Sources */,
+				D8DC349A277D827900FCE74E /* ReviewRepositoryInterface.swift in Sources */,
 				D81D05922774AD2700FED1B4 /* AppTrackingTransparencyRepository.swift in Sources */,
 				D8E300A526CE895E0032B666 /* ActivityIndicatorView.swift in Sources */,
 				D8087FD626DDD1C1008BFFEE /* MenuIconView.swift in Sources */,
@@ -960,6 +967,7 @@
 				D81E428226D21FD100DB5AD6 /* FavoriteButtonView.swift in Sources */,
 				D8ED9EB2269E795F00AFE337 /* MockShopData.swift in Sources */,
 				D81D05942774AD3200FED1B4 /* AppTrackingTransparencyRepositoryInterface.swift in Sources */,
+				D8DC349C277D829300FCE74E /* ReviewRepository.swift in Sources */,
 				D828135327648CD9002F1DF1 /* ShopDataStore.swift in Sources */,
 				D81D05902774AD1600FED1B4 /* AppTrackingTransparencyDataStore.swift in Sources */,
 				D87C9C3B269701A30051FA77 /* MenuView.swift in Sources */,
