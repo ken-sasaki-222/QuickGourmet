@@ -90,7 +90,6 @@ struct QuickSearchView: View {
                 .background(ColorManager.baseColor)
             }
             .onAppear {
-                quickSearchVM.requestIDFA()
                 quickSearchVM.askForReview()
             }
             PopupWindowView(show: $isShowsPopUp, searchAction: { selection in

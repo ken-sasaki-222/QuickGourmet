@@ -5,10 +5,8 @@
 //  Created by sasaki.ken on 2021/08/03.
 //
 
-import AdSupport
-import AppTrackingTransparency
 import StoreKit
-import SwiftUI
+import Foundation
 
 class QuickSearchViewModel: NSObject, ObservableObject {
     @Published var shopData: [Shop] = []
@@ -81,13 +79,6 @@ class QuickSearchViewModel: NSObject, ObservableObject {
         } catch {
             self.error = error
         }
-    }
-
-    func requestIDFA() {
-        ATTrackingManager.requestTrackingAuthorization(completionHandler: { _ in
-            // Tracking authorization completed. Start loading ads here.
-            // loadAd()
-        })
     }
 
     func askForReview() {
