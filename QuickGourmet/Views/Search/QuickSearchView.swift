@@ -65,39 +65,37 @@ struct QuickSearchView: View {
                 NavigationView {
                     ScrollView {
                         ZStack {
-                            ZStack {
-                                VStack(spacing: 10) {
-                                    ForEach(0 ..< quickSearchImages.count) { index in
-                                        NavigationLink(destination: QuickSearchListView(quickSearchVM: quickSearchVM), isActive: $isTapActive) {}
-                                        Button(action: {
-                                            onTapQuickSearchRow()
-                                        }) {
-                                            QuickSearchRowView(imageString: quickSearchImages[index], genreName: quickSearchTextes[index], width: geometry.size.width * 0.9)
-                                        }
-                                        .alert(isPresented: $isShowsAlert) {
-                                            Alert(title: Text("確認"), message: Text("あなたの現在地から徒歩圏内のお店を検索するためには、位置情報がONである必要があります。"), dismissButton: .default(Text("OK")) {
-                                                locatePermissionVM.goToLocateSetting()
-                                            })
-                                        }
+                            VStack(spacing: 10) {
+                                ForEach(0 ..< quickSearchImages.count) { index in
+                                    NavigationLink(destination: QuickSearchListView(quickSearchVM: quickSearchVM), isActive: $isTapActive) {}
+                                    Button(action: {
+                                        onTapQuickSearchRow()
+                                    }) {
+                                        QuickSearchRowView(imageString: quickSearchImages[index], genreName: quickSearchTextes[index], width: geometry.size.width * 0.9)
                                     }
-                                    .edgesIgnoringSafeArea(.bottom)
+                                    .alert(isPresented: $isShowsAlert) {
+                                        Alert(title: Text("確認"), message: Text("あなたの現在地から徒歩圏内のお店を検索するためには、位置情報がONである必要があります。"), dismissButton: .default(Text("OK")) {
+                                            locatePermissionVM.goToLocateSetting()
+                                        })
+                                    }
                                 }
-                                .navigationTitle("探す")
-                                .navigationBarTitleDisplayMode(.inline)
+                                .edgesIgnoringSafeArea(.bottom)
                             }
+                            .navigationTitle("探す")
+                            .navigationBarTitleDisplayMode(.inline)
                         }
                     }
-                    .background(ColorManager.baseColor)
                 }
-                .onAppear {
-                    quickSearchVM.requestIDFA()
-                    quickSearchVM.askForReview()
-                }
-                PopupWindowView(show: $isShowsPopUp, searchAction: { selection in
-                    communicateQuickSearchVM(index: index, selection: selection)
-                    isTapActive = true
-                })
+                .background(ColorManager.baseColor)
             }
+            .onAppear {
+                quickSearchVM.requestIDFA()
+                quickSearchVM.askForReview()
+            }
+            PopupWindowView(show: $isShowsPopUp, searchAction: { selection in
+                communicateQuickSearchVM(index: index, selection: selection)
+                isTapActive = true
+            })
         }
         .accentColor(ColorManager.font_white)
     }
