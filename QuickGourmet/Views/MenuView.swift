@@ -11,7 +11,7 @@ import SwiftUI
 struct MenuView: View {
     @State private var isShowMailView = false
     @State private var isShowsAlert = false
-    private let menuVM = HamburgerMenuViewModel()
+    private let menuVM = MenuViewModel()
     private let locatePermissionVM = LocatePermissionViewModel()
 
     init() {

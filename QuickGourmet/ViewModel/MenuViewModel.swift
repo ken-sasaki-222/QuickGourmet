@@ -8,9 +8,8 @@
 import Foundation
 import MessageUI
 import StoreKit
-import SwiftUI
 
-class HamburgerMenuViewModel {
+class MenuViewModel {
     enum DevelopperUrlType: String {
         case twitter = "https://twitter.com/ken_sasaki2"
         case gitHub = "https://github.com/ken-sasaki-222"

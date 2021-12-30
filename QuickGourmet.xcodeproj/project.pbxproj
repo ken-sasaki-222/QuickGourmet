@@ -53,7 +53,7 @@
 		D860592726FCBB800016C8AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D860592626FCBB800016C8AE /* LaunchScreen.storyboard */; };
 		D86F6A32277370A800910B15 /* LocatePermissionAlertType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86F6A31277370A800910B15 /* LocatePermissionAlertType.swift */; };
 		D872240226D125300017D405 /* FavoriteListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D872240126D125300017D405 /* FavoriteListView.swift */; };
-		D87B8C3D26B045EF00BB945C /* HamburgerMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87B8C3C26B045EF00BB945C /* HamburgerMenuViewModel.swift */; };
+		D87B8C3D26B045EF00BB945C /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87B8C3C26B045EF00BB945C /* MenuViewModel.swift */; };
 		D87C9C392696FDB70051FA77 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87C9C382696FDB70051FA77 /* TabBarView.swift */; };
 		D87C9C3B269701A30051FA77 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87C9C3A269701A30051FA77 /* MenuView.swift */; };
 		D88124E5277C767E00AA3405 /* AppTrackingTransparencyStatusTranslatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88124E4277C767E00AA3405 /* AppTrackingTransparencyStatusTranslatorTests.swift */; };
@@ -179,7 +179,7 @@
 		D870EFDE26F5F8DB000E6D09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D870EFE426F5FE4A000E6D09 /* QuickGourmetTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "QuickGourmetTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		D872240126D125300017D405 /* FavoriteListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteListView.swift; sourceTree = "<group>"; };
-		D87B8C3C26B045EF00BB945C /* HamburgerMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamburgerMenuViewModel.swift; sourceTree = "<group>"; };
+		D87B8C3C26B045EF00BB945C /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
 		D87C9C382696FDB70051FA77 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		D87C9C3A269701A30051FA77 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		D88124E4277C767E00AA3405 /* AppTrackingTransparencyStatusTranslatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTrackingTransparencyStatusTranslatorTests.swift; sourceTree = "<group>"; };
@@ -305,7 +305,7 @@
 			children = (
 				D81D05952774AD5100FED1B4 /* AppTrackingTransparencyViewModel.swift */,
 				D81E428426D23F7800DB5AD6 /* FavoriteViewModel.swift */,
-				D87B8C3C26B045EF00BB945C /* HamburgerMenuViewModel.swift */,
+				D87B8C3C26B045EF00BB945C /* MenuViewModel.swift */,
 				D8A25A8F2768D4AA00D9F92F /* LocatePermissionViewModel.swift */,
 				D889303A26B914C2008C0F60 /* QuickSearchViewModel.swift */,
 			);
@@ -914,7 +914,7 @@
 				D8A25A8A2768D40900D9F92F /* LocatePermissionDataStore.swift in Sources */,
 				D833880F26CC9F6A003446B1 /* UIApplication+Keyboard.swift in Sources */,
 				D897A27026F49E2000496839 /* ShopSearchRepository.swift in Sources */,
-				D87B8C3D26B045EF00BB945C /* HamburgerMenuViewModel.swift in Sources */,
+				D87B8C3D26B045EF00BB945C /* MenuViewModel.swift in Sources */,
 				D828135A2764B049002F1DF1 /* FavoriteDataStore.swift in Sources */,
 				D81D059A2777062700FED1B4 /* AppTrackingTransparencyStatusTranslator.swift in Sources */,
 				D81D05962774AD5100FED1B4 /* AppTrackingTransparencyViewModel.swift in Sources */,
