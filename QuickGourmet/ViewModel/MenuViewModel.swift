@@ -10,12 +10,6 @@ import MessageUI
 import StoreKit
 
 class MenuViewModel {
-    enum DevelopperUrlType: String {
-        case twitter = "https://twitter.com/ken_sasaki2"
-        case gitHub = "https://github.com/ken-sasaki-222"
-        case qiita = "https://qiita.com/nkekisasa222"
-    }
-
     func askForReview() {
         if let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
             SKStoreReviewController.requestReview(in: scene)
@@ -35,27 +29,14 @@ class MenuViewModel {
     }
 
     @discardableResult
-    func goToDeveloperSNSPage(snsString: String) -> URL? {
-        var snsUrlString = String()
-
-        switch snsString {
-        case "twitter":
-            snsUrlString = DevelopperUrlType.twitter.rawValue
-        case "gitHub":
-            snsUrlString = DevelopperUrlType.gitHub.rawValue
-        case "qiita":
-            snsUrlString = DevelopperUrlType.qiita.rawValue
-        default:
+    func openDeveloperTwitter(url: String) -> URL? {
+        guard let url = URL(string: url) else {
             return nil
         }
 
-        guard let snsUrl = URL(string: snsUrlString) else {
-            return nil
-        }
-
-        if UIApplication.shared.canOpenURL(snsUrl) {
-            UIApplication.shared.open(snsUrl, options: [:], completionHandler: nil)
-            return snsUrl
+        if UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            return url
         } else {
             return nil
         }
