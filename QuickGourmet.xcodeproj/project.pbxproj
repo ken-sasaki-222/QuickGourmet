@@ -435,6 +435,7 @@
 				D8AE32CA26DF0E5900FDD2B8 /* Manager */,
 				D8550486269D0BA00053334A /* Search */,
 				D8E300A426CE895E0032B666 /* ActivityIndicatorView.swift */,
+				D81D059D2777091E00FED1B4 /* AppTrackingTransparencyView.swift */,
 				D8A25A932768D56700D9F92F /* LocatePermissionView.swift */,
 				D8FC157826B19DDA00B22408 /* MailView.swift */,
 				D83D600D26AAB387002A6CEC /* MapView.swift */,
@@ -458,7 +459,6 @@
 		D8A8E5C5269DF275009F9C0C /* Image */ = {
 			isa = PBXGroup;
 			children = (
-				D81D059D2777091E00FED1B4 /* AppTrackingTransparencyView.swift */,
 				D8A8E5C3269DEFBF009F9C0C /* URLImage.swift */,
 				D889E16226AF09EA00F18681 /* LogoImage.swift */,
 				D8C58FC026B8D2590020AC57 /* TransitionImage.swift */,
