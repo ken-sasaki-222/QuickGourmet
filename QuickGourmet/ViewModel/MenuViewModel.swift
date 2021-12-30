@@ -7,15 +7,8 @@
 
 import Foundation
 import MessageUI
-import StoreKit
 
 class MenuViewModel {
-    func askForReview() {
-        if let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
-            SKStoreReviewController.requestReview(in: scene)
-        }
-    }
-
     func shareOnTwitter() {
         let message = "飲食店をクイック検索！ \n 『食いっくグルメ』をダウンロードしよう。"
         guard let encodedMessage = message.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
