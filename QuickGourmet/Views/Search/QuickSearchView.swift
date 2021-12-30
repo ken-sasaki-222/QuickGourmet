@@ -69,6 +69,7 @@ struct QuickSearchView: View {
                                 ForEach(0 ..< quickSearchImages.count) { index in
                                     NavigationLink(destination: QuickSearchListView(quickSearchVM: quickSearchVM), isActive: $isTapActive) {}
                                     Button(action: {
+                                        self.index = index
                                         onTapQuickSearchRow()
                                     }) {
                                         QuickSearchRowView(imageString: quickSearchImages[index], genreName: quickSearchTextes[index], width: geometry.size.width * 0.9)
@@ -134,7 +135,6 @@ struct QuickSearchView: View {
     private func openPopUp() {
         withAnimation {
             isShowsPopUp = true
-            self.index = index
         }
     }
 }
