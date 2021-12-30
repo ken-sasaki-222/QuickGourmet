@@ -368,12 +368,12 @@
 				D8C5DE4426E35E4300617F6D /* PickerSelectTypeRepository.swift */,
 				D8C5DE4226E35DCE00617F6D /* PickerSelectTypeRepositoryInterface.swift */,
 				D8C5DE3B26E3489100617F6D /* RepositoryLocator.swift */,
+				D8DC349B277D829300FCE74E /* ReviewRepository.swift */,
+				D8DC3499277D827900FCE74E /* ReviewRepositoryInterface.swift */,
 				D897A27326F49E4900496839 /* ShopRepositoryInterface.swift */,
 				D897A26F26F49E2000496839 /* ShopSearchRepository.swift */,
 				D834146326CCFDBC002D7ED0 /* UserRepository.swift */,
 				D834146526CCFDFC002D7ED0 /* UserRepositoryInterface.swift */,
-				D8DC3499277D827900FCE74E /* ReviewRepositoryInterface.swift */,
-				D8DC349B277D829300FCE74E /* ReviewRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
