@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import MessageUI
+import SwiftUI
 
 class MenuViewModel {
     func shareOnTwitter() {
