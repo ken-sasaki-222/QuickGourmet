@@ -11,8 +11,9 @@ import SwiftUI
 struct MenuView: View {
     @State private var isShowMailView = false
     @State private var isShowsAlert = false
-    private let menuVM = HamburgerMenuViewModel()
+    private let menuVM = MenuViewModel()
     private let locatePermissionVM = LocatePermissionViewModel()
+    private let twitterUrl = "https://twitter.com/ken_sasaki2"
 
     init() {
         NavigationManager().setNavigation()
@@ -63,7 +64,7 @@ struct MenuView: View {
                     HStack {
                         MenuIconView(image: "twitter_icon", color: ColorManager.icon_blue)
                         Button(action: {
-                            menuVM.goToDeveloperSNSPage(snsString: "twitter")
+                            menuVM.openDeveloperTwitter(url: twitterUrl)
                         }) {
                             Text("Twitter")
                                 .font(.custom(FontManager.Mplus.regular, size: 16))

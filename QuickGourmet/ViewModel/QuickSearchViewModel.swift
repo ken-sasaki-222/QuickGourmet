@@ -5,10 +5,7 @@
 //  Created by sasaki.ken on 2021/08/03.
 //
 
-import AdSupport
-import AppTrackingTransparency
-import StoreKit
-import SwiftUI
+import Foundation
 
 class QuickSearchViewModel: NSObject, ObservableObject {
     @Published var shopData: [Shop] = []
@@ -17,23 +14,28 @@ class QuickSearchViewModel: NSObject, ObservableObject {
     private let genreTypeRepository: GenreTypeRepositoryInterface
     private var shopSearchRepository: ShopRepositoryInterface
     private let pickerSelectTypeRepository: PickerSelectTypeRepositoryInterface
+    private let reviewRepository: ReviewRepositoryInterface
     private var reviewed = false
     var genreIndex: Int = 0
     var pickerSelection: Int = 0
 
-    init(userRepository: UserRepositoryInterface, genreTypeRepository: GenreTypeRepositoryInterface, shopSearchRepository: ShopRepositoryInterface, pickerSelectTypeRepository: PickerSelectTypeRepositoryInterface) {
+    init(userRepository: UserRepositoryInterface, genreTypeRepository: GenreTypeRepositoryInterface, shopSearchRepository: ShopRepositoryInterface, pickerSelectTypeRepository: PickerSelectTypeRepositoryInterface, reviewRepository: ReviewRepositoryInterface) {
         self.userRepository = userRepository
         self.genreTypeRepository = genreTypeRepository
         self.shopSearchRepository = shopSearchRepository
         self.pickerSelectTypeRepository = pickerSelectTypeRepository
+        self.reviewRepository = reviewRepository
         super.init()
     }
 
     override convenience init() {
-        self.init(userRepository: RepositoryLocator.getUserRepository(),
-                  genreTypeRepository: RepositoryLocator.getGenreTypeRepository(),
-                  shopSearchRepository: RepositoryLocator.getShopSearchRepository(),
-                  pickerSelectTypeRepository: RepositoryLocator.getPickerSelectTypeRepository())
+        self.init(
+            userRepository: RepositoryLocator.getUserRepository(),
+            genreTypeRepository: RepositoryLocator.getGenreTypeRepository(),
+            shopSearchRepository: RepositoryLocator.getShopSearchRepository(),
+            pickerSelectTypeRepository: RepositoryLocator.getPickerSelectTypeRepository(),
+            reviewRepository: RepositoryLocator.getReviewRepository()
+        )
     }
 
     private var range: Int? {
@@ -83,22 +85,13 @@ class QuickSearchViewModel: NSObject, ObservableObject {
         }
     }
 
-    func requestIDFA() {
-        ATTrackingManager.requestTrackingAuthorization(completionHandler: { _ in
-            // Tracking authorization completed. Start loading ads here.
-            // loadAd()
-        })
-    }
-
     func askForReview() {
         if reviewed == true {
             return
         }
-        if userRepository.launchCount % 7 == 0 {
-            if let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
-                SKStoreReviewController.requestReview(in: scene)
-                reviewed = true
-            }
+        if userRepository.launchCount % 5 == 0 {
+            reviewRepository.askForReview()
+            reviewed = true
         }
     }
 

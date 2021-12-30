@@ -65,7 +65,7 @@ struct FavoriteShopDetailInfoView: View {
                 }
                 .padding(.init(top: 10, leading: 30, bottom: 10, trailing: 30))
             }
-            HStack {
+            VStack {
                 // FavoriteShopDetailInfoViewではお気に入り解除するだけ
                 RemoveFavoriteButtonView {
                     guard let documentID = documentID else {

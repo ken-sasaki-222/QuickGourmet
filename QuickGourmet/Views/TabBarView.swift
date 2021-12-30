@@ -22,8 +22,8 @@ struct TabBarView: View {
             TabView(selection: $section) {
                 QuickSearchView()
                     .tabItem {
-                        Image(systemName: "house")
-                        Text("ホーム")
+                        Image(systemName: "magnifyingglass")
+                        Text("探す")
                     }
                     .tag(0)
                 FavoriteListView()
@@ -48,7 +48,7 @@ struct TabBarView: View {
             }
             if isShowsIndicator {
                 ZStack {
-                    ColorManager.black.opacity(0.5)
+                    ColorManager.black.opacity(0.3)
                         .edgesIgnoringSafeArea(.all)
                     RoundedRectangle(cornerRadius: 10)
                         .frame(width: 140, height: 120, alignment: .center)

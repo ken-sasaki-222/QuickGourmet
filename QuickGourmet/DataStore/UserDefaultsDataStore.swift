@@ -8,7 +8,7 @@
 import Foundation
 
 class UserDefaultsDataStore {
-    enum UserDefaultsKey: String {
+    private enum UserDefaultsKey: String {
         case latitude
         case longitude
         case locationSaved
@@ -21,7 +21,7 @@ class UserDefaultsDataStore {
         case deviceId = "device_id"
     }
 
-    var defaults: UserDefaults {
+    private var defaults: UserDefaults {
         UserDefaults.standard
     }
 

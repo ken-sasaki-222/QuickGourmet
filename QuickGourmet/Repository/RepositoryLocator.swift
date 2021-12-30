@@ -39,4 +39,8 @@ class RepositoryLocator: NSObject {
     static func getAppTrackingTransparencyRepository() -> AppTrackingTransparencyRepositoryInterface {
         AppTrackingTransparencyRepository()
     }
+
+    static func getReviewRepository() -> ReviewRepositoryInterface {
+        ReviewRepository()
+    }
 }

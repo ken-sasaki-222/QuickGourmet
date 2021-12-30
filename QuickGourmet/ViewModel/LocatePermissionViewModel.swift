@@ -5,10 +5,11 @@
 //  Created by sasaki.ken on 2021/12/14.
 //
 
+import Foundation
 import SwiftUI
 
 class LocatePermissionViewModel: NSObject, ObservableObject {
-    @Published var isShowsAlert: Bool = false
+    @Published var isShowsAlert = false
     @Published var alertType: LocatePermissionAlertType = .failLocatePermission
     private var locatePermissionRepository: LocatePermissionRepositoryInterface
     private var userRepository: UserRepositoryInterface

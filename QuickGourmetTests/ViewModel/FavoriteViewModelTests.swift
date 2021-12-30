@@ -9,8 +9,8 @@
 import XCTest
 
 class FavoriteViewModelTests: XCTestCase {
-    let userRepository = UserRepository()
-    let favoriteVM = FavoriteViewModel()
+    private let userRepository = UserRepository()
+    private let favoriteVM = FavoriteViewModel()
 
     override func setUpWithError() throws {
         // FirebaseTestHelper().setUpFirestoreEmulator()

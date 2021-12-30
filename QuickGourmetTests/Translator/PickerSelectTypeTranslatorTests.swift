@@ -18,11 +18,13 @@ class PickerSelectTypeTranslatorTests: XCTestCase {
     }
 
     func testTranslate_expectAndResultEqual() throws {
-        let inputs: [PickerSelectType] = [.fourMinutesWalk,
-                                          .sevenMinutesWalk,
-                                          .thirteenMinuteWalk,
-                                          .twentyFiveMinutes,
-                                          .thirtyEightMinuteWalk]
+        let inputs: [PickerSelectType] = [
+            .fourMinutesWalk,
+            .sevenMinutesWalk,
+            .thirteenMinuteWalk,
+            .twentyFiveMinutes,
+            .thirtyEightMinuteWalk
+        ]
 
         let expects = [1, 2, 3, 4, 5]
 
