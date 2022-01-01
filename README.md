@@ -4,14 +4,12 @@
 [App Store](https://apps.apple.com/us/app/食いっくグルメ/id1587448015)からインストール。
 
 ## 開発の経緯
-① 開発者が2021年5月に上京した際に、土地感覚がないことで飲食店の検索に戸惑うことが多々ありました。  
+開発者が2021年5月に上京した際に、土地感覚がないことで飲食店の検索に戸惑うことが多々ありました。  
 さまざまなプラットフォームから検索するが、不要な情報も多く、欲しい情報だけピックアップしたいと思うようになりました。  
 そこで、現在地から徒歩県内の飲食店でフィルタリングしてピックアップできるアプリがあれば、便利なのでは？と、考えるようになったのが開発の経緯です。  
 
-② 開発者はiOSエンジニアとしてキャリアが始まったばかりのフェーズなので、とにかくスキルアップにはアウトプットが必要と考えておりました。実務で学んだことを個人アプリへ落とし込むことでスキルアップにつながると考え、`依存性逆転の法則`や、`XCTest`など本業で学んだインプット情報をアウトプットする場として開発を始めたことも開発経緯であります。
 
 ## 機能一覧
-- FirebaseAuthを用いたログイン&ログアウト機能
 - 現在地周辺の飲食店検索機能
 - マップ機能
 - ブックマーク機能
@@ -41,7 +39,6 @@
 - AppTrackingTransparency
 - CoreLocation
 - Firebase
-- FirebaseAuth
 - MapKit
 - MessageUI
 - NendAd
@@ -53,16 +50,15 @@
 #### 利用したCocoaPods
 
 ```
-  pod 'SwiftFormat/CLI'  
-  pod 'SwiftLint'  
-  pod 'NendSDK_iOS'  
-  pod 'Firebase/Auth'  
-  pod 'FirebaseFirestore'  
+  pod 'SwiftFormat'
+  pod 'SwiftLint'
+  pod 'NendSDK_iOS'
+  pod 'Firebase/Crashlytics'
+  pod 'FirebaseFirestore'
 ```
 
 #### Firebase
 - Firestore
-- FirebaseAuth（匿名ログイン）
 
 #### 広告
 - NendSDK
