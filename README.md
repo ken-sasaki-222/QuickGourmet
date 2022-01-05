@@ -66,5 +66,5 @@
 ## 開発者の連絡先
 [Twitter DM](https://twitter.com/ken_sasaki2) からご連絡ください。
 
-↓開発者の活動リンク↓
+↓開発者の活動リンク↓  
 https://linktr.ee/sasaki.ken
