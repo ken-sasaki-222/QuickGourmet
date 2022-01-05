@@ -21,7 +21,7 @@ struct AppTrackingTransparencyView: View {
             VStack {
                 Spacer()
                 Text("トラッキングを許可してください")
-                    .font(.custom(FontManager.Mplus.medium, size: 26))
+                    .font(.custom(FontManager.Mplus.medium, size: 24))
                     .foregroundColor(ColorManager.white)
                     .lineLimit(1)
                     .padding(.bottom, 3)
