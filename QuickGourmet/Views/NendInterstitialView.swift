@@ -22,7 +22,9 @@ class NendInterstitialView: NSObject, NADInterstitialLoadingDelegate, NADInterst
     // 静止広告の表示
     func showInterstitiaStillessAD() {
         var showResult: NADInterstitialShowResult
-        let rootVC = UIApplication.shared.windows.first?.rootViewController
+        let scenes = UIApplication.shared.connectedScenes
+        let windowScenes = scenes.first as? UIWindowScene
+        let rootVC = windowScenes?.keyWindow?.rootViewController
         showResult = NADInterstitial.sharedInstance().showAd(from: rootVC, spotID: NEND_INTERSTITIAL_STILLNESS_SPOTID)
 
         switch showResult {
