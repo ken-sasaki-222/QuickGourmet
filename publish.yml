@@ -1,0 +1,63 @@
+name: Publish
+
+on:
+  # push:
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: macos-11
+    timeout-minutes: 60 
+    steps:
+    - uses: actions/checkout@v2
+    - name: Show macos version
+      run: sw_vers
+    - name: Create secure dir
+      run: mkdir -p secure
+    - name: Create service account credentials file
+      run: echo "$CREDENTIALS" > secure/pocke-weather-app-e2f34dfe488c.json
+      env:
+        CREDENTIALS: ${{ secrets.SERVICE_ACCOUNT_CREDENTIALS }}
+    - name: Log
+      run: sudo ls /Applications/
+    - name: Select Xcode
+      run: sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
+    - name: Xcode version
+      run: /usr/bin/xcodebuild -version
+    - name: Cache Pods
+      uses: actions/cache@v2
+      with:
+        path: Pods
+        key: ${{ runner.os }}-${{ hashFiles('**/Podfile.lock') }}-2
+    - name: Pod install
+      if: steps.cache.outputs.cache-hit != 'true'
+      run: pod install
+    - name: Lint
+      run: Pods/SwiftLint/swiftlint
+    - name: Setup SSH Keys and known_hosts for fastlane match
+      run: |
+        SSH_PATH="$HOME/.ssh"
+        mkdir -p "$SSH_PATH"
+        touch "$SSH_PATH/known_hosts"
+        echo "$PRIVATE_KEY" > "$SSH_PATH/id_rsa"
+        chmod 700 "$SSH_PATH"
+        ssh-keyscan github.com >> ~/.ssh/known_hosts
+        chmod 600 "$SSH_PATH/known_hosts"
+        chmod 600 "$SSH_PATH/id_rsa"
+        eval $(ssh-agent)
+        ssh-add "$SSH_PATH/id_rsa"
+      env:
+        PRIVATE_KEY: ${{ secrets.FOR_MATCH_SSH_ID_RSA }}
+    # - name: Test
+    #   run: bundle exec fastlane test
+    - name: install fastlane
+      run: bundle install
+    # - name: fastlane test
+    #   run: bundle exec fastlane downloadCertAndProf
+    #   env:
+    #     MATCH_PASSWORD: ${{ secrets.FASTLANE_MATCH_PASSWORD }}
+    - name: Publish
+      run: bundle exec fastlane publishAll
+      env:
+        MATCH_PASSWORD: ${{ secrets.FASTLANE_MATCH_PASSWORD }}
+    - name: Log
+      run: echo "done"
