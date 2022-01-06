@@ -67,7 +67,7 @@ class QuickSearchViewModel: NSObject, ObservableObject {
         guard let range = range, let genre = genre else {
             return ""
         }
-        return "https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=\(APIKEY)&lat=\(latitude)&lng=\(longitude)&range=\(range)&genre=\(genre)&count=100&format=json"
+        return "https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=\(HOTPEPPER_KEY)&lat=\(latitude)&lng=\(longitude)&range=\(range)&genre=\(genre)&count=100&format=json"
     }
 
     func getShopData() async {

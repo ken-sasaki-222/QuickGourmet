@@ -18,7 +18,7 @@ class ShopDataStoreTests: XCTestCase {
 
     func testFetchShopData() async throws {
         let dataStore = ShopDataStore()
-        let request = "https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=\(APIKEY)&lat=35.6465202848107&lng=139.62975824675942&range=3&genre=G001&count=100&format=json"
+        let request = "https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=\(HOTPEPPER_KEY)&lat=35.6465202848107&lng=139.62975824675942&range=3&genre=G001&count=100&format=json"
         let response = try await dataStore.fetchShopDate(requestString: request)
         print("Success fetch shop data.")
         print("response:", response)
