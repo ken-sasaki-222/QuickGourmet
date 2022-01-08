@@ -25,7 +25,7 @@ class NendInterstitialView: NSObject, NADInterstitialLoadingDelegate, NADInterst
         let scenes = UIApplication.shared.connectedScenes
         let windowScenes = scenes.first as? UIWindowScene
         let rootVC = windowScenes?.keyWindow?.rootViewController
-        showResult = NADInterstitial.sharedInstance().showAd(from: rootVC, spotID: NEND_INTERSTITIAL_STILLNESS_SPOTID)
+        showResult = NADInterstitial.sharedInstance().showAd(from: rootVC, spotID: 1_039_050)
 
         switch showResult {
         case .AD_SHOW_SUCCESS:

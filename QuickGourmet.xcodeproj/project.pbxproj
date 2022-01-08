@@ -27,7 +27,6 @@
 		D81E428A26D255FA00DB5AD6 /* FavoriteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81E428926D255FA00DB5AD6 /* FavoriteRepository.swift */; };
 		D81E428E26D258C500DB5AD6 /* FavoriteShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81E428D26D258C500DB5AD6 /* FavoriteShop.swift */; };
 		D8242669276C6ED800746EC0 /* LocationStatusType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8242668276C6ED800746EC0 /* LocationStatusType.swift */; };
-		D826E54627741A6000D02E2B /* NendKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D826E54527741A6000D02E2B /* NendKey.swift */; };
 		D826E54827741AC600D02E2B /* FirebaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D826E54727741AC600D02E2B /* FirebaseHelper.swift */; };
 		D826E54A27741D4800D02E2B /* ImageDownloadHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D826E54927741D4800D02E2B /* ImageDownloadHelper.swift */; };
 		D828135327648CD9002F1DF1 /* ShopDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D828135227648CD9002F1DF1 /* ShopDataStore.swift */; };
@@ -161,7 +160,6 @@
 		D81E428926D255FA00DB5AD6 /* FavoriteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRepository.swift; sourceTree = "<group>"; };
 		D81E428D26D258C500DB5AD6 /* FavoriteShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteShop.swift; sourceTree = "<group>"; };
 		D8242668276C6ED800746EC0 /* LocationStatusType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationStatusType.swift; sourceTree = "<group>"; };
-		D826E54527741A6000D02E2B /* NendKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NendKey.swift; sourceTree = "<group>"; };
 		D826E54727741AC600D02E2B /* FirebaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseHelper.swift; sourceTree = "<group>"; };
 		D826E54927741D4800D02E2B /* ImageDownloadHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloadHelper.swift; sourceTree = "<group>"; };
 		D828135227648CD9002F1DF1 /* ShopDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopDataStore.swift; sourceTree = "<group>"; };
@@ -310,7 +308,6 @@
 		D826E54427741A4100D02E2B /* Secret */ = {
 			isa = PBXGroup;
 			children = (
-				D826E54527741A6000D02E2B /* NendKey.swift */,
 				D8C337DC27897BB700636D50 /* settings.template.plist */,
 				D8C337DE27897BE900636D50 /* settings.plist */,
 			);
@@ -937,7 +934,6 @@
 				D828135A2764B049002F1DF1 /* FavoriteDataStore.swift in Sources */,
 				D81D059A2777062700FED1B4 /* AppTrackingTransparencyStatusTranslator.swift in Sources */,
 				D81D05962774AD5100FED1B4 /* AppTrackingTransparencyViewModel.swift in Sources */,
-				D826E54627741A6000D02E2B /* NendKey.swift in Sources */,
 				D80803E726D49E93009FACC8 /* MockFavoriteShopData.swift in Sources */,
 				D889E16326AF09EA00F18681 /* LogoImage.swift in Sources */,
 				D81E428A26D255FA00DB5AD6 /* FavoriteRepository.swift in Sources */,
