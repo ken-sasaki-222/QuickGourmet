@@ -10,5 +10,5 @@ import Foundation
 struct Settings: Codable {
     var hotpepperKey: String
     var nendInterstitialKey: String
-    var nendInterstitialId: Double
+    var nendInterstitialId: Int
 }
