@@ -25,7 +25,7 @@ class ShopDataStoreTests: XCTestCase {
         let params = "?key=\(key)&lat=35.6465202848107&lng=139.62975824675942&range=3&genre=G001&count=100&format=json"
         let request = "https://webservice.recruit.co.jp/hotpepper/gourmet/v1/" + params
 
-        let response = try await dataStore.fetchShopDate(requestString: request)
+        let response = try await dataStore.fetchShopDate(request: request)
         print("Success fetch shop data.")
         print("response:", response)
         XCTAssertNotNil(response)
