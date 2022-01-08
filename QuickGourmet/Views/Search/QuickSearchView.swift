@@ -104,7 +104,7 @@ struct QuickSearchView: View {
         quickSearchVM.genreIndex = index
         quickSearchVM.pickerSelection = selection
         Task {
-            await quickSearchVM.getShopData()
+            try await quickSearchVM.getShopData()
         }
     }
 

@@ -11,8 +11,8 @@ class ShopDataStore {
     private let shared = URLSession.shared
     private let decoder = JSONDecoder()
 
-    func fetchShopDate(requestString: String) async throws -> [Shop] {
-        guard let requestUrl = URL(string: requestString) else {
+    func fetchShopDate(request: String) async throws -> [Shop] {
+        guard let requestUrl = URL(string: request) else {
             throw NSError(domain: "Request url notfound.", code: -1, userInfo: nil)
         }
         print("requestURL: \(requestUrl)")

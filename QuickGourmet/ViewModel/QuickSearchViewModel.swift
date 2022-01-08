@@ -62,20 +62,28 @@ class QuickSearchViewModel: NSObject, ObservableObject {
         userRepository.longitude
     }
 
-    // HotPepper API.
-    private var requestString: String {
+    private func getRequestString() throws -> String? {
         guard let range = range, let genre = genre else {
-            return ""
+            return nil
         }
-        return "https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=\(HOTPEPPER_KEY)&lat=\(latitude)&lng=\(longitude)&range=\(range)&genre=\(genre)&count=100&format=json"
+
+        guard let key = try LoadSettingsHelper.getHotpepperKey() else {
+            return nil
+        }
+
+        return "https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=\(key)&lat=\(latitude)&lng=\(longitude)&range=\(range)&genre=\(genre)&count=100&format=json"
     }
 
-    func getShopData() async {
-        print("requestString:", requestString)
-        let requestString = requestString.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed) ?? ""
+    func getShopData() async throws {
+        guard let requestString = try getRequestString() else {
+            return
+        }
+        print(requestString as Any)
+
+        let request = requestString.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed) ?? ""
 
         do {
-            let response = try await shopSearchRepository.fetchShopDate(requestString: requestString)
+            let response = try await shopSearchRepository.fetchShopDate(request: request)
             // refactorTODO: 新しい書き方にしたい
             DispatchQueue.main.async {
                 self.shopData = response
