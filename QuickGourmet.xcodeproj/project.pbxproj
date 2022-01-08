@@ -403,7 +403,8 @@
 		D8550488269D0DAA0053334A /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				D8C5DE4D26E36C8E00617F6D /* Shop */,
+				D855048C269D0F1B0053334A /* HotPepperResponseResponse.swift */,
+				D81E428D26D258C500DB5AD6 /* FavoriteShop.swift */,
 				D8C5DE4E26E36CDC00617F6D /* Type */,
 			);
 			path = Model;
@@ -555,15 +556,6 @@
 				D81D05992777062700FED1B4 /* AppTrackingTransparencyStatusTranslator.swift */,
 			);
 			path = Translator;
-			sourceTree = "<group>";
-		};
-		D8C5DE4D26E36C8E00617F6D /* Shop */ = {
-			isa = PBXGroup;
-			children = (
-				D855048C269D0F1B0053334A /* HotPepperResponseResponse.swift */,
-				D81E428D26D258C500DB5AD6 /* FavoriteShop.swift */,
-			);
-			path = Shop;
 			sourceTree = "<group>";
 		};
 		D8C5DE4E26E36CDC00617F6D /* Type */ = {
