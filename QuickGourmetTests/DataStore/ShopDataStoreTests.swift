@@ -28,6 +28,6 @@ class ShopDataStoreTests: XCTestCase {
         let response = try await dataStore.fetchShopDate(request: request)
         print("Success fetch shop data.")
         print("response:", response)
-        XCTAssertNotNil(response)
+        XCTAssert(response.count > 0)
     }
 }
