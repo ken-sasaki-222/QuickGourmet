@@ -16,18 +16,23 @@ class ShopDataStoreTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testFetchShopData() async throws {
+    func testFetchShopData() async {
         let dataStore = ShopDataStore()
 
-        guard let key = try LoadSettingsHelper.getHotpepperKey() else {
-            return
-        }
-        let params = "?key=\(key)&lat=35.6465202848107&lng=139.62975824675942&range=3&genre=G001&count=100&format=json"
-        let request = "https://webservice.recruit.co.jp/hotpepper/gourmet/v1/" + params
+        do {
+            guard let key = try LoadSettingsHelper.getHotpepperKey() else {
+                return
+            }
+            let params = "?key=\(key)&lat=35.6465202848107&lng=139.62975824675942&range=3&genre=G001&count=100&format=json"
+            let request = "https://webservice.recruit.co.jp/hotpepper/gourmet/v1/" + params
+            let response = try await dataStore.fetchShopDate(request: request)
 
-        let response = try await dataStore.fetchShopDate(request: request)
-        print("Success fetch shop data.")
-        print("response:", response)
-        XCTAssert(response.count > 0)
+            print("Success fetch shop data.")
+            print("response:", response)
+
+            XCTAssert(response.count > 0)
+        } catch {
+            XCTFail(error.localizedDescription)
+        }
     }
 }

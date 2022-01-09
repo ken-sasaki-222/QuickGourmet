@@ -37,7 +37,7 @@ class QuickSearchViewModel: NSObject, ObservableObject {
             reviewRepository: RepositoryLocator.getReviewRepository()
         )
     }
-    
+
     private var latitude: Double {
         userRepository.latitude
     }
