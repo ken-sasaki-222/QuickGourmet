@@ -24,21 +24,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseHelper.firebaseConfigure()
         recordLaunchCount()
         saveDeviceId()
-        try? setUpNendAd()
+        setUpNendAd()
 
         return true
     }
 
-    private func setUpNendAd() throws {
-        guard let nendKey = try LoadSettingsHelper.getNendInterstitialKey() else {
-            return
-        }
+    private func setUpNendAd() {
+        do {
+            guard let nendKey = try LoadSettingsHelper.getNendInterstitialKey() else {
+                return
+            }
+            guard let nendId = try LoadSettingsHelper.getNendInterstitialId() else {
+                return
+            }
 
-        guard let nendId = try LoadSettingsHelper.getNendInterstitialId() else {
-            return
+            NADInterstitial.sharedInstance().loadAd(withSpotID: nendId, apiKey: nendKey)
+        } catch {
+            print("Error setup nend ad.")
+            print("Error localize message.", error.localizedDescription)
         }
-
-        NADInterstitial.sharedInstance().loadAd(withSpotID: nendId, apiKey: nendKey)
     }
 
     private func recordLaunchCount() {

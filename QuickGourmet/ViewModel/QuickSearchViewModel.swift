@@ -37,6 +37,14 @@ class QuickSearchViewModel: NSObject, ObservableObject {
             reviewRepository: RepositoryLocator.getReviewRepository()
         )
     }
+    
+    private var latitude: Double {
+        userRepository.latitude
+    }
+
+    private var longitude: Double {
+        userRepository.longitude
+    }
 
     private var range: Int? {
         guard let pickerSelectType = PickerSelectType(rawValue: pickerSelection) else {
@@ -54,28 +62,33 @@ class QuickSearchViewModel: NSObject, ObservableObject {
         return genre
     }
 
-    private var latitude: Double {
-        userRepository.latitude
+    private var hotpepperKey: String? {
+        do {
+            guard let key = try LoadSettingsHelper.getHotpepperKey() else {
+                return nil
+            }
+
+            return key
+        } catch {
+            print("Error get hotpepper key.")
+            print("Error localize message.", error.localizedDescription)
+            return nil
+        }
     }
 
-    private var longitude: Double {
-        userRepository.longitude
-    }
-
-    private func getRequestString() throws -> String? {
-        guard let range = range, let genre = genre else {
+    private func getRequestString() -> String? {
+        guard let range = range, let genre = genre, let key = hotpepperKey else {
             return nil
         }
 
-        guard let key = try LoadSettingsHelper.getHotpepperKey() else {
-            return nil
-        }
+        let params = "?key=\(key)&lat=\(latitude)&lng=\(longitude)&range=\(range)&genre=\(genre)&count=100&format=json"
+        let requestString = "https://webservice.recruit.co.jp/hotpepper/gourmet/v1/" + params
 
-        return "https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=\(key)&lat=\(latitude)&lng=\(longitude)&range=\(range)&genre=\(genre)&count=100&format=json"
+        return requestString
     }
 
-    func getShopData() async throws {
-        guard let requestString = try getRequestString() else {
+    func getShopData() async {
+        guard let requestString = getRequestString() else {
             return
         }
         print(requestString as Any)
@@ -89,7 +102,9 @@ class QuickSearchViewModel: NSObject, ObservableObject {
                 self.shopData = response
             }
         } catch {
-            self.error = error
+            DispatchQueue.main.async {
+                self.error = error
+            }
         }
     }
 

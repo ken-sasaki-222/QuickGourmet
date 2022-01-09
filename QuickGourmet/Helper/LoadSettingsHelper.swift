@@ -10,7 +10,7 @@ import Foundation
 class LoadSettingsHelper {
     static func getHotpepperKey() throws -> String? {
         guard let path = Bundle.main.path(forResource: "settings", ofType: "plist") else {
-            return nil
+            throw NSError(domain: "Required 'settings.plist' not found.", code: -5, userInfo: nil)
         }
         let settingUrl = URL(fileURLWithPath: path)
         let data = try Data(contentsOf: settingUrl)
@@ -22,7 +22,7 @@ class LoadSettingsHelper {
 
     static func getNendInterstitialKey() throws -> String? {
         guard let path = Bundle.main.path(forResource: "settings", ofType: "plist") else {
-            return nil
+            throw NSError(domain: "Required 'settings.plist' not found.", code: -5, userInfo: nil)
         }
         let settingUrl = URL(fileURLWithPath: path)
         let data = try Data(contentsOf: settingUrl)
@@ -34,7 +34,7 @@ class LoadSettingsHelper {
 
     static func getNendInterstitialId() throws -> Int? {
         guard let path = Bundle.main.path(forResource: "settings", ofType: "plist") else {
-            return nil
+            throw NSError(domain: "Required 'settings.plist' not found.", code: -5, userInfo: nil)
         }
         let settingUrl = URL(fileURLWithPath: path)
         let data = try Data(contentsOf: settingUrl)
