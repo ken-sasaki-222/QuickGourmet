@@ -19,31 +19,39 @@ class NendInterstitialView: NSObject, NADInterstitialLoadingDelegate, NADInterst
         NADInterstitial.sharedInstance().delegate = nil
     }
 
-    // 静止広告の表示
     func showInterstitiaStillessAD() {
         var showResult: NADInterstitialShowResult
         let scenes = UIApplication.shared.connectedScenes
         let windowScenes = scenes.first as? UIWindowScene
         let rootVC = windowScenes?.keyWindow?.rootViewController
-        showResult = NADInterstitial.sharedInstance().showAd(from: rootVC, spotID: NEND_INTERSTITIAL_STILLNESS_SPOTID)
 
-        switch showResult {
-        case .AD_SHOW_SUCCESS:
-            print("AD_SHOW_SUCCESS")
-        case .AD_LOAD_INCOMPLETE:
-            print("AD_LOAD_INCOMPLETE")
-        case .AD_REQUEST_INCOMPLETE:
-            print("FAILED_AD_REQUEST")
-        case .AD_DOWNLOAD_INCOMPLETE:
-            print("FAILED_AD_DOWNLOAD")
-        case .AD_FREQUENCY_NOT_REACHABLE:
-            print("AD_FREQUENCY_NOT_REACHABLE")
-        case .AD_SHOW_ALREADY:
-            print("AD_SHOW_ALREADY")
-        case .AD_CANNOT_DISPLAY:
-            print("AD_CANNOT_DISPLAY")
-        @unknown default:
-            break
+        do {
+            guard let nendId = try LoadSettingsHelper.getNendInterstitialId() else {
+                return
+            }
+            showResult = NADInterstitial.sharedInstance().showAd(from: rootVC, spotID: nendId)
+
+            switch showResult {
+            case .AD_SHOW_SUCCESS:
+                print("AD_SHOW_SUCCESS")
+            case .AD_LOAD_INCOMPLETE:
+                print("AD_LOAD_INCOMPLETE")
+            case .AD_REQUEST_INCOMPLETE:
+                print("FAILED_AD_REQUEST")
+            case .AD_DOWNLOAD_INCOMPLETE:
+                print("FAILED_AD_DOWNLOAD")
+            case .AD_FREQUENCY_NOT_REACHABLE:
+                print("AD_FREQUENCY_NOT_REACHABLE")
+            case .AD_SHOW_ALREADY:
+                print("AD_SHOW_ALREADY")
+            case .AD_CANNOT_DISPLAY:
+                print("AD_CANNOT_DISPLAY")
+            @unknown default:
+                return
+            }
+        } catch {
+            print("Error setup nend ad.")
+            print("Error localize message.", error.localizedDescription)
         }
     }
 

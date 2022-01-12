@@ -10,9 +10,9 @@ import Foundation
 class ShopSearchRepository: ShopRepositoryInterface {
     private let shopDataStore = ShopDataStore()
 
-    func fetchShopDate(requestString: String) async throws -> [Shop] {
+    func fetchShopDate(request: String) async throws -> [Shop] {
         do {
-            let shopDate = try await shopDataStore.fetchShopDate(requestString: requestString)
+            let shopDate = try await shopDataStore.fetchShopDate(request: request)
             return shopDate
         } catch {
             throw error

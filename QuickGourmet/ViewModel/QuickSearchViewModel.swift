@@ -38,6 +38,14 @@ class QuickSearchViewModel: NSObject, ObservableObject {
         )
     }
 
+    private var latitude: Double {
+        userRepository.latitude
+    }
+
+    private var longitude: Double {
+        userRepository.longitude
+    }
+
     private var range: Int? {
         guard let pickerSelectType = PickerSelectType(rawValue: pickerSelection) else {
             return nil
@@ -54,34 +62,49 @@ class QuickSearchViewModel: NSObject, ObservableObject {
         return genre
     }
 
-    private var latitude: Double {
-        userRepository.latitude
-    }
+    private var hotpepperKey: String? {
+        do {
+            guard let key = try LoadSettingsHelper.getHotpepperKey() else {
+                return nil
+            }
 
-    private var longitude: Double {
-        userRepository.longitude
-    }
-
-    // HotPepper API.
-    private var requestString: String {
-        guard let range = range, let genre = genre else {
-            return ""
+            return key
+        } catch {
+            print("Error get hotpepper key.")
+            print("Error localize message.", error.localizedDescription)
+            return nil
         }
-        return "https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=\(HOTPEPPER_KEY)&lat=\(latitude)&lng=\(longitude)&range=\(range)&genre=\(genre)&count=100&format=json"
+    }
+
+    private func getRequestString() -> String? {
+        guard let range = range, let genre = genre, let key = hotpepperKey else {
+            return nil
+        }
+
+        let params = "?key=\(key)&lat=\(latitude)&lng=\(longitude)&range=\(range)&genre=\(genre)&count=100&format=json"
+        let requestString = "https://webservice.recruit.co.jp/hotpepper/gourmet/v1/" + params
+
+        return requestString
     }
 
     func getShopData() async {
-        print("requestString:", requestString)
-        let requestString = requestString.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed) ?? ""
+        guard let requestString = getRequestString() else {
+            return
+        }
+        print(requestString as Any)
+
+        let request = requestString.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed) ?? ""
 
         do {
-            let response = try await shopSearchRepository.fetchShopDate(requestString: requestString)
+            let response = try await shopSearchRepository.fetchShopDate(request: request)
             // refactorTODO: 新しい書き方にしたい
             DispatchQueue.main.async {
                 self.shopData = response
             }
         } catch {
-            self.error = error
+            DispatchQueue.main.async {
+                self.error = error
+            }
         }
     }
 

@@ -28,6 +28,7 @@
 - バックエンド：Firebase（Firestore）
 - API：ホットペッパーグルメAPI
 - コード管理：SwiftLint、SwiftFormat
+- CI/CD：Bitrise
 - テスト：XCTest
 
 #### 利用したライブラリ
